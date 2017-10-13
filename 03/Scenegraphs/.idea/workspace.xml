@@ -61,16 +61,21 @@
       <file leaf-file-name="YMCA-humanoid.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="478" column="24" lean-forward="false" selection-start-line="478" selection-start-column="24" selection-end-line="478" selection-end-column="24" />
+            <state relative-caret-position="445">
+              <caret line="802" column="55" lean-forward="true" selection-start-line="802" selection-start-column="55" selection-end-line="802" selection-end-column="55" />
               <folding>
                 <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#2;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
@@ -909,16 +914,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="478" column="24" lean-forward="false" selection-start-line="478" selection-start-column="24" selection-end-line="478" selection-end-column="24" />
+        <state relative-caret-position="445">
+          <caret line="802" column="55" lean-forward="true" selection-start-line="802" selection-start-column="55" selection-end-line="802" selection-end-column="55" />
           <folding>
             <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#group#2;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
