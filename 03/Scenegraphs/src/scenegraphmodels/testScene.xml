@@ -1,0 +1,25 @@
+<scene>
+    <group>
+        <transform name="moveWholeScene">
+            <set>
+                <translate>100 -100 -300</translate>
+            </set>
+            <group name="wholeScene">
+                <transform>
+                    <set>
+                        <translate>0 0 0</translate>
+                    </set>
+                    <group name="room1" from="scenegraphmodels/roomWithContents.xml">
+                    </group>
+                </transform>
+                <transform>
+                    <set>
+                        <translate>0 0 150</translate>
+                    </set>
+                    <group name="hallway1-2" from="scenegraphmodels/hallway.xml">
+                    </group>
+                </transform>
+            </group>
+        </transform>
+    </group>
+</scene>
