@@ -36,6 +36,7 @@ public class View {
   private Vector3f eyePosition;
 
 
+
   private util.ShaderProgram program;
   private util.ShaderLocationsVault shaderLocations;
   private int projectionLocation;

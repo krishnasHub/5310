@@ -1357,7 +1357,6 @@
                                                 </set>
                                                 <transform name="righthand">
                                                     <set>
-                                                        
                                                         <translate>0 -10 0</translate>
                                                         <scale>1 10 1</scale>
                                                     </set>
