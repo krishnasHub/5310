@@ -183,6 +183,38 @@
                                                     </object>
                                                 </transform>
                                             </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -22 0</translate>
+                                                </set>
+                                                <transform name="leftwrist">
+                                                    <set>
+                                                        <scale>2 2 2</scale>
+                                                    </set>
+                                                    <object instanceof="sphere">
+                                                        <material>
+                                                            <color>0 1 0</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -24 0</translate>
+                                                </set>
+                                                <transform name="lefthand">
+                                                    <set>
+                                                        <translate>0 -5 0</translate>
+                                                        <scale>1 5 1</scale>
+                                                    </set>
+                                                    <object instanceof="cylinder">
+                                                        <material>
+                                                            <color>0 0 1</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+
                                         </group>
                                     </transform>
                                 </transform>
@@ -242,6 +274,38 @@
                                                     </object>
                                                 </transform>
                                             </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -22 0</translate>
+                                                </set>
+                                                <transform name="rightwrist">
+                                                    <set>
+                                                        <scale>2 2 2</scale>
+                                                    </set>
+                                                    <object instanceof="sphere">
+                                                        <material>
+                                                            <color>0 1 0</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -24 0</translate>
+                                                </set>
+                                                <transform name="righthand">
+                                                    <set>
+                                                        <translate>0 -5 0</translate>
+                                                        <scale>1 5 1</scale>
+                                                    </set>
+                                                    <object instanceof="cylinder">
+                                                        <material>
+                                                            <color>0 0 1</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+
                                         </group>
                                     </transform>
                                 </transform>
@@ -1119,10 +1183,11 @@
                                 <transform name="lefthand">
                                     <set>
                                         <translate>10 27 0</translate>
+                                        <rotate>180 1 0 0</rotate>
+                                        <rotate>30 0 0 1</rotate>
                                     </set>
-                                    <transform name="left-full-arm">
+                                    <transform>
                                         <set>
-                                            <rotate>135 0 0 1</rotate>
                                         </set>
                                         <group>
                                             <transform>
@@ -1155,13 +1220,13 @@
                                                     </object>
                                                 </transform>
                                             </transform>
-                                            <transform name="left-forearm-rotation">
+                                            <transform>
                                                 <set>
                                                     <translate>0 -12 0</translate>
-                                                    <rotate>90 0 0 1</rotate>
                                                 </set>
                                                 <transform name="leftforearm">
                                                     <set>
+                                                        <rotate>-90 0 0 1</rotate>
                                                         <translate>0 -10 0</translate>
                                                         <scale>1 10 1</scale>
                                                     </set>
@@ -1172,16 +1237,52 @@
                                                     </object>
                                                 </transform>
                                             </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>-90 0 0 1</rotate>
+                                                    <translate>0 -12 0</translate>
+                                                </set>
+                                                <transform name="leftwrist">
+                                                    <set>
+                                                        <scale>2 2 2</scale>
+                                                    </set>
+                                                    <object instanceof="sphere">
+                                                        <material>
+                                                            <color>0 1 0</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>-90 0 0 1</rotate>
+                                                    <translate>0 -10 0</translate>
+                                                </set>
+                                                <transform name="lefthand">
+                                                    <set>
+                                                        <translate>0 -10 0</translate>
+                                                        <scale>1 10 1</scale>
+                                                    </set>
+                                                    <object instanceof="cylinder">
+                                                        <material>
+                                                            <color>0 0 1</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
                                         </group>
                                     </transform>
                                 </transform>
                                 <transform name="righthand">
                                     <set>
                                         <translate>-10 27 0</translate>
+                                        <rotate>180 1 0 0</rotate>
+                                        <rotate>-30 0 0 1</rotate>
                                     </set>
                                     <transform name="righthand">
                                         <set>
-                                            <rotate>-135 0 0 1</rotate>
                                         </set>
                                         <group>
                                             <transform>
@@ -1217,10 +1318,10 @@
                                             <transform>
                                                 <set>
                                                     <translate>0 -12 0</translate>
-                                                    <rotate>-90 0 0 1</rotate>
                                                 </set>
                                                 <transform name="rightforearm">
                                                     <set>
+                                                        <rotate>90 0 0 1</rotate>
                                                         <translate>0 -10 0</translate>
                                                         <scale>1 10 1</scale>
                                                     </set>
@@ -1231,6 +1332,42 @@
                                                     </object>
                                                 </transform>
                                             </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>90 0 0 1</rotate>
+                                                    <translate>0 -10 0</translate>
+                                                </set>
+                                                <transform name="rightwrist">
+                                                    <set>
+                                                        <scale>2 2 2</scale>
+                                                    </set>
+                                                    <object instanceof="sphere">
+                                                        <material>
+                                                            <color>0 1 0</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>90 0 0 1</rotate>
+                                                    <translate>0 -10 0</translate>
+                                                </set>
+                                                <transform name="righthand">
+                                                    <set>
+                                                        <translate>0 -10 0</translate>
+                                                        <scale>1 10 1</scale>
+                                                    </set>
+                                                    <object instanceof="cylinder">
+                                                        <material>
+                                                            <color>0 0 1</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+
                                         </group>
                                     </transform>
                                 </transform>
