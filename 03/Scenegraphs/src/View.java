@@ -33,6 +33,7 @@ public class View {
   private Matrix4f projection, trackballTransform;
   private float trackballRadius;
   private Vector2f mousePos;
+  private Vector3f eyePosition;
 
 
   private util.ShaderProgram program;
@@ -42,6 +43,7 @@ public class View {
 
 
   public View() {
+    eyePosition = new Vector3f(0, 50, 200);
     projection = new Matrix4f();
     modelView = new Stack<Matrix4f>();
     trackballRadius = 300;
@@ -106,7 +108,7 @@ public class View {
          * Right now this matrix is identity, which means "no transformations"
          */
     modelView.push(new Matrix4f());
-    modelView.peek().lookAt(new Vector3f(0, 50, 80), new Vector3f(0, 50, 0), new Vector3f(0, 1, 0))
+    modelView.peek().lookAt(eyePosition, new Vector3f(0, 0, 0), new Vector3f(0, 1, 0))
             .mul(trackballTransform);
 
 
@@ -162,7 +164,7 @@ public class View {
     WINDOW_HEIGHT = height;
     gl.glViewport(0, 0, width, height);
 
-    projection = new Matrix4f().perspective((float) Math.toRadians(120.0f), (float) width / height, 0.1f, 10000.0f);
+    projection = new Matrix4f().perspective((float) Math.toRadians(60.0f), (float) width / height, 0.1f, 10000.0f);
     // proj = new Matrix4f().ortho(-400,400,-400,400,0.1f,10000.0f);
 
   }
