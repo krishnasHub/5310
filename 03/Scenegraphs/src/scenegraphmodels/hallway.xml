@@ -1,0 +1,77 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+
+    <group>
+        <transform>
+            <set>
+                <!--this translate is to view the room-->
+                <translate>0 -100 -100</translate>
+            </set>
+            <group name="room">
+                <transform name="floor">
+                    <set>
+                        <scale> 100 2 100</scale>
+                    </set>
+                    <group>/Scenegra
+                        <object instanceof="box">
+                            <material>
+                                <color> 1 1 0 </color>
+                            </material>
+                        </object>
+                    </group>
+                </transform>
+                <group>
+                    <transform name="buildOnFloor">
+                        <set>
+                            <translate> 0 100 0 </translate>
+                        </set>
+                        <group>
+                            <transform name="ceiling">
+                                <set>
+                                    <translate>0 50 0</translate>
+                                    <scale> 100 2 100</scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <color> 1 1 0 </color>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                            <transform name="wallEmptyLeft">
+                                <set>
+                                    <translate>-50 -25 0</translate>
+                                    <scale> 2 150 100 </scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <color> 1 0 0 </color>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                            <transform name="wallEmptyRight">
+                                <set>
+                                    <translate>50 -25 0</translate>
+                                    <scale> 2 150 100 </scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <color> 1 0 0 </color>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                        </group>
+                    </transform>
+                </group>
+            </group>
+        </transform>
+    </group>
+</scene>
