@@ -29,8 +29,8 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="440">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+            <state relative-caret-position="1063">
+              <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,27 +58,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YMCA-humanoid.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="YMCA-humanoid.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="802" column="55" lean-forward="true" selection-start-line="802" selection-start-column="55" selection-end-line="802" selection-end-column="55" />
+            <state relative-caret-position="491">
+              <caret line="1169" column="44" lean-forward="true" selection-start-line="1169" selection-start-column="44" selection-end-line="1169" selection-end-column="44" />
               <folding>
                 <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#2;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -200,9 +209,9 @@
         <option value="$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/shaders/default.vert" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml.fxml" />
-        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
-        <option value="$PROJECT_DIR$/src/View.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml" />
+        <option value="$PROJECT_DIR$/src/View.java" />
+        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
       </list>
     </option>
   </component>
@@ -662,7 +671,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/View.java</url>
-          <line>80</line>
+          <line>81</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
@@ -894,49 +903,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="802" column="55" lean-forward="true" selection-start-line="802" selection-start-column="55" selection-end-line="802" selection-end-column="55" />
+        <state relative-caret-position="491">
+          <caret line="1169" column="44" lean-forward="true" selection-start-line="1169" selection-start-column="44" selection-end-line="1169" selection-end-column="44" />
           <folding>
             <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
             <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#2;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1063">
+          <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

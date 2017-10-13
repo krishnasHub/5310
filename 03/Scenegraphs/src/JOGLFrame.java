@@ -27,6 +27,9 @@ import java.nio.IntBuffer;
  * Created by ashesh on 9/18/2015.
  */
 public class JOGLFrame extends JFrame {
+  private static final String YMCA_SCENE_GRAPH_XML = "scenegraphmodels/YMCA-humanoid.xml";
+  private static final String ROOM_SCENE_GRAPH_XML = "scenegraphmodels/room.xml";
+  private static final String SCENE_GRAPH_XML = ROOM_SCENE_GRAPH_XML;
   private View view;
   private MyTextRenderer textRenderer;
   private GLCanvas canvas;
@@ -63,7 +66,7 @@ public class JOGLFrame extends JFrame {
           textRenderer = new MyTextRenderer(glAutoDrawable);
           InputStream in = getClass().getClassLoader()
                   .getResourceAsStream
-                          ("scenegraphmodels/YMCA-humanoid.xml");
+                          (SCENE_GRAPH_XML);
           view.initScenegraph(glAutoDrawable, in);
 
           glAutoDrawable.getGL().setSwapInterval(0);
