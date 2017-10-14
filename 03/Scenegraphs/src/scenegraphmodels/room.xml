@@ -7,8 +7,6 @@
     <group>
         <transform>
             <set>
-                <!--this translate is to view the room-->
-                <translate>0 0 0</translate>
             </set>
             <group name="room">
                 <transform name="floor">

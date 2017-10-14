@@ -12,7 +12,7 @@
             <group name="room">
                 <transform name="floor">
                     <set>
-                        <scale> 100 2 100</scale>
+                        <scale> 600 2 100</scale>
                     </set>
                     <group>
                         <object instanceof="box">
@@ -30,39 +30,39 @@
                         <group>
                             <transform name="ceiling">
                                 <set>
-                                    <translate>0 50 0</translate>
-                                    <scale> 100 2 100</scale>
+                                    <translate>0 100 0</translate>
+                                    <scale> 600 2 100</scale>
                                 </set>
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 1 0 </color>
+                                            <color> 0 1 0 </color>
                                         </material>
                                     </object>
                                 </group>
                             </transform>
-                            <transform name="wallEmptyLeft">
+                            <transform name="hallwayBackWall">
                                 <set>
-                                    <translate>-50 -25 0</translate>
-                                    <scale> 2 150 100 </scale>
+                                    <translate>100 0 -50</translate>
+                                    <scale> 400 200 2</scale>
                                 </set>
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 0 0 </color>
+                                            <color> 0 1 0 </color>
                                         </material>
                                     </object>
                                 </group>
                             </transform>
-                            <transform name="wallEmptyRight">
+                            <transform name="hallwayfrontWall">
                                 <set>
-                                    <translate>50 -25 0</translate>
-                                    <scale> 2 150 100 </scale>
+                                    <translate>100 0 50</translate>
+                                    <scale> 400 200 2</scale>
                                 </set>
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 0 0 </color>
+                                            <color> 0 1 0 </color>
                                         </material>
                                     </object>
                                 </group>
