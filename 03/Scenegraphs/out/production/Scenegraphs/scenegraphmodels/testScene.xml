@@ -5,7 +5,8 @@
                 <transform name="moveWholeScene">
                     <set>
                         <!--use this translate to move the whole scene around during testing-->
-                        <translate>0 -100 0</translate>
+                        <translate>-150 -100 0</translate>
+                        <rotate>90 0 1 0</rotate>
                     </set>
                     <group name="wholeScene">
                         <transform name="room1">
