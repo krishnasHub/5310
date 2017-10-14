@@ -29,9 +29,9 @@ import java.util.Stack;
  * by the JOGLFrame class.
  */
 public class View {
-  private static float DISPLACEMENT = 10.0f;
-  private static float PAN_ANGLE = 2f;
-  private static float cameraDist = 200.0f;
+  private static final float DISPLACEMENT = 10.0f;
+  private static final float PAN_ANGLE = 2f;
+  private static final float CAM_DIST = 200.0f;
 
   private int WINDOW_WIDTH, WINDOW_HEIGHT;
   private Stack<Matrix4f> modelView;
@@ -49,10 +49,26 @@ public class View {
   private sgraph.IScenegraph<VertexAttrib> scenegraph;
 
 
+  private float angle_xz = 0;
+  private float angle_yz = 0;
+
+  private void updateLookAtPosition() {
+    float x = eyePosition.x;
+    float y = eyePosition.y;
+    float z = eyePosition.z;
+
+    lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
+    lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
+
+
+    lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
+    lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
+  }
+
   public View() {
-    eyePosition = new Vector3f(0, 50, 200);
+    eyePosition = new Vector3f(0, 0, 200);
     lookAtPosition = new Vector3f(0, 0, 0);
-    cameraDist = eyePosition.distance(lookAtPosition);
+    updateLookAtPosition();
 
     projection = new Matrix4f();
     modelView = new Stack<Matrix4f>();
@@ -162,25 +178,20 @@ public class View {
   }
 
 
-  float angle = (float) Math.toRadians(PAN_ANGLE);
+
 
   private void rotateInDirection(int dir) {
-    lookAtPosition.x += dir * DISPLACEMENT;
+    //lookAtPosition.x += dir * DISPLACEMENT;
 
-
-    /*
-    float dz = lookAtPosition.z - eyePosition.z;
-    float dx = lookAtPosition.x - eyePosition.x;
-
-    float r = (float)Math.sqrt((dz*dz) + (dx*dx));
-
-    lookAtPosition.x += dir * r * (float) Math.sin(angle);
-    lookAtPosition.z -= (dir * r * (float) Math.cos(angle));
-    */
+    angle_xz += PAN_ANGLE * dir;
+    updateLookAtPosition();
   }
 
   private void nodInDirection(int dir) {
-    lookAtPosition.y += dir * DISPLACEMENT;
+    //lookAtPosition.y += dir * DISPLACEMENT;
+
+    angle_yz += PAN_ANGLE * dir;
+    updateLookAtPosition();
   }
 
   public void keyEvent(KeyEvent e) {
