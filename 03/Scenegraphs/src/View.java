@@ -30,7 +30,7 @@ import java.util.Stack;
  */
 public class View {
   private static final float DISPLACEMENT = 10.0f;
-  private static final float PAN_ANGLE = 2f;
+  private static final float PAN_ANGLE = 1f;
   private static final float CAM_DIST = 200.0f;
 
   private int WINDOW_WIDTH, WINDOW_HEIGHT;
@@ -59,10 +59,10 @@ public class View {
 
     lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
     lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
-
-
     lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
-    lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
+
+    lookAtPosition.z = lookAtPosition.z  - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
+
   }
 
   public View() {
@@ -184,6 +184,12 @@ public class View {
     //lookAtPosition.x += dir * DISPLACEMENT;
 
     angle_xz += PAN_ANGLE * dir;
+
+    angle_xz = angle_xz % 360;
+
+    System.out.println("angle_xz=" + angle_xz);
+
+
     updateLookAtPosition();
   }
 
@@ -191,6 +197,9 @@ public class View {
     //lookAtPosition.y += dir * DISPLACEMENT;
 
     angle_yz += PAN_ANGLE * dir;
+
+    angle_yz = angle_yz % 360;
+
     updateLookAtPosition();
   }
 
