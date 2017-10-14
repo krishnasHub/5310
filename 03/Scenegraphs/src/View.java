@@ -8,6 +8,7 @@ import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,12 +29,17 @@ import java.util.Stack;
  * by the JOGLFrame class.
  */
 public class View {
+  private static float DISPLACEMENT = 10.0f;
+  private static float PAN_ANGLE = 2f;
+  private static float cameraDist = 200.0f;
+
   private int WINDOW_WIDTH, WINDOW_HEIGHT;
   private Stack<Matrix4f> modelView;
   private Matrix4f projection, trackballTransform;
   private float trackballRadius;
   private Vector2f mousePos;
   private Vector3f eyePosition;
+  private Vector3f lookAtPosition;
 
 
 
@@ -45,6 +51,9 @@ public class View {
 
   public View() {
     eyePosition = new Vector3f(0, 50, 200);
+    lookAtPosition = new Vector3f(0, 0, 0);
+    cameraDist = eyePosition.distance(lookAtPosition);
+
     projection = new Matrix4f();
     modelView = new Stack<Matrix4f>();
     trackballRadius = 300;
@@ -109,8 +118,7 @@ public class View {
          * Right now this matrix is identity, which means "no transformations"
          */
     modelView.push(new Matrix4f());
-    modelView.peek().lookAt(eyePosition, new Vector3f(0, 0, 0), new Vector3f(0, 1, 0))
-            .mul(trackballTransform);
+    modelView.peek().lookAt(eyePosition, lookAtPosition, new Vector3f(0, 1, 0)).mul(trackballTransform);
 
 
     /*
@@ -138,6 +146,67 @@ public class View {
     program.disable(gl);
 
 
+  }
+
+  private void zoomInDirection(int dir) {
+    float deltaZ = eyePosition.z - lookAtPosition.z;
+    float deltaX = eyePosition.x - lookAtPosition.x;
+
+    float tetha = (float) Math.atan(deltaX / deltaZ);
+
+    eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(tetha));
+    eyePosition.x -= (float)(DISPLACEMENT * dir * Math.sin(tetha));
+
+    lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(tetha));
+    lookAtPosition.x -= (float)(DISPLACEMENT * dir * Math.sin(tetha));
+  }
+
+
+  float angle = (float) Math.toRadians(PAN_ANGLE);
+
+  private void rotateInDirection(int dir) {
+    lookAtPosition.x += dir * DISPLACEMENT;
+
+
+    /*
+    float dz = lookAtPosition.z - eyePosition.z;
+    float dx = lookAtPosition.x - eyePosition.x;
+
+    float r = (float)Math.sqrt((dz*dz) + (dx*dx));
+
+    lookAtPosition.x += dir * r * (float) Math.sin(angle);
+    lookAtPosition.z -= (dir * r * (float) Math.cos(angle));
+    */
+  }
+
+  private void nodInDirection(int dir) {
+    lookAtPosition.y += dir * DISPLACEMENT;
+  }
+
+  public void keyEvent(KeyEvent e) {
+
+
+    switch(e.getKeyCode()) {
+      case KeyEvent.VK_LEFT:
+        rotateInDirection(-1);
+        break;
+      case KeyEvent.VK_RIGHT:
+        rotateInDirection(1);
+        break;
+      case KeyEvent.VK_UP:
+        zoomInDirection(1);
+        break;
+      case KeyEvent.VK_DOWN:
+        zoomInDirection(-1);
+        break;
+      case KeyEvent.VK_W:
+        nodInDirection(1);
+        break;
+      case KeyEvent.VK_S:
+        nodInDirection(-1);
+        break;
+
+    }
   }
 
   public void mousePressed(int x, int y) {

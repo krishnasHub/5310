@@ -9,8 +9,7 @@
             <translate>-90 -100 0</translate>
             <scale>72 72 72</scale>
         </set>
-        <group name="Y-unit-height-humanoid" from="scenegraphmodels/Y-humanoid.xml">
-        </group>
+        <group name="Y-unit-height-humanoid" from="scenegraphmodels/Y-humanoid.xml"></group>
     </transform>
 
     <transform name="The M humanoid">
