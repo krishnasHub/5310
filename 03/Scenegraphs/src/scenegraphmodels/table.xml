@@ -33,13 +33,23 @@
 
     <transform name="Mace">
         <set>
-            <translate>-20 11 0</translate>
+            <translate>-20 12 0</translate>
+            <rotate>-20 0 1 0</rotate>
             <rotate>-101 0 0 1</rotate>
-            <translate>0 10 0</translate>
             <rotate>180 0 0 1</rotate>
-            <scale>0.45 0.45 0.45</scale>
+            <scale>0.6 0.6 0.6</scale>
         </set>
         <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
+    </transform>
+
+
+    <transform name="MJolnir">
+        <set>
+            <translate>15 8 -20</translate>
+            <rotate>180 0 0 1</rotate>
+            <scale>0.4 0.4 0.4</scale>
+        </set>
+        <group name="Entire Mjolnir" from="scenegraphmodels/mjolnir.xml"></group>
     </transform>
 
     <transform name="Leg 1">
