@@ -6,7 +6,7 @@
     <transform>
         <set>
         </set>
-        <group name="Y-unit-height-humanoid">
+        <group name="M-unit-height-humanoid">
             <transform>
                 <set>
                     <scale>0.0125 0.0125 0.0125</scale>
@@ -170,6 +170,7 @@
                                                 </set>
                                                 <transform name="leftforearm">
                                                     <set>
+                                                        <rotate>-90 0 0 1</rotate>
                                                         <translate>0 -10 0</translate>
                                                         <scale>1 10 1</scale>
                                                     </set>
@@ -182,7 +183,9 @@
                                             </transform>
                                             <transform>
                                                 <set>
-                                                    <translate>0 -22 0</translate>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>-90 0 0 1</rotate>
+                                                    <translate>0 -12 0</translate>
                                                 </set>
                                                 <transform name="leftwrist">
                                                     <set>
@@ -197,12 +200,15 @@
                                             </transform>
                                             <transform>
                                                 <set>
-                                                    <translate>0 -24 0</translate>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>-90 0 0 1</rotate>
+                                                    <translate>0 -10 0</translate>
                                                 </set>
                                                 <transform name="lefthand">
                                                     <set>
-                                                        <translate>0 -5 0</translate>
-                                                        <scale>1 5 1</scale>
+                                                        <rotate>-60 0 0 1</rotate>
+                                                        <translate>0 -10 0</translate>
+                                                        <scale>1 10 1</scale>
                                                     </set>
                                                     <object instanceof="cylinder">
                                                         <material>
@@ -211,7 +217,6 @@
                                                     </object>
                                                 </transform>
                                             </transform>
-
                                         </group>
                                     </transform>
                                 </transform>
@@ -261,6 +266,7 @@
                                                 </set>
                                                 <transform name="rightforearm">
                                                     <set>
+                                                        <rotate>90 0 0 1</rotate>
                                                         <translate>0 -10 0</translate>
                                                         <scale>1 10 1</scale>
                                                     </set>
@@ -273,7 +279,9 @@
                                             </transform>
                                             <transform>
                                                 <set>
-                                                    <translate>0 -22 0</translate>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>90 0 0 1</rotate>
+                                                    <translate>0 -10 0</translate>
                                                 </set>
                                                 <transform name="rightwrist">
                                                     <set>
@@ -288,12 +296,15 @@
                                             </transform>
                                             <transform>
                                                 <set>
-                                                    <translate>0 -24 0</translate>
+                                                    <translate>0 -12 0</translate>
+                                                    <rotate>90 0 0 1</rotate>
+                                                    <translate>0 -10 0</translate>
                                                 </set>
                                                 <transform name="righthand">
                                                     <set>
-                                                        <translate>0 -5 0</translate>
-                                                        <scale>1 5 1</scale>
+                                                        <rotate>60 0 0 1</rotate>
+                                                        <translate>0 -10 0</translate>
+                                                        <scale>1 10 1</scale>
                                                     </set>
                                                     <object instanceof="cylinder">
                                                         <material>

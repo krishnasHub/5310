@@ -36,21 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GL3ScenegraphRenderer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3360">
-              <caret line="93" column="12" lean-forward="false" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1063">
-              <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+            <state relative-caret-position="223">
+              <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,11 +48,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YMCA-humanoid.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="YMCA-humanoid.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="1169" column="44" lean-forward="true" selection-start-line="1169" selection-start-column="44" selection-end-line="1169" selection-end-column="44" />
+            <state relative-caret-position="280">
+              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="C-humanoid.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/C-humanoid.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="356" column="16" lean-forward="false" selection-start-line="356" selection-start-column="16" selection-end-line="356" selection-end-column="16" />
               <folding>
                 <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
@@ -70,29 +73,69 @@
                 <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
                 <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="M-humanoid.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/M-humanoid.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="43" />
+              <folding>
+                <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="A-humanoid.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/A-humanoid.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="880">
+              <caret line="130" column="48" lean-forward="true" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="49" />
+              <folding>
+                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#2;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Y-humanoid.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/Y-humanoid.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="two-humanoids.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/two-humanoids.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="6" column="60" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="60" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -111,26 +154,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="520">
               <caret line="28" column="29" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scenegraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/Scenegraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SceneXMLReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/SceneXMLReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3640">
-              <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -161,10 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../utilities/util/GLScenegraph.java" />
-        <option value="$PROJECT_DIR$/../utilities/util/GL3Renderer.java" />
-        <option value="$PROJECT_DIR$/../utilities/util/IRenderer.java" />
-        <option value="$PROJECT_DIR$/../utilities/util/GLRenderer.java" />
         <option value="$PROJECT_DIR$/../utilities/util/INode.java" />
         <option value="$PROJECT_DIR$/../utilities/util/GroupNode.java" />
         <option value="$PROJECT_DIR$/../utilities/util/TransformNode.java" />
@@ -209,9 +228,13 @@
         <option value="$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/shaders/default.vert" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml.fxml" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml" />
         <option value="$PROJECT_DIR$/src/View.java" />
         <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/Y-humanoid.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/M-humanoid.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/C-humanoid.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/A-humanoid.xml" />
       </list>
     </option>
   </component>
@@ -222,10 +245,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-16" />
-    <option name="y" value="-16" />
-    <option name="width" value="3872" />
-    <option name="height" value="2092" />
+    <option name="x" value="-14" />
+    <option name="width" value="3856" />
+    <option name="height" value="2074" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -337,6 +359,11 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Computer Graphics\Projects\Java\shared\5310\03\Scenegraphs\src\scenegraphmodels" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -597,7 +624,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3872" height="2092" extended-state="0" />
+    <frame x="-14" y="0" width="3856" height="2074" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -607,15 +634,15 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23907177" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24141689" sideWeight="0.5041841" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23907177" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24141689" sideWeight="0.4958159" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14539748" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -691,22 +718,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../extras/util/TextureImage.java" />
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="64" column="57" lean-forward="false" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VertexAttribProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="74" lean-forward="false" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../extras/util/ObjImporter.java" />
     <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -881,64 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/A-humanoid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="284" column="0" lean-forward="true" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
-          <folding>
-            <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#2;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/Y-humanoid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="281" column="16" lean-forward="true" selection-start-line="281" selection-start-column="16" selection-end-line="281" selection-end-column="16" />
-          <folding>
-            <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="1169" column="44" lean-forward="true" selection-start-line="1169" selection-start-column="44" selection-end-line="1169" selection-end-column="44" />
-          <folding>
-            <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#1;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#2;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#3;n#scene#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -947,14 +900,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/two-humanoids.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="6" column="60" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1063">
-          <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+        <state relative-caret-position="223">
+          <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/Y-humanoid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/M-humanoid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/C-humanoid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="356" column="16" lean-forward="false" selection-start-line="356" selection-start-column="16" selection-end-line="356" selection-end-column="16" />
+          <folding>
+            <element signature="n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/A-humanoid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="130" column="48" lean-forward="true" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="49" />
+          <folding>
+            <element signature="n#group#0;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#group#2;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/YMCA-humanoid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

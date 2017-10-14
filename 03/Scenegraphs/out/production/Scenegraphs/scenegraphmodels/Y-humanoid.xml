@@ -5,10 +5,8 @@
     <instance name="cone" path="models/cone"></instance>
     <transform>
         <set>
-            <translate>0 -36 0</translate>
-            <scale>72 72 72</scale>
         </set>
-        <group name="unit-height-humanoid">
+        <group name="Y-unit-height-humanoid">
             <transform>
                 <set>
                     <scale>0.0125 0.0125 0.0125</scale>
@@ -182,6 +180,38 @@
                                                     </object>
                                                 </transform>
                                             </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -22 0</translate>
+                                                </set>
+                                                <transform name="leftwrist">
+                                                    <set>
+                                                        <scale>2 2 2</scale>
+                                                    </set>
+                                                    <object instanceof="sphere">
+                                                        <material>
+                                                            <color>0 1 0</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -24 0</translate>
+                                                </set>
+                                                <transform name="lefthand">
+                                                    <set>
+                                                        <translate>0 -5 0</translate>
+                                                        <scale>1 5 1</scale>
+                                                    </set>
+                                                    <object instanceof="cylinder">
+                                                        <material>
+                                                            <color>0 0 1</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+
                                         </group>
                                     </transform>
                                 </transform>
@@ -241,6 +271,38 @@
                                                     </object>
                                                 </transform>
                                             </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -22 0</translate>
+                                                </set>
+                                                <transform name="rightwrist">
+                                                    <set>
+                                                        <scale>2 2 2</scale>
+                                                    </set>
+                                                    <object instanceof="sphere">
+                                                        <material>
+                                                            <color>0 1 0</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+                                            <transform>
+                                                <set>
+                                                    <translate>0 -24 0</translate>
+                                                </set>
+                                                <transform name="righthand">
+                                                    <set>
+                                                        <translate>0 -5 0</translate>
+                                                        <scale>1 5 1</scale>
+                                                    </set>
+                                                    <object instanceof="cylinder">
+                                                        <material>
+                                                            <color>0 0 1</color>
+                                                        </material>
+                                                    </object>
+                                                </transform>
+                                            </transform>
+
                                         </group>
                                     </transform>
                                 </transform>
