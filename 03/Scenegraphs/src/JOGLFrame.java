@@ -28,8 +28,13 @@ import java.nio.IntBuffer;
  */
 public class JOGLFrame extends JFrame {
   private static final String YMCA_SCENE_GRAPH_XML = "scenegraphmodels/YMCA-humanoid.xml";
+<<<<<<< HEAD
   private static final String ROOM_SCENE_GRAPH_XML = "scenegraphmodels/room.xml";
   private static final String SCENE_GRAPH_XML = YMCA_SCENE_GRAPH_XML;
+=======
+  private static final String ROOM_SCENE_GRAPH_XML = "scenegraphmodels/testScene.xml";
+  private static final String SCENE_GRAPH_XML = ROOM_SCENE_GRAPH_XML;
+>>>>>>> f13064e18e69e72cc2ef488797131e860df75c71
   private View view;
   private MyTextRenderer textRenderer;
   private GLCanvas canvas;
