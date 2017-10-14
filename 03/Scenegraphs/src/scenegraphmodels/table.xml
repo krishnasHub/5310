@@ -20,7 +20,7 @@
     <transform name="Totem">
         <set>
             <translate>0 -2 20</translate>
-            <scale>0.15 0.15 0.15</scale>
+            <scale>0.12 0.12 0.12</scale>
         </set>
 
         <object instanceof="totem">
@@ -28,6 +28,18 @@
                 <color>0 0 1</color>
             </material>
         </object>
+    </transform>
+
+
+    <transform name="Mace">
+        <set>
+            <translate>-20 11 0</translate>
+            <rotate>-101 0 0 1</rotate>
+            <translate>0 10 0</translate>
+            <rotate>180 0 0 1</rotate>
+            <scale>0.45 0.45 0.45</scale>
+        </set>
+        <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
     </transform>
 
     <transform name="Leg 1">
