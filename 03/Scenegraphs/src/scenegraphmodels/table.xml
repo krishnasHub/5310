@@ -3,77 +3,91 @@
     <instance name="box" path="models/box"></instance>
     <instance name="cylinder" path="models/cylinder"></instance>
     <instance name="cone" path="models/cone"></instance>
-    <transform>
+    <instance name="totem" path="models/totem"></instance>
+
+    <transform name="Table Top">
         <set>
-            <scale>50 5 50</scale>
+            <scale>60 2 60</scale>
         </set>
 
         <object instanceof="box">
             <material>
-                <color>0.5 0.5 0.5</color>
+                <color>0.5 0.25 0</color>
             </material>
         </object>
     </transform>
-    <transform>
+
+    <transform name="Totem">
         <set>
-            <translate>0 25 0</translate>
+            <translate>0 -2 20</translate>
+            <scale>0.15 0.15 0.15</scale>
         </set>
-        <group name="face">
-            <transform name="actualface">
-                <set>
-                    <scale>20 25 20</scale>
-                </set>
-                <object instanceof="sphere">
-                    <material>
-                        <color>1 1 0.8</color>
-                    </material>
-                </object>
-            </transform>
-            <transform name="lefteye">
-                <set>
-                    <translate>7 15 12</translate>
-                    <scale>3 4 3</scale>
-                </set>
-                <object instanceof="sphere">
-                    <material>
-                        <color>0 0 0</color>
-                    </material>
-                </object>
-            </transform>
-            <transform name="righteye">
-                <set>
-                    <translate>-7 15 12</translate>
-                    <scale>3 4 3</scale>
-                </set>
-                <object instanceof="sphere">
-                    <material>
-                        <color>0 0 0</color>
-                    </material>
-                </object>
-            </transform>
-            <transform name="nose">
-                <set>
-                    <translate>0 10 10</translate>
-                    <rotate>90 1 0 0</rotate>
-                    <scale>5 20 5</scale>
-                </set>
-                <object instanceof="cylinder">
-                    <material>
-                        <color>1 0 0</color>
-                    </material>
-                </object>
-            </transform>
-            <transform name="hat">
-                <set>
-                    <translate>0 20 0</translate>
-                    <scale>10 25 10</scale>
-                </set>
-                <object instanceof="cone">
-                    <material>
-                        <color>1 0 1</color>
-                    </material>
-                </object>
-            </transform>
-        </group>
+
+        <object instanceof="totem">
+            <material>
+                <color>0 0 1</color>
+            </material>
+        </object>
     </transform>
+
+    <transform name="Leg 1">
+        <set>
+            <translate>-20 -20 20</translate>
+            <scale>2 40 2</scale>
+
+        </set>
+
+        <object instanceof="box">
+            <material>
+                <color>1 0.61 0.30</color>
+            </material>
+        </object>
+    </transform>
+
+
+    <transform name="Leg 2">
+        <set>
+            <translate>20 -20 20</translate>
+            <scale>2 40 2</scale>
+
+        </set>
+
+        <object instanceof="box">
+            <material>
+                <color>1 0.61 0.30</color>
+            </material>
+        </object>
+    </transform>
+
+    <transform name="Leg 3">
+        <set>
+            <translate>-20 -20 -20</translate>
+            <scale>2 40 2</scale>
+
+        </set>
+
+        <object instanceof="box">
+            <material>
+                <color>1 0.61 0.30</color>
+            </material>
+        </object>
+    </transform>
+
+
+    <transform name="Leg 4">
+        <set>
+            <translate>20 -20 -20</translate>
+            <scale>2 40 2</scale>
+
+        </set>
+
+        <object instanceof="box">
+            <material>
+                <color>1 0.61 0.30</color>
+            </material>
+        </object>
+    </transform>
+
+
+
 </scene>
