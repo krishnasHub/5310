@@ -1,5 +1,6 @@
 import com.jogamp.common.nio.Buffers;
 import com.jogamp.opengl.*;
+import com.jogamp.opengl.math.Matrix4;
 import com.jogamp.opengl.util.GLBuffers;
 
 import org.joml.Matrix4f;
@@ -30,8 +31,8 @@ import java.util.Stack;
  */
 public class View {
   private static final float DISPLACEMENT = 10.0f;
-  private static final float PAN_ANGLE = 1f;
-  private static final float CAM_DIST = 200.0f;
+  private static final float PAN_ANGLE = 2f;
+  private static final float CAM_DIST = 0.5f;
 
   private int WINDOW_WIDTH, WINDOW_HEIGHT;
   private Stack<Matrix4f> modelView;
@@ -43,6 +44,7 @@ public class View {
   private Vector3f lookAtPosition;
   private Vector3f savedLookAtPosition;
   private Vector3f upVector;
+
 
 
 
@@ -59,8 +61,6 @@ public class View {
   private float savedAngle_yz = angle_yz;
 
   private boolean viewYMCA;
-
-
 
   public View() {
     eyePosition = new Vector3f(0, 0, 200);
@@ -192,6 +192,7 @@ public class View {
   }
 
   private void updateLookAtPosition() {
+
     float x = eyePosition.x;
     float y = eyePosition.y;
     float z = eyePosition.z;
@@ -200,6 +201,13 @@ public class View {
     lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
     lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
     lookAtPosition.z = lookAtPosition.z  - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
+
+    //printCam();
+  }
+
+  private void printCam() {
+    System.out.println("eyePosition: x=" + eyePosition.x + ", y=" + eyePosition.y + ", z=" + eyePosition.z);
+    System.out.println("lookAtPosition: x=" + lookAtPosition.x + ", y=" + lookAtPosition.y + ", z=" + lookAtPosition.z);
   }
 
   private void rotateInDirection(int dir) {
@@ -207,10 +215,10 @@ public class View {
 
     angle_xz += PAN_ANGLE * dir;
 
-    angle_xz = angle_xz % 360;
-
     if(angle_xz < 0)
       angle_xz = 360f + angle_xz;
+
+    angle_xz = angle_xz % 360;
 
     System.out.println("angle_xz=" + angle_xz);
 
@@ -227,6 +235,13 @@ public class View {
       angle_yz = 360f + angle_yz;
 
     angle_yz = angle_yz % 360;
+
+
+    if(angle_yz > 90 && angle_yz <= 270) {
+      //upVector.y = -1;
+    } else {
+      //upVector.y = 1;
+    }
 
     System.out.println("angle_yz=" + angle_yz);
 
