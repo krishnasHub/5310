@@ -183,10 +183,12 @@ public class View {
     eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     eyePosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     eyePosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
+    eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
 
     lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     lookAtPosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     lookAtPosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
+    lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
   }
 
   private void updateLookAtPosition() {
@@ -197,11 +199,8 @@ public class View {
     lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
     lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
     lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
-
     lookAtPosition.z = lookAtPosition.z  - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
-
   }
-
 
   private void rotateInDirection(int dir) {
     //lookAtPosition.x += dir * DISPLACEMENT;
