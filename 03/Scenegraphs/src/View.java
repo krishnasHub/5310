@@ -42,6 +42,7 @@ public class View {
   private Vector3f savedEyePosition;
   private Vector3f lookAtPosition;
   private Vector3f savedLookAtPosition;
+  private Vector3f upVector;
 
 
 
@@ -59,24 +60,15 @@ public class View {
 
   private boolean viewYMCA;
 
-  private void updateLookAtPosition() {
-    float x = eyePosition.x;
-    float y = eyePosition.y;
-    float z = eyePosition.z;
 
-    lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
-    lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
-    lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
-
-    lookAtPosition.z = lookAtPosition.z  - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
-
-  }
 
   public View() {
     eyePosition = new Vector3f(0, 0, 200);
     savedEyePosition = new Vector3f(0, 0, 200);
     lookAtPosition = new Vector3f(0, 0, 0);
     savedLookAtPosition = new Vector3f(0, 0, 200);
+    upVector = new Vector3f(0, 1, 0);
+
     updateLookAtPosition();
 
     projection = new Matrix4f();
@@ -153,7 +145,7 @@ public class View {
          * Right now this matrix is identity, which means "no transformations"
          */
     modelView.push(new Matrix4f());
-    modelView.peek().lookAt(eyePosition, lookAtPosition, new Vector3f(0, 1, 0)).mul(trackballTransform);
+    modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
 
 
     /*
@@ -188,19 +180,27 @@ public class View {
   }
 
   private void zoomInDirection(int dir) {
-    float deltaZ = eyePosition.z - lookAtPosition.z;
-    float deltaX = eyePosition.x - lookAtPosition.x;
+    eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
+    eyePosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
+    eyePosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
 
-    float tetha = (float) Math.atan(deltaX / deltaZ);
-
-    eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(tetha));
-    eyePosition.x -= (float)(DISPLACEMENT * dir * Math.sin(tetha));
-
-    lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(tetha));
-    lookAtPosition.x -= (float)(DISPLACEMENT * dir * Math.sin(tetha));
+    lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
+    lookAtPosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
+    lookAtPosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
   }
 
+  private void updateLookAtPosition() {
+    float x = eyePosition.x;
+    float y = eyePosition.y;
+    float z = eyePosition.z;
 
+    lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
+    lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
+    lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
+
+    lookAtPosition.z = lookAtPosition.z  - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
+
+  }
 
 
   private void rotateInDirection(int dir) {
@@ -209,6 +209,9 @@ public class View {
     angle_xz += PAN_ANGLE * dir;
 
     angle_xz = angle_xz % 360;
+
+    if(angle_xz < 0)
+      angle_xz = 360f + angle_xz;
 
     System.out.println("angle_xz=" + angle_xz);
 
@@ -221,7 +224,12 @@ public class View {
 
     angle_yz += PAN_ANGLE * dir;
 
+    if(angle_yz < 0)
+      angle_yz = 360f + angle_yz;
+
     angle_yz = angle_yz % 360;
+
+    System.out.println("angle_yz=" + angle_yz);
 
     updateLookAtPosition();
   }
@@ -299,7 +307,7 @@ public class View {
     WINDOW_HEIGHT = height;
     gl.glViewport(0, 0, width, height);
 
-    projection = new Matrix4f().perspective((float) Math.toRadians(60.0f), (float) width / height, 0.1f, 10000.0f);
+    projection = new Matrix4f().perspective((float) Math.toRadians(60), (float) width / height, 0.1f, 10000.0f);
     // proj = new Matrix4f().ortho(-400,400,-400,400,0.1f,10000.0f);
 
   }
