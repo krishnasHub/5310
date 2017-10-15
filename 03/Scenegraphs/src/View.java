@@ -47,10 +47,13 @@ public class View {
   private util.ShaderLocationsVault shaderLocations;
   private int projectionLocation;
   private sgraph.IScenegraph<VertexAttrib> scenegraph;
+  private sgraph.IScenegraph<VertexAttrib> scenegraphYMCA;
 
 
   private float angle_xz = 0;
   private float angle_yz = 0;
+
+  private boolean viewYMCA;
 
   private void updateLookAtPosition() {
     float x = eyePosition.x;
@@ -75,6 +78,8 @@ public class View {
     trackballRadius = 300;
     trackballTransform = new Matrix4f();
     scenegraph = null;
+    scenegraphYMCA = null;
+    viewYMCA = false;
   }
 
   public void initScenegraph(GLAutoDrawable gla, InputStream in) throws Exception {
@@ -83,9 +88,16 @@ public class View {
     if (scenegraph != null)
       scenegraph.dispose();
 
+    if (scenegraphYMCA != null)
+      scenegraphYMCA.dispose();
+
+
     program.enable(gl);
 
     scenegraph = sgraph.SceneXMLReader.importScenegraph(in, new VertexAttribProducer());
+    scenegraphYMCA = sgraph.SceneXMLReader.importScenegraph(getClass().getClassLoader()
+            .getResourceAsStream
+                    ("scenegraphmodels/YMCA-humanoid.xml"), new VertexAttribProducer());
 
     sgraph.IScenegraphRenderer renderer = new sgraph.GL3ScenegraphRenderer();
     renderer.setContext(gla);
@@ -95,6 +107,7 @@ public class View {
     shaderVarsToVertexAttribs.put("vTexCoord", "texcoord");
     renderer.initShaderProgram(program, shaderVarsToVertexAttribs);
     scenegraph.setRenderer(renderer);
+    scenegraphYMCA.setRenderer(renderer);
     program.disable(gl);
   }
 
@@ -146,8 +159,12 @@ public class View {
 
 
     //gl.glPolygonMode(GL.GL_FRONT_AND_BACK,GL3.GL_LINE); //OUTLINES
+    if (viewYMCA == true) {
+      scenegraphYMCA.draw(modelView);
+    } else if (viewYMCA == false) {
+      scenegraph.draw(modelView);
+    }
 
-    scenegraph.draw(modelView);
     /*
      *OpenGL batch-processes all its OpenGL commands.
           *  *The next command asks OpenGL to "empty" its batch of issued commands, i.e. draw
@@ -224,6 +241,12 @@ public class View {
         break;
       case KeyEvent.VK_S:
         nodInDirection(-1);
+        break;
+      case KeyEvent.VK_Y:
+        viewYMCA = true;
+        break;
+      case KeyEvent.VK_R:
+        viewYMCA = false;
         break;
 
     }
