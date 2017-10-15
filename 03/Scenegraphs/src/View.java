@@ -39,7 +39,9 @@ public class View {
   private float trackballRadius;
   private Vector2f mousePos;
   private Vector3f eyePosition;
+  private Vector3f savedEyePosition;
   private Vector3f lookAtPosition;
+  private Vector3f savedLookAtPosition;
 
 
 
@@ -52,6 +54,8 @@ public class View {
 
   private float angle_xz = 0;
   private float angle_yz = 0;
+  private float savedAngle_xz = angle_xz;
+  private float savedAngle_yz = angle_yz;
 
   private boolean viewYMCA;
 
@@ -70,7 +74,9 @@ public class View {
 
   public View() {
     eyePosition = new Vector3f(0, 0, 200);
+    savedEyePosition = new Vector3f(0, 0, 200);
     lookAtPosition = new Vector3f(0, 0, 0);
+    savedLookAtPosition = new Vector3f(0, 0, 200);
     updateLookAtPosition();
 
     projection = new Matrix4f();
@@ -243,9 +249,25 @@ public class View {
         nodInDirection(-1);
         break;
       case KeyEvent.VK_Y:
+        // Save the state of your eye position and what you are looking at in the room.
+        savedEyePosition = eyePosition;
+        savedLookAtPosition = lookAtPosition;
+        savedAngle_xz = angle_xz;
+        savedAngle_yz = angle_yz;
+
+        // Reset it to look at YMCA scene.
+        eyePosition = new Vector3f(0, 0, 200);
+        lookAtPosition = new Vector3f(0, 0, 0);
+        angle_xz = 0;
+        angle_yz = 0;
         viewYMCA = true;
         break;
       case KeyEvent.VK_R:
+        // Reload the saved state before moving to YMCA.
+        eyePosition = savedEyePosition;
+        lookAtPosition = savedLookAtPosition;
+        angle_xz = savedAngle_xz;
+        angle_yz = savedAngle_yz;
         viewYMCA = false;
         break;
 
