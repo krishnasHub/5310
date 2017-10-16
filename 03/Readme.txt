@@ -73,7 +73,7 @@ Rendering text on the screen can be interpreted as two things:
 1. Seeing Text on the world as 3D objects.
 For this, the text we want to see can be rendered as Objects on the world. One way to do that would
 be to use textures that only have the text we want to print. We can apply these textures to simple
-meshes and add them to the sceengraph. Finally, we can transform these meshes so that we can place
+meshes and add them to the scenegraph. Finally, we can transform these meshes so that we can place
 them in the 3D world by scaling, translating and rotating them to see them as we want. This way,
 there isn't much framework change, except using the addTexture() functions to add the textures to
 the right meshes at the right place in the graph.
