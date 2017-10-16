@@ -180,36 +180,38 @@ public class View {
   }
 
   private void zoomInDirection(int dir) {
-    eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
+    eyePosition.z -= lookingForward * (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     eyePosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     eyePosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
     //eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
 
-    lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
+    lookAtPosition.z -= lookingForward * (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     lookAtPosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     lookAtPosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
     //lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
   }
+
+  int lookingForward = 1;
 
   private void updateLookAtPosition() {
     float x = eyePosition.x;
     float y = eyePosition.y;
     float z = eyePosition.z;
 
-    int dir = 1;
+
 
     if(angle_yz >= 90 && angle_yz <= 270) {
       upVector.y = -1;
-      dir = -1;
+      lookingForward = -1;
     } else {
       upVector.y = 1;
-      dir = 1;
+      lookingForward = 1;
     }
 
 
 
     lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
-    lookAtPosition.z = z - dir * CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
+    lookAtPosition.z = z - lookingForward * CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
     lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
 
     //printCam();
