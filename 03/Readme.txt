@@ -39,6 +39,16 @@ applied correctly.
 =========================================
 
 3. The GL3SceneGraphRenderer class's job is ultimately to render every mesh in the scenegraph, as
-implied by the name.  It contains the shader program and to further decouple the structure of the code.
-In previous assignments, this was all done in the View class.  If you wanted to create a textual rendering
-of the scene, you would use the MyTextRenderer ......
+implied by the name. This class encapsulates the gl context, the shader vertex map and (more importantly) the map of meshes to render.
+In the SceneGraphRenderer class, when we set the renderer, we add all the meshes from the leaf nodes into the renderer. This way, the renderer only has the Meshes that actually have to be drawn.
+When the draw function is called on the SceneGraphRenderer, it simply calls the draw on teh rootNode. Since every Node set in the SceneGraph can either be a GroupNode or a LeafNode, the draw function of the GroupNode in turn calls all it's children's draw method until a LeafNodei s called.
+The LeafNode internally calls the SceneGraphRenderer's drawMesh function, which points to the actual Mesh we want to draw on the screen.
+This draw function - drawMesh uses the transformation (which is provided by teh SceneGraph) to actually draw the mesh on the screen.
+
+To extend this further, if I want to write a textual descrption of each node, I would make changes in the SceneGraph class and to the  SceneGraphRenderer class (and it's interface) to add a method called renderText() and implement the actual OpenGL code to write Text on  screen in the SceneGraphRenderer class.
+I would further add this renderText() contract to the ISceneGraphRenderer interface as well.
+The SceneGraph class would hold the textual information to be rendered - the name of the node, the type of the node (Group Node or Leaf node) and any more textual information we want to render about this node.
+This information can reside at the Node level so that each node has it's own text to be rendered.
+Then, in the GroupNode's draw method, we can call the context's renderText() function first before calling the draw() method.
+This way, every node's textual information is rendered before the node is rendered.
+
