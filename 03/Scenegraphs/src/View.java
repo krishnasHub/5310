@@ -63,7 +63,7 @@ public class View {
   private boolean viewYMCA;
 
   public View() {
-    eyePosition = new Vector3f(0, 0, 200);
+    eyePosition = new Vector3f(0, 0, 0);
     savedEyePosition = new Vector3f(0, 0, 200);
     lookAtPosition = new Vector3f(0, 0, 0);
     savedLookAtPosition = new Vector3f(0, 0, 200);
@@ -183,24 +183,34 @@ public class View {
     eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     eyePosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     eyePosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
-    eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
+    //eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
 
     lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     lookAtPosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     lookAtPosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
-    lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
+    //lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
   }
 
   private void updateLookAtPosition() {
-
     float x = eyePosition.x;
     float y = eyePosition.y;
     float z = eyePosition.z;
 
+    int dir = 1;
+
+    if(angle_yz >= 90 && angle_yz <= 270) {
+      upVector.y = -1;
+      dir = -1;
+    } else {
+      upVector.y = 1;
+      dir = 1;
+    }
+
+
+
     lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
-    lookAtPosition.z = z - CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
+    lookAtPosition.z = z - dir * CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
     lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
-    lookAtPosition.z = lookAtPosition.z  - CAM_DIST * (float) Math.cos(Math.toRadians(angle_yz));
 
     //printCam();
   }
@@ -236,12 +246,12 @@ public class View {
 
     angle_yz = angle_yz % 360;
 
-
-    if(angle_yz > 90 && angle_yz <= 270) {
-      //upVector.y = -1;
+    /*
+    if(angle_yz >= 90 && angle_yz <= 270) {
+      upVector.y = -1;
     } else {
-      //upVector.y = 1;
-    }
+      upVector.y = 1;
+    }*/
 
     System.out.println("angle_yz=" + angle_yz);
 
@@ -321,7 +331,7 @@ public class View {
     WINDOW_HEIGHT = height;
     gl.glViewport(0, 0, width, height);
 
-    projection = new Matrix4f().perspective((float) Math.toRadians(60), (float) width / height, 0.1f, 10000.0f);
+    projection = new Matrix4f().perspective((float) Math.toRadians(60f), (float) width / height, 0.1f, 10000.0f);
     // proj = new Matrix4f().ortho(-400,400,-400,400,0.1f,10000.0f);
 
   }
