@@ -89,8 +89,8 @@ This way, when the children are called, if a child is a LeafNode, it's drawn wit
 set of transformations from the modelView that was set by the TransformNode. If the child is
 a group node or another transform node, we add more transformations to the modelView stack.
 Once all the children are rendered, we pop the transformation from the modelView stack.
-This way, when this node is 'done' being drawn, the next node gets a free transformation
-from the top of the stack, which is unrelated to the current transformations.
+This way, when this node is 'done' being rendered (drawn or transformed), the next node gets it's parent's transformation
+from the top of the stack, which is unrelated to the current transformations applied.
 
 This traversal is analogous to PreOrder tree traversal where we first work on the
 current node, then the child nodes.
