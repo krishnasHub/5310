@@ -60,16 +60,26 @@ a spinning fan, an oscillating fan, etc. as seen in class).
 =========================================
 
 2. The scene graph is drawn by first being initialized in the View class, which sets off the process
-of parsing the xml file as described in #1.  The view class also initializes the renderer
-and passes it to the scenegraph.  When the view class calls the draw method, it is passed
-to the scene graph, who passes it to the renderer class (GL3ScenegraphRenderer).  As stated
-in the end of #1, by placing the transformnodes in the appropriate place in the scenegraph, the
-transformations are applied to all of the subgraphs/subtrees below that node.  It does this by
-managing what is being drawn through a stack.  As leafnodes are drawn, they are popped from the
-stack but the transformations are not until all of the subgraphs have been rendered. This process
-is further described in #3.  In the XML file, we are structuring the transformations next to the
-object/composite objects that we can the transformation applied to (with the <set> tags. The same
-idea is applied when building the scenegraph to make sure the transofmrations are applied correctly.
+of parsing the xml file as described in #1 to get the Scenegraph data structure that's basically a well designed tree.
+
+This tree (as exaplained above) has three different nodes, from which the TransformNode is the one that holds the transformations we want to apply to the group stored in the children of the node.
+The View class passes the modelView that has the trackball transformations and the camera placement applied to it.
+The root node (which is nothing but a group node) of the Scenegraph grabs it passes it down to all it's children, callign the draw method on each.
+The TransformaNode, when the draw function is called on it, with the ModelView stack passed, first pushes the copy of the top most transformation into the modelView stck, making sure the latest transformation is present.
+It then applies it's own set of transforms to this modelview (the one on the top of the stack) and calls the draw on all it's children.
+This way, when the children are called, if a child is a LeafNode, it's drawn with the current set of transformations from the modelView that was set by the TransformNode.
+If the child is a group node or another transform node, we add more transformations to the modelView stack.
+Once all teh children are rendered, we pop the transformation from the modelView stack.
+This way, when this node is 'done' being drawn, the next node gets a free transformation from the top of the stack, which is unrelated to the current transformations.
+
+This traversal is analogous to PreOrder tree traversal where we first work on the current node, then the child nodes.
+
+The obvious advantae in using the scenegraph datastructure comes by placing the transformnodes in the appropriate place in the scenegraph, the transformations are applied to all of the subgraphs/subtrees below that node.  
+It does this by managing what is being drawn through a stack.  As leafnodes are drawn, they are popped from the
+stack but the transformations are not until all of the subgraphs have been rendered.
+
+In the XML file, we are structuring the transformations next to the object/composite objects that we can the transformation applied to (with the <set> tags.
+The same idea is applied when building the scenegraph to make sure the transofmrations are applied correctly.
 
 =========================================
 
