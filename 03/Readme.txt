@@ -6,6 +6,29 @@ Assignment 3
 
 =========================================
 
+RUNNING THE PROGRAM & COMPLETION
+Both the YMCA and three rooms were completed in this assignment.  In order to run the program,
+you can just run the ScenegraphViewer class.  The rooms rendering is seen first when you load the
+program.  It starts off in the hallway, but faces the room with the table and objects on top
+so it can be seen from the current position.  By looking left and right (left arrow and right
+arrow keys), you will see the 2nd and third rooms (that are empty). You can use the "w" and "s" keys
+to nod up and down, as well as the up/down arrow keys to move positions as instructed.
+
+Both the YMCA and three rooms are rendered upon loading the program.  When you press the "y" and
+"r" arrow keys, you can switch between scenes.  The scene graphs do not need their xml files to be
+parsed as this was done in the beginning.
+
+As you move through the rooms, at any point you can switch to the YMCA scene.  As you switch,
+the position and where you are looking at in the rooms is saved.  But, when you enter the YMCA
+scene you always are at the same starting position.  This is intentional as when you move around the
+room scene, your eye position and lookAt will be applied to the YMCA scene.  By moving around the
+room, you may have the YMCA humanoids become out of view and difficult to find, that is why
+it is always reset to the same starting position.  You can move and have the same functionality
+in the YMCA scene, but when you switch back to the room, you will be at the same position as
+before you went to the YMCA scene (no matter where you move in the YMCA scene).  
+
+=========================================
+
 1.  The scene graph is made all of the objects that is being rendered to
 the viewer and is organized in a tree-like structure.  It obtains the data for the structure
 by the View class using the sgraph package to take in the XML file from
@@ -90,4 +113,5 @@ call the context's renderText() function first before calling the draw() method.
 node's textual information is rendered before the node is rendered. This is again analogous to the
 preorder tree traversal algorithm, where we print out the node, then go for the child nodes to print
 out their information on the screen, as we build each node.
+
 
