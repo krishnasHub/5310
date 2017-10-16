@@ -46,9 +46,15 @@ The transforms are also parsed into their own separate nodes, appropriately name
 These transformnodes are the result of parsing the xml files for the type of transformation (scale,
 rotate, translate), as well as their values to save the respective matrix transformation.
 
-More plainly put, the scenegraph contains the nodes for both the objects, as well as separate nodes
-of transforms that will be applied to the subtrees within the overall scenegraph. This allows
-transforms to be applied to the ever-evolving perception of what we consider an object (e.g. a fan,
+More plainly put, the scenegraph is basically a tree structure that holds nodes. These nodes are one of the three types:
+1. GroupNode - These group a set of Nodes to represent a collection (or group) of objects that behave cumilatively in a particular fashion and can be logically grouped together. A good example would be hand, wrist, forearm and arm all being part of the group Roght Arm.
+2. TransformNode - These are nodes that hold the transformations to be applied to this node and all the nodes that branch from it. This is useful if you want to apply a transformation to all the child nodes of a group so they all behave in a particular way. An example would be rotating the right arm by 10 degrees, which would imply rotating all the parts of the arm by the same angle, or moving the arm by 20 pixels and moving all the parts of the arm by the same amount.
+3. LeafNode - These are the nodes that represent the actual individual meshes that represnt, either a part of the main object or the entire object in itself. These are the actual polygon meshes we want to draw on the screen. As examples, these are the entire right forearm, a sphere or anything more complex.
+
+The way we use this data structure is useful, in that, with the current organization, we can wasily travers the tree to get to that block (or group) of meshes and apply a transformation to the entire structure, just by adding a transformation to that node. This makes applying transformations very easy and intuitive.
+Working on this tree is simply implementing the Preorder tree traversal when it comes to drawing the entire set, starting from the root node or any other node of interest.
+
+This design allows transforms to be applied to the ever-evolving perception of what we consider an object (e.g. a fan,
 a spinning fan, an oscillating fan, etc. as seen in class).
 
 =========================================
