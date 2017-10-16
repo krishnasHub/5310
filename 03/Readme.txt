@@ -37,49 +37,74 @@ scenegraphmodels and parsing it appropriately into its respective PolygonMeshes.
 This parsing is done in the SceneXMLReader class (MyHandler and SceneXMLReader nested classes).
 During parsing, elements are pushed onto a stack, matching how they are nested in the xml file.
 The elements that get pushed are INodes.  These nodes are parsed by matching the tag (objects or
-transforms). In the example of objects, the name from the xml file get matched to the .obj files in
-the models package.  They are used to obtain the appropriate Polygon meshses using ObjImporter and
-ultimately added ot the scenegraph.  When adding to the scenegraph, a map is used to match the name
-to the mesh for efficient lookup.
+transforms). In the example of objects, the name from the xml file get matched to the .obj files
+in the models package.  They are used to obtain the appropriate Polygon meshses using ObjImporter
+and ultimately added ot the scenegraph.  When adding to the scenegraph, a map is used to match the
+name to the mesh for efficient lookup.
 
 The transforms are also parsed into their own separate nodes, appropriately named TransformNode.
 These transformnodes are the result of parsing the xml files for the type of transformation (scale,
 rotate, translate), as well as their values to save the respective matrix transformation.
 
-More plainly put, the scenegraph is basically a tree structure that holds nodes. These nodes are one of the three types:
-1. GroupNode - These group a set of Nodes to represent a collection (or group) of objects that behave cumilatively in a particular fashion and can be logically grouped together. A good example would be hand, wrist, forearm and arm all being part of the group Roght Arm.
-2. TransformNode - These are nodes that hold the transformations to be applied to this node and all the nodes that branch from it. This is useful if you want to apply a transformation to all the child nodes of a group so they all behave in a particular way. An example would be rotating the right arm by 10 degrees, which would imply rotating all the parts of the arm by the same angle, or moving the arm by 20 pixels and moving all the parts of the arm by the same amount.
-3. LeafNode - These are the nodes that represent the actual individual meshes that represnt, either a part of the main object or the entire object in itself. These are the actual polygon meshes we want to draw on the screen. As examples, these are the entire right forearm, a sphere or anything more complex.
+More plainly put, the scenegraph is basically a tree structure that holds nodes. These nodes are
+one of the three types:
+1. GroupNode - These group a set of Nodes to represent a collection (or group) of objects that
+behave cumulatively in a particular fashion and can be logically grouped together. A good example
+would be hand, wrist, forearm and arm all being part of the group Right Arm. (another example
+would be the fan: a fan, a spinning fan, an oscillating fan, etc. as seen in class).
+2. TransformNode - These are nodes that hold the transformations to be applied to this node and
+all the nodes that branch from it. This is useful if you want to apply a transformation to all
+the child nodes of a group so they all behave in a particular way. An example would be rotating
+the right arm by 10 degrees, which would imply rotating all the parts of the arm by the same
+angle, or moving the arm by 20 pixels and moving all the parts of the arm by the same amount.
+3. LeafNode - These are the nodes that represent the actual individual meshes that represent,
+either a part of the main object or the entire object in itself. These are the actual polygon
+meshes we want to draw on the screen. As examples, these are the entire right forearm, a sphere
+or anything more complex.
 
-The way we use this data structure is useful, in that, with the current organization, we can wasily travers the tree to get to that block (or group) of meshes and apply a transformation to the entire structure, just by adding a transformation to that node. This makes applying transformations very easy and intuitive.
-Working on this tree is simply implementing the Preorder tree traversal when it comes to drawing the entire set, starting from the root node or any other node of interest.
-
-This design allows transforms to be applied to the ever-evolving perception of what we consider an object (e.g. a fan,
-a spinning fan, an oscillating fan, etc. as seen in class).
+The way we use this data structure is useful, in that, with the current organization, we can
+easily traverse the tree to get to that block (or group) of meshes and apply a transformation
+to the entire structure, just by adding a transformation to that node. This makes applying
+transformations very easy and intuitive. Working on this tree is simply implementing the
+Preorder tree traversal when it comes to drawing the entire set, starting from the root node or
+any other node of interest.
 
 =========================================
 
-2. The scene graph is drawn by first being initialized in the View class, which sets off the process
-of parsing the xml file as described in #1 to get the Scenegraph data structure that's basically a well designed tree.
+2. The scene graph is drawn by first being initialized in the View class, which sets off
+the process of parsing the xml file as described in #1 to get the Scenegraph data structure
+that's basically a well designed tree.
 
-This tree (as exaplained above) has three different nodes, from which the TransformNode is the one that holds the transformations we want to apply to the group stored in the children of the node.
-The View class passes the modelView that has the trackball transformations and the camera placement applied to it.
-The root node (which is nothing but a group node) of the Scenegraph grabs it passes it down to all it's children, callign the draw method on each.
-The TransformaNode, when the draw function is called on it, with the ModelView stack passed, first pushes the copy of the top most transformation into the modelView stck, making sure the latest transformation is present.
-It then applies it's own set of transforms to this modelview (the one on the top of the stack) and calls the draw on all it's children.
-This way, when the children are called, if a child is a LeafNode, it's drawn with the current set of transformations from the modelView that was set by the TransformNode.
-If the child is a group node or another transform node, we add more transformations to the modelView stack.
-Once all teh children are rendered, we pop the transformation from the modelView stack.
-This way, when this node is 'done' being drawn, the next node gets a free transformation from the top of the stack, which is unrelated to the current transformations.
+This tree (as explained above) has three different nodes, from which the TransformNode is the
+one that holds the transformations we want to apply to the group stored in the children of the
+node. The View class passes the modelView that has the trackball transformations and the camera
+placement applied to it. The root node (which is a group node) of the Scenegraph grabs it
+passes it down to all it's children, calling the draw method on each.
 
-This traversal is analogous to PreOrder tree traversal where we first work on the current node, then the child nodes.
+The TransformNode, when the draw function is called on it, with the ModelView stack passed,
+first pushes the copy of the top most transformation into the modelView stack, making sure
+the latest transformation is present. It then applies it's own set of transforms to this
+modelview (the one on the top of the stack) and calls the draw on all it's children.
+This way, when the children are called, if a child is a LeafNode, it's drawn with the current
+set of transformations from the modelView that was set by the TransformNode. If the child is
+a group node or another transform node, we add more transformations to the modelView stack.
+Once all the children are rendered, we pop the transformation from the modelView stack.
+This way, when this node is 'done' being drawn, the next node gets a free transformation
+from the top of the stack, which is unrelated to the current transformations.
 
-The obvious advantae in using the scenegraph datastructure comes by placing the transformnodes in the appropriate place in the scenegraph, the transformations are applied to all of the subgraphs/subtrees below that node.  
-It does this by managing what is being drawn through a stack.  As leafnodes are drawn, they are popped from the
+This traversal is analogous to PreOrder tree traversal where we first work on the
+current node, then the child nodes.
+
+The obvious advantage in using the scenegraph data structure comes by placing the
+transformnodes in the appropriate place in the scenegraph, the transformations are applied
+to all of the subgraphs/subtrees below that node. It does this by managing what is being
+drawn through a stack.  As leafnodes are drawn, they are popped from the
 stack but the transformations are not until all of the subgraphs have been rendered.
 
-In the XML file, we are structuring the transformations next to the object/composite objects that we can the transformation applied to (with the <set> tags.
-The same idea is applied when building the scenegraph to make sure the transofmrations are applied correctly.
+In the XML file, we are structuring the transformations next to the object/composite
+objects that we can the transformation applied to (with the <set> tags.
+The same idea is applied when building the scenegraph to make sure the transformations are
+applied correctly.
 
 =========================================
 
