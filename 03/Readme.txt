@@ -11,18 +11,18 @@ Both the YMCA and three rooms were completed in this assignment.  In order to ru
 you can just run the ScenegraphViewer class.  The rooms rendering is seen first when you load the
 program.  It starts off in the hallway, but faces the room with the table and objects on top
 so it can be seen from the current position.  By looking left and right (left arrow and right
-arrow keys), you will see the 2nd and third rooms (that are empty). You can use the "w" and "s" keys
-to nod up and down, as well as the up/down arrow keys to move positions as instructed.
+arrow keys), you will see the 2nd and third rooms (that are empty). You can use the "w" and "s"
+keys to nod up and down, as well as the up/down arrow keys to move positions as instructed.
 
 Both the YMCA and three rooms are rendered upon loading the program.  When you press the "y" and
-"r" arrow keys, you can switch between scenes.  The scene graphs do not need their xml files to be
-parsed as this was done in the beginning.
+"r" arrow keys, you can switch between scenes.  The xml files for both scene graphs
+are parsed in the beginning of running the program.
 
 As you move through the rooms, at any point you can switch to the YMCA scene.  As you switch,
 the position and where you are looking at in the rooms is saved.  But, when you enter the YMCA
-scene you always are at the same starting position.  This is intentional as when you move around the
-room scene, your eye position and lookAt will be applied to the YMCA scene.  By moving around the
-room, you may have the YMCA humanoids become out of view and difficult to find, that is why
+scene you always are at the same starting position.  This is intentional as when you move around
+the room scene, your eye position and lookAt will be applied to the YMCA scene.  By moving around
+the room, you may have the YMCA humanoids become out of view and difficult to find, that is why
 it is always reset to the same starting position.  You can move and have the same functionality
 in the YMCA scene, but when you switch back to the room, you will be at the same position as
 before you went to the YMCA scene (no matter where you move in the YMCA scene).  
@@ -64,7 +64,7 @@ or anything more complex.
 
 The way we use this data structure is useful, in that, with the current organization, we can
 easily traverse the tree to get to that block (or group) of meshes and apply a transformation
-to the entire structure, just by adding a transformation to that node. This makes applying
+to that structure, just by adding a transformation to that node. This makes applying
 transformations very easy and intuitive. Working on this tree is simply implementing the
 Preorder tree traversal when it comes to drawing the entire set, starting from the root node or
 any other node of interest.
@@ -89,8 +89,9 @@ This way, when the children are called, if a child is a LeafNode, it's drawn wit
 set of transformations from the modelView that was set by the TransformNode. If the child is
 a group node or another transform node, we add more transformations to the modelView stack.
 Once all the children are rendered, we pop the transformation from the modelView stack.
-This way, when this node is 'done' being rendered (drawn or transformed), the next node gets it's parent's transformation
-from the top of the stack, which is unrelated to the current transformations applied.
+This way, when this node is 'done' being rendered (drawn or transformed), the next node gets it's
+parent's transformation from the top of the stack, which is unrelated to the current
+transformations applied.
 
 This traversal is analogous to PreOrder tree traversal where we first work on the
 current node, then the child nodes.
