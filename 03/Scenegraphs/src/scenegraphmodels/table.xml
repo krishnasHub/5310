@@ -52,6 +52,14 @@
         <group name="Entire Mjolnir" from="scenegraphmodels/mjolnir.xml"></group>
     </transform>
 
+    <transform name="Pyramid">
+        <set>
+            <translate>-10 5 -20</translate>
+            <scale>1 1 1</scale>
+        </set>
+        <group name="Entire Mjolnir" from="scenegraphmodels/pyramid.xml"></group>
+    </transform>
+
     <transform name="Leg 1">
         <set>
             <translate>-20 -20 20</translate>
