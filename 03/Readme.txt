@@ -7,10 +7,19 @@ Assignment 3
 =========================================
 
 RUNNING THE PROGRAM & COMPLETION
-Both the YMCA and three rooms were completed in this assignment.  In order to run the program,
-you can just run the ScenegraphViewer class.  The rooms rendering is seen first when you load the
-program.  It starts off in the hallway, but faces the room with the table and objects on top
-so it can be seen from the current position.  By looking left and right (left arrow and right
+Both the YMCA and three rooms were completed in this assignment.
+
+In order to run the program, you can just run the ScenegraphViewer class.
+
+The rooms rendering is seen first when you load the program.
+It starts off in the hallway, but faces the room with the table and objects on top so it can be seen from the current position. 
+
+The hallway has walls colored in light green, the floor and the ceiling colored orange.
+The rooms (all three identical) have solid walls colored red, the wall contianing the door colored dark blue, the wall contianing a window colored light blue. Both the ceiling and the floor of rooms are colored yellow.
+
+The different color are given so that it's easier to identify each section of the scene.
+
+By looking left and right (left arrow and right
 arrow keys), you will see the 2nd and third rooms (that are empty). You can use the "w" and "s"
 keys to nod up and down, as well as the up/down arrow keys to move positions as instructed.
 
