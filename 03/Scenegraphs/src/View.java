@@ -32,7 +32,7 @@ import java.util.Stack;
 public class View {
   private static final float DISPLACEMENT = 10.0f;
   private static final float PAN_ANGLE = 2f;
-  private static final float CAM_DIST = 0.5f;
+  private static final float CAM_DIST = 1f;
 
   private int WINDOW_WIDTH, WINDOW_HEIGHT;
   private Stack<Matrix4f> modelView;
@@ -198,17 +198,13 @@ public class View {
     float y = eyePosition.y;
     float z = eyePosition.z;
 
-
-
-    if(angle_yz >= 90 && angle_yz <= 270) {
-      upVector.y = -1;
+    if(angle_yz >= 94 && angle_yz <= 270) {
+      upVector.y = -(0.1f + (angle_yz + 2 % 180) / 180.0f);
       lookingForward = -1;
     } else {
-      upVector.y = 1;
+      upVector.y = 0.1f + (angle_yz + 2 % 180) / 180.0f;
       lookingForward = 1;
     }
-
-
 
     lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
     lookAtPosition.z = z - lookingForward * CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
@@ -333,7 +329,7 @@ public class View {
     WINDOW_HEIGHT = height;
     gl.glViewport(0, 0, width, height);
 
-    projection = new Matrix4f().perspective((float) Math.toRadians(60f), (float) width / height, 0.1f, 10000.0f);
+    projection = new Matrix4f().perspective((float) Math.toRadians(75), (float) width / height, 0.1f, 10000.0f);
     // proj = new Matrix4f().ortho(-400,400,-400,400,0.1f,10000.0f);
 
   }
