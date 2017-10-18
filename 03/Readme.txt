@@ -13,15 +13,27 @@ In order to run the program, you can just run the ScenegraphViewer class.
 
 The rooms rendering is seen first when you load the program.
 It starts off in the hallway, but faces the room with the table and objects on top so it can be seen from the current position. 
+Each room has some object placed in it.
+
+The main room has the table with these objects on it:
+1. A Mace - It's a golden/grey colored mace kept on the table at an anle.
+2. A pyramid - It's a siple pyramid kept at the edge of the table, colored in shades of brown.
+3. A hammer - A crude representation of Thor's Mjulnir kept on the other side of the table.
+4. A totem - This is the object of revolution from the earlier assignment, placed at the front, on the table, colored in blue.
+
+The room to the left has 3 maces kept on the flor, leaning against the wall.
+The room to the right has Thor's hammer on it, kept on the floor.
+
+The hallway is empty. It connects the three rooms together.
 
 The hallway has walls colored in light green, the floor and the ceiling colored orange.
 The rooms (all three identical) have solid walls colored red, the wall contianing the door colored dark blue, the wall contianing a window colored light blue. Both the ceiling and the floor of rooms are colored yellow.
 
 The different color are given so that it's easier to identify each section of the scene.
 
-By looking left and right (left arrow and right
-arrow keys), you will see the 2nd and third rooms (that are empty). You can use the "w" and "s"
-keys to nod up and down, as well as the up/down arrow keys to move positions as instructed.
+By looking left and right (left arrow and right arrow keys), you will see the 2nd and third rooms.
+You can use the "w" and "s" keys to nod up and down, as well as the up/down arrow keys to move positions as instructed.
+The left and right work as expected.
 
 Both the YMCA and three rooms are rendered upon loading the program.  When you press the "y" and
 "r" arrow keys, you can switch between scenes.  The xml files for both scene graphs
@@ -29,9 +41,9 @@ are parsed in the beginning of running the program.
 
 As you move through the rooms, at any point you can switch to the YMCA scene.  As you switch,
 the position and where you are looking at in the rooms is saved.  But, when you enter the YMCA
-scene you always are at the same starting position.  This is intentional as when you move around
-the room scene, your eye position and lookAt will be applied to the YMCA scene.  By moving around
-the room, you may have the YMCA humanoids become out of view and difficult to find, that is why
+scene you always are at the same starting position.
+This is intentional as when you move around the room scene, your eye position and lookAt will be applied to the YMCA scene. 
+By moving around the room, you may have the YMCA humanoids become out of view and difficult to find, that is why
 it is always reset to the same starting position.  You can move and have the same functionality
 in the YMCA scene, but when you switch back to the room, you will be at the same position as
 before you went to the YMCA scene (no matter where you move in the YMCA scene).  
