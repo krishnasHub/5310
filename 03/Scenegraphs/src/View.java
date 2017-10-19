@@ -183,12 +183,10 @@ public class View {
     eyePosition.z -= lookingForward * (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     eyePosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     eyePosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
-    //eyePosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
 
     lookAtPosition.z -= lookingForward * (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
     lookAtPosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
     lookAtPosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
-    //lookAtPosition.z -= (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_yz)));
   }
 
   int lookingForward = 1;
@@ -243,13 +241,6 @@ public class View {
       angle_yz = 360f + angle_yz;
 
     angle_yz = angle_yz % 360;
-
-    /*
-    if(angle_yz >= 90 && angle_yz <= 270) {
-      upVector.y = -1;
-    } else {
-      upVector.y = 1;
-    }*/
 
     System.out.println("angle_yz=" + angle_yz);
 
@@ -330,7 +321,6 @@ public class View {
     gl.glViewport(0, 0, width, height);
 
     projection = new Matrix4f().perspective((float) Math.toRadians(75), (float) width / height, 0.1f, 10000.0f);
-    // proj = new Matrix4f().ortho(-400,400,-400,400,0.1f,10000.0f);
 
   }
 
