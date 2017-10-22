@@ -1,9 +1,4 @@
 <scene>
-    <instance name="sphere" path="models/sphere"></instance>
-    <instance name="box" path="models/box"></instance>
-    <instance name="cylinder" path="models/cylinder"></instance>
-    <instance name="cone" path="models/cone"></instance>
-
     <transform name="The Y humanoid">
         <set>
             <translate>-90 -100 0</translate>

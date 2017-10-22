@@ -197,10 +197,10 @@ public class View {
     float z = eyePosition.z;
 
     if(angle_yz >= 94 && angle_yz <= 270) {
-      upVector.y = -(0.1f + (angle_yz + 2 % 180) / 180.0f);
+      upVector.y = -1;
       lookingForward = -1;
     } else {
-      upVector.y = 0.1f + (angle_yz + 2 % 180) / 180.0f;
+      upVector.y = 1;
       lookingForward = 1;
     }
 
