@@ -1,0 +1,31 @@
+<scene>
+    <transform>
+        <set>
+            <group name="Room With Scene">
+                <transform>
+                    <set>
+                        <!--use this translate to move the whole scene around during testing-->
+
+                    </set>
+                    <group>
+                        <transform name="room1">
+                            <set>
+                            </set>
+                            <group name="room1" from="scenegraphmodels/room.xml">
+                            </group>
+                        </transform>
+
+                        <transform name="table">
+                            <set>
+                                <translate>0 40 0</translate>
+                            </set>
+                            <group name="room1" from="scenegraphmodels/table.xml">
+                            </group>
+                        </transform>
+
+                    </group>
+                </transform>
+            </group>
+        </set>
+    </transform>
+</scene>

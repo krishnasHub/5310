@@ -1,0 +1,166 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+
+    <group>
+        <transform>
+            <set>
+            </set>
+            <group name="room">
+                <transform name="floor">
+                    <set>
+                        <scale> 200 2 200</scale>
+                    </set>
+                    <group>/Scenegra
+                        <object instanceof="box">
+                            <material>
+                                <color> 1 1 0 </color>
+                            </material>
+                        </object>
+                    </group>
+                </transform>
+                <group>
+                    <transform name="buildOnFloor">
+                        <set>
+                            <translate> 0 100 0 </translate>
+                        </set>
+                        <group>
+                            <transform name="ceiling">
+                                <set>
+                                    <translate>0 100 0</translate>
+                                    <scale> 200 2 200</scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <color> 1 1 0 </color>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                            <transform name="wallEmptyLeft">
+                                <set>
+                                    <translate>-100 0 0</translate>
+                                    <scale> 2 200 200 </scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <color> 1 0 0 </color>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                            <transform name="wallEmptyRight">
+                                <set>
+                                    <translate>100 0 0</translate>
+                                    <scale> 2 200 200 </scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <color> 1 0 0 </color>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                            <transform name="wallWithWindow">
+                                <set>
+                                    <translate>0 0 -100</translate>
+                                </set>
+                                <group>
+                                    <transform name="leftOfWindow">
+                                        <set>
+                                            <translate>-75 0 0</translate>
+                                            <scale>50 200 2</scale>
+                                        </set>
+                                        <object instanceof="box">
+                                            <material>
+                                                <color>  0 1 1  </color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="rightOfWindow">
+                                        <set>
+                                            <translate>75 0 0</translate>
+                                            <scale>50 200 2</scale>
+                                        </set>
+                                        <object instanceof="box">
+                                            <material>
+                                                <color> 0 1 1 </color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="topOfWindow">
+                                        <set>
+                                            <translate>0 75 0</translate>
+                                            <scale>100 50 2</scale>
+                                        </set>
+                                        <object instanceof="box">
+                                            <material>
+                                                <color> 0 1 1 </color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="bottomOfWindow">
+                                        <set>
+                                            <translate>0 -75 0</translate>
+                                            <scale>100 50 2</scale>
+                                        </set>
+                                        <object instanceof="box">
+                                            <material>
+                                                <color> 0 1 1 </color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </group>
+                            </transform>
+                            <transform name="wallWithDoor">
+                                <set>
+                                    <translate>0 0 100</translate>
+                                </set>
+                                <group>
+                                    <transform name="leftOfDoor">
+                                        <set>
+                                            <translate>-75 0 0</translate>
+                                            <scale>50 200 2</scale>
+                                        </set>
+                                        <object instanceof="box">
+                                            <material>
+                                                <color> 0 0 1 </color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="rightOfDoor">
+                                        <set>
+                                            <translate>75 0 0</translate>
+                                            <scale>50 200 2</scale>
+                                        </set>
+                                        <object instanceof="box">
+                                            <material>
+                                                <color> 0 0 1 </color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="topOfDoor">
+                                        <set>
+                                            <translate>0 75 0</translate>
+                                            <scale>100 50 2</scale>
+                                        </set>
+                                        <object instanceof="box">
+                                            <material>
+                                                <color> 0 0 1 </color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </group>
+                            </transform>
+                        </group>
+                    </transform>
+                </group>
+            </group>
+        </transform>
+    </group>
+</scene>
