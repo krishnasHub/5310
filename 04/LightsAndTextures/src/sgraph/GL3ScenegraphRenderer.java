@@ -211,7 +211,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
 
         GL3ScenegraphRenderer.lightCounter++;
 
-        System.out.println(name + " x=" + pos.x + " y=" + pos.y + " z=" + pos.z);
+        //System.out.println(name + " x=" + pos.x + " y=" + pos.y + " z=" + pos.z);
     }
 
     /**

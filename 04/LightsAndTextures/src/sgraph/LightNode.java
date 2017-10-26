@@ -26,6 +26,8 @@ public class LightNode extends AbstractNode {
     @Override
     public void draw(IScenegraphRenderer context, Stack<Matrix4f> modelView) {
         context.drawLight(this.light, modelView.peek());
+
+        /*
         Vector4f posn = this.light.getPosition();
         posn.x += dir * 1f;
 
@@ -33,6 +35,7 @@ public class LightNode extends AbstractNode {
             dir *= -1;
 
         this.light.setPosition(posn);
+        */
     }
 
     @Override

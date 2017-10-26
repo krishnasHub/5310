@@ -5,6 +5,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import util.IVertexData;
+import util.Light;
 import util.VertexProducer;
 
 import javax.xml.parsers.SAXParser;
@@ -71,6 +72,7 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
 
   public void endDocument() throws SAXException {
   }
+
 
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     System.out.println("Start tag: " + qName);
@@ -197,18 +199,30 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
           }
         }
 
-        node = new sgraph.LightNode(scenegraph, name);
-        try {
-          stackNodes.peek().addChild(node);
-        } catch (IllegalArgumentException e) {
-          throw new SAXException(e.getMessage());
+        // if we have a LeafNode, then add this light to the Object's list of lights.
+        // else add it as a LeafNode to the group or transform node.
+        if(stackNodes.peek() instanceof LeafNode) {
+          ((LeafNode) (stackNodes.peek())).addLight();
+        } else {
+          node = new sgraph.LightNode(scenegraph, name);
+          try {
+            stackNodes.peek().addChild(node);
+          } catch (IllegalArgumentException e) {
+            throw new SAXException(e.getMessage());
+          }
+          stackNodes.push(node);
+          subgraph.put(stackNodes.peek().getName(), stackNodes.peek());
         }
-        stackNodes.push(node);
-        subgraph.put(stackNodes.peek().getName(), stackNodes.peek());
+        break;
+
+      case "material":
+        attributesForMaterial = true;
         break;
     }
     data = "";
   }
+
+  private boolean attributesForMaterial = false;
 
   public void endElement(String uri, String localName, String qName) throws SAXException {
     Scanner sc;
@@ -223,8 +237,11 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       case "group":
       case "transform":
       case "object":
-      case "light":
         stackNodes.pop();
+        break;
+      case "light":
+        if(stackNodes.peek() instanceof LightNode)
+          stackNodes.pop();
         break;
       case "set":
         stackNodes.peek().setTransform(transform);
@@ -245,6 +262,7 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       case "material":
         stackNodes.peek().setMaterial(material);
         material = new util.Material();
+        attributesForMaterial = false;
         break;
       case "color":
         sc = new Scanner(data);
@@ -257,6 +275,9 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
           ((LightNode) stackNodes.peek()).getLight().setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else if (stackNodes.peek() instanceof LeafNode && !attributesForMaterial) {
+          Light l = ((LeafNode) (stackNodes.peek())).getTopmostLight();
+          l.setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         } else {
           material.setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         }
@@ -265,6 +286,9 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
           ((LightNode) stackNodes.peek()).getLight().setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else if (stackNodes.peek() instanceof LeafNode && !attributesForMaterial) {
+          Light l = ((LeafNode) (stackNodes.peek())).getTopmostLight();
+          l.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         } else {
           material.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         }
@@ -273,6 +297,9 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
           ((LightNode) stackNodes.peek()).getLight().setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else if (stackNodes.peek() instanceof LeafNode && !attributesForMaterial) {
+          Light l = ((LeafNode) (stackNodes.peek())).getTopmostLight();
+          l.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         } else {
           material.setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         }
@@ -305,24 +332,36 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
           ((LightNode) stackNodes.peek()).getLight().setPosition(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else if (stackNodes.peek() instanceof LeafNode) {
+          Light l = ((LeafNode) (stackNodes.peek())).getTopmostLight();
+          l.setPosition(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         }
         break;
       case "direction":
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
           ((LightNode) stackNodes.peek()).getLight().setDirection(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else if (stackNodes.peek() instanceof LeafNode) {
+          Light l = ((LeafNode) (stackNodes.peek())).getTopmostLight();
+          l.setDirection(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         }
         break;
       case "spotdirection":
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
           ((LightNode) stackNodes.peek()).getLight().setSpotDirection(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else if (stackNodes.peek() instanceof LeafNode) {
+          Light l = ((LeafNode) (stackNodes.peek())).getTopmostLight();
+          l.setSpotDirection(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         }
         break;
       case "spotangle":
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
           ((LightNode) stackNodes.peek()).getLight().setSpotAngle(sc.nextFloat());
+        } else if (stackNodes.peek() instanceof LeafNode) {
+          Light l = ((LeafNode) (stackNodes.peek())).getTopmostLight();
+          l.setSpotAngle(sc.nextFloat());
         }
         break;
     }

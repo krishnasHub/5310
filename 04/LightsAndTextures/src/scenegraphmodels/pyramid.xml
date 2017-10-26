@@ -13,7 +13,10 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.6 0.298 0</color>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
+                        <shininess>100</shininess>
                     </material>
                 </object>
             </transform>
@@ -26,7 +29,10 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.61 0.298 0</color>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
+                        <shininess>100</shininess>
                     </material>
                 </object>
             </transform>
@@ -39,7 +45,10 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.62 0.298 0</color>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
+                        <shininess>100</shininess>
                     </material>
                 </object>
             </transform>
@@ -52,8 +61,17 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.63 0.298 0</color>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
+                        <shininess>100</shininess>
                     </material>
+                    <light name="Light on pyramid top">
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
+                        <position>0 2 0</position>
+                    </light>
+
                 </object>
             </transform>
 
@@ -69,11 +87,14 @@
 
                 <object instanceof="cone">
                     <material>
-                        <color>0.4 0.2 0</color>
+                        <ambient>0.4 0.2 0</ambient>
+                        <diffuse>0.4 0.2 0</diffuse>
+                        <specular>0.4 0.2 0</specular>
+                        <shininess>100</shininess>
                     </material>
                 </object>
             </transform>
-            <transform name="Pyramid Base">
+            <transform name="Pyramid Cone">
                 <set>
                     <translate>0 -1 0</translate>
                     <rotate>-45 0 1 0</rotate>
@@ -83,7 +104,10 @@
 
                 <object instanceof="cone">
                     <material>
-                        <color>0.4 0.2 0</color>
+                        <ambient>0.4 0.2 0</ambient>
+                        <diffuse>0.4 0.2 0</diffuse>
+                        <specular>0.4 0.2 0</specular>
+                        <shininess>100</shininess>
                     </material>
                 </object>
             </transform>

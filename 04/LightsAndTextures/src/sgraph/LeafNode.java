@@ -1,7 +1,10 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import util.Light;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -21,15 +24,28 @@ public class LeafNode extends AbstractNode
      */
     protected util.Material material;
 
+    protected List<Light> lights;
+    private int lightCount = -1;
+
     protected String textureName;
 
     public LeafNode(String instanceOf, IScenegraph graph, String name)
     {
         super(graph,name);
         this.objInstanceName = instanceOf;
+        lights = new ArrayList<Light>();
     }
 
 
+    public void addLight() {
+        this.lights.add(new Light());
+        lightCount++;
+        LightNode.TotalLightCount++;
+    }
+
+    public Light getTopmostLight() {
+        return this.lights.get(lightCount);
+    }
 
     /*
 	 *Set the material of each vertex in this object
@@ -83,6 +99,10 @@ public class LeafNode extends AbstractNode
         if (objInstanceName.length()>0)
         {
             context.drawMesh(objInstanceName,material,textureName,modelView.peek());
+        }
+
+        if(lights.size() > 0) {
+            lights.forEach(l -> context.drawLight(l, modelView.peek()));
         }
     }
 
