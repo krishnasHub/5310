@@ -9,12 +9,12 @@ import org.joml.Vector4f;
  * array of floats, to work with OpenGL buffers
  */
 public class VertexAttrib implements util.IVertexData {
-  private Vector4f position,normal,texcoord;
+  private Vector4f position, normal, texcoord;
 
   public VertexAttrib() {
     position = new Vector4f(0, 0, 0, 1);
-    normal = new Vector4f(0,0,0,0);
-    texcoord = new Vector4f(0,0,0,1);
+    normal = new Vector4f(0, 0, 0, 0);
+    texcoord = new Vector4f(0, 0, 0, 1);
   }
 
   @Override
@@ -120,6 +120,6 @@ public class VertexAttrib implements util.IVertexData {
   @Override
   public String[] getAllAttributes() {
     return new String[]{"position",
-            "normal","texcoord"};
+            "normal", "texcoord"};
   }
 }

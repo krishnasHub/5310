@@ -7,6 +7,8 @@ import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
+import sgraph.GL3ScenegraphRenderer;
+import sgraph.LightNode;
 
 
 import java.awt.event.KeyEvent;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
+import java.util.List;
 
 
 /**
@@ -30,6 +33,9 @@ import java.util.Stack;
  * by the JOGLFrame class.
  */
 public class View {
+
+
+
   private static final float DISPLACEMENT = 10.0f;
   private static final float PAN_ANGLE = 2f;
   private static final float CAM_DIST = 1f;
@@ -46,14 +52,13 @@ public class View {
   private Vector3f upVector;
 
 
-
+  private int projectionLocation;
+  private int numLightsLocation;
 
   private util.ShaderProgram program;
   private util.ShaderLocationsVault shaderLocations;
-  private int projectionLocation;
   private sgraph.IScenegraph<VertexAttrib> scenegraph;
   private sgraph.IScenegraph<VertexAttrib> scenegraphYMCA;
-
 
   private float angle_xz = 0;
   private float angle_yz = 0;
@@ -63,7 +68,7 @@ public class View {
   private boolean viewYMCA;
 
   public View() {
-    eyePosition = new Vector3f(0, 0, 0);
+    eyePosition = new Vector3f(0, 0, 200);
     savedEyePosition = new Vector3f(0, 0, 200);
     lookAtPosition = new Vector3f(0, 0, 0);
     savedLookAtPosition = new Vector3f(0, 0, 200);
@@ -112,48 +117,40 @@ public class View {
   public void init(GLAutoDrawable gla) throws Exception {
     GL3 gl = gla.getGL().getGL3();
 
-
     //compile and make our shader program. Look at the ShaderProgram class for details on how this is done
     program = new util.ShaderProgram();
-
-    program.createProgram(gl, "shaders/default.vert", "shaders/default"
-            + ".frag");
-
+    program.createProgram(gl, "shaders/gouraud-multiple.vert",
+            "shaders/gouraud-multiple.frag");
     shaderLocations = program.getAllShaderVariables(gl);
 
     //get input variables that need to be given to the shader program
     projectionLocation = shaderLocations.getLocation("projection");
+    numLightsLocation = shaderLocations.getLocation("numLights");
   }
-
 
   public void draw(GLAutoDrawable gla) {
     GL3 gl = gla.getGL().getGL3();
+    FloatBuffer fb = Buffers.newDirectFloatBuffer(16);
+    GL3ScenegraphRenderer.lightCounter = 0;
 
-    gl.glClearColor(0, 0, 0, 1);
+    gl.glClearColor(0.8f, 0.8f, 0.8f, 1);
     gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT);
-    gl.glEnable(gl.GL_DEPTH_TEST);
-
-
-    program.enable(gl);
+    gl.glEnable(GL.GL_DEPTH_TEST);
 
     while (!modelView.empty())
       modelView.pop();
 
-        /*
-         *In order to change the shape of this triangle, we can either move the vertex positions above, or "transform" them
-         * We use a modelview matrix to store the transformations to be applied to our triangle.
-         * Right now this matrix is identity, which means "no transformations"
-         */
     modelView.push(new Matrix4f());
     modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
 
+    program.enable(gl);
 
-    /*
-     *Supply the shader with all the matrices it expects.
-    */
-    FloatBuffer fb = Buffers.newDirectFloatBuffer(16);
     gl.glUniformMatrix4fv(projectionLocation, 1, false, projection.get(fb));
-    //return;
+    gl.glUniform1i(numLightsLocation, LightNode.TotalLightCount);
+
+    gl.glEnable(GL.GL_TEXTURE_2D);
+    gl.glActiveTexture(GL.GL_TEXTURE0);
+    //gl.glUniform1i(textureLocation, 0);
 
 
     //gl.glPolygonMode(GL.GL_FRONT_AND_BACK,GL3.GL_LINE); //OUTLINES
@@ -211,10 +208,6 @@ public class View {
     //printCam();
   }
 
-  private void printCam() {
-    System.out.println("eyePosition: x=" + eyePosition.x + ", y=" + eyePosition.y + ", z=" + eyePosition.z);
-    System.out.println("lookAtPosition: x=" + lookAtPosition.x + ", y=" + lookAtPosition.y + ", z=" + lookAtPosition.z);
-  }
 
   private void rotateInDirection(int dir) {
     //lookAtPosition.x += dir * DISPLACEMENT;

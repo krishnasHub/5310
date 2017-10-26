@@ -29,8 +29,8 @@ import java.nio.IntBuffer;
 public class JOGLFrame extends JFrame {
   private static final String YMCA_SCENE_GRAPH_XML = "scenegraphmodels/YMCA-humanoid.xml";
   private static final String ROOM_SCENE_GRAPH_XML = "scenegraphmodels/testScene.xml";
-  private static final String TABLE = "scenegraphmodels/room-with-table.xml";
-  private static final String SCENE_GRAPH_XML = ROOM_SCENE_GRAPH_XML;
+  private static final String TABLE = "scenegraphmodels/table.xml";
+  private static final String SCENE_GRAPH_XML = TABLE;
 
   private View view;
   private MyTextRenderer textRenderer;

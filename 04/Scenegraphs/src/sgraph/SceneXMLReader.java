@@ -57,7 +57,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
   private Matrix4f transform;
   private util.Material material;
   private Map<String, INode> subgraph;
-  private Light light;
 
   public IScenegraph<K> getScenegraph() {
     return scenegraph;
@@ -76,7 +75,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
     subgraph = new TreeMap<String, INode>();
     transform = new Matrix4f();
     material = new util.Material();
-    light = null;
   }
 
   public void endDocument() throws SAXException {
@@ -200,7 +198,21 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       }
       break;
       case "light":
-        light = new Light();
+        String name = "Light";
+        for (int i = 0; i < attributes.getLength(); i++) {
+          if (attributes.getQName(i).equals("name")) {
+            name = attributes.getValue(i);
+          }
+        }
+
+        node = new sgraph.LightNode(scenegraph, name);
+        try {
+          stackNodes.peek().addChild(node);
+        } catch (IllegalArgumentException e) {
+          throw new SAXException(e.getMessage());
+        }
+        stackNodes.push(node);
+        subgraph.put(stackNodes.peek().getName(), stackNodes.peek());
         break;
     }
     data = "";
@@ -219,6 +231,7 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       case "group":
       case "transform":
       case "object":
+      case "light":
         stackNodes.pop();
         break;
       case "set":
@@ -250,15 +263,27 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         break;
       case "ambient":
         sc = new Scanner(data);
-        material.setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        if(stackNodes.peek() instanceof LightNode) {
+          ((LightNode) stackNodes.peek()).getLight().setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else {
+          material.setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        }
         break;
       case "diffuse":
         sc = new Scanner(data);
-        material.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        if(stackNodes.peek() instanceof LightNode) {
+          ((LightNode) stackNodes.peek()).getLight().setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else {
+          material.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        }
         break;
       case "specular":
         sc = new Scanner(data);
-        material.setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        if(stackNodes.peek() instanceof LightNode) {
+          ((LightNode) stackNodes.peek()).getLight().setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        } else {
+          material.setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        }
         break;
       case "emissive":
         sc = new Scanner(data);
@@ -283,6 +308,30 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       case "refractive":
         sc = new Scanner(data);
         material.setRefractiveIndex(sc.nextFloat());
+        break;
+      case "position":
+        sc = new Scanner(data);
+        if(stackNodes.peek() instanceof LightNode) {
+          ((LightNode) stackNodes.peek()).getLight().setPosition(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        }
+        break;
+      case "direction":
+        sc = new Scanner(data);
+        if(stackNodes.peek() instanceof LightNode) {
+          ((LightNode) stackNodes.peek()).getLight().setDirection(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        }
+        break;
+      case "spotdirection":
+        sc = new Scanner(data);
+        if(stackNodes.peek() instanceof LightNode) {
+          ((LightNode) stackNodes.peek()).getLight().setSpotDirection(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        }
+        break;
+      case "spotangle":
+        sc = new Scanner(data);
+        if(stackNodes.peek() instanceof LightNode) {
+          ((LightNode) stackNodes.peek()).getLight().setSpotAngle(sc.nextFloat());
+        }
         break;
     }
     data = "";

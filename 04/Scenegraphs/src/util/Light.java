@@ -24,6 +24,22 @@ public class Light {
     spotCutoff = 0.0f;
   }
 
+  @Override
+  public Light clone() {
+    Light light = new Light();
+
+    light.setAmbient(this.getAmbient());
+    light.setDiffuse(this.getDiffuse());
+    light.setSpecular(this.getSpecular());
+
+    light.setPosition(this.getPosition());
+    light.setSpotDirection(this.spotDirection.x, this.spotDirection.y, this.spotDirection.z);
+
+    light.setSpotAngle(this.getSpotCutoff());
+
+    return light;
+  }
+
   public Light(Light l) {
     ambient = new Vector3f(l.ambient);
     diffuse = new Vector3f(l.diffuse);

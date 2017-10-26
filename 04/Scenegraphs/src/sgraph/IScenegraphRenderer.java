@@ -2,6 +2,7 @@ package sgraph;
 
 import org.joml.Matrix4f;
 import util.IVertexData;
+import util.Light;
 
 import java.util.Map;
 import java.util.Stack;
@@ -68,6 +69,9 @@ public interface IScenegraphRenderer
      * @param transformation
      */
     void drawMesh(String name, util.Material material,String textureName,final Matrix4f transformation);
+
+
+    void drawLight(Light light, final Matrix4f transformation);
 
     /**
      * Add a new texture with the given name and the path to the actual image file
