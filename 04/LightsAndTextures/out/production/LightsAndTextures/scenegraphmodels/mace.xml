@@ -1,0 +1,132 @@
+<scene>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+    <instance name="cone" path="models/cone"></instance>
+
+    <transform>
+    <set>
+    </set>
+    <group name="Entire Mace">
+        <transform name="Mace Top">
+            <set>
+                <translate>0 10 0</translate>
+                <scale>8 16 8</scale>
+            </set>
+
+            <object instanceof="cone">
+                <material>
+                    <color>0.8 0.533 0</color>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Sphere">
+            <set>
+                <scale>20 20 20</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <color>1 0.701 0.101</color>
+                </material>
+            </object>
+        </transform>
+
+
+        <transform name="Mace Spikes">
+            <set>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <color>0.8 0.533 0</color>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Spikes">
+            <set>
+                <rotate>90 0 1 0</rotate>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <color>0.8 0.533 0</color>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Spikes">
+            <set>
+                <rotate>45 0 1 0</rotate>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <color>0.8 0.533 0</color>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Spikes">
+            <set>
+                <rotate>135 0 1 0</rotate>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <color>0.8 0.533 0</color>
+                </material>
+            </object>
+        </transform>
+
+
+        <transform name="Mace grip">
+            <set>
+                <translate>0 -25 0</translate>
+                <scale>4 6 4</scale>
+            </set>
+
+            <object instanceof="cylinder">
+                <material>
+                    <color>0.8 0.533 0</color>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace axil">
+            <set>
+                <translate>0 -80 0</translate>
+                <scale>3 60 3</scale>
+            </set>
+
+            <object instanceof="cylinder">
+                <material>
+                    <color>0.55 0.55 0.55</color>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace kilt">
+            <set>
+                <translate>0 -85 0</translate>
+                <scale>4 6 4</scale>
+            </set>
+
+            <object instanceof="cylinder">
+                <material>
+                    <color>0.8 0.533 0</color>
+                </material>
+            </object>
+        </transform>
+    </group>
+    </transform>
+
+
+
+
+</scene>

@@ -1,0 +1,98 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+    <instance name="cone" path="models/cone"></instance>
+
+    <transform>
+        <set>
+        </set>
+        <group name="Entire Pyramid">
+            <transform name="Pyramid Base">
+                <set>
+                    <scale>16 3 16</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <color>0.6 0.298 0</color>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 3 0</translate>
+                    <scale>12 3 12</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <color>0.61 0.298 0</color>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 6 0</translate>
+                    <scale>8 3 8</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <color>0.62 0.298 0</color>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 9 0</translate>
+                    <scale>6 3 6</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <color>0.63 0.298 0</color>
+                    </material>
+                </object>
+            </transform>
+
+
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 -1 0</translate>
+                    <rotate>45 0 1 0</rotate>
+                    <scale>13 13 2</scale>
+
+                </set>
+
+                <object instanceof="cone">
+                    <material>
+                        <color>0.4 0.2 0</color>
+                    </material>
+                </object>
+            </transform>
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 -1 0</translate>
+                    <rotate>-45 0 1 0</rotate>
+                    <scale>13 13 2</scale>
+
+                </set>
+
+                <object instanceof="cone">
+                    <material>
+                        <color>0.4 0.2 0</color>
+                    </material>
+                </object>
+            </transform>
+
+
+        </group>
+    </transform>
+
+
+
+
+</scene>
