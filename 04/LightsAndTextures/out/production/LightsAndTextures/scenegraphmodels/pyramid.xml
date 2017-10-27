@@ -14,10 +14,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <ambient>0.63 0.298 0</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>100</shininess>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone2.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -30,10 +31,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <ambient>0.63 0.298 0</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>100</shininess>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone3.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -46,10 +48,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <ambient>0.63 0.298 0</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>100</shininess>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone3.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -59,13 +62,14 @@
                     <translate>0 9 0</translate>
                     <scale>6 3 6</scale>
                 </set>
-
+<!-- 0.63 0.298 0 -->
                 <object instanceof="box">
                     <material>
-                        <ambient>0.63 0.298 0</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>100</shininess>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone2.png</textureName>
                     </material>
 
                     <light name="Light on pyramid top">
@@ -89,10 +93,11 @@
 
                 <object instanceof="cone">
                     <material>
-                        <ambient>0.4 0.2 0</ambient>
-                        <diffuse>0.4 0.2 0</diffuse>
-                        <specular>0.4 0.2 0</specular>
-                        <shininess>100</shininess>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>10</shininess>
+                        <textureName>rock1.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -106,10 +111,11 @@
 
                 <object instanceof="cone">
                     <material>
-                        <ambient>0.4 0.2 0</ambient>
-                        <diffuse>0.4 0.2 0</diffuse>
-                        <specular>0.4 0.2 0</specular>
-                        <shininess>100</shininess>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>10</shininess>
+                        <textureName>rock1.png</textureName>
                     </material>
                 </object>
             </transform>

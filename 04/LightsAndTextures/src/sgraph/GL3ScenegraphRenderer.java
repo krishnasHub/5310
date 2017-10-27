@@ -5,12 +5,15 @@ import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL3;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.math.Matrix4;
+import com.jogamp.opengl.util.texture.Texture;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
 import util.IVertexData;
 import util.Light;
 import util.TextureImage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.FloatBuffer;
 import java.util.*;
@@ -43,17 +46,50 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
      */
     protected Map<String,util.ObjectInstance> meshRenderers;
 
+    private static Map<String, util.TextureImage> imageMap;
+
     /**
      * A variable tracking whether shader locations have been set. This must be done before
      * drawing!
      */
     private boolean shaderLocationsSet;
 
+    private boolean mipmapped = false;
+
     public GL3ScenegraphRenderer()
     {
         meshRenderers = new HashMap<String,util.ObjectInstance>();
         shaderLocations = new util.ShaderLocationsVault();
         shaderLocationsSet = false;
+
+        buildImageMap();
+    }
+
+    private void buildImageMap() {
+        if(imageMap != null)
+            return;
+
+        imageMap = new HashMap<>();
+
+        try {
+            File textureFolder = new File("src/textures");
+
+            String[] files = textureFolder.list();
+
+            for(int i = 0; i < files.length; ++i) {
+                String textureName = files[i];
+                int ind = textureName.lastIndexOf('.');
+
+                util.TextureImage textureImage = new util.TextureImage("textures/" + textureName,
+                        textureName.substring(ind + 1), textureName.substring(0, ind));
+                imageMap.put(textureName, textureImage);
+            }
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+
     }
 
     /**
@@ -139,6 +175,10 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
         for (util.ObjectInstance s:meshRenderers.values())
             s.cleanup(glContext);
     }
+
+
+
+
     /**
      * Draws a specific mesh.
      * If the mesh has been added to this renderer, it delegates to its correspond mesh renderer
@@ -156,6 +196,19 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             GL3 gl = glContext.getGL().getGL3();
             FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
             FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
+            Texture tex = null;
+            util.TextureImage textureImage = null;
+
+            if(textureName == null || textureName == "")
+                textureName = "white.png";
+
+            textureImage = imageMap.get(textureName);
+            tex = textureImage.getTexture();
+
+            tex.setTexParameteri(gl, GL.GL_TEXTURE_WRAP_S, GL.GL_REPEAT);
+            tex.setTexParameteri(gl, GL.GL_TEXTURE_WRAP_T, GL.GL_REPEAT);
+            tex.setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
+            tex.setTexParameteri(gl, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 
 
             Matrix4f normalmatrix = new Matrix4f(transformation);
@@ -163,13 +216,25 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             gl.glUniformMatrix4fv(shaderLocations.getLocation("modelview"), 1, false, transformation.get(fb16));
             gl.glUniformMatrix4fv(shaderLocations.getLocation("normalmatrix"), 1, false, normalmatrix.get(fb16));
 
-            //Matrix4f textureTransform = new Matrix4f();
+            Matrix4f textureTransform = new Matrix4f();
 
-            //gl.glUniformMatrix4fv(shaderLocations.getLocation("texturematrix"), 1, false, textureTransform.get(fb16));
+            if(textureImage.getTexture().getMustFlipVertically()) {
+                textureTransform = new Matrix4f().translate(0, 1, 0).scale(1, -1, 1);
+            }
+            textureTransform = new Matrix4f(textureTransform);
+
+            gl.glUniformMatrix4fv(shaderLocations.getLocation("texturematrix"), 1, false, textureTransform.get(fb16));
             gl.glUniform3fv(shaderLocations.getLocation("material.ambient"), 1, material.getAmbient().get(fb4));
             gl.glUniform3fv(shaderLocations.getLocation("material.diffuse"), 1, material.getDiffuse().get(fb4));
             gl.glUniform3fv(shaderLocations.getLocation("material.specular"), 1, material.getSpecular().get(fb4));
             gl.glUniform1f(shaderLocations.getLocation("material.shininess"), material.getShininess());
+
+            if (mipmapped)
+                textureImage.getTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR_MIPMAP_LINEAR);
+            else
+                textureImage.getTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
+            textureImage.getTexture().bind(gl);
+
 
             if(textures != null) {
                 textures.get(name).getTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
@@ -177,7 +242,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             }
 
             meshRenderers.get(name).draw(glContext);
-            System.out.println("Done drawing Mesh");
+            //System.out.println("Done drawing Mesh");
         }
     }
 
@@ -211,7 +276,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             gl.glUniform3fv(ll.specular, 1, light.getSpecular().get(fb4));
             //System.out.println(name + " x=" + pos.x + " y=" + pos.y + " z=" + pos.z);
 
-            System.out.println("Done drawing Light");
+            //System.out.println("Done drawing Light");
         }
 
 

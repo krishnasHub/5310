@@ -21,10 +21,11 @@
 
             <object instanceof="box">
                 <material>
-                    <ambient>0.8 0.25 0</ambient>
-                    <diffuse>0.5 0.25 0</diffuse>
-                    <specular>0.8 0.6 0.6</specular>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <textureName>wood.png</textureName>
                 </material>
 
 
@@ -69,7 +70,7 @@
         <transform name="Pyramid">
             <set>
                 <translate>-10 5 -20</translate>
-                <scale>1 1 1</scale>
+                <scale>1.5 1.5 1.5</scale>
             </set>
             <group name="Entire Mjolnir" from="scenegraphmodels/pyramid.xml"></group>
         </transform>
@@ -78,12 +79,15 @@
             <set>
                 <translate>-20 -20 20</translate>
                 <scale>2 40 2</scale>
-
             </set>
 
             <object instanceof="box">
                 <material>
-                    <color>1 0.61 0.30</color>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
                 </material>
             </object>
         </transform>
@@ -98,7 +102,11 @@
 
             <object instanceof="box">
                 <material>
-                    <color>1 0.61 0.30</color>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
                 </material>
             </object>
         </transform>
@@ -112,7 +120,11 @@
 
             <object instanceof="box">
                 <material>
-                    <color>1 0.61 0.30</color>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
                 </material>
             </object>
         </transform>
@@ -127,7 +139,11 @@
 
             <object instanceof="box">
                 <material>
-                    <color>1 0.61 0.30</color>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
                 </material>
             </object>
         </transform>

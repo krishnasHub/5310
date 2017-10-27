@@ -354,11 +354,11 @@ public class View {
       //all the light properties, except positions
       gl.glUniform1i(numLightsLocation, renderer.getLightCount());
 
-      System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+      //System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
       renderer.drawLight();
       renderer.drawMeshes();
 
-      System.out.println("-------------------------------------------------------------------------");
+      //System.out.println("-------------------------------------------------------------------------");
 
     } else {
       //all the light properties, except positions

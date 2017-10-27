@@ -271,6 +271,12 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         material.setSpecular(material.getAmbient());
         material.setShininess(1.0f);
         break;
+      case "textureName":
+        sc = new Scanner(data);
+        if(stackNodes.peek() instanceof LeafNode) {
+          ((LeafNode) stackNodes.peek()).setTextureName(sc.next());
+        }
+        break;
       case "ambient":
         sc = new Scanner(data);
         if(stackNodes.peek() instanceof LightNode) {
