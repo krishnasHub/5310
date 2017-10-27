@@ -11,21 +11,21 @@ import java.util.Stack;
  */
 public class LightNode extends AbstractNode {
 
-    public static int TotalLightCount = 0;
+    //public static int TotalLightCount = 0;
 
     private Light light;
 
     public LightNode(IScenegraph graph, String name) {
         super(graph,name);
         this.light = new Light();
-        TotalLightCount++;
+        //TotalLightCount++;
     }
 
     int dir = 1;
 
     @Override
     public void draw(IScenegraphRenderer context, Stack<Matrix4f> modelView) {
-        context.drawLight(this.light, modelView.peek());
+        context.storeLight(this.light, modelView.peek());
 
         /*
         Vector4f posn = this.light.getPosition();

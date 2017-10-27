@@ -71,7 +71,19 @@ public interface IScenegraphRenderer
     void drawMesh(String name, util.Material material, String textureName, final Matrix4f transformation);
 
 
-    void drawLight(Light light, final Matrix4f transformation);
+    void drawLight();
+
+    void drawMeshes();
+
+    void storeMeshInfo(MeshInfo meshInfo);
+
+    void storeLight(Light light, final Matrix4f transformation);
+
+    void clearRenderer();
+
+    int getLightCount();
+
+    int getMeshCount();
 
     /**
      * Add a new texture with the given name and the path to the actual image file

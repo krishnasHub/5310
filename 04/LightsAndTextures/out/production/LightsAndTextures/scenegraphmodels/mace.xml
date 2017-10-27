@@ -15,7 +15,10 @@
 
             <object instanceof="cone">
                 <material>
-                    <color>0.8 0.533 0</color>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -27,7 +30,10 @@
 
             <object instanceof="sphere">
                 <material>
-                    <color>1 0.701 0.101</color>
+                    <ambient>1 0.701 0.101</ambient>
+                    <diffuse>1 0.701 0.101</diffuse>
+                    <specular>1 0.701 0.101</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -40,7 +46,10 @@
 
             <object instanceof="sphere">
                 <material>
-                    <color>0.8 0.533 0</color>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -53,7 +62,10 @@
 
             <object instanceof="sphere">
                 <material>
-                    <color>0.8 0.533 0</color>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -66,7 +78,10 @@
 
             <object instanceof="sphere">
                 <material>
-                    <color>0.8 0.533 0</color>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -79,7 +94,10 @@
 
             <object instanceof="sphere">
                 <material>
-                    <color>0.8 0.533 0</color>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -93,7 +111,10 @@
 
             <object instanceof="cylinder">
                 <material>
-                    <color>0.8 0.533 0</color>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -106,7 +127,10 @@
 
             <object instanceof="cylinder">
                 <material>
-                    <color>0.55 0.55 0.55</color>
+                    <ambient>0.55 0.55 0.55</ambient>
+                    <diffuse>0.55 0.55 0.55</diffuse>
+                    <specular>0.55 0.55 0.55</specular>
+                    <shininess>100</shininess>
                 </material>
             </object>
         </transform>
@@ -119,8 +143,18 @@
 
             <object instanceof="cylinder">
                 <material>
-                    <color>0.8 0.533 0</color>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
                 </material>
+
+                <light name="Light on hammer grip">
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <position>0 -0.5 0</position>
+                </light>
+
             </object>
         </transform>
     </group>

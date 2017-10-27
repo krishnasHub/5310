@@ -29,6 +29,7 @@ import java.util.*;
 public class View {
 
   private static final String TABLE = "scenegraphmodels/table.xml";
+  private static final String HUMANOID = "scenegraphmodels/humanoid-lights.xml";
   private static final String SCENE_GRAPH_XML = TABLE;
 
   private int WINDOW_WIDTH, WINDOW_HEIGHT;
@@ -60,6 +61,7 @@ public class View {
   private int numLightsLocation;
   int angleOfRotation;
 
+  private sgraph.IScenegraphRenderer renderer;
 
   public View() {
     proj = new Matrix4f();
@@ -125,14 +127,14 @@ public class View {
 
     Matrix4f t;
 
-    t = new Matrix4f().translate(0, 0, 0).scale(50, 50, 50);
+    t = new Matrix4f().translate(-200, 0, 0).scale(1, 1, 1);
     transforms.add(t);
 
     // textures
 
     util.TextureImage textureImage;
 
-    textureImage = new util.TextureImage("textures/earthmap.png",
+    textureImage = new util.TextureImage("textures/white.png",
             "png",
             "earthmap");
 
@@ -145,6 +147,7 @@ public class View {
     tex.setTexParameteri(gl, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
 
     textures.add(textureImage);
+
 
   }
 
@@ -199,7 +202,7 @@ public class View {
     program.enable(gl);
 
     scenegraph = sgraph.SceneXMLReader.importScenegraph(in, new VertexAttribProducer());
-    sgraph.IScenegraphRenderer renderer = new sgraph.GL3ScenegraphRenderer();
+    renderer = new sgraph.GL3ScenegraphRenderer();
     renderer.setContext(gla);
     Map<String, String> shaderVarsToVertexAttribs = new HashMap<String, String>();
     shaderVarsToVertexAttribs.put("vPosition", "position");
@@ -232,7 +235,8 @@ public class View {
   private Vector3f upVector = new Vector3f(0, 1, 0);
 
   public void draw(GLAutoDrawable gla) {
-    GL3ScenegraphRenderer.lightCounter = 0;
+    //GL3ScenegraphRenderer.lightCounter = 0;
+    renderer.clearRenderer();
 
     angleOfRotation = (angleOfRotation + 1);
     GL3 gl = gla.getGL().getGL3();
@@ -307,10 +311,6 @@ public class View {
     //return;
 
 
-    //all the light properties, except positions
-    gl.glUniform1i(numLightsLocation, lights.size() + LightNode.TotalLightCount);
-
-
     for (int i = 0; i < meshObjects.size(); i++) {
       Matrix4f transformation = new Matrix4f().mul(modelView.peek()).mul(trackballTransform).mul(transforms.get(i));
       Matrix4f normalmatrix = new Matrix4f(transformation);
@@ -351,6 +351,19 @@ public class View {
       modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
 
       scenegraph.draw(modelView);
+      //all the light properties, except positions
+      gl.glUniform1i(numLightsLocation, renderer.getLightCount());
+
+      System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+      renderer.drawLight();
+      renderer.drawMeshes();
+
+      System.out.println("-------------------------------------------------------------------------");
+
+    } else {
+      //all the light properties, except positions
+      gl.glUniform1i(numLightsLocation, lights.size());
+
     }
 
     gl.glFlush();

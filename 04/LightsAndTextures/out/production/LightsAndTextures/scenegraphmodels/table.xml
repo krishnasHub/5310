@@ -14,20 +14,6 @@
     <group name="Entire Table">
 
 
-        <light name="Table Light">
-            <ambient>0.2 1 0.2</ambient>
-            <diffuse>0.2 1 0.2</diffuse>
-            <specular>0.2 1 0.2</specular>
-            <position>-300 0 0</position>
-        </light>
-
-        <light name="Table Light">
-            <ambient>0.8 0.2 0.2</ambient>
-            <diffuse>0.8 0.2 0.2</diffuse>
-            <specular>0.8 0.2 0.2</specular>
-            <position>0 0 0</position>
-        </light>
-
         <transform name="Table Top">
             <set>
                 <scale>60 2 60</scale>
@@ -40,6 +26,8 @@
                     <specular>0.8 0.6 0.6</specular>
                     <shininess>100</shininess>
                 </material>
+
+
 
             </object>
         </transform>
@@ -68,7 +56,6 @@
             </set>
             <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
         </transform>
-
 
         <transform name="MJolnir">
             <set>

@@ -40,7 +40,7 @@ public class LeafNode extends AbstractNode
     public void addLight() {
         this.lights.add(new Light());
         lightCount++;
-        LightNode.TotalLightCount++;
+        //LightNode.TotalLightCount++;
     }
 
     public Light getTopmostLight() {
@@ -98,11 +98,18 @@ public class LeafNode extends AbstractNode
     {
         if (objInstanceName.length()>0)
         {
-            context.drawMesh(objInstanceName,material,textureName,modelView.peek());
+            MeshInfo meshInfo = new MeshInfo();
+            meshInfo.name = objInstanceName;
+            meshInfo.material = material;
+            meshInfo.textureName = textureName;
+            meshInfo.transformation = modelView.peek();
+
+            //context.drawMesh(objInstanceName, material, textureName, modelView.peek());
+            context.storeMeshInfo(meshInfo);
         }
 
         if(lights.size() > 0) {
-            lights.forEach(l -> context.drawLight(l, modelView.peek()));
+            lights.forEach(l -> context.storeLight(l, modelView.peek()));
         }
     }
 

@@ -20,12 +20,6 @@
                     <specular>0.8 0.533 0</specular>
                     <shininess>100</shininess>
                 </material>
-
-                <light name="Light on hammer grip">
-                    <diffuse>0.8 0.533 0</diffuse>
-                    <specular>0.8 0.533 0</specular>
-                    <position>0 0.5 0</position>
-                </light>
             </object>
         </transform>
 

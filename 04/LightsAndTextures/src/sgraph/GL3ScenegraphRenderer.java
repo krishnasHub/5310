@@ -4,6 +4,7 @@ import com.jogamp.common.nio.Buffers;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL3;
 import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.math.Matrix4;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
 import util.IVertexData;
@@ -12,10 +13,7 @@ import util.TextureImage;
 
 import java.io.IOException;
 import java.nio.FloatBuffer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * This is a scene graph renderer implementation that works specifically with the JOGL library
@@ -179,39 +177,88 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             }
 
             meshRenderers.get(name).draw(glContext);
+            System.out.println("Done drawing Mesh");
         }
     }
 
 
-    public static int lightCounter = 0;
-
-    public void drawLight(Light light, final Matrix4f transformation) {
+    public void drawLight() {
         GL3 gl = glContext.getGL().getGL3();
-        FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
 
-        LightLocation ll = new LightLocation();
-        String name;
+        for(int i = 0; i < allLights.size(); ++i) {
+            Light light = allLights.get(i);
+            Matrix4f transformation = allTransformations.get(i);
+            FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
 
-        name = "light[" + GL3ScenegraphRenderer.lightCounter + "]";
-        ll.ambient = shaderLocations.getLocation(name + ".ambient");
-        ll.diffuse = shaderLocations.getLocation(name + ".diffuse");
-        ll.specular = shaderLocations.getLocation(name + ".specular");
-        ll.position = shaderLocations.getLocation(name + ".position");
+            LightLocation ll = new LightLocation();
+            String name;
 
-        //gl.glUniform4fv(light.getPosition(), 1, pos.get(fb4));
+            name = "light[" + i + "]";
+            ll.ambient = shaderLocations.getLocation(name + ".ambient");
+            ll.diffuse = shaderLocations.getLocation(name + ".diffuse");
+            ll.specular = shaderLocations.getLocation(name + ".specular");
+            ll.position = shaderLocations.getLocation(name + ".position");
 
-        Vector4f pos = light.getPosition();
-        Matrix4f lightTransformation = new Matrix4f(transformation);
+            //gl.glUniform4fv(light.getPosition(), 1, pos.get(fb4));
 
-        pos = lightTransformation.transform(pos);
-        gl.glUniform4fv(ll.position, 1, pos.get(fb4));
-        gl.glUniform3fv(ll.ambient, 1, light.getAmbient().get(fb4));
-        gl.glUniform3fv(ll.diffuse, 1, light.getDiffuse().get(fb4));
-        gl.glUniform3fv(ll.specular, 1, light.getSpecular().get(fb4));
+            Vector4f pos = light.getPosition();
+            Matrix4f lightTransformation = new Matrix4f(transformation);
 
-        GL3ScenegraphRenderer.lightCounter++;
+            pos = lightTransformation.transform(pos);
+            gl.glUniform4fv(ll.position, 1, pos.get(fb4));
+            gl.glUniform3fv(ll.ambient, 1, light.getAmbient().get(fb4));
+            gl.glUniform3fv(ll.diffuse, 1, light.getDiffuse().get(fb4));
+            gl.glUniform3fv(ll.specular, 1, light.getSpecular().get(fb4));
+            //System.out.println(name + " x=" + pos.x + " y=" + pos.y + " z=" + pos.z);
 
-        //System.out.println(name + " x=" + pos.x + " y=" + pos.y + " z=" + pos.z);
+            System.out.println("Done drawing Light");
+        }
+
+
+    }
+
+    public void drawMeshes() {
+        meshInfoList.forEach(m -> {
+            drawMesh(m.name, m.material, m.textureName, m.transformation);
+        });
+    }
+
+    List<MeshInfo> meshInfoList;
+    List<Light> allLights = null;
+    List<Matrix4f> allTransformations = null;
+
+    public void storeLight(Light light, final Matrix4f transformation) {
+        allLights.add(light);
+        allTransformations.add(transformation);
+    }
+
+    public void storeMeshInfo(MeshInfo meshInfo) {
+        meshInfoList.add(meshInfo);
+    }
+
+    public int getMeshCount() {
+        return meshInfoList.size();
+    }
+
+    public int getLightCount() {
+        return allLights.size();
+    }
+
+    public void clearRenderer() {
+        if(allLights == null)
+            allLights = new ArrayList<>();
+        else
+            allLights.clear();
+
+        if(allTransformations == null)
+            allTransformations = new ArrayList<>();
+        else
+            allTransformations.clear();
+
+        if(meshInfoList == null)
+            meshInfoList = new ArrayList<>();
+        else
+            meshInfoList.clear();
     }
 
     /**
