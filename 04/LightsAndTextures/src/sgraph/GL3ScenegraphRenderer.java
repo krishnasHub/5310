@@ -247,11 +247,28 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
     }
 
 
+    int dir = 1;
+    private void tinkerLightPos(Light light) {
+        // Table Light
+        if(light.getSpotDirection().y != -1)
+            return;
+
+        Vector4f pos = light.getPosition();
+
+        pos.y += dir * 0.05f;
+
+        if(pos.y >= 50 || pos.y <= 0)
+            dir *= -1;
+
+        light.setPosition(pos);
+    }
+
     public void drawLight() {
         GL3 gl = glContext.getGL().getGL3();
 
         for(int i = 0; i < allLights.size(); ++i) {
             Light light = allLights.get(i);
+            //tinkerLightPos(light);
             Matrix4f transformation = allTransformations.get(i);
             FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
 
@@ -263,6 +280,8 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             ll.diffuse = shaderLocations.getLocation(name + ".diffuse");
             ll.specular = shaderLocations.getLocation(name + ".specular");
             ll.position = shaderLocations.getLocation(name + ".position");
+            ll.spotCutoff = shaderLocations.getLocation(name + ".spotCutoff");
+            ll.spotDirection = shaderLocations.getLocation(name + ".spotDirection");
 
             //gl.glUniform4fv(light.getPosition(), 1, pos.get(fb4));
 
@@ -274,6 +293,8 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             gl.glUniform3fv(ll.ambient, 1, light.getAmbient().get(fb4));
             gl.glUniform3fv(ll.diffuse, 1, light.getDiffuse().get(fb4));
             gl.glUniform3fv(ll.specular, 1, light.getSpecular().get(fb4));
+            gl.glUniform1f(ll.spotCutoff, light.getSpotCutoff());
+            gl.glUniform3fv(ll.spotDirection, 1, light.getSpotDirection().get(fb4));
             //System.out.println(name + " x=" + pos.x + " y=" + pos.y + " z=" + pos.z);
 
             //System.out.println("Done drawing Light");

@@ -7,12 +7,19 @@
 
     <transform name="Table Transform">
         <set>
-            <translate>100 0 0</translate>
+            <scale>2 2 2</scale>
+            <translate>0 0 0</translate>
         </set>
 
 
     <group name="Entire Table">
-
+        <light name="Table Light">
+            <diffuse>0.8 0.8 0.8</diffuse>
+            <specular>0.8 0.8 0.8</specular>
+            <position>0 10 0 </position>
+            <spotangle>0.01</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
 
         <transform name="Table Top">
             <set>
@@ -33,6 +40,7 @@
             </object>
         </transform>
 
+        <!--
         <transform name="Totem">
             <set>
                 <translate>0 -2 20</translate>
@@ -44,8 +52,7 @@
                     <color>0 0 1</color>
                 </material>
             </object>
-        </transform>
-
+        </transform> -->
 
         <transform name="Mace">
             <set>
@@ -57,6 +64,9 @@
             </set>
             <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
         </transform>
+
+
+
 
         <transform name="MJolnir">
             <set>
@@ -74,6 +84,7 @@
             </set>
             <group name="Entire Mjolnir" from="scenegraphmodels/pyramid.xml"></group>
         </transform>
+
 
         <transform name="Leg 1">
             <set>

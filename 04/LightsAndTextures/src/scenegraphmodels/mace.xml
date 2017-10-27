@@ -30,10 +30,11 @@
 
             <object instanceof="sphere">
                 <material>
-                    <ambient>1 0.701 0.101</ambient>
-                    <diffuse>1 0.701 0.101</diffuse>
-                    <specular>1 0.701 0.101</specular>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
                 </material>
             </object>
         </transform>
@@ -46,10 +47,11 @@
 
             <object instanceof="sphere">
                 <material>
-                    <ambient>0.8 0.533 0</ambient>
-                    <diffuse>0.8 0.533 0</diffuse>
-                    <specular>0.8 0.533 0</specular>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
                 </material>
             </object>
         </transform>
@@ -62,10 +64,11 @@
 
             <object instanceof="sphere">
                 <material>
-                    <ambient>0.8 0.533 0</ambient>
-                    <diffuse>0.8 0.533 0</diffuse>
-                    <specular>0.8 0.533 0</specular>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
                 </material>
             </object>
         </transform>
@@ -78,10 +81,11 @@
 
             <object instanceof="sphere">
                 <material>
-                    <ambient>0.8 0.533 0</ambient>
-                    <diffuse>0.8 0.533 0</diffuse>
-                    <specular>0.8 0.533 0</specular>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
                 </material>
             </object>
         </transform>
@@ -94,10 +98,11 @@
 
             <object instanceof="sphere">
                 <material>
-                    <ambient>0.8 0.533 0</ambient>
-                    <diffuse>0.8 0.533 0</diffuse>
-                    <specular>0.8 0.533 0</specular>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
                 </material>
             </object>
         </transform>
@@ -127,10 +132,11 @@
 
             <object instanceof="cylinder">
                 <material>
-                    <ambient>0.55 0.55 0.55</ambient>
-                    <diffuse>0.55 0.55 0.55</diffuse>
-                    <specular>0.55 0.55 0.55</specular>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <textureName>steel1.png</textureName>
                 </material>
             </object>
         </transform>
@@ -153,6 +159,8 @@
                     <diffuse>0.8 0.533 0</diffuse>
                     <specular>0.8 0.533 0</specular>
                     <position>0 -0.5 0</position>
+                    <spotangle>1</spotangle>
+                    <spotdirection>0 1 0 </spotdirection>
                 </light>
 
             </object>

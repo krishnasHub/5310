@@ -5,9 +5,9 @@ package sgraph;
  * Something to represent the struct LightProperties
  */
 public class LightLocation {
-    public int ambient, diffuse, specular, position;
+    public int ambient, diffuse, specular, position, spotDirection, spotCutoff;
 
     public LightLocation() {
-        ambient = diffuse = specular = position = -1;
+        ambient = diffuse = specular = position = spotDirection = spotCutoff = -1;
     }
 }

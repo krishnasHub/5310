@@ -14,6 +14,8 @@ struct LightProperties
     vec3 diffuse;
     vec3 specular;
     vec4 position;
+    vec3 spotDirection;
+    float spotCutoff;
 };
 
 
@@ -71,4 +73,5 @@ void main()
     }
     fColor = fColor * texture(image,fTexCoord.st);
     //fColor = vec4(fTexCoord.s,fTexCoord.t,0,1);
+    // d dot (-l) >= cos(tetha)
 }

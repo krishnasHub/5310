@@ -235,20 +235,11 @@ public class View {
   private Vector3f upVector = new Vector3f(0, 1, 0);
 
   public void draw(GLAutoDrawable gla) {
-    //GL3ScenegraphRenderer.lightCounter = 0;
     renderer.clearRenderer();
 
-    angleOfRotation = (angleOfRotation + 1);
     GL3 gl = gla.getGL().getGL3();
     FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
     FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
-
-    //animate the world light (light[0])
-    Vector4f lightPos = new Vector4f(
-            (float)(20*Math.sin(0.1*angleOfRotation)),
-    0,100,1.0f);
-    if(lights.size() > 0)
-      lights.get(0).setPosition(lightPos);
 
     gl.glClearColor(0, 0, 0, 1);
     gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT);
@@ -256,92 +247,16 @@ public class View {
 
     program.enable(gl);
 
-        /*
-         *In order to change the shape of this triangle, we can either move the vertex positions above, or "transform" them
-         * We use a modelview matrix to store the transformations to be applied to our triangle.
-         * Right now this matrix is identity, which means "no transformations"
-         */
-
-    while (!modelView.empty())
-      modelView.pop();
-
-    modelView.push(new Matrix4f());
-    modelView.peek().lookAt(eyePosition, lookAtPosition, upVector);
-
-
     gl.glEnable(GL.GL_TEXTURE_2D);
     gl.glActiveTexture(GL.GL_TEXTURE0);
-
-
     gl.glUniform1i(textureLocation, 0);
 
-
-    //modelview currently represents world-to-view transformation
-    //transform all lights so that they are in the view coordinate system too
-    //before you send them to the shader.
-    //that way everything is in one coordinate system (view) and the math will
-    //be correct
-    for (int i = 0; i < lights.size(); i++) {
-      Vector4f pos = lights.get(i).getPosition();
-      Matrix4f lightTransformation=null;
-
-      if (lightCoordinateSystems.get(i)==meshObjects.size()) { //light in world
-        lightTransformation = new Matrix4f(modelView.peek());
-      }
-      else if (lightCoordinateSystems.get(i)==meshObjects.size()+1) { //light
-        // in view
-        lightTransformation = new Matrix4f();
-      }
-      else {//assumed to be object
-        lightTransformation = new Matrix4f(modelView.peek())
-                .mul(trackballTransform)
-                .mul(transforms.get(lightCoordinateSystems.get(i)));
-      }
-      pos = lightTransformation.transform(pos);
-      gl.glUniform4fv(lightLocations.get(i).position, 1, pos.get(fb4));
-      gl.glUniform3fv(lightLocations.get(i).ambient, 1, lights.get(i).getAmbient().get(fb4));
-      gl.glUniform3fv(lightLocations.get(i).diffuse, 1, lights.get(i).getDiffuse().get(fb4));
-      gl.glUniform3fv(lightLocations.get(i).specular, 1, lights.get(i).getSpecular().get(fb4));
-    }
 
     /*
      *Supply the shader with all the matrices it expects.
     */
     gl.glUniformMatrix4fv(projectionLocation, 1, false, proj.get(fb16));
     //return;
-
-
-    for (int i = 0; i < meshObjects.size(); i++) {
-      Matrix4f transformation = new Matrix4f().mul(modelView.peek()).mul(trackballTransform).mul(transforms.get(i));
-      Matrix4f normalmatrix = new Matrix4f(transformation);
-      normalmatrix = normalmatrix.invert().transpose();
-      gl.glUniformMatrix4fv(modelviewLocation, 1, false, transformation.get(fb16));
-      gl.glUniformMatrix4fv(normalmatrixLocation, 1, false, normalmatrix.get(fb16));
-
-      if (!textures.get(i).getTexture().getMustFlipVertically()) //for
-      // flipping the
-      // image vertically
-      {
-        textureTransform = new Matrix4f().translate(0, 1, 0).scale(1, -1, 1);
-      } else
-        textureTransform = new Matrix4f();
-
-      textureTransform = new Matrix4f(textureTransform);
-      gl.glUniformMatrix4fv(texturematrixLocation, 1, false, textureTransform.get(fb16));
-      gl.glUniform3fv(materialAmbientLocation, 1, materials.get(i).getAmbient().get(fb4));
-      gl.glUniform3fv(materialDiffuseLocation, 1, materials.get(i).getDiffuse().get(fb4));
-      gl.glUniform3fv(materialSpecularLocation, 1, materials.get(i).getSpecular().get(fb4));
-      gl.glUniform1f(materialShininessLocation, materials.get(i).getShininess());
-
-      if (mipmapped)
-        textures.get(i).getTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL
-                .GL_LINEAR_MIPMAP_LINEAR);
-      else
-        textures.get(i).getTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL
-                .GL_NEAREST);
-      textures.get(i).getTexture().bind(gl);
-      meshObjects.get(i).draw(gla);
-    }
 
     if(scenegraph != null) {
       while (!modelView.empty())
