@@ -24,38 +24,8 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1519">
-              <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LightNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/LightNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2280">
-              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mjolnir.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/mjolnir.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="480">
+              <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -64,38 +34,8 @@
       <file leaf-file-name="TransformNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3560">
-              <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/mace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="157" column="4" lean-forward="false" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pyramid.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="71" column="36" lean-forward="false" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/table.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="33" column="46" lean-forward="true" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+            <state relative-caret-position="2640">
+              <caret line="118" column="38" lean-forward="false" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -114,13 +54,9 @@
       <file leaf-file-name="SceneXMLReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/SceneXMLReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7240">
-              <caret line="197" column="42" lean-forward="false" selection-start-line="197" selection-start-column="42" selection-end-line="197" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1465#1466#0" expanded="false" />
-                <element signature="e#1492#1493#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="387">
+              <caret line="132" column="12" lean-forward="true" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,7 +72,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>vTexCoord</find>
       <find>initShaderProg</find>
       <find>Translate</find>
       <find>&quot;transform&quot;</find>
@@ -166,6 +101,7 @@
       <find>light</find>
       <find>static</find>
       <find>steel2</find>
+      <find>transform</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -918,18 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/SceneXMLReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7240">
-          <caret line="197" column="42" lean-forward="false" selection-start-line="197" selection-start-column="42" selection-end-line="197" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1465#1466#0" expanded="false" />
-            <element signature="e#1492#1493#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../../../JOML/joml-1.9.4.jar!/org/joml/Matrix4f.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -995,16 +919,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3560">
-          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="52" />
+        <state relative-caret-position="2640">
+          <caret line="118" column="38" lean-forward="false" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/SceneXMLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="132" column="12" lean-forward="true" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1519">
-          <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
           <folding />
         </state>
       </provider>

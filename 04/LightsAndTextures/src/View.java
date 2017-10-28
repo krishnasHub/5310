@@ -36,16 +36,7 @@ public class View {
   private Matrix4f proj;
   private Stack<Matrix4f> modelView;
 
-  /*
-  private List<ObjectInstance> meshObjects;
-  private List<util.TextureImage> textures;
-  private List<util.Material> materials;
-  private List<Matrix4f> transforms;
-  private List<util.Light> lights;
-  //0-meshObjects.size()-1 are object coordinates, then world and then view
-  private List<Integer> lightCoordinateSystems;
-  */
-  private Matrix4f trackballTransform, textureTransform;
+  private Matrix4f trackballTransform;
   private float trackballRadius;
   private Vector2f mousePos;
   private boolean mipmapped;
@@ -55,12 +46,11 @@ public class View {
   private sgraph.IScenegraph<VertexAttrib> scenegraphYMCA;
 
 
-  util.ShaderProgram program;
-  util.ShaderLocationsVault shaderLocations;
-  private int modelviewLocation, projectionLocation, normalmatrixLocation, texturematrixLocation;
-  private int materialAmbientLocation, materialDiffuseLocation, materialSpecularLocation, materialShininessLocation;
+  private util.ShaderProgram program;
+  private util.ShaderLocationsVault shaderLocations;
+  private int modelviewLocation, projectionLocation;
+
   private int textureLocation;
-  private List<LightLocation> lightLocations;
   private int numLightsLocation;
   int angleOfRotation;
 
@@ -71,18 +61,6 @@ public class View {
     proj.identity();
 
     modelView = new Stack<Matrix4f>();
-
-    /*
-    meshObjects = new ArrayList<ObjectInstance>();
-    transforms = new ArrayList<Matrix4f>();
-    materials = new ArrayList<util.Material>();
-    lights = new ArrayList<util.Light>();
-    lightCoordinateSystems = new ArrayList<Integer>();
-    lightLocations = new ArrayList<LightLocation>();
-    textures = new ArrayList<util.TextureImage>();
-    textureTransform = new Matrix4f();
-    */
-
     trackballTransform = new Matrix4f();
     angleOfRotation = 0;
     trackballRadius = 300;
@@ -220,6 +198,4 @@ public class View {
     GL3 gl = gla.getGL().getGL3();
 
   }
-
-
 }
