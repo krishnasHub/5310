@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phong-multiple.frag" pinned="false" current-in-tab="false">
+      <file leaf-file-name="phong-multiple.frag" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/shaders/phong-multiple.frag">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="997">
-              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="877">
+              <caret line="78" column="12" lean-forward="false" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pyramid.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pyramid.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+            <state relative-caret-position="267">
+              <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -76,8 +76,8 @@
       <file leaf-file-name="table.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/table.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="14" />
+            <state relative-caret-position="467">
+              <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -86,8 +86,8 @@
       <file leaf-file-name="GL3ScenegraphRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="259" column="23" lean-forward="false" selection-start-line="259" selection-start-column="23" selection-end-line="259" selection-end-column="23" />
+            <state relative-caret-position="901">
+              <caret line="270" column="14" lean-forward="false" selection-start-line="270" selection-start-column="14" selection-end-line="270" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -182,11 +182,11 @@
         <option value="$PROJECT_DIR$/src/View.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/mace.xml" />
         <option value="$PROJECT_DIR$/src/sgraph/LightLocation.java" />
-        <option value="$PROJECT_DIR$/src/shaders/phong-multiple.frag" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/table.xml" />
-        <option value="$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/util/Light.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml" />
+        <option value="$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/table.xml" />
+        <option value="$PROJECT_DIR$/src/shaders/phong-multiple.frag" />
       </list>
     </option>
   </component>
@@ -1026,22 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shaders/phong-multiple.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="997">
-          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="259" column="23" lean-forward="false" selection-start-line="259" selection-start-column="23" selection-end-line="259" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/Light.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -1050,18 +1034,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/table.xml">
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="267">
+          <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml">
+    <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+        <state relative-caret-position="901">
+          <caret line="270" column="14" lean-forward="false" selection-start-line="270" selection-start-column="14" selection-end-line="270" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/table.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shaders/phong-multiple.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="877">
+          <caret line="78" column="12" lean-forward="false" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
           <folding />
         </state>
       </provider>
