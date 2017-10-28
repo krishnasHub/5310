@@ -28,7 +28,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.45 0.45 0.45</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -41,7 +45,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.42 0.42 0.42</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -54,7 +62,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.42 0.42 0.42</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -67,7 +79,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.4 0.4 0.4</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver2.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -80,7 +96,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.4 0.4 0.4</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -94,7 +114,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.4 0.4 0.4</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver2.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -107,7 +131,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <color>0.4 0.4 0.4</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -134,10 +162,11 @@
 
                 <object instanceof="cylinder">
                     <material>
-                        <ambient>0.5 0.25 0</ambient>
-                        <diffuse>0.5 0.25 0</diffuse>
-                        <specular>0.5 0.25 0</specular>
-                        <shininess>100</shininess>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>20</shininess>
+                        <textureName>leather.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -153,7 +182,11 @@
 
                 <object instanceof="sphere">
                     <material>
-                        <color>0.45 0.45 0.45</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -167,7 +200,11 @@
 
                 <object instanceof="sphere">
                     <material>
-                        <color>0.45 0.45 0.45</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -181,7 +218,11 @@
 
                 <object instanceof="sphere">
                     <material>
-                        <color>0.45 0.45 0.45</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -195,7 +236,11 @@
 
                 <object instanceof="sphere">
                     <material>
-                        <color>0.45 0.45 0.45</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -209,7 +254,11 @@
 
                 <object instanceof="sphere">
                     <material>
-                        <color>0.45 0.45 0.45</color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -223,17 +272,13 @@
 
                 <object instanceof="cylinder">
                     <material>
-                        <ambient>0.45 0.45 0.45</ambient>
-                        <diffuse>0.45 0.45 0.45</diffuse>
-                        <specular>0.45 0.45 0.45</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
+                        <textureName>steel2.png</textureName>
                     </material>
-                    <!-- <light name="Light on hammer grip">
-                        <ambient>0.02 0.025 0.1</ambient>
-                        <diffuse>0.2 0.25 1</diffuse>
-                        <specular>0.2 0.25 1</specular>
-                        <position>0 -0.5 0</position>
-                    </light> -->
+
                 </object>
             </transform>
         </group>
