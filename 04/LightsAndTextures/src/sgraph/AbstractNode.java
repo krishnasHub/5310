@@ -121,6 +121,10 @@ public abstract class AbstractNode implements INode
         throw new IllegalArgumentException(getName()+" is not a transform node");
     }
 
+    public void animate(int time) {
+        // Nothing to be done in this node. It's only applicable in the Transform node.
+    }
+
     /**
      * By default, throws an exception. Any nodes that are capable of storing material should
      * override this method

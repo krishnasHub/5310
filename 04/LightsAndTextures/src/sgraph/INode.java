@@ -54,7 +54,6 @@ public interface INode
      */
     void setName(String name);
 
-
     /**
      * Get the name of this node
      * @return the name of this node
@@ -86,6 +85,7 @@ public interface INode
      */
     void setAnimationTransform(Matrix4f m) throws IllegalArgumentException;
 
+    void animate(int time);
 
     /**
      * Set the material associated with this node. Not all types of nodes can have materials associated with them.

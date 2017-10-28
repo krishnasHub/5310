@@ -47,7 +47,8 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
   private INode node;
   private Stack<INode> stackNodes;
   private String data;
-  private Matrix4f transform;
+  private Matrix4f transform, animation_transform;
+  private boolean setting_transform = true;
   private util.Material material;
   private Map<String, INode> subgraph;
 
@@ -67,6 +68,7 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
     scenegraph = new Scenegraph<K>();
     subgraph = new TreeMap<String, INode>();
     transform = new Matrix4f();
+    animation_transform = new Matrix4f();
     material = new util.Material();
   }
 
@@ -144,10 +146,17 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
           throw new SAXException(e.getMessage());
         }
         transform.identity();
+        animation_transform.identity();
         stackNodes.push(node);
         subgraph.put(stackNodes.peek().getName(), stackNodes.peek());
       }
       break;
+      case "set":
+        setting_transform = true;
+        break;
+      case "animate":
+        setting_transform = false;
+        break;
       case "object": {
         String name = "";
         String objectname = "";
@@ -247,17 +256,36 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         stackNodes.peek().setTransform(transform);
         transform.identity();
         break;
+      case "animate":
+        stackNodes.peek().setAnimationTransform(animation_transform);
+        animation_transform.identity();
+        break;
+      case "animationType":
+        sc = new Scanner(data);
+        if(stackNodes.peek() instanceof TransformNode) {
+          ((TransformNode) stackNodes.peek()).addAnimatiors(sc.next().trim());
+        }
+        break;
       case "scale":
         sc = new Scanner(data);
-        transform.scale(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        if(setting_transform)
+          transform.scale(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        else
+          animation_transform.scale(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
       case "rotate":
         sc = new Scanner(data);
-        transform.rotate((float) Math.toRadians(sc.nextFloat()), sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        if(setting_transform)
+          transform.rotate((float) Math.toRadians(sc.nextFloat()), sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        else
+          animation_transform.rotate((float) Math.toRadians(sc.nextFloat()), sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
       case "translate":
         sc = new Scanner(data);
-        transform.translate(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        if(setting_transform)
+          transform.translate(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+        else
+          animation_transform.translate(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
       case "material":
         stackNodes.peek().setMaterial(material);

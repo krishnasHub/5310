@@ -2,6 +2,8 @@ package sgraph;
 
 import org.joml.Matrix4f;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -16,7 +18,9 @@ public class TransformNode extends AbstractNode
      * Matrices storing the static and animation transformations separately, so that they can be
      * changed separately
      */
-    protected Matrix4f transform,animation_transform;
+    protected Matrix4f transform, animation_transform;
+
+    private List<Animator> animations;
 
     /**
      * A reference to its only child
@@ -28,6 +32,7 @@ public class TransformNode extends AbstractNode
         super(graph,name);
         this.transform = new Matrix4f();
         animation_transform = new Matrix4f();
+        animations = new ArrayList<>();
         child = null;
     }
 
@@ -115,11 +120,25 @@ public class TransformNode extends AbstractNode
     public void draw(IScenegraphRenderer context, Stack<Matrix4f> modelView)
     {
         modelView.push(new Matrix4f(modelView.peek()));
-        modelView.peek().mul(animation_transform)
-                        .mul(transform);
+        modelView.peek().mul(transform)
+                        .mul(animation_transform);
         if (child!=null)
             child.draw(context,modelView);
         modelView.pop();
+    }
+
+    @Override
+    public void animate(int time) {
+        Matrix4f animationToApply = new Matrix4f();
+
+        for(int i = 0; i < animations.size(); ++i) {
+            animationToApply = animationToApply.mul((animations.get(i).animate(time)));
+        }
+
+        this.setAnimationTransform(animationToApply);
+
+        if(this.child != null)
+            this.child.animate(time);
     }
 
 
@@ -132,6 +151,20 @@ public class TransformNode extends AbstractNode
         animation_transform = new Matrix4f(mat);
     }
 
+    public void addAnimatiors(String animators) {
+        String[] animatorNames = animators.split("\\,");
+
+        for(int i = 0; i < animatorNames.length; ++i) {
+            try {
+                String className = "sgraph." + animatorNames[i].trim();
+                Class c = Class.forName(className);
+                Animator anim = (Animator) c.newInstance();
+                this.animations.add(anim);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
     /**
      * Gets the transform at this node (not the animation transform)
      * @return

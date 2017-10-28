@@ -8,6 +8,7 @@ import com.jogamp.opengl.math.Matrix4;
 import com.jogamp.opengl.util.texture.Texture;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
+import org.omg.CORBA.INTERNAL;
 import util.IVertexData;
 import util.Light;
 import util.TextureImage;
@@ -280,6 +281,8 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
 
     Vector4f oldPosition;
 
+    int timer = 0;
+
     public void drawLight() {
         GL3 gl = glContext.getGL().getGL3();
 
@@ -357,6 +360,11 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
     }
 
     public void clearRenderer() {
+        timer++;
+
+        if(timer == Integer.MAX_VALUE - 10)
+            timer = 0;
+
         if(allLights == null)
             allLights = new ArrayList<>();
         else

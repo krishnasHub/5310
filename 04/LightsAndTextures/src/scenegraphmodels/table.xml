@@ -87,10 +87,19 @@
                 <rotate>180 0 0 1</rotate>
                 <scale>0.6 0.6 0.6</scale>
             </set>
+            <animationType>RotateByZ</animationType>
+
             <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
         </transform>
 
-
+        <!--
+        <transform name="Machine">
+            <set>
+                <translate>-200 12 0</translate>
+                <scale>0.3 0.3 0.3</scale>
+            </set>
+            <group name="Entire Mace" from="scenegraphmodels/davinci.xml"></group>
+        </transform> -->
 
 
         <transform name="MJolnir">

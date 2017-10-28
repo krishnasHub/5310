@@ -78,6 +78,13 @@ public class GroupNode extends AbstractNode
         }
     }
 
+    public void animate(int time) {
+        for (int i=0;i<children.size();i++)
+        {
+            children.get(i).animate(time);
+        }
+    }
+
     /**
      * Makes a deep copy of the subtree rooted at this node
      * @return a deep copy of the subtree rooted at this node

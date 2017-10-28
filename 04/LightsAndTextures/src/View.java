@@ -120,9 +120,13 @@ public class View {
   private Vector3f eyePosition = new Vector3f(0.0f, 0.0f, 200.0f);
   private Vector3f lookAtPosition = new Vector3f(0, 0, 0);
   private Vector3f upVector = new Vector3f(0, 1, 0);
+  private int timer = 0;
 
   public void draw(GLAutoDrawable gla) {
+    timer++;
     renderer.clearRenderer();
+    if(timer == Integer.MAX_VALUE - 10)
+      timer = 0;
 
     GL3 gl = gla.getGL().getGL3();
     FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
@@ -144,6 +148,8 @@ public class View {
     gl.glUniformMatrix4fv(projectionLocation, 1, false, proj.get(fb16));
 
     if(scenegraph != null) {
+      scenegraph.animate(timer);
+
       while (!modelView.empty())
         modelView.pop();
 
