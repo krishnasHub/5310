@@ -268,7 +268,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
 
         for(int i = 0; i < allLights.size(); ++i) {
             Light light = allLights.get(i);
-            //tinkerLightPos(light);
+            tinkerLightPos(light);
             Matrix4f transformation = allTransformations.get(i);
             FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
 

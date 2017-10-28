@@ -14,6 +14,7 @@
 
     <group name="Entire Table">
         <light name="Table Light">
+            <ambient>0.03 0.03 0.03</ambient>
             <diffuse>0.8 0.8 0.8</diffuse>
             <specular>0.8 0.8 0.8</specular>
             <position>0 30 0 </position>

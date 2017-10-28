@@ -77,6 +77,7 @@ void main()
         if(inCone)
         {
             spotLightAmount = (dDotmL - cos(light[i].spotCutoff)) / dDotmL;
+            spotLightAmount = 1;
             fColor = fColor + vec4(spotLightAmount * (ambient + diffuse + specular),1.0);
         }
     }
