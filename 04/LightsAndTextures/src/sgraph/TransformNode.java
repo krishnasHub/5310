@@ -152,7 +152,7 @@ public class TransformNode extends AbstractNode
     }
 
     public void addAnimatiors(String animators) {
-        String[] animatorNames = animators.split("\\,");
+        String[] animatorNames = animators.split("\\+");
 
         for(int i = 0; i < animatorNames.length; ++i) {
             try {

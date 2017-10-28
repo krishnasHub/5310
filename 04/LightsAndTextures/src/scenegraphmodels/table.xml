@@ -87,8 +87,8 @@
                 <rotate>180 0 0 1</rotate>
                 <scale>0.6 0.6 0.6</scale>
             </set>
-            <animationType>RotateByZ</animationType>
 
+            <animationType>RotateByZ</animationType>
             <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
         </transform>
 
@@ -104,10 +104,10 @@
 
         <transform name="MJolnir">
             <set>
-                <translate>15 8 -20</translate>
-                <rotate>180 0 0 1</rotate>
                 <scale>0.4 0.4 0.4</scale>
             </set>
+            <animationType>Revolve100+RotateByZ</animationType>
+
             <group name="Entire Mjolnir" from="scenegraphmodels/mjolnir.xml"></group>
         </transform>
 
