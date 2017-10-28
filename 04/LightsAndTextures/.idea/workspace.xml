@@ -60,15 +60,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="1089" column="19" lean-forward="false" selection-start-line="1089" selection-start-column="18" selection-end-line="1089" selection-end-column="19" />
+            <state relative-caret-position="396">
+              <caret line="1032" column="9" lean-forward="true" selection-start-line="1032" selection-start-column="9" selection-end-line="1032" selection-end-column="9" />
               <folding>
-                <element signature="e#7070#7076#0" expanded="true" />
-                <element signature="e#7085#7091#0" expanded="true" />
+                <element signature="e#6486#6492#0" expanded="true" />
+                <element signature="e#6501#6507#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="davinci.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/davinci.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="disc.obj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/disc.obj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gear.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/gear.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,6 +207,7 @@
         <option value="$PROJECT_DIR$/src/scenegraphmodels/table.xml" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/mjolnir.xml" />
         <option value="$PROJECT_DIR$/src/View.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -263,10 +294,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/models" />
+      <recent name="$PROJECT_DIR$/src/scenegraphmodels" />
       <recent name="F:\Computer Graphics\Projects\Java\shared\5310\04\LightsAndTextures\src\models" />
       <recent name="F:\Computer Graphics\Projects\Java\shared\5310\04\LightsAndTextures\src\scenegraphmodels" />
       <recent name="F:\Computer Graphics\Projects\Java\shared\5310\04\LightsAndTextures\src" />
-      <recent name="F:\Computer Graphics\Projects\Java\shared\5310\LightsAndTextures\src\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -601,14 +633,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/shaders/phong-multiple.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="73" column="1" lean-forward="false" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LightsTextures.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -931,11 +955,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/disc.obj">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="396">
+          <caret line="1032" column="9" lean-forward="true" selection-start-line="1032" selection-start-column="9" selection-end-line="1032" selection-end-column="9" />
+          <folding>
+            <element signature="e#6486#6492#0" expanded="true" />
+            <element signature="e#6501#6507#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -943,6 +970,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/disc.obj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
