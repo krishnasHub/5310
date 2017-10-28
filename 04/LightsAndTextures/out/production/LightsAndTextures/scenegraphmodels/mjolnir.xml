@@ -18,6 +18,15 @@
                     <material>
                         <color>0.4 0.4 0.4</color>
                     </material>
+
+                    <light name="Headloght">
+                        <diffuse>0.0 0.0 0.9</diffuse>
+                        <specular>0.0 0.0 0.9</specular>
+                        <position>0 2 0 </position>
+                        <spotangle>60</spotangle>
+                        <spotdirection>0 -1 0 </spotdirection>
+                    </light>
+
                 </object>
             </transform>
 

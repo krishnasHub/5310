@@ -92,6 +92,9 @@
             <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
         </transform>
 
+
+
+
         <!--
         <transform name="Machine">
             <set>
