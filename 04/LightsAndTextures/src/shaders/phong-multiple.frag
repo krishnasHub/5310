@@ -39,8 +39,7 @@ void main()
     vec3 lightVec,viewVec,reflectVec;
     vec3 normalView;
     vec3 ambient,diffuse,specular;
-    float nDotL,rDotV;
-
+    float nDotL,rDotV,dDotmL;
 
     fColor = vec4(0,0,0,1);
 
@@ -63,13 +62,19 @@ void main()
 
         rDotV = max(dot(reflectVec,viewVec),0.0);
 
+        dDotmL = dot(light[i].spotDirection, -lightVec);
+        bool inCone = (dDotmL >= cos(light[i].spotCutoff));
+
+
         ambient = material.ambient * light[i].ambient;
         diffuse = material.diffuse * light[i].diffuse * max(nDotL,0);
         if (nDotL>0)
             specular = material.specular * light[i].specular * pow(rDotV,material.shininess);
         else
             specular = vec3(0,0,0);
-        fColor = fColor + vec4(ambient+diffuse+specular,1.0);
+
+        if(inCone)
+            fColor = fColor + vec4(ambient+diffuse+specular,1.0);
     }
     fColor = fColor * texture(image,fTexCoord.st);
     //fColor = vec4(fTexCoord.s,fTexCoord.t,0,1);

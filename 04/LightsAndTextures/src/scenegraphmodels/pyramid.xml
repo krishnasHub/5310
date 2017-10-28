@@ -73,6 +73,7 @@
                     </material>
 
 
+
                     <light name="Light on pyramid top">
                         <diffuse>0.8 0.8 0.8</diffuse>
                         <specular>0.63 0.298 0</specular>

@@ -16,8 +16,8 @@
         <light name="Table Light">
             <diffuse>0.8 0.8 0.8</diffuse>
             <specular>0.8 0.8 0.8</specular>
-            <position>0 10 0 </position>
-            <spotangle>0.01</spotangle>
+            <position>0 20 0 </position>
+            <spotangle>60</spotangle>
             <spotdirection>0 -1 0 </spotdirection>
         </light>
 
