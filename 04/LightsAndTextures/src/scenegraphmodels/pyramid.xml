@@ -72,15 +72,6 @@
                         <textureName>sandstone2.png</textureName>
                     </material>
 
-
-
-                    <light name="Light on pyramid top">
-                        <diffuse>0.8 0.8 0.8</diffuse>
-                        <specular>0.8 0.8 0.8</specular>
-                        <position>0 12 0</position>
-                        <spotdirection>0 1 0 </spotdirection>
-                    </light>
-
                 </object>
             </transform>
 

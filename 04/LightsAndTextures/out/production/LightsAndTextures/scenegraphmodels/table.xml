@@ -15,10 +15,10 @@
     <group name="Entire Table">
         <light name="Table Light">
             <ambient>0.03 0.03 0.03</ambient>
-            <diffuse>0.8 0.8 0.8</diffuse>
-            <specular>0.8 0.8 0.8</specular>
-            <position>0 30 0 </position>
-            <spotangle>60</spotangle>
+            <diffuse>0.8 0.0 0.0</diffuse>
+            <specular>0.8 0.0 0.0</specular>
+            <position>-10 20 10 </position>
+            <spotangle>40</spotangle>
             <spotdirection>0 -1 0 </spotdirection>
         </light>
 
@@ -36,10 +36,33 @@
                     <textureName>wood.png</textureName>
                 </material>
 
-
+                <light name="Table Light 2">
+                    <ambient>0.3 0.3 0.3</ambient>
+                    <diffuse>0.6 0.6 0.6</diffuse>
+                    <specular>0.6 0.6 0.6</specular>
+                    <position>0 20 0 </position>
+                </light>
 
             </object>
         </transform>
+
+        <light name="Table Light 1">
+            <ambient>0.03 0.03 0.03</ambient>
+            <diffuse>0.0 0.8 0.0</diffuse>
+            <specular>0.0 0.8 0.0</specular>
+            <position>0 20 0 </position>
+            <spotangle>40</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
+        <light name="Table Light 2">
+            <ambient>0.03 0.03 0.03</ambient>
+            <diffuse>0.0 0.0 0.8</diffuse>
+            <specular>0.0 0.0 0.8</specular>
+            <position>10 20 10 </position>
+            <spotangle>40</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
 
         <!--
         <transform name="Totem">
@@ -54,6 +77,7 @@
                 </material>
             </object>
         </transform> -->
+
 
         <transform name="Mace">
             <set>

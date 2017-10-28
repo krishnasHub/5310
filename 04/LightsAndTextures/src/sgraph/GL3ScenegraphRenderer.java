@@ -263,12 +263,31 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
         light.setPosition(pos);
     }
 
+    private void comparePositions(Vector4f pos) {
+        if(oldPosition == null) {
+            oldPosition = new Vector4f(pos);
+            return;
+        }
+
+        if(oldPosition.x != pos.x || oldPosition.y != pos.y || oldPosition.z != pos.z) {
+            //System.out.println("pos and oldPos are different:");
+            //System.out.println("oldPos: x=" + oldPosition.x + ", y=" + oldPosition.y + ", z=" + oldPosition.z);
+            //System.out.println("pos: x=" + pos.x + ", y=" + pos.y + ", z=" + pos.z);
+
+            oldPosition = new Vector4f(pos);
+        }
+    }
+
+    Vector4f oldPosition;
+
     public void drawLight() {
         GL3 gl = glContext.getGL().getGL3();
 
         for(int i = 0; i < allLights.size(); ++i) {
             Light light = allLights.get(i);
-            tinkerLightPos(light);
+
+
+            //tinkerLightPos(light);
             Matrix4f transformation = allTransformations.get(i);
             FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
 
@@ -293,6 +312,8 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             pos = lightTransformation.transform(pos);
             spotDir = lightTransformation.transform(spotDir);
             spotDir = spotDir.normalize();
+
+            comparePositions(pos);
 
             gl.glUniform4fv(ll.position, 1, pos.get(fb4));
             gl.glUniform3fv(ll.ambient, 1, light.getAmbient().get(fb4));

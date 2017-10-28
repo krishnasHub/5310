@@ -24,8 +24,38 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9240">
+            <state relative-caret-position="-160">
               <caret line="251" column="39" lean-forward="false" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LightNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sgraph/LightNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2280">
+              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransformNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="649">
+              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,18 +74,8 @@
       <file leaf-file-name="mace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/mace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6200">
-              <caret line="155" column="27" lean-forward="false" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mjolnir.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/mjolnir.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9200">
-              <caret line="230" column="25" lean-forward="false" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
+            <state relative-caret-position="464">
+              <caret line="157" column="4" lean-forward="false" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -64,38 +84,28 @@
       <file leaf-file-name="pyramid.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3200">
-              <caret line="80" column="41" lean-forward="false" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
+            <state relative-caret-position="400">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="table.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/table.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="840">
-              <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="50" />
+              <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GL3ScenegraphRenderer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GL3ScenegraphRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="291" column="0" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Light.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/Light.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+            <state relative-caret-position="464">
+              <caret line="272" column="14" lean-forward="false" selection-start-line="272" selection-start-column="14" selection-end-line="272" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -106,7 +116,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="7240">
               <caret line="197" column="42" lean-forward="false" selection-start-line="197" selection-start-column="42" selection-end-line="197" selection-end-column="42" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1465#1466#0" expanded="false" />
+                <element signature="e#1492#1493#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,7 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sphere</find>
       <find>position</find>
       <find>vTexCoord</find>
       <find>initShaderProg</find>
@@ -152,6 +165,7 @@
       <find>spotangle</find>
       <find>nDotL</find>
       <find>light</find>
+      <find>static</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -178,13 +192,13 @@
         <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/mjolnir.xml" />
         <option value="$PROJECT_DIR$/src/View.java" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/mace.xml" />
         <option value="$PROJECT_DIR$/src/sgraph/LightLocation.java" />
         <option value="$PROJECT_DIR$/src/util/Light.java" />
         <option value="$PROJECT_DIR$/src/shaders/phong-multiple.frag" />
-        <option value="$PROJECT_DIR$/src/scenegraphmodels/table.xml" />
         <option value="$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/mace.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphmodels/table.xml" />
       </list>
     </option>
   </component>
@@ -315,24 +329,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scenegraphmodels" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightsAndTextures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LightsAndTextures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -672,7 +668,7 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -865,13 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="114" column="75" lean-forward="false" selection-start-line="114" selection-start-column="66" selection-end-line="114" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/humanoid-lights.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -887,14 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/LightNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/MeshInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -907,13 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2279">
           <caret line="65" column="14" lean-forward="false" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -938,22 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9200">
           <caret line="230" column="25" lean-forward="false" selection-start-line="230" selection-start-column="25" selection-end-line="230" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9240">
-          <caret line="251" column="39" lean-forward="false" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/mace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6200">
-          <caret line="155" column="27" lean-forward="false" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -993,23 +951,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7240">
           <caret line="197" column="42" lean-forward="false" selection-start-line="197" selection-start-column="42" selection-end-line="197" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/table.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3200">
-          <caret line="80" column="41" lean-forward="false" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1465#1466#0" expanded="false" />
+            <element signature="e#1492#1493#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,10 +966,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="251" column="39" lean-forward="false" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/LightNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/LeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2280">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sgraph/TransformNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="649">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sgraph/GL3ScenegraphRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="291" column="0" lean-forward="true" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+        <state relative-caret-position="464">
+          <caret line="272" column="14" lean-forward="false" selection-start-line="272" selection-start-column="14" selection-end-line="272" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/pyramid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/mace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="157" column="4" lean-forward="false" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphmodels/table.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
           <folding />
         </state>
       </provider>
