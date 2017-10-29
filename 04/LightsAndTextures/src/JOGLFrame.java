@@ -65,12 +65,12 @@ public class JOGLFrame extends JFrame {
       public void display(GLAutoDrawable glAutoDrawable) { //called every time this window must be redrawn
 
         view.draw(glAutoDrawable);
-        textRenderer.beginRendering(canvas.getWidth(), canvas.getHeight());
+        //textRenderer.beginRendering(canvas.getWidth(), canvas.getHeight());
         // optionally set the color
-        textRenderer.setColor(1.0f, 1.0f, 0.0f, 1.0f);
+        //textRenderer.setColor(1.0f, 1.0f, 0.0f, 1.0f);
         String text = "Frame rate: " + canvas.getAnimator().getLastFPS();
-        textRenderer.draw(text, 10, canvas.getHeight() - 50);
-        textRenderer.endRendering();
+        //textRenderer.draw(text, 10, canvas.getHeight() - 50);
+        //textRenderer.endRendering();
       }
 
       @Override
