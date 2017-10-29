@@ -14,6 +14,11 @@
                 <object instanceof="disc">
                     <material>
                         <color> 1 0 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone1.png</textureName>
                     </material>
                 </object>
             </group>
@@ -29,6 +34,11 @@
                 <object instanceof="disc">
                     <material>
                         <color> 1 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -44,6 +54,11 @@
                 <object instanceof="disc">
                     <material>
                         <color> 1 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>steel1.png</textureName>
                     </material>
                 </object>
             </group>
@@ -59,6 +74,11 @@
                 <object instanceof="cylinder">
                     <material>
                         <color> 1 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>steel2.png</textureName>
                     </material>
                 </object>
             </group>
@@ -73,6 +93,11 @@
                 <object instanceof="cylinder">
                     <material>
                         <color> 1 0 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>steel1.png</textureName>
                     </material>
                 </object>
             </group>
@@ -87,6 +112,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -102,6 +132,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -117,6 +152,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -132,6 +172,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -147,6 +192,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -162,6 +212,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -177,6 +232,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -192,6 +252,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -207,6 +272,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -222,6 +292,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -237,6 +312,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -252,6 +332,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -267,6 +352,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -282,6 +372,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -297,6 +392,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -312,6 +412,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -327,6 +432,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -342,6 +452,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -356,6 +471,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -371,6 +491,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -386,6 +511,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -401,6 +531,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -416,6 +551,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -431,6 +571,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
                     </material>
                 </object>
             </group>
@@ -445,6 +590,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </group>
@@ -460,6 +610,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </group>
@@ -475,6 +630,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </group>
@@ -490,6 +650,11 @@
                 <object instanceof="box">
                     <material>
                         <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </group>

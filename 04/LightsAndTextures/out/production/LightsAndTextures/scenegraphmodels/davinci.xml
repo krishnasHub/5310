@@ -1,7 +1,10 @@
 <scene>
     <transform name="davinciHelicopter">
         <set>
+            <scale>.05 .05 .05</scale>
+            <rotate>90 1 0 0</rotate>
         </set>
+        <animationType>RotateY2</animationType>
         <group name="base">
             <transform name="bottomplatform">
                 <set>
@@ -12,6 +15,12 @@
                     <object instanceof="box">
                         <material>
                             <color>0 0 1</color>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>1 1 1</diffuse>
+                            <specular>1 1 1</specular>
+                            <shininess>50</shininess>
+                            <textureName>wood_leg.png</textureName>
+
                         </material>
                     </object>
                 </group>
@@ -25,6 +34,11 @@
                     <object instanceof="box">
                         <material>
                             <color>0 1 0</color>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>1 1 1</diffuse>
+                            <specular>1 1 1</specular>
+                            <shininess>50</shininess>
+                            <textureName>wood_leg.png</textureName>
                         </material>
                     </object>
                 </group>
@@ -39,6 +53,11 @@
                     <object instanceof="box">
                         <material>
                             <color>0 1 0</color>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>1 1 1</diffuse>
+                            <specular>1 1 1</specular>
+                            <shininess>50</shininess>
+                            <textureName>wood_leg.png</textureName>
                         </material>
                     </object>
                 </group>
@@ -53,6 +72,11 @@
                     <object instanceof="box">
                         <material>
                             <color>0 1 0</color>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>1 1 1</diffuse>
+                            <specular>1 1 1</specular>
+                            <shininess>50</shininess>
+                            <textureName>wood_leg.png</textureName>
                         </material>
                     </object>
                 </group>
@@ -67,6 +91,11 @@
                     <object instanceof="box">
                         <material>
                             <color>0 1 0</color>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>1 1 1</diffuse>
+                            <specular>1 1 1</specular>
+                            <shininess>50</shininess>
+                            <textureName>wood_leg.png</textureName>
                         </material>
                     </object>
                 </group>
@@ -84,6 +113,11 @@
                             <object instanceof="box">
                                 <material>
                                     <color>1 0 0</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -100,6 +134,11 @@
                             <object instanceof="cylinder">
                                 <material>
                                     <color>1 0 0</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -107,7 +146,6 @@
 
                 </group>
             </transform>
-
 
 
             <transform name="center driver">
@@ -119,7 +157,6 @@
                     <transform name="centerBeam">
                         <set>
                             <!-- spin horizontal gear and beam-->
-                            <rotate>0 0 1 0</rotate>
                         </set>
                         <group>
                             <transform name="mainBeam">
@@ -131,6 +168,11 @@
                                     <object instanceof="cylinder">
                                         <material>
                                             <color>0 0 1</color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>50</shininess>
+                                            <textureName>silver.png</textureName>
                                         </material>
                                     </object>
                                 </group>
@@ -140,6 +182,7 @@
                                     <translate>10 100 -70</translate>
                                     <rotate>90 1 0 0</rotate>
                                 </set>
+                                <animationType>RotateZ</animationType>
                                 <group name="room1" from="scenegraphmodels/gear.xml">
                                 </group>
                             </transform>
@@ -154,6 +197,7 @@
                             <!--spin vertical gear and crank-->
                             <rotate>10 1 0 0</rotate>
                         </set>
+                        <animationType>RotateX</animationType>
                         <group>
                             <transform name="leftcrank">
                                 <set>
@@ -165,6 +209,11 @@
                                     <object instanceof="cylinder">
                                         <material>
                                             <color>0 0 1</color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>50</shininess>
+                                            <textureName>silver.png</textureName>
                                         </material>
                                     </object>
                                 </group>
@@ -198,6 +247,11 @@
                             <object instanceof="cylinder">
                                 <material>
                                     <color>1 0 0</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -211,6 +265,11 @@
                             <object instanceof="cylinder">
                                 <material>
                                     <color>0 1 0</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -226,6 +285,11 @@
                             <object instanceof="cylinder">
                                 <material>
                                     <color>0 0 1</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -241,6 +305,11 @@
                             <object instanceof="cylinder">
                                 <material>
                                     <color>0 0 1</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -257,6 +326,11 @@
                             <object instanceof="cylinder">
                                 <material>
                                     <color>0 0 1</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -273,6 +347,11 @@
                             <object instanceof="cylinder">
                                 <material>
                                     <color>0 0 1</color>
+                                    <ambient>1 1 1</ambient>
+                                    <diffuse>1 1 1</diffuse>
+                                    <specular>1 1 1</specular>
+                                    <shininess>50</shininess>
+                                    <textureName>wood_leg.png</textureName>
                                 </material>
                             </object>
                         </group>
@@ -284,6 +363,7 @@
                             <!-- spinning chopper blades-->
                             <rotate>45 0 1 0</rotate>
                         </set>
+                        <animationType>RotateY</animationType>
                         <group>
                             <transform>
                                 <set>
@@ -293,6 +373,11 @@
                                     <object instanceof="box">
                                         <material>
                                             <color>1 0 0</color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>50</shininess>
+                                            <textureName>steel1.png</textureName>
                                         </material>
                                     </object>
                                 </group>
@@ -306,6 +391,11 @@
                                     <object instanceof="box">
                                         <material>
                                             <color>1 0 0</color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>50</shininess>
+                                            <textureName>steel2.png</textureName>
                                         </material>
                                     </object>
                                 </group>

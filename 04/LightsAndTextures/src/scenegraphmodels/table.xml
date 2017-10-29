@@ -93,6 +93,14 @@
         </transform>
 
 
+        <transform name="davinci">
+            <set>
+                <translate>10 35 0</translate>
+            </set>
+            <animationType>Revolve10</animationType>
+            <group name="davinci" from="scenegraphmodels/davinci.xml"></group>
+        </transform>
+
 
 
         <!--
