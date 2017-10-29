@@ -25,6 +25,12 @@
                     </object>
                 </group>
             </transform>
+            <!--humanoid goes here-->
+
+
+
+
+            
             <transform name="Bottom Platform Support Top Platform 1">
                 <set>
                     <translate>10 25 50</translate>
@@ -164,6 +170,7 @@
                                     <translate>10 -100 -70</translate>
                                     <scale>10 425 10</scale>
                                 </set>
+                                <animationType>RotateY</animationType>
                                 <group>
                                     <object instanceof="cylinder">
                                         <material>
