@@ -25,19 +25,19 @@
                     </object>
                 </group>
             </transform>
-            <transform name="Y-humanoid">
+
+            <!--humanoid goes here-->
+            <transform name="humanoid">
                 <set>
-                    <translate>15 20 15</translate>
-                    <scale>500 500 500</scale>
+                    <translate>70 -100 70</translate>
+                    <scale>100 100 100</scale>
                 </set>
-                <group>
-                    <object instanceof="humanoid">
-                        <material>
-                            <color>0 1 0</color>
-                        </material>
-                    </object>
+                <group name="humanoid" from="scenegraphmodels/Y-humanoid.xml">
                 </group>
             </transform>
+
+
+            
             <transform name="Bottom Platform Support Top Platform 1">
                 <set>
                     <translate>10 25 50</translate>

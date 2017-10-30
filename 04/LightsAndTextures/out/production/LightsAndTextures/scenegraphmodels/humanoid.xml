@@ -8,11 +8,14 @@
             <translate>0 -36 0</translate>
             <scale>72 72 72</scale>
         </set>
+
+        <animationType>RotateY</animationType>
         <group name="unit-height-humanoid">
             <transform>
                 <set>
                     <scale>0.0125 0.0125 0.0125</scale>
                 </set>
+
                 <group>
                     <group name="lowerbody">
                         <transform name="leftleg">
@@ -120,6 +123,7 @@
                                         <rotate>90 0 0 1</rotate>
                                         <scale>1 20 1</scale>
                                     </set>
+
                                     <object instanceof="cylinder">
                                         <material>
                                             <color>1 1 0</color>
@@ -153,6 +157,7 @@
                                                 <set>
                                                     <translate>0 -11 0</translate>
                                                 </set>
+
                                                 <transform name="leftelbow">
                                                     <set>
                                                         <scale>2 2 2</scale>
