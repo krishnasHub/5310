@@ -25,6 +25,19 @@
                     </object>
                 </group>
             </transform>
+
+            <!--humanoid goes here-->
+            <transform name="humanoid">
+                <set>
+                    <translate>110 -100 -80</translate>
+                    <scale>100 100 100</scale>
+                </set>
+                <group name="humanoid" from="scenegraphmodels/Y-humanoid.xml">
+                </group>
+            </transform>
+
+
+            
             <transform name="Bottom Platform Support Top Platform 1">
                 <set>
                     <translate>10 25 50</translate>
@@ -164,6 +177,7 @@
                                     <translate>10 -100 -70</translate>
                                     <scale>10 425 10</scale>
                                 </set>
+                                <animationType>RotateY</animationType>
                                 <group>
                                     <object instanceof="cylinder">
                                         <material>

@@ -1,0 +1,87 @@
+<scene>
+    <transform>
+        <set>
+            <group>
+                <transform name="moveWholeScene">
+                    <set>
+                        <!--use this translate to move the whole scene around during testing-->
+                        <translate>-150 -100 330</translate>
+                        <rotate>90 0 1 0</rotate>
+                    </set>
+                    <group name="wholeScene">
+                        <transform name="room1">
+                            <set>
+                            </set>
+                            <group name="room1" from="scenegraphmodels/room.xml">
+                            </group>
+                        </transform>
+                        <transform name="room2">
+                            <set>
+                                <translate>0 0 300</translate>
+                                <rotate>180 0 1 0</rotate>
+                            </set>
+                            <group name="room2" from="scenegraphmodels/room.xml">
+                            </group>
+                        </transform>
+                        <transform name="room3">
+                            <set>
+                                <translate>600 0 150</translate>
+                                <rotate>-90 0 1 0</rotate>
+                            </set>
+                            <group name="room3" from="scenegraphmodels/room-with-table.xml">
+                            </group>
+                        </transform>
+                        <transform>
+                            <set>
+                                <translate>200 0 150</translate>
+                            </set>
+                            <group name="hallway1-2" from="scenegraphmodels/hallway.xml">
+                            </group>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <translate>0 8 320</translate>
+                                <rotate>45 0 1 0</rotate>
+                                <rotate>180 0 0 1</rotate>
+                                <scale>0.4 0.4 0.4</scale>
+                            </set>
+                            <group name="Thors-hammer" from="scenegraphmodels/mjolnir.xml">
+                            </group>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <translate>80 15 -30</translate>
+                                <rotate>160 0 0 1</rotate>
+                                <scale>0.6 0.6 0.6</scale>
+                            </set>
+                            <group name="strong-mace" from="scenegraphmodels/mace.xml">
+                            </group>
+                        </transform>
+                        <transform>
+                            <set>
+                                <translate>80 15 0</translate>
+                                <rotate>160 0 0 1</rotate>
+                                <scale>0.6 0.6 0.6</scale>
+                            </set>
+                            <group name="strong-mace" from="scenegraphmodels/mace.xml">
+                            </group>
+                        </transform>
+                        <transform>
+                            <set>
+                                <translate>80 15 30</translate>
+                                <rotate>160 0 0 1</rotate>
+                                <scale>0.6 0.6 0.6</scale>
+                            </set>
+                            <group name="strong-mace" from="scenegraphmodels/mace.xml">
+                            </group>
+                        </transform>
+
+
+                    </group>
+                </transform>
+            </group>
+        </set>
+    </transform>
+</scene>
