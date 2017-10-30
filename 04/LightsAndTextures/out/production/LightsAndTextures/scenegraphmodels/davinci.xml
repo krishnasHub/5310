@@ -29,7 +29,7 @@
             <!--humanoid goes here-->
             <transform name="humanoid">
                 <set>
-                    <translate>70 -100 70</translate>
+                    <translate>82 -210 83</translate>
                     <scale>100 100 100</scale>
                 </set>
                 <group name="humanoid" from="scenegraphmodels/Y-humanoid.xml">
