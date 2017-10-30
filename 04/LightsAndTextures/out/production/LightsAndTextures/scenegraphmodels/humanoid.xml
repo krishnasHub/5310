@@ -9,7 +9,6 @@
             <scale>72 72 72</scale>
         </set>
 
-        <animationType>RotateY</animationType>
         <group name="unit-height-humanoid">
             <transform>
                 <set>

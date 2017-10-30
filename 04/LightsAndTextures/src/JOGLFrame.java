@@ -98,11 +98,7 @@ public class JOGLFrame extends JFrame {
 
     @Override
     public void keyPressed(KeyEvent e) {
-      switch (e.getKeyCode()) {
-        case KeyEvent.VK_M:
-          view.toggleMipmapping();
-          break;
-      }
+      JOGLFrame.this.view.keyEvent(e);
     }
 
     @Override

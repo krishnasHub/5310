@@ -14,6 +14,7 @@ import sgraph.LightNode;
 import util.ObjectInstance;
 
 
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.nio.FloatBuffer;
 import java.util.*;
@@ -28,9 +29,14 @@ import java.util.*;
  */
 public class View {
 
+  private static final String SCENE = "scenegraphmodels/testScene.xml";
   private static final String TABLE = "scenegraphmodels/table.xml";
   private static final String HUMANOID = "scenegraphmodels/humanoid-lights.xml";
-  private static final String SCENE_GRAPH_XML = TABLE;
+  private static final String SCENE_GRAPH_XML = SCENE;
+
+  private static final float DISPLACEMENT = 10.0f;
+  private static final float PAN_ANGLE = 2f;
+  private static final float CAM_DIST = 1f;
 
   private int WINDOW_WIDTH, WINDOW_HEIGHT;
   private Matrix4f proj;
@@ -53,6 +59,11 @@ public class View {
   private int textureLocation;
   private int numLightsLocation;
   int angleOfRotation;
+
+  private float angle_xz = 0;
+  private float angle_yz = 0;
+  private float savedAngle_xz = angle_xz;
+  private float savedAngle_yz = angle_yz;
 
   private sgraph.IScenegraphRenderer renderer;
 
@@ -169,6 +180,100 @@ public class View {
     program.disable(gl);
   }
 
+  private void zoomInDirection(int dir) {
+    eyePosition.z -= lookingForward * (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
+    eyePosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
+    eyePosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
+
+    lookAtPosition.z -= lookingForward * (float)(DISPLACEMENT * dir * Math.cos(Math.toRadians(angle_xz)));
+    lookAtPosition.x += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_xz)));
+    lookAtPosition.y += (float)(DISPLACEMENT * dir * Math.sin(Math.toRadians(angle_yz)));
+  }
+
+  int lookingForward = 1;
+
+  private void updateLookAtPosition() {
+    float x = eyePosition.x;
+    float y = eyePosition.y;
+    float z = eyePosition.z;
+
+    if(angle_yz >= 94 && angle_yz <= 270) {
+      upVector.y = -1;
+      lookingForward = -1;
+    } else {
+      upVector.y = 1;
+      lookingForward = 1;
+    }
+
+    lookAtPosition.x = x + CAM_DIST * (float) Math.sin(Math.toRadians(angle_xz));
+    lookAtPosition.z = z - lookingForward * CAM_DIST * (float) Math.cos(Math.toRadians(angle_xz));
+    lookAtPosition.y = y + CAM_DIST * (float) Math.sin(Math.toRadians(angle_yz));
+
+    //printCam();
+  }
+
+  private void printCam() {
+    System.out.println("eyePosition: x=" + eyePosition.x + ", y=" + eyePosition.y + ", z=" + eyePosition.z);
+    System.out.println("lookAtPosition: x=" + lookAtPosition.x + ", y=" + lookAtPosition.y + ", z=" + lookAtPosition.z);
+  }
+
+  private void rotateInDirection(int dir) {
+    //lookAtPosition.x += dir * DISPLACEMENT;
+
+    angle_xz += PAN_ANGLE * dir;
+
+    if(angle_xz < 0)
+      angle_xz = 360f + angle_xz;
+
+    angle_xz = angle_xz % 360;
+
+    System.out.println("angle_xz=" + angle_xz);
+
+
+    updateLookAtPosition();
+  }
+
+  private void nodInDirection(int dir) {
+    //lookAtPosition.y += dir * DISPLACEMENT;
+
+    angle_yz += PAN_ANGLE * dir;
+
+    if(angle_yz < 0)
+      angle_yz = 360f + angle_yz;
+
+    angle_yz = angle_yz % 360;
+
+    System.out.println("angle_yz=" + angle_yz);
+
+    updateLookAtPosition();
+  }
+
+
+  public void keyEvent(KeyEvent e) {
+
+
+    switch(e.getKeyCode()) {
+      case KeyEvent.VK_LEFT:
+        rotateInDirection(-1);
+        break;
+      case KeyEvent.VK_RIGHT:
+        rotateInDirection(1);
+        break;
+      case KeyEvent.VK_UP:
+        zoomInDirection(1);
+        break;
+      case KeyEvent.VK_DOWN:
+        zoomInDirection(-1);
+        break;
+      case KeyEvent.VK_W:
+        nodInDirection(1);
+        break;
+      case KeyEvent.VK_S:
+        nodInDirection(-1);
+        break;
+    }
+  }
+
   public void mousePressed(int x, int y) {
     mousePos = new Vector2f(x, y);
   }
@@ -194,9 +299,7 @@ public class View {
     WINDOW_HEIGHT = height;
     gl.glViewport(0, 0, width, height);
 
-    proj = new Matrix4f().perspective((float)Math.toRadians(60f),(float)
-            width/height,0.1f,10000.0f);
-    //proj = new Matrix4f().ortho(-50, 50, -50, 50, -50.0f, 10000.0f);
+    proj = new Matrix4f().perspective((float) Math.toRadians(75), (float) width / height, 0.1f, 10000.0f);
 
   }
 
