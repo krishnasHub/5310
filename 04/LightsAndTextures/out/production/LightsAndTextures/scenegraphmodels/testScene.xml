@@ -42,12 +42,17 @@
                         <transform>
                             <set>
                                 <translate>0 8 320</translate>
-                                <rotate>45 0 1 0</rotate>
-                                <rotate>180 0 0 1</rotate>
-                                <scale>0.4 0.4 0.4</scale>
                             </set>
-                            <group name="Thors-hammer" from="scenegraphmodels/mjolnir.xml">
-                            </group>
+                            <animationType>RotateY</animationType>
+                            <transform>
+                                <set>
+                                    <rotate>170 0 0 1</rotate>
+                                    <scale>0.4 0.4 0.4</scale>
+                                </set>
+                                <group name="Thors-hammer" from="scenegraphmodels/mjolnir.xml">
+
+                                </group>
+                            </transform>
                         </transform>
 
                         <transform>
@@ -57,6 +62,7 @@
                                 <scale>0.6 0.6 0.6</scale>
                             </set>
                             <group name="strong-mace" from="scenegraphmodels/mace.xml">
+
                             </group>
                         </transform>
                         <transform>

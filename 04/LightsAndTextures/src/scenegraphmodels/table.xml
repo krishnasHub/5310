@@ -13,18 +13,9 @@
 
 
     <group name="Entire Table">
-        <light name="Table Light">
 
-            <diffuse>0.8 0.0 0.0</diffuse>
-            <specular>0.8 0.0 0.0</specular>
-            <position>-10 20 10 </position>
-            <spotangle>40</spotangle>
-            <spotdirection>0 -1 0 </spotdirection>
-        </light>
 
-        <light>
-            <ambient>0.3 0.3 0.3</ambient>
-        </light>
+
 
         <transform name="Table Top">
             <set>
@@ -44,39 +35,6 @@
 
             </object>
         </transform>
-
-        <light name="Table Light 1">
-
-            <diffuse>0.0 0.8 0.0</diffuse>
-            <specular>0.0 0.8 0.0</specular>
-            <position>0 20 0 </position>
-            <spotangle>40</spotangle>
-            <spotdirection>0 -1 0 </spotdirection>
-        </light>
-
-        <light name="Table Light 2">
-
-            <diffuse>0.0 0.0 0.9</diffuse>
-            <specular>0.0 0.0 0.9</specular>
-            <position>10 20 10 </position>
-            <spotangle>40</spotangle>
-            <spotdirection>0 -1 0 </spotdirection>
-        </light>
-
-        <!--
-        <transform name="Totem">
-            <set>
-                <translate>0 -2 20</translate>
-                <scale>0.12 0.12 0.12</scale>
-            </set>
-
-            <object instanceof="totem">
-                <material>
-                    <color>0 0 1</color>
-                </material>
-            </object>
-        </transform> -->
-
 
         <transform name="Mace">
             <set>
@@ -101,15 +59,6 @@
         </transform>
 
 
-
-        <!--
-        <transform name="Machine">
-            <set>
-                <translate>-200 12 0</translate>
-                <scale>0.3 0.3 0.3</scale>
-            </set>
-            <group name="Entire Mace" from="scenegraphmodels/davinci.xml"></group>
-        </transform> -->
 
 
         <transform name="MJolnir">

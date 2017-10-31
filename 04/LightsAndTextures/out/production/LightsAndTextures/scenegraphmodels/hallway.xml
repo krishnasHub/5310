@@ -5,6 +5,35 @@
     <instance name="cone" path="models/cone.obj" />
 
     <group>
+
+        <light name="Hallway Light 1">
+            <ambient>0.2 0.125 0</ambient>
+            <diffuse>0.8 0.533 0</diffuse>
+            <specular>0.8 0.533 0</specular>
+            <position>-200 335 0 </position>
+            <spotangle>20</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
+
+        <light name="Hallway Light 2">
+            <ambient>0.2 0.125 0</ambient>
+            <diffuse>0.8 0.533 0</diffuse>
+            <specular>0.8 0.533 0</specular>
+            <position>0 335 0 </position>
+            <spotangle>20</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
+        <light name="Hallway Light 3">
+            <ambient>0.2 0.125 0</ambient>
+            <diffuse>0.8 0.533 0</diffuse>
+            <specular>0.8 0.533 0</specular>
+            <position>200 335 0 </position>
+            <spotangle>20</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
         <transform>
             <set>
                 <!--this translate is to view the room-->
@@ -21,7 +50,7 @@
                                 <ambient>1 1 1</ambient>
                                 <diffuse>1 1 1</diffuse>
                                 <specular>1 1 1</specular>
-                                <shininess>50</shininess>
+                                <shininess>120</shininess>
                                 <textureName>wood_leg.png</textureName>
                             </material>
                         </object>
@@ -41,7 +70,10 @@
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 1 1 </color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
                                             <textureName>wood_leg.png</textureName>
                                         </material>
                                     </object>
@@ -55,7 +87,10 @@
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 1 1 </color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
                                             <textureName>wood.png</textureName>
                                         </material>
                                     </object>
@@ -69,7 +104,10 @@
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 1 1 </color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
                                             <textureName>wood.png</textureName>
                                         </material>
                                     </object>

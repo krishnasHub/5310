@@ -5,6 +5,16 @@
     <instance name="cone" path="models/cone.obj" />
 
     <group>
+
+        <light name="Hallway Light 1">
+            <ambient>0.1 0.1 0.1</ambient>
+            <diffuse>0.6 0.6 0.6</diffuse>
+            <specular>0.9 0.9 0.9</specular>
+            <position>0 335 0 </position>
+            <spotangle>40</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
         <transform>
             <set>
             </set>
@@ -17,7 +27,7 @@
                         <object instanceof="box">
                             <material>
                                 <color> 1 1 1 </color>
-                                <textureName>rock1.png</textureName>
+                                <textureName>wood_leg.png</textureName>
                             </material>
                         </object>
                     </group>
@@ -36,8 +46,11 @@
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 1 1 </color>
-                                            <textureName>rock1.png</textureName>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
+                                            <textureName>wood_leg.png</textureName>
                                         </material>
                                     </object>
                                 </group>
@@ -50,8 +63,11 @@
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 1 1 </color>
-                                            <textureName>rock1.png</textureName>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
+                                            <textureName>wood_leg.png</textureName>
                                         </material>
                                     </object>
                                 </group>
@@ -64,8 +80,11 @@
                                 <group>
                                     <object instanceof="box">
                                         <material>
-                                            <color> 1 1 1 </color>
-                                            <textureName>rock1.png</textureName>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
+                                            <textureName>wood_leg.png</textureName>
                                         </material>
                                     </object>
                                 </group>
@@ -82,8 +101,11 @@
                                         </set>
                                         <object instanceof="box">
                                             <material>
-                                                <color> 1 1 1 </color>
-                                                <textureName>rock1.png</textureName>
+                                                <ambient>1 1 1</ambient>
+                                                <diffuse>1 1 1</diffuse>
+                                                <specular>1 1 1</specular>
+                                                <shininess>100</shininess>
+                                                <textureName>wood_leg.png</textureName>
                                             </material>
                                         </object>
                                     </transform>
@@ -94,8 +116,11 @@
                                         </set>
                                         <object instanceof="box">
                                             <material>
-                                                <color> 1 1 1 </color>
-                                                <textureName>rock1.png</textureName>
+                                                <ambient>1 1 1</ambient>
+                                                <diffuse>1 1 1</diffuse>
+                                                <specular>1 1 1</specular>
+                                                <shininess>100</shininess>
+                                                <textureName>wood_leg.png</textureName>
                                             </material>
                                         </object>
                                     </transform>
@@ -106,8 +131,11 @@
                                         </set>
                                         <object instanceof="box">
                                             <material>
-                                                <color> 1 1 1 </color>
-                                                <textureName>rock1.png</textureName>
+                                                <ambient>1 1 1</ambient>
+                                                <diffuse>1 1 1</diffuse>
+                                                <specular>1 1 1</specular>
+                                                <shininess>100</shininess>
+                                                <textureName>wood_leg.png</textureName>
                                             </material>
                                         </object>
                                     </transform>
@@ -118,8 +146,11 @@
                                         </set>
                                         <object instanceof="box">
                                             <material>
-                                                <color> 1 1 1 </color>
-                                                <textureName>rock1.png</textureName>
+                                                <ambient>1 1 1</ambient>
+                                                <diffuse>1 1 1</diffuse>
+                                                <specular>1 1 1</specular>
+                                                <shininess>100</shininess>
+                                                <textureName>wood_leg.png</textureName>
                                             </material>
                                         </object>
                                     </transform>
@@ -137,8 +168,11 @@
                                         </set>
                                         <object instanceof="box">
                                             <material>
-                                                <color> 1 1 1 </color>
-                                                <textureName>rock1.png</textureName>
+                                                <ambient>1 1 1</ambient>
+                                                <diffuse>1 1 1</diffuse>
+                                                <specular>1 1 1</specular>
+                                                <shininess>100</shininess>
+                                                <textureName>wood_leg.png</textureName>
                                             </material>
                                         </object>
                                     </transform>
@@ -149,8 +183,11 @@
                                         </set>
                                         <object instanceof="box">
                                             <material>
-                                                <color> 1 1 1 </color>
-                                                <textureName>rock1.png</textureName>
+                                                <ambient>1 1 1</ambient>
+                                                <diffuse>1 1 1</diffuse>
+                                                <specular>1 1 1</specular>
+                                                <shininess>100</shininess>
+                                                <textureName>wood_leg.png</textureName>
                                             </material>
                                         </object>
                                     </transform>
@@ -161,8 +198,11 @@
                                         </set>
                                         <object instanceof="box">
                                             <material>
-                                                <color> 1 1 1 </color>
-                                                <textureName>rock1.png</textureName>
+                                                <ambient>1 1 1</ambient>
+                                                <diffuse>1 1 1</diffuse>
+                                                <specular>1 1 1</specular>
+                                                <shininess>100</shininess>
+                                                <textureName>wood_leg.png</textureName>
                                             </material>
                                         </object>
                                     </transform>
