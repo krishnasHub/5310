@@ -338,29 +338,21 @@ public class View {
           FileNotFoundException,IOException {
 
     if (screenCaptureUtil==null) {
-      //error at next line
-      try {
         screenCaptureUtil = new AWTGLReadBufferUtil(gla.getGLProfile(),false);
-      } catch (Exception e) {
-        System.out.println("ERROR after setting screenCaptureUtil");
-      }
     }
 
 
     File f = new File(filename);
     GL3 gl = gla.getGL().getGL3();
 
-    try {
+    //error at this line
+    BufferedImage image = screenCaptureUtil.readPixelsToBufferedImage(gl, true);
 
-      BufferedImage image = screenCaptureUtil.readPixelsToBufferedImage(gl, true);
+    OutputStream file = null;
+    file = new FileOutputStream(filename);
 
-      OutputStream file = null;
-      file = new FileOutputStream(filename);
+    ImageIO.write(image,"png",file);
 
-      ImageIO.write(image,"png",file);
-    } catch (Exception e) {
-      System.out.println("ERROR AT BUFFERED IMAGE");
-    }
 
   }
 
