@@ -7,6 +7,7 @@ import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.math.Matrix4;
 import com.jogamp.opengl.util.texture.Texture;
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 import org.omg.CORBA.INTERNAL;
 import util.IVertexData;
@@ -283,10 +284,13 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
 
     int timer = 0;
 
-    public void drawLight() {
+    public void drawLight(Map<Integer, Boolean> lightSwitch) {
         GL3 gl = glContext.getGL().getGL3();
+        boolean showLight = true;
+        Vector3f black = new Vector3f();
 
         for(int i = 0; i < allLights.size(); ++i) {
+            showLight = lightSwitch.get(i);
             Light light = allLights.get(i);
 
 
@@ -319,9 +323,9 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             comparePositions(pos);
 
             gl.glUniform4fv(ll.position, 1, pos.get(fb4));
-            gl.glUniform3fv(ll.ambient, 1, light.getAmbient().get(fb4));
-            gl.glUniform3fv(ll.diffuse, 1, light.getDiffuse().get(fb4));
-            gl.glUniform3fv(ll.specular, 1, light.getSpecular().get(fb4));
+            gl.glUniform3fv(ll.ambient, 1, (showLight ? light.getAmbient() : black).get(fb4));
+            gl.glUniform3fv(ll.diffuse, 1, (showLight ? light.getDiffuse() : black).get(fb4));
+            gl.glUniform3fv(ll.specular, 1, (showLight ? light.getSpecular() : black).get(fb4));
             gl.glUniform1f(ll.spotCutoff, (float) Math.toRadians(light.getSpotCutoff()));
             gl.glUniform3fv(ll.spotDirection, 1, spotDir.get(fb4));
             //System.out.println(name + " x=" + pos.x + " y=" + pos.y + " z=" + pos.z);

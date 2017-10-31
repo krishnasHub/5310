@@ -71,7 +71,7 @@ public interface IScenegraphRenderer
     void drawMesh(String name, util.Material material, String textureName, final Matrix4f transformation);
 
 
-    void drawLight();
+    void drawLight(Map<Integer, Boolean> lightSwitch);
 
     void drawMeshes();
 

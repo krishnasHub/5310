@@ -65,6 +65,8 @@ public class View {
   private float savedAngle_xz = angle_xz;
   private float savedAngle_yz = angle_yz;
 
+  private Map<Integer, Boolean> lightSwitch;
+
   private sgraph.IScenegraphRenderer renderer;
 
   public View() {
@@ -76,6 +78,8 @@ public class View {
     angleOfRotation = 0;
     trackballRadius = 300;
     mipmapped = true;
+
+    lightSwitch = new HashMap<Integer, Boolean>();
 
   }
 
@@ -128,7 +132,7 @@ public class View {
     initSceneGraph(gla);
   }
 
-  private Vector3f eyePosition = new Vector3f(0.0f, 0.0f, 0.0f);
+  private Vector3f eyePosition = new Vector3f(0.0f, 0.0f, 100.0f);
   private Vector3f lookAtPosition = new Vector3f(0, 0, 0);
   private Vector3f upVector = new Vector3f(0, 1, 0);
   private int timer = 0;
@@ -171,7 +175,13 @@ public class View {
       //all the light properties, except positions
       gl.glUniform1i(numLightsLocation, renderer.getLightCount());
 
-      renderer.drawLight();
+      if(lightSwitch.size() != renderer.getLightCount()) {
+        System.out.println("Re-adding lights to switch");
+        for(int i = 0; i < renderer.getLightCount(); ++i)
+          lightSwitch.put(i, true);
+      }
+
+      renderer.drawLight(this.lightSwitch);
       renderer.drawMeshes();
     }
 
@@ -249,6 +259,14 @@ public class View {
   }
 
 
+  private void toggleSwitch(int num) {
+    if(num >= renderer.getLightCount())
+      return;
+
+    Boolean v = lightSwitch.get(num);
+    lightSwitch.put(num, !v);
+  }
+
   public void keyEvent(KeyEvent e) {
 
 
@@ -270,6 +288,18 @@ public class View {
         break;
       case KeyEvent.VK_S:
         nodInDirection(-1);
+        break;
+
+      case KeyEvent.VK_1:
+      case KeyEvent.VK_2:
+      case KeyEvent.VK_3:
+      case KeyEvent.VK_4:
+      case KeyEvent.VK_5:
+      case KeyEvent.VK_6:
+      case KeyEvent.VK_7:
+      case KeyEvent.VK_8:
+      case KeyEvent.VK_9:
+        toggleSwitch(e.getKeyCode() - KeyEvent.VK_1);
         break;
     }
   }
