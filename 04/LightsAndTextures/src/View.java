@@ -1,5 +1,6 @@
 import com.jogamp.common.nio.Buffers;
 import com.jogamp.opengl.*;
+import com.jogamp.opengl.util.awt.AWTGLReadBufferUtil;
 import com.jogamp.opengl.util.texture.Texture;
 import com.jogamp.opengl.util.texture.TextureIO;
 
@@ -15,9 +16,12 @@ import util.ObjectInstance;
 
 
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.FloatBuffer;
 import java.util.*;
+
+import javax.imageio.ImageIO;
 
 
 /**
@@ -51,6 +55,7 @@ public class View {
   private sgraph.IScenegraph<VertexAttrib> scenegraph;
   private sgraph.IScenegraph<VertexAttrib> scenegraphYMCA;
 
+  AWTGLReadBufferUtil screenCaptureUtil;
 
   private util.ShaderProgram program;
   private util.ShaderLocationsVault shaderLocations;
@@ -80,6 +85,8 @@ public class View {
     mipmapped = true;
 
     lightSwitch = new HashMap<Integer, Boolean>();
+
+    screenCaptureUtil = null;
 
   }
 
@@ -186,7 +193,6 @@ public class View {
     }
 
     gl.glFlush();
-
     program.disable(gl);
   }
 
@@ -321,6 +327,41 @@ public class View {
     trackballTransform = new Matrix4f().rotate(delta.x / trackballRadius, 0, 1, 0)
             .rotate(delta.y / trackballRadius, 1, 0, 0)
             .mul(trackballTransform);
+  }
+
+  /**
+   * This method captures the current frame buffer and writes it to a file of
+   * the given name
+   * @param filename the name of the file where the image should be saved
+   */
+  public void captureFrame(String filename,GLAutoDrawable gla) throws
+          FileNotFoundException,IOException {
+
+    if (screenCaptureUtil==null) {
+      //error at next line
+      try {
+        screenCaptureUtil = new AWTGLReadBufferUtil(gla.getGLProfile(),false);
+      } catch (Exception e) {
+        System.out.println("ERROR after setting screenCaptureUtil");
+      }
+    }
+
+
+    File f = new File(filename);
+    GL3 gl = gla.getGL().getGL3();
+
+    try {
+
+      BufferedImage image = screenCaptureUtil.readPixelsToBufferedImage(gl, true);
+
+      OutputStream file = null;
+      file = new FileOutputStream(filename);
+
+      ImageIO.write(image,"png",file);
+    } catch (Exception e) {
+      System.out.println("ERROR AT BUFFERED IMAGE");
+    }
+
   }
 
   public void reshape(GLAutoDrawable gla, int x, int y, int width, int height) {

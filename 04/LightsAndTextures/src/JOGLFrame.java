@@ -20,6 +20,7 @@ public class JOGLFrame extends JFrame {
   private View view;
   private TextRenderer textRenderer;
   private GLCanvas canvas;
+  int frameno;
 
   public JOGLFrame(String title) {
     //routine JFrame setting stuff
@@ -65,6 +66,17 @@ public class JOGLFrame extends JFrame {
       public void display(GLAutoDrawable glAutoDrawable) { //called every time this window must be redrawn
 
         view.draw(glAutoDrawable);
+        if (frameno<500) {
+          String filename = "output/image"
+                  +String.format("%03d.png",frameno);
+          try {
+            view.captureFrame(filename,glAutoDrawable);
+          } catch (Exception e) {
+            JOptionPane.showMessageDialog(JOGLFrame.this, e.getMessage(), "Error while loading", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+          }
+          frameno++;
+        }
         //textRenderer.beginRendering(canvas.getWidth(), canvas.getHeight());
         // optionally set the color
         //textRenderer.setColor(1.0f, 1.0f, 0.0f, 1.0f);
@@ -87,6 +99,8 @@ public class JOGLFrame extends JFrame {
     AnimatorBase animator = new FPSAnimator(canvas, 300);
     animator.setUpdateFPSFrames(300, null);
     animator.start();
+
+    frameno = 0;
   }
 
   private class KeyboardListener implements KeyListener {
