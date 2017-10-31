@@ -1,0 +1,57 @@
+Krishna V Jayanthi
+Arnold Esguerra
+5310 Computer Graphics
+Fall 2017
+Assignment 4
+
+=========================================
+#PROGRAM FEATURES
+
+KEYS:
+Keys that operate as the previous assignment:
+"W" and "S" to nod up/down
+Up/Down arrow keys to move forward/backward
+Left/Right arrow keys to turn left/right
+New keys for this assignment:
+"1": Toggles on/off the light in the first room (to the left when starting the program.
+This has multiple maces in it.
+"2": Toggles on/off the light in the second room (to the right) with mjolnir/Thor's hammer.
+"3": Toggles on/off the light in the main room (with table, new model/object).
+
+LIGHTS:
+In addition to the three lights just mentioned, there are additional ones in the hallway
+that cannot be toggled on/off. Lights are implemented as an additional node in the scenegraph.
+They are parsed from the xml files as the other objects instances are. Whether or not
+it is a spotlight is determined by the spotangle.
+
+NEW MODEL/OBJECT:
+The DaVinci Helicopter features two rotating gears, as well as spinning blades. Connected
+to each gear are shafts/cranks connected to the overall frame/platforms. On top of
+the platform is a humanoid hanging onto a support beam and waving. The gear alone has
+well over 10 object instances (each tooth is a box instance) as well the higher-level
+structure of the helicopter.  This flies above the table in the third room.
+
+ANIMATIONS:
+Second Room:
+The mjolnir rotates, spinning on its head.
+
+Third room:
+The DaVinci Helicopter has gears (and its corresponding shafts/cranks rotating).
+The two gears rotate on two different axises, and the spinning blades rotate on the same
+axis as one of the gears (at different speeds for visual effect). As mentioned,
+the humanoid is waving. The mjolnir flies around the table, while rotating. The mace spins
+stationary on the table.
+
+
+=========================================
+#ADDITIONAL FEATURE
+Textures were also implemented in this program (not required by assignment). The texture
+that each object has is defined in the xml files, and parsed through the XML parser. Images
+for each texture are located in the ./textures/ folder.
+=========================================
+#EXTRA CREDIT
+
+The video file is located in output/images, called out.mp4.
+It can also be downloaded at found at: https://github.com/ajesguerra/webdev-esguerra-arnold/blob/master/src/assets/projectimages/out.mp4
+
+Each time the video runs, it will re-capture up to 500 images into the ./output/images folder.
