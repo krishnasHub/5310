@@ -9,39 +9,57 @@ Assignment 4
 
 KEYS:
 Keys that operate as the previous assignment:
-"W" and "S" to nod up/down
-Up/Down arrow keys to move forward/backward
-Left/Right arrow keys to turn left/right
+"W" and "S"  to nod up/down
+Up/Down      to move forward/backward
+Left/Right   to turn left/right
+
 New keys for this assignment:
-"1": Toggles on/off the light in the first room (to the left when starting the program.
-This has multiple maces in it.
-"2": Toggles on/off the light in the second room (to the right) with mjolnir/Thor's hammer.
-"3": Toggles on/off the light in the main room (with table, new model/object).
+"1": Toggles on/off the spotlight in the first room (to the left when starting the program. This room has multiple maces in it.)
+"2": Toggles on/off the spotlight in the second room (to the right with mjolnir/Thor's hammer in it.)
+"3": Toggles on/off the spotlight in the main room (with table, new model/object).
+
+"4" Toggles the spotlight on the machine floating in the main room (containing the table)
+"5" Toggles the blue point light on Mjolnir circling and rotating in the main room. This is faint blue light.
+
+"6", "7", "8" toggles spotlights in the main hallway. They are yellow lights placed on the roof of the hallway.
+"9" Toggles the blue point light on Mjolnir spinning in the second room. You might want to turn off other lights to see it.
+
 
 LIGHTS:
-In addition to the three lights just mentioned, there are additional ones in the hallway
-that cannot be toggled on/off. Lights are implemented as an additional node in the scenegraph.
-They are parsed from the xml files as the other objects instances are. Whether or not
-it is a spotlight is determined by the spotangle.
+Lights are implemented as an additional node in the scenegraph. There's a dedicated LightNode that extends AbstractNode.
+Lights can also be attached to Objects. Objects (LeafNodes) can hold a List of lights.
+So, in the scenegraph, you can attach multiple light to a single Leafnode.
+They are parsed from the xml files as the other objects instances are. Whether or not it is a spotlight is determined by the spotangle.
 
 NEW MODEL/OBJECT:
 The DaVinci Helicopter features two rotating gears, as well as spinning blades. Connected
 to each gear are shafts/cranks connected to the overall frame/platforms. On top of
-the platform is a humanoid hanging onto a support beam and waving. The gear alone has
+the platform is a humanoid standing on the main platform, holding a support beam and waving. The gear alone has
 well over 10 object instances (each tooth is a box instance) as well the higher-level
 structure of the helicopter.  This flies above the table in the third room.
 
 ANIMATIONS:
-Second Room:
+
+1) Second Room:
 The mjolnir rotates, spinning on its head.
 
 Third room:
-The DaVinci Helicopter has gears (and its corresponding shafts/cranks rotating).
+2) The DaVinci Helicopter has gears (and its corresponding shafts/cranks rotating).
 The two gears rotate on two different axises, and the spinning blades rotate on the same
 axis as one of the gears (at different speeds for visual effect). As mentioned,
 the humanoid is waving. The mjolnir flies around the table, while rotating. The mace spins
 stationary on the table.
 
+Instead of hard coding the animations into the animate() function,
+we were able to create separate Animator classes that each did one specefic animation.
+We then (using Java reflection) were able to add the names of these animators into the scenegraph, to the transformation nodes.
+Now, when we want a particular part animated, all we do is add that animator class name to the right node and when the scenegraph
+is parsed, the framework automatically attaches an animation to the List of animations applicable to a transform node.
+
+We've also extended this so that we can add multiple animations, one after the other to our objects in the scenegraph.
+All animations seen in the application were done this way. Look for the <animationType> tag in the scenegraph.
+
+eg. <animationType>Revolve100+RotateByZ</animationType> will apply the animation Revolve100 and then the animation RotateByZ to the object.
 
 =========================================
 #ADDITIONAL FEATURE
@@ -49,6 +67,7 @@ Textures were also implemented in this program (not required by assignment). The
 that each object has is defined in the xml files, and parsed through the XML parser. Images
 for each texture are located in the ./textures/ folder.
 =========================================
+
 #EXTRA CREDIT
 
 The video file is located in output/images, called out.mp4.
