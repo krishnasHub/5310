@@ -93,35 +93,7 @@ public class GroupNode extends AbstractNode
 
         // Then calculate for self.
         for (int i = 1; i < children.size(); i++) {
-            INode node = children.get(i);
-            BoundingBox box = node.getBoundingBox();
-
-            // Re-calculate the bounds for MinBounds.
-            if(box.getMinBounds().x < this.boundingBox.getMinBounds().x) {
-                this.boundingBox.getMinBounds().x = box.getMinBounds().x;
-            }
-
-            if(box.getMinBounds().y < this.boundingBox.getMinBounds().y) {
-                this.boundingBox.getMinBounds().y = box.getMinBounds().y;
-            }
-
-            if(box.getMinBounds().z < this.boundingBox.getMinBounds().z) {
-                this.boundingBox.getMinBounds().z = box.getMinBounds().z;
-            }
-
-
-            // Re-calculate the bounds for MaxBounds.
-            if(box.getMaxBounds().x > this.boundingBox.getMaxBounds().x) {
-                this.boundingBox.getMaxBounds().x = box.getMaxBounds().x;
-            }
-
-            if(box.getMaxBounds().y > this.boundingBox.getMaxBounds().y) {
-                this.boundingBox.getMaxBounds().y = box.getMaxBounds().y;
-            }
-
-            if(box.getMaxBounds().z > this.boundingBox.getMaxBounds().z) {
-                this.boundingBox.getMaxBounds().z = box.getMaxBounds().z;
-            }
+            reCalculateBoundingBox(children.get(i));
         }
 
         System.out.println("Done calculating bb for Group");

@@ -138,14 +138,21 @@ public class TransformNode extends AbstractNode
         // First calculate the boundingBoxes for all children.
         child.calculateBoundingBox();
 
-        this.boundingBox = new BoundingBox(child.getBoundingBox());
 
+        // Get the child's bb
+        BoundingBox bb = new BoundingBox(child.getBoundingBox());
+
+        // Transform the child's bb
         Matrix4f currTransform = new Matrix4f()
                 .mul(transform)
                 .mul(animation_transform);
 
-        currTransform.transform(this.boundingBox.getMinBounds());
-        currTransform.transform(this.boundingBox.getMaxBounds());
+        currTransform.transform(bb.getMinBounds());
+        currTransform.transform(bb.getMaxBounds());
+
+        // Recalculate my own bb based on the transformed bb.
+        reCalculateBoundingBox(bb);
+
 
         System.out.println("Done calculating bb for Transform");
     }

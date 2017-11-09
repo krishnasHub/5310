@@ -157,4 +157,37 @@ public abstract class AbstractNode implements INode
         return this.boundingBox;
     }
 
+    public void reCalculateBoundingBox(BoundingBox box) {
+        // Re-calculate the bounds for MinBounds.
+        if(box.getMinBounds().x < this.boundingBox.getMinBounds().x) {
+            this.boundingBox.getMinBounds().x = box.getMinBounds().x;
+        }
+
+        if(box.getMinBounds().y < this.boundingBox.getMinBounds().y) {
+            this.boundingBox.getMinBounds().y = box.getMinBounds().y;
+        }
+
+        if(box.getMinBounds().z < this.boundingBox.getMinBounds().z) {
+            this.boundingBox.getMinBounds().z = box.getMinBounds().z;
+        }
+
+
+        // Re-calculate the bounds for MaxBounds.
+        if(box.getMaxBounds().x > this.boundingBox.getMaxBounds().x) {
+            this.boundingBox.getMaxBounds().x = box.getMaxBounds().x;
+        }
+
+        if(box.getMaxBounds().y > this.boundingBox.getMaxBounds().y) {
+            this.boundingBox.getMaxBounds().y = box.getMaxBounds().y;
+        }
+
+        if(box.getMaxBounds().z > this.boundingBox.getMaxBounds().z) {
+            this.boundingBox.getMaxBounds().z = box.getMaxBounds().z;
+        }
+    }
+
+    public void reCalculateBoundingBox(INode node) {
+        reCalculateBoundingBox(node.getBoundingBox());
+    }
+
 }
