@@ -1,0 +1,122 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+
+    <group>
+
+        <light name="Hallway Light 1">
+            <ambient>0.2 0.125 0</ambient>
+            <diffuse>0.8 0.533 0</diffuse>
+            <specular>0.8 0.533 0</specular>
+            <position>-200 335 0 </position>
+            <spotangle>20</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
+
+        <light name="Hallway Light 2">
+            <ambient>0.2 0.125 0</ambient>
+            <diffuse>0.8 0.533 0</diffuse>
+            <specular>0.8 0.533 0</specular>
+            <position>0 335 0 </position>
+            <spotangle>20</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
+        <light name="Hallway Light 3">
+            <ambient>0.2 0.125 0</ambient>
+            <diffuse>0.8 0.533 0</diffuse>
+            <specular>0.8 0.533 0</specular>
+            <position>200 335 0 </position>
+            <spotangle>20</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
+
+        <transform>
+            <set>
+                <!--this translate is to view the room-->
+            </set>
+            <group name="room">
+                <transform name="floor">
+                    <set>
+                        <scale> 600 2 100</scale>
+                    </set>
+                    <group>
+                        <object instanceof="box">
+                            <material>
+                                <color> 1 0.501 0 </color>
+                                <ambient>1 1 1</ambient>
+                                <diffuse>1 1 1</diffuse>
+                                <specular>1 1 1</specular>
+                                <shininess>120</shininess>
+                                <textureName>wood_leg.png</textureName>
+                            </material>
+                        </object>
+                    </group>
+                </transform>
+                <group>
+                    <transform name="buildOnFloor">
+                        <set>
+                            <translate> 0 100 0 </translate>
+                        </set>
+                        <group>
+                            <transform name="ceiling">
+                                <set>
+                                    <translate>0 100 0</translate>
+                                    <scale> 600 2 100</scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
+                                            <textureName>wood_leg.png</textureName>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                            <transform name="hallwayBackWall">
+                                <set>
+                                    <translate>100 0 -50</translate>
+                                    <scale> 400 200 2</scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
+                                            <textureName>wood.png</textureName>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                            <transform name="hallwayfrontWall">
+                                <set>
+                                    <translate>100 0 50</translate>
+                                    <scale> 400 200 2</scale>
+                                </set>
+                                <group>
+                                    <object instanceof="box">
+                                        <material>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
+                                            <textureName>wood.png</textureName>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
+                        </group>
+                    </transform>
+                </group>
+            </group>
+        </transform>
+    </group>
+</scene>

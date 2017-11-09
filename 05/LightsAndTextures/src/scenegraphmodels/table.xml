@@ -1,0 +1,156 @@
+<scene>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="box" path="models/box"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+    <instance name="cone" path="models/cone"></instance>
+    <instance name="totem" path="models/totem"></instance>
+
+    <transform name="Table Transform">
+        <set>
+            <scale>2 2 2</scale>
+            <translate>0 0 0</translate>
+        </set>
+
+
+    <group name="Entire Table">
+
+
+
+
+        <transform name="Table Top">
+            <set>
+                <scale>60 2 60</scale>
+            </set>
+
+            <object instanceof="box">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                    <textureName>wood.png</textureName>
+                </material>
+
+
+
+            </object>
+        </transform>
+
+        <transform name="Mace">
+            <set>
+                <translate>-20 12 0</translate>
+                <rotate>-20 0 1 0</rotate>
+                <rotate>-101 0 0 1</rotate>
+                <rotate>180 0 0 1</rotate>
+                <scale>0.6 0.6 0.6</scale>
+            </set>
+
+            <animationType>RotateByZ</animationType>
+            <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
+        </transform>
+
+
+        <transform name="davinci">
+            <set>
+                <translate>10 35 0</translate>
+            </set>
+            <animationType>Revolve10</animationType>
+            <group name="davinci" from="scenegraphmodels/davinci.xml"></group>
+        </transform>
+
+
+
+
+        <transform name="MJolnir">
+            <set>
+                <scale>0.4 0.4 0.4</scale>
+            </set>
+            <animationType>Revolve100+RotateByZ</animationType>
+
+            <group name="Entire Mjolnir" from="scenegraphmodels/mjolnir.xml"></group>
+        </transform>
+
+        <transform name="Pyramid">
+            <set>
+                <translate>-10 5 -20</translate>
+                <scale>1.5 1.5 1.5</scale>
+            </set>
+            <group name="Entire Mjolnir" from="scenegraphmodels/pyramid.xml"></group>
+        </transform>
+
+
+        <transform name="Leg 1">
+            <set>
+                <translate>-20 -20 20</translate>
+                <scale>2 40 2</scale>
+            </set>
+
+            <object instanceof="box">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+
+        <transform name="Leg 2">
+            <set>
+                <translate>20 -20 20</translate>
+                <scale>2 40 2</scale>
+
+            </set>
+
+            <object instanceof="box">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Leg 3">
+            <set>
+                <translate>-20 -20 -20</translate>
+                <scale>2 40 2</scale>
+
+            </set>
+
+            <object instanceof="box">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+
+        <transform name="Leg 4">
+            <set>
+                <translate>20 -20 -20</translate>
+                <scale>2 40 2</scale>
+
+            </set>
+
+            <object instanceof="box">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>50</shininess>
+                    <textureName>wood_leg.png</textureName>
+                </material>
+            </object>
+        </transform>
+    </group>
+    </transform>
+</scene>

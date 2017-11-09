@@ -1,0 +1,34 @@
+
+
+<!-- RESTRUCTURE THIS BETTER -->
+<scene>
+    <group>
+        <transform name="moveWholeScene">
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="wholeScene">
+                <transform>
+                    <set>
+                        <translate>0 0 0</translate>
+                    </set>
+                    <group>
+                        <transform>
+                            <set>
+                            </set>
+                            <group name="room1" from="scenegraphmodels/room.xml">
+                            </group>
+                        </transform>
+                        <transform>
+                            <set>
+                                <translate>0 50 0</translate>
+                            </set>
+                            <group name="settingInRoom" from="scenegraphmodels/humanoid.xml">
+                            </group>
+                        </transform>
+                    </group>
+                </transform>
+            </group>
+        </transform>
+    </group>
+</scene>
