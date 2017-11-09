@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import util.BoundingBox;
 import util.IVertexData;
 import util.Light;
 
@@ -82,6 +83,8 @@ public interface IScenegraphRenderer
     void clearRenderer();
 
     int getLightCount();
+
+    BoundingBox getBoundingBoxForMesh(String instancename);
 
     int getMeshCount();
 

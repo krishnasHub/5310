@@ -38,6 +38,12 @@ public class LightNode extends AbstractNode {
         */
     }
 
+    public void calculateBoundingBox() {
+        // Do nothing for a light node. Light has no bounding box. So, we don't really care about it.
+    }
+
+
+
     @Override
     public INode clone() {
         LightNode ret = new LightNode(scenegraph, name);

@@ -31,6 +31,7 @@ public class PolygonMesh<VertexType extends IVertexData> {
   protected int primitiveType;
   protected int primitiveSize;
 
+  protected BoundingBox boundingBox;
   protected Vector4f minBounds, maxBounds; //bounding box
 
   public PolygonMesh() {
@@ -39,6 +40,8 @@ public class PolygonMesh<VertexType extends IVertexData> {
     primitiveType = primitiveSize = 0;
     minBounds = new Vector4f();
     maxBounds = new Vector4f();
+
+    boundingBox = new BoundingBox();
   }
 
   /**
@@ -81,6 +84,8 @@ public class PolygonMesh<VertexType extends IVertexData> {
   public Vector4f getMaximumBounds() {
     return new Vector4f(maxBounds);
   }
+
+  public BoundingBox getBoundingBox() {return new BoundingBox(this.boundingBox);}
 
 
   public List<VertexType> getVertexAttributes() {
@@ -137,31 +142,39 @@ public class PolygonMesh<VertexType extends IVertexData> {
     minBounds = new Vector4f(positions.get(0));
     maxBounds = new Vector4f(positions.get(0));
 
+    boundingBox = new BoundingBox(new Vector4f(positions.get(0)), new Vector4f(positions.get(0)));
+
     for (j = 0; j < positions.size(); j++) {
       Vector4f p = positions.get(j);
 
       if (p.x < minBounds.x) {
         minBounds.x = p.x;
+        boundingBox.getMinBounds().x = p.x;
       }
 
       if (p.x > maxBounds.x) {
         maxBounds.x = p.x;
+        boundingBox.getMaxBounds().x = p.x;
       }
 
       if (p.y < minBounds.y) {
         minBounds.y = p.y;
+        boundingBox.getMinBounds().y = p.y;
       }
 
       if (p.y > maxBounds.y) {
         maxBounds.y = p.y;
+        boundingBox.getMaxBounds().y = p.y;
       }
 
       if (p.z < minBounds.z) {
         minBounds.z = p.z;
+        boundingBox.getMinBounds().z = p.z;
       }
 
       if (p.z > maxBounds.z) {
         maxBounds.z = p.z;
+        boundingBox.getMaxBounds().z = p.z;
       }
     }
   }

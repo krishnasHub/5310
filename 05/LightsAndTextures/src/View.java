@@ -34,9 +34,9 @@ import javax.imageio.ImageIO;
 public class View {
 
   private static final String SCENE = "scenegraphmodels/testScene.xml";
-  private static final String TABLE = "scenegraphmodels/davinci.xml";
+  private static final String TABLE = "scenegraphmodels/table.xml";
   private static final String HUMANOID = "scenegraphmodels/humanoid-lights.xml";
-  private static final String SCENE_GRAPH_XML = SCENE;
+  private static final String SCENE_GRAPH_XML = TABLE;
 
   private static final float DISPLACEMENT = 10.0f;
   private static final float PAN_ANGLE = 2f;
@@ -139,7 +139,7 @@ public class View {
     initSceneGraph(gla);
   }
 
-  private Vector3f eyePosition = new Vector3f(0.0f, 0.0f, 100.0f);
+  private Vector3f eyePosition = new Vector3f(0.0f, 0.0f, 200.0f);
   private Vector3f lookAtPosition = new Vector3f(0, 0, 0);
   private Vector3f upVector = new Vector3f(0, 1, 0);
   private int timer = 0;
@@ -178,17 +178,26 @@ public class View {
       modelView.push(new Matrix4f());
       modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
 
+      // Collect all the objects to draw.
       scenegraph.draw(modelView);
-      //all the light properties, except positions
+
+      // Note down the number of lights to render.
       gl.glUniform1i(numLightsLocation, renderer.getLightCount());
 
+      // To add or not to add, depends on the switch
       if(lightSwitch.size() != renderer.getLightCount()) {
         System.out.println("Re-adding lights to switch");
         for(int i = 0; i < renderer.getLightCount(); ++i)
           lightSwitch.put(i, true);
       }
 
+      // Pass light information to the shaders.
       renderer.drawLight(this.lightSwitch);
+
+      System.out.println("/*********************************************************/");
+      scenegraph.getRoot().calculateBoundingBox();
+
+      // Finally draw the objects.
       renderer.drawMeshes();
     }
 

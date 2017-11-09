@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import util.BoundingBox;
 import util.Light;
 
 /**
@@ -24,11 +25,14 @@ public abstract class AbstractNode implements INode
      */
     protected IScenegraph scenegraph;
 
+    protected BoundingBox boundingBox;
+
     public AbstractNode(IScenegraph graph, String name)
     {
         this.parent = null;
         scenegraph = graph;
         setName(name);
+        this.boundingBox = new BoundingBox();
     }
 
     /**
@@ -147,6 +151,10 @@ public abstract class AbstractNode implements INode
      */
     public void addLight(Light l) {
         throw new UnsupportedOperationException("Lights not supported yet!");
+    }
+
+    public BoundingBox getBoundingBox() {
+        return this.boundingBox;
     }
 
 }

@@ -10,6 +10,7 @@ import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 import org.omg.CORBA.INTERNAL;
+import util.BoundingBox;
 import util.IVertexData;
 import util.Light;
 import util.TextureImage;
@@ -145,6 +146,11 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
               shaderLocations,shaderVarsToVertexAttribs,mesh,name);
 
       meshRenderers.put(name,obj);
+    }
+
+
+    public BoundingBox getBoundingBoxForMesh(String instancename) {
+        return meshRenderers.get(instancename).getMesh().getBoundingBox();
     }
 
     @Override

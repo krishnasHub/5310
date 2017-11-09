@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import util.BoundingBox;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -125,6 +126,28 @@ public class TransformNode extends AbstractNode
         if (child!=null)
             child.draw(context,modelView);
         modelView.pop();
+    }
+
+
+    public void calculateBoundingBox() {
+        if(child == null)
+            return;
+
+        System.out.println("Calculating bb for Transform");
+
+        // First calculate the boundingBoxes for all children.
+        child.calculateBoundingBox();
+
+        this.boundingBox = new BoundingBox(child.getBoundingBox());
+
+        Matrix4f currTransform = new Matrix4f()
+                .mul(transform)
+                .mul(animation_transform);
+
+        currTransform.transform(this.boundingBox.getMinBounds());
+        currTransform.transform(this.boundingBox.getMaxBounds());
+
+        System.out.println("Done calculating bb for Transform");
     }
 
     @Override

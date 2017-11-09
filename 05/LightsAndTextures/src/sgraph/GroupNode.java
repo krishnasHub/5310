@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import util.BoundingBox;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +78,57 @@ public class GroupNode extends AbstractNode
             children.get(i).draw(context,modelView);
         }
     }
+
+    public void calculateBoundingBox() {
+        System.out.println("Calculating bb for Group");
+        if(children == null || children.size() == 0)
+            return;
+
+        // First calculate the boundingBoxes for all children.
+        for (int i=0;i<children.size();i++) {
+            children.get(i).calculateBoundingBox();
+        }
+
+        this.boundingBox = new BoundingBox(children.get(0).getBoundingBox());
+
+        // Then calculate for self.
+        for (int i = 1; i < children.size(); i++) {
+            INode node = children.get(i);
+            BoundingBox box = node.getBoundingBox();
+
+            // Re-calculate the bounds for MinBounds.
+            if(box.getMinBounds().x < this.boundingBox.getMinBounds().x) {
+                this.boundingBox.getMinBounds().x = box.getMinBounds().x;
+            }
+
+            if(box.getMinBounds().y < this.boundingBox.getMinBounds().y) {
+                this.boundingBox.getMinBounds().y = box.getMinBounds().y;
+            }
+
+            if(box.getMinBounds().z < this.boundingBox.getMinBounds().z) {
+                this.boundingBox.getMinBounds().z = box.getMinBounds().z;
+            }
+
+
+            // Re-calculate the bounds for MaxBounds.
+            if(box.getMaxBounds().x > this.boundingBox.getMaxBounds().x) {
+                this.boundingBox.getMaxBounds().x = box.getMaxBounds().x;
+            }
+
+            if(box.getMaxBounds().y > this.boundingBox.getMaxBounds().y) {
+                this.boundingBox.getMaxBounds().y = box.getMaxBounds().y;
+            }
+
+            if(box.getMaxBounds().z > this.boundingBox.getMaxBounds().z) {
+                this.boundingBox.getMaxBounds().z = box.getMaxBounds().z;
+            }
+        }
+
+        System.out.println("Done calculating bb for Group");
+    }
+
+
+
 
     public void animate(int time) {
         for (int i=0;i<children.size();i++)

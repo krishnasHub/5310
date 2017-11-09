@@ -14,7 +14,14 @@
 
     <group name="Entire Table">
 
-
+        <light name="Table Light 1">
+            <ambient>0.1 0.1 0.1</ambient>
+            <diffuse>0.6 0.6 0.6</diffuse>
+            <specular>0.9 0.9 0.9</specular>
+            <position>0 30 0 </position>
+            <spotangle>40</spotangle>
+            <spotdirection>0 -1 0 </spotdirection>
+        </light>
 
 
         <transform name="Table Top">
@@ -48,7 +55,6 @@
             <animationType>RotateByZ</animationType>
             <group name="Entire Mace" from="scenegraphmodels/mace.xml"></group>
         </transform>
-
 
         <transform name="davinci">
             <set>

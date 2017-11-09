@@ -34,6 +34,7 @@ public class LeafNode extends AbstractNode
         super(graph,name);
         this.objInstanceName = instanceOf;
         lights = new ArrayList<Light>();
+
     }
 
 
@@ -82,6 +83,13 @@ public class LeafNode extends AbstractNode
         return newclone;
     }
 
+    public void calculateBoundingBox() {
+        // Do nothing for a Leaf node. It's already being done in draw().
+        System.out.println("Calculating bb for Leaf");
+        System.out.println("Done calculating bb for Leaf");
+    }
+
+
 
     /**
      * Delegates to the scene graph for rendering. This has two advantages:
@@ -106,6 +114,9 @@ public class LeafNode extends AbstractNode
 
             //context.drawMesh(objInstanceName, material, textureName, modelView.peek());
             context.storeMeshInfo(meshInfo);
+
+            // Get the bounding box for this Leaf node.
+            this.boundingBox = context.getBoundingBoxForMesh(objInstanceName);
         }
 
         if(lights.size() > 0) {

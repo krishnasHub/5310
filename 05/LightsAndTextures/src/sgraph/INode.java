@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import util.BoundingBox;
 import util.Light;
 
 import java.util.Stack;
@@ -86,6 +87,11 @@ public interface INode
     void setAnimationTransform(Matrix4f m) throws IllegalArgumentException;
 
     void animate(int time);
+
+
+    void calculateBoundingBox();
+
+    BoundingBox getBoundingBox();
 
     /**
      * Set the material associated with this node. Not all types of nodes can have materials associated with them.
