@@ -115,5 +115,8 @@ public interface INode
      * @param l
      */
     void addLight(Light l);
+
+
+    void setShowExploded(boolean showExploded);
 }
 

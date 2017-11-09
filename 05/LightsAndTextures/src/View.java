@@ -50,6 +50,7 @@ public class View {
   private float trackballRadius;
   private Vector2f mousePos;
   private boolean mipmapped;
+  private boolean showExplodedView = false;
 
 
   private sgraph.IScenegraph<VertexAttrib> scenegraph;
@@ -315,6 +316,10 @@ public class View {
       case KeyEvent.VK_8:
       case KeyEvent.VK_9:
         toggleSwitch(e.getKeyCode() - KeyEvent.VK_1);
+        break;
+
+      case KeyEvent.VK_E:
+        showExplodedView = !showExplodedView;
         break;
     }
   }

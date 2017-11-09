@@ -27,6 +27,8 @@ public abstract class AbstractNode implements INode
 
     protected BoundingBox boundingBox;
 
+    protected boolean showExploded;
+
     public AbstractNode(IScenegraph graph, String name)
     {
         this.parent = null;
@@ -190,4 +192,11 @@ public abstract class AbstractNode implements INode
         reCalculateBoundingBox(node.getBoundingBox());
     }
 
+    public boolean isShowExploded() {
+        return showExploded;
+    }
+
+    public void setShowExploded(boolean showExploded) {
+        this.showExploded = showExploded;
+    }
 }

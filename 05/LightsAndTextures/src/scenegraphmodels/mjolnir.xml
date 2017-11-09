@@ -6,7 +6,7 @@
     <transform>
         <set>
         </set>
-        <group name="Entire Mjolnir">
+        <group name="Entire Mjolnir" showExploded="true">
 
             <transform name="Top Ring">
                 <set>

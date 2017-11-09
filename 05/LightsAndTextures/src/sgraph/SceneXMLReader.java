@@ -88,6 +88,8 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         String name = "";
         String copyof = "";
         String fromfile = "";
+        boolean showExploded = false;
+
         for (int i = 0; i < attributes.getLength(); i++) {
           if (attributes.getQName(i).equals("name"))
             name = attributes.getValue(i);
@@ -95,10 +97,13 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
             copyof = attributes.getValue(i);
           else if (attributes.getQName(i).equals("from"))
             fromfile = attributes.getValue(i);
+          else if (attributes.getQName(i).equals("showExploded"))
+            showExploded = attributes.getValue(i).equals("true");
         }
         if ((copyof.length() > 0) && (subgraph.containsKey(copyof))) {
           node = subgraph.get(copyof).clone();
           node.setName(name);
+
         } else if (fromfile.length() > 0) {
           sgraph.IScenegraph<K> tempsg = null;
           try {
@@ -124,6 +129,9 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
           node.addChild(tempsg.getRoot());
         } else
           node = new sgraph.GroupNode(scenegraph, name);
+
+        node.setShowExploded(showExploded);
+
         try {
           stackNodes.peek().addChild(node);
         } catch (IllegalArgumentException e) {
@@ -135,9 +143,12 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       break;
       case "transform": {
         String name = "";
+        boolean showExploded = false;
         for (int i = 0; i < attributes.getLength(); i++) {
           if (attributes.getQName(i).equals("name"))
             name = attributes.getValue(i);
+          else if (attributes.getQName(i).equals("showExploded"))
+            showExploded = attributes.getValue(i).equals("true");
         }
         node = new sgraph.TransformNode(scenegraph, name);
         try {
@@ -145,6 +156,9 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         } catch (IllegalArgumentException e) {
           throw new SAXException(e.getMessage());
         }
+
+        node.setShowExploded(showExploded);
+
         transform.identity();
         animation_transform.identity();
         stackNodes.push(node);
