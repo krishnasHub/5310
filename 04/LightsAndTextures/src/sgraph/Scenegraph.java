@@ -111,10 +111,9 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     @Override
     public void animate(float time) {
-        if ((root!=null) && (renderer!=null))
-        {
+        // Look for <animationType> tags in the scenegraph where animators are added as simple snippets.
+        if ((root!=null) && (renderer!=null)) {
             root.animate((int) time);
-
         }
     }
 

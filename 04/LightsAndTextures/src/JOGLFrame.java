@@ -66,7 +66,7 @@ public class JOGLFrame extends JFrame {
       public void display(GLAutoDrawable glAutoDrawable) { //called every time this window must be redrawn
 
         view.draw(glAutoDrawable);
-        if (frameno<500) {
+        if (frameno<-500) {
           String filename = "output/image"
                   +String.format("%03d.png",frameno);
           try {

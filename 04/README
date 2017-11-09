@@ -74,3 +74,6 @@ The video file is located in output/images, called out.mp4.
 It can also be downloaded at found at: https://github.com/ajesguerra/webdev-esguerra-arnold/blob/master/src/assets/projectimages/out.mp4
 
 Each time the video runs, it will re-capture up to 500 images into the ./output/images folder.
+For the sake of submission, we have commented out the video recording. To re-enable capturing all teh frames,
+make changes in the JoglFrame class at line No. 69, from if (frameno<-500) to if (frameno<500).
+
