@@ -64,7 +64,7 @@ void main()
         rDotV = max(dot(reflectVec,viewVec),0.0);
 
         dDotmL = dot(light[i].spotDirection, -lightVec);
-        bool inCone = (dDotmL >= cos(light[i].spotCutoff));
+        bool inCone = (dDotmL >= (light[i].spotCutoff));
 
         ambient = material.ambient * light[i].ambient;
         diffuse = material.diffuse * light[i].diffuse * max(nDotL,0);
@@ -76,7 +76,7 @@ void main()
 
         if(inCone)
         {
-            spotLightAmount = (dDotmL - cos(light[i].spotCutoff)) / dDotmL;
+            spotLightAmount = (dDotmL - (light[i].spotCutoff)) / dDotmL;
             spotLightAmount = 1;
             fColor = fColor + vec4(spotLightAmount * (ambient + diffuse + specular),1.0);
         }
