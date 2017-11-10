@@ -2,6 +2,8 @@ package util;
 
 import org.joml.Vector4f;
 
+import java.util.List;
+
 /**
  * Created by krish on 11/9/2017.
  *
@@ -26,7 +28,19 @@ public class BoundingBox {
         this.maxBounds = maxBounds;
     }
 
+    public boolean collides(List<BoundingBox> boxes) {
+        boolean ret = false;
+
+        for(int i = 0; i < boxes.size(); ++i)
+            ret |= collides(boxes.get(i));
+
+        return ret;
+    }
+
     public boolean collides(BoundingBox box) {
+        if(box == this)
+            return false;
+
         return (box.getMinBounds().x >= this.getMinBounds().x && box.getMinBounds().x <= this.getMaxBounds().x &&
                 box.getMinBounds().y >= this.getMinBounds().y && box.getMinBounds().y <= this.getMaxBounds().y &&
                 box.getMinBounds().z >= this.getMinBounds().z && box.getMinBounds().z <= this.getMaxBounds().z);

@@ -4,10 +4,12 @@ import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 import util.BoundingBox;
+import util.P;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * This class represents a group node in the scenegraph. A group node is simply a logical grouping
@@ -83,7 +85,7 @@ public class GroupNode extends AbstractNode
     }
 
     public void calculateBoundingBox() {
-        System.out.println("Calculating bb for Group");
+        P.P("Calculating bb for Group");
         if(children == null || children.size() == 0)
             return;
 
@@ -99,7 +101,7 @@ public class GroupNode extends AbstractNode
             reCalculateBoundingBox(children.get(i));
         }
 
-        System.out.println("Done calculating bb for Group");
+        P.P("Done calculating bb for Group");
     }
 
 
@@ -150,15 +152,36 @@ public class GroupNode extends AbstractNode
             // We only radially move the Transform Node. Can't really translate any other nodes.
             if(node instanceof TransformNode) {
                 ng = node.getBoundingBox().getCentroid();
-
-                radial = new Vector3f(ng.x - cg.x, ng.y - cg.y, ng.z - cg.z);
-
                 tempTNode = (TransformNode) node;
 
-                transform = new Matrix4f()
-                        .translate(radial)
-                        .mul(tempTNode.getTransform());
-                tempTNode.setTransform(transform);
+                boolean collides = true;
+                float scale = 0.5f;
+
+                while(collides) {
+
+                    tempTNode.calculateBoundingBox();
+
+                    radial = new Vector3f(ng.x - cg.x, ng.y - cg.y, ng.z - cg.z);
+                    if (radial.x == 0.0f && radial.y == 0.0f && radial.z == 0.0f)
+                        radial = new Vector3f(0, 2, 0);
+                    //radial.normalize();
+                    radial.mul(scale);
+
+                    //radial.add(ng.x, ng.y, ng.z);
+
+
+                    transform = new Matrix4f()
+                            .translate(radial)
+                            .mul(tempTNode.getTransform());
+                    tempTNode.setTransform(transform);
+
+                    tempTNode.calculateBoundingBox();
+
+                    collides = tempTNode.getBoundingBox()
+                            .collides(children.stream()
+                                    .map(c -> c.getBoundingBox()).collect(Collectors.toList()));
+                    scale += 0.5f;
+                }
             }
         }
 
