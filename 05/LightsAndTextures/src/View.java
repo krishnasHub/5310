@@ -34,7 +34,7 @@ import javax.imageio.ImageIO;
 public class View {
 
   private static final String SCENE = "scenegraphmodels/testScene.xml";
-  private static final String TABLE = "scenegraphmodels/table.xml";
+  private static final String TABLE = "scenegraphmodels/davinci.xml";
   private static final String HUMANOID = "scenegraphmodels/humanoid-lights.xml";
   private static final String SCENE_GRAPH_XML = TABLE;
 
@@ -140,7 +140,7 @@ public class View {
     initSceneGraph(gla);
   }
 
-  private Vector3f eyePosition = new Vector3f(0.0f, 0.0f, 200.0f);
+  private Vector3f eyePosition = new Vector3f(0.0f, 0.0f, 50.0f);
   private Vector3f lookAtPosition = new Vector3f(0, 0, 0);
   private Vector3f upVector = new Vector3f(0, 1, 0);
   private int timer = 0;

@@ -33,7 +33,7 @@
                     <translate>110 -100 -80</translate>
                     <scale>100 100 100</scale>
                 </set>
-                <group name="humanoid" from="scenegraphmodels/Y-humanoid.xml">
+                <group name="humanoid" from="scenegraphmodels/Y-humanoid.xml" >
                     <light>
                         <ambient>0.1 0.1 0.1</ambient>
                         <diffuse>0.2 0.2 0.4</diffuse>
@@ -205,7 +205,7 @@
                                     <rotate>90 1 0 0</rotate>
                                 </set>
                                 <animationType>RotateZ</animationType>
-                                <group name="room1" from="scenegraphmodels/gear.xml">
+                                <group name="Horizontal Gear" from="scenegraphmodels/gear.xml">
                                 </group>
                             </transform>
                         </group>
@@ -244,7 +244,7 @@
                                 <set>
                                     <rotate>90 0 1 0</rotate>
                                 </set>
-                                <group name="room1" from="scenegraphmodels/gear.xml">
+                                <group name="Vertical Gear" from="scenegraphmodels/gear.xml">
                                 </group>
                             </transform>
                         </group>
@@ -386,7 +386,7 @@
                             <rotate>45 0 1 0</rotate>
                         </set>
                         <animationType>RotateY</animationType>
-                        <group>
+                        <group showExploded="true">
 
                             <transform>
                                 <set>

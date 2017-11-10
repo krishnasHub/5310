@@ -151,10 +151,12 @@ public class GroupNode extends AbstractNode
                 ng = node.getBoundingBox().getCentroid();
 
                 radial = new Vector3f(ng.x - cg.x, ng.y - cg.y, ng.z - cg.z);
+
                 tempTNode = (TransformNode) node;
 
-
-                transform = new Matrix4f().translate(radial).mul(tempTNode.getTransform());
+                transform = new Matrix4f()
+                        .translate(radial)
+                        .mul(tempTNode.getTransform());
                 tempTNode.setTransform(transform);
             }
         }
