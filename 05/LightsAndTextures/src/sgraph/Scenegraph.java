@@ -39,6 +39,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
      */
     protected IScenegraphRenderer renderer;
 
+    public boolean showExplodedView = false;
+
 
     public Scenegraph()
     {
@@ -107,6 +109,9 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     }
 
 
+    public void showExplodedView(boolean show) {
+        this.showExplodedView = show;
+    }
 
 
     @Override

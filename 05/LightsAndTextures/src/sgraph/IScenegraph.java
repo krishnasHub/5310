@@ -97,4 +97,6 @@ public interface IScenegraph<VertexType extends IVertexData>
      */
     void addTexture(String name, String path);
     void dispose();
+
+    void showExplodedView(boolean show);
 }

@@ -5,7 +5,8 @@
             <rotate>90 1 0 0</rotate>
         </set>
         <animationType>RotateY2</animationType>
-        <group name="base">
+        <group name="base" showExploded="true">
+
             <transform name="bottomplatform">
                 <set>
                     <translate>10 -100 -70</translate>
@@ -45,7 +46,6 @@
             </transform>
 
 
-            
             <transform name="Bottom Platform Support Top Platform 1">
                 <set>
                     <translate>10 25 50</translate>
@@ -125,7 +125,7 @@
                 <set>
                     <translate>-120 -25 -50</translate>
                 </set>
-                <group>
+                <group showExploded="true">
                     <transform name="leftHouseBaseSquare">
                         <set>
                             <scale>20 150 150</scale>
@@ -174,12 +174,12 @@
                     <!--Use this translate to see what is part of the set-->
                     <translate>0 0 0</translate>
                 </set>
-                <group>
+                <group showExploded="true">
                     <transform name="centerBeam">
                         <set>
                             <!-- spin horizontal gear and beam-->
                         </set>
-                        <group>
+                        <group showExploded="true">
                             <transform name="mainBeam">
                                 <set>
                                     <translate>10 -100 -70</translate>
@@ -220,7 +220,7 @@
                             <rotate>10 1 0 0</rotate>
                         </set>
                         <animationType>RotateX</animationType>
-                        <group>
+                        <group showExploded="true">
                             <transform name="leftcrank">
                                 <set>
                                     <translate>35 0 0</translate>
@@ -259,7 +259,7 @@
                     <!--use this translate to see what is part of the set-->
                     <translate>0 0 0</translate>
                 </set>
-                <group>
+                <group showExploded="true">
                     <transform>
                         <set>
                             <translate>10 150 -70</translate>
@@ -428,14 +428,6 @@
                 </group>
             </transform>
 
-            <transform>
-                <set>
-                </set>
-                <group>
-
-
-                </group>
-            </transform>
         </group>
     </transform>
 </scene>

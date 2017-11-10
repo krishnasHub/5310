@@ -93,6 +93,8 @@ public interface INode
 
     BoundingBox getBoundingBox();
 
+    void explodeNode();
+
     /**
      * Set the material associated with this node. Not all types of nodes can have materials associated with them.
      * If the node cannot have a material, this method throws an {@link }IllegalArgumentException}

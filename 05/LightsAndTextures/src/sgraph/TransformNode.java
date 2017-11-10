@@ -129,6 +129,14 @@ public class TransformNode extends AbstractNode
     }
 
 
+    public void explodeNode() {
+        // Do nothing..
+        if(this.showExploded)
+            child.setShowExploded(true);
+        if(child != null)
+            child.explodeNode();
+    }
+
     public void calculateBoundingBox() {
         if(child == null)
             return;
@@ -152,7 +160,6 @@ public class TransformNode extends AbstractNode
 
         // Recalculate my own bb based on the transformed bb.
         reCalculateBoundingBox(bb);
-
 
         System.out.println("Done calculating bb for Transform");
     }

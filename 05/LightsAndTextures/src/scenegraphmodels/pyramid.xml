@@ -7,7 +7,7 @@
 
         </set>
         <group name="Entire Pyramid">
-            <transform name="Pyramid Base">
+            <transform name="Pyramid Base 1">
                 <set>
                     <scale>16 3 16</scale>
                 </set>
@@ -23,7 +23,7 @@
                 </object>
             </transform>
 
-            <transform name="Pyramid Base">
+            <transform name="Pyramid Base 2">
                 <set>
                     <translate>0 3 0</translate>
                     <scale>12 3 12</scale>
@@ -40,7 +40,7 @@
                 </object>
             </transform>
 
-            <transform name="Pyramid Base">
+            <transform name="Pyramid Base 3">
                 <set>
                     <translate>0 6 0</translate>
                     <scale>8 3 8</scale>
@@ -57,7 +57,7 @@
                 </object>
             </transform>
 
-            <transform name="Pyramid Base">
+            <transform name="Pyramid Base 4">
                 <set>
                     <translate>0 9 0</translate>
                     <scale>6 3 6</scale>
@@ -76,8 +76,8 @@
             </transform>
 
 
-
-            <transform name="Pyramid Base">
+<!--
+            <transform name="Pyramid Cone 1">
                 <set>
                     <translate>0 -1 0</translate>
                     <rotate>45 0 1 0</rotate>
@@ -95,7 +95,7 @@
                     </material>
                 </object>
             </transform>
-            <transform name="Pyramid Cone">
+            <transform name="Pyramid Cone 2">
                 <set>
                     <translate>0 -1 0</translate>
                     <rotate>-45 0 1 0</rotate>
@@ -113,7 +113,7 @@
                     </material>
                 </object>
             </transform>
-
+-->
 
         </group>
     </transform>

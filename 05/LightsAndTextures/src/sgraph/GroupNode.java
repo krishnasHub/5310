@@ -1,6 +1,8 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
+import org.joml.Vector4f;
 import util.BoundingBox;
 
 import java.util.ArrayList;
@@ -100,6 +102,69 @@ public class GroupNode extends AbstractNode
     }
 
 
+    public void explodeNode() {
+        // explode the children..
+        for(int i = 0; i < children.size(); ++i) {
+            // explode the child node.
+            children.get(i).explodeNode();
+
+            // recalculate the bounding box after exploding..
+            children.get(i).calculateBoundingBox();
+        }
+
+        // If this node does not have to explode, don't.
+        if(!this.showExploded)
+            return;
+
+        // recalculate my own bounding box.
+        this.calculateBoundingBox();
+
+        // Find the centroid of this group after exploding every child.
+        Vector4f cg = this.boundingBox.getCentroid();
+
+        // Now, for every child, push them radially outwards from the centroid along the path made from
+        // joining the centroid of this group to the centroid of that individual node.
+        Vector4f ng = null;
+        Vector3f radial = null;
+        TransformNode tempTNode = null;
+        Matrix4f transform = null;
+        List<INode> tempNodesToAdd = new ArrayList<>();
+        List<INode> nodestoRemove = new ArrayList<>();
+
+        for(int i = 0; i < children.size(); ++i) {
+            INode node = children.get(i);
+
+            // If the child is a LeafNode or a GroupNode, wrap it with a TransformNode
+            if(node instanceof LeafNode || node instanceof GroupNode) {
+
+                TransformNode tn = new TransformNode(this.scenegraph,
+                        "Temp Transform " + (i + 1) + " " + this.name);
+                tn.addChild(node);
+                tempNodesToAdd.add(tn);
+                nodestoRemove.add(node);
+                node = tn;
+                node.calculateBoundingBox();
+            }
+
+            // We only radially move the Transform Node. Can't really translate any other nodes.
+            if(node instanceof TransformNode) {
+                ng = node.getBoundingBox().getCentroid();
+
+                radial = new Vector3f(ng.x - cg.x, ng.y - cg.y, ng.z - cg.z);
+                tempTNode = (TransformNode) node;
+
+
+                transform = new Matrix4f().translate(radial).mul(tempTNode.getTransform());
+                tempTNode.setTransform(transform);
+            }
+        }
+
+        this.children.removeAll(nodestoRemove);
+        this.children.addAll(tempNodesToAdd);
+
+        this.calculateBoundingBox();
+
+    }
 
 
     public void animate(int time) {

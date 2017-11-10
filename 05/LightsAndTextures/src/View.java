@@ -173,11 +173,23 @@ public class View {
     if(scenegraph != null) {
       scenegraph.animate(timer);
 
+      System.out.println("/*********************************************************/");
+      scenegraph.getRoot().calculateBoundingBox();
+
+      if(this.showExplodedView) {
+
+        scenegraph.getRoot().explodeNode();
+        this.showExplodedView = false;
+      }
+
+
       while (!modelView.empty())
         modelView.pop();
 
       modelView.push(new Matrix4f());
       modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
+
+
 
       // Collect all the objects to draw.
       scenegraph.draw(modelView);
@@ -195,8 +207,7 @@ public class View {
       // Pass light information to the shaders.
       renderer.drawLight(this.lightSwitch);
 
-      System.out.println("/*********************************************************/");
-      scenegraph.getRoot().calculateBoundingBox();
+
 
       // Finally draw the objects.
       renderer.drawMeshes();

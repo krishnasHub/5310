@@ -42,6 +42,9 @@ public class LightNode extends AbstractNode {
         // Do nothing for a light node. Light has no bounding box. So, we don't really care about it.
     }
 
+    public void explodeNode() {
+        // Do nothing..
+    }
 
 
     @Override
