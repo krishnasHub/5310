@@ -99,4 +99,6 @@ public interface IScenegraph<VertexType extends IVertexData>
     void dispose();
 
     void showExplodedView(boolean show);
+
+    IScenegraph<VertexType> clone();
 }

@@ -2,6 +2,7 @@ package sgraph;
 
 import org.joml.Matrix4f;
 import util.IVertexData;
+import util.P;
 import util.PolygonMesh;
 
 import java.util.HashMap;
@@ -40,6 +41,36 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     protected IScenegraphRenderer renderer;
 
     public boolean showExplodedView = false;
+
+    public IScenegraph<VertexType> clone() {
+        IScenegraph<VertexType> ret = null;
+
+        try {
+            ret = new Scenegraph<>();
+
+            ret.setRenderer(this.renderer);
+            ret.makeScenegraph(this.root.clone());
+            ret.getRoot().setScenegraph(ret);
+
+            ret.showExplodedView(this.showExplodedView);
+
+            for(String str : meshes.keySet())
+                ret.addPolygonMesh(str, meshes.get(str));
+
+            for(String str : textures.keySet())
+                ret.addTexture(str, textures.get(str));
+
+            for(String str : nodes.keySet())
+                ret.addNode(str, ret.getRoot().getNode(str));
+
+
+        } catch(Exception e) {
+            P.P(e);
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
 
 
     public Scenegraph()

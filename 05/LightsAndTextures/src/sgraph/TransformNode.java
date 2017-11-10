@@ -56,8 +56,8 @@ public class TransformNode extends AbstractNode
         }
 
         TransformNode newtransform = new TransformNode(scenegraph,name);
-        newtransform.setTransform(this.transform);
-        newtransform.setAnimationTransform(animation_transform);
+        newtransform.setTransform(new Matrix4f(this.transform));
+        newtransform.setAnimationTransform(new Matrix4f(animation_transform));
 
         if (newchild!=null)
         {

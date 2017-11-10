@@ -21,6 +21,7 @@ public class GroupNode extends AbstractNode
      */
     protected List<INode> children;
 
+
     public GroupNode(IScenegraph graph, String name)
     {
         super(graph,name);

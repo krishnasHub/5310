@@ -6,6 +6,9 @@
         </set>
         <animationType>RotateY2</animationType>
         <group name="base" showExploded="true">
+            <light>
+                <ambient>1 1 1</ambient>
+            </light>
 
             <transform name="bottomplatform">
                 <set>
@@ -33,7 +36,7 @@
                     <translate>110 -100 -80</translate>
                     <scale>100 100 100</scale>
                 </set>
-                <group name="humanoid" from="scenegraphmodels/Y-humanoid.xml" showExploded="true">
+                <group name="humanoid" from="scenegraphmodels/Y-humanoid.xml" >
                     <light>
                         <ambient>0.1 0.1 0.1</ambient>
                         <diffuse>0.2 0.2 0.4</diffuse>

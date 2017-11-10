@@ -13,6 +13,7 @@ import sgraph.GL3ScenegraphRenderer;
 import sgraph.LightLocation;
 import sgraph.LightNode;
 import util.ObjectInstance;
+import util.P;
 
 
 import java.awt.event.KeyEvent;
@@ -54,7 +55,8 @@ public class View {
 
 
   private sgraph.IScenegraph<VertexAttrib> scenegraph;
-  private sgraph.IScenegraph<VertexAttrib> scenegraphYMCA;
+  private sgraph.IScenegraph<VertexAttrib> explodedScenegraph;
+  private sgraph.IScenegraph<VertexAttrib> sceneGraphtoRender = null;
 
   AWTGLReadBufferUtil screenCaptureUtil;
 
@@ -108,6 +110,9 @@ public class View {
     if (scenegraph != null)
       scenegraph.dispose();
 
+    if(explodedScenegraph != null)
+      explodedScenegraph.dispose();
+
     InputStream in = getClass().getClassLoader().getResourceAsStream(SCENE_GRAPH_XML);
 
 
@@ -122,6 +127,14 @@ public class View {
     shaderVarsToVertexAttribs.put("vTexCoord", "texcoord");
     renderer.initShaderProgram(program, shaderVarsToVertexAttribs);
     scenegraph.setRenderer(renderer);
+
+    explodedScenegraph = sgraph.SceneXMLReader.importScenegraph(getClass().getClassLoader().getResourceAsStream(SCENE_GRAPH_XML), new VertexAttribProducer());
+    explodedScenegraph.setRenderer(renderer);
+
+    explodedScenegraph.getRoot().explodeNode();
+
+    sceneGraphtoRender = scenegraph;
+
 
     //program.disable(gl);
   }
@@ -170,15 +183,19 @@ public class View {
     */
     gl.glUniformMatrix4fv(projectionLocation, 1, false, proj.get(fb16));
 
-    if(scenegraph != null) {
-      scenegraph.animate(timer);
+    if(sceneGraphtoRender != null) {
+      sceneGraphtoRender.animate(timer);
 
-      System.out.println("/*********************************************************/");
-      scenegraph.getRoot().calculateBoundingBox();
+      P.P("/*********************************************************/");
+      sceneGraphtoRender.getRoot().calculateBoundingBox();
 
       if(this.showExplodedView) {
 
-        scenegraph.getRoot().explodeNode();
+        if(sceneGraphtoRender == scenegraph)
+          sceneGraphtoRender = explodedScenegraph;
+        else
+          sceneGraphtoRender = scenegraph;
+
         this.showExplodedView = false;
       }
 
@@ -192,7 +209,7 @@ public class View {
 
 
       // Collect all the objects to draw.
-      scenegraph.draw(modelView);
+      sceneGraphtoRender.draw(modelView);
 
       // Note down the number of lights to render.
       gl.glUniform1i(numLightsLocation, renderer.getLightCount());

@@ -6,6 +6,9 @@
         </set>
         <animationType>RotateY2</animationType>
         <group name="base" showExploded="true">
+            <light>
+                <ambient>1 1 1</ambient>
+            </light>
 
             <transform name="bottomplatform">
                 <set>

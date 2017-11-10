@@ -2,6 +2,7 @@ package sgraph;
 
 import org.joml.Matrix4f;
 import util.Light;
+import util.Material;
 import util.PolygonMesh;
 
 import java.util.ArrayList;
@@ -80,7 +81,7 @@ public class LeafNode extends AbstractNode
     public INode clone()
     {
         LeafNode newclone = new LeafNode(this.objInstanceName,scenegraph,name);
-        newclone.setMaterial(this.getMaterial());
+        newclone.setMaterial(new Material(this.getMaterial()));
         return newclone;
     }
 
