@@ -3,6 +3,7 @@ package sgraph;
 import org.joml.Matrix4f;
 import util.Light;
 import util.Material;
+import util.P;
 import util.PolygonMesh;
 
 import java.util.ArrayList;
@@ -88,11 +89,11 @@ public class LeafNode extends AbstractNode
     public void calculateBoundingBox() {
         // Do nothing for a Leaf node. It's already being done in draw().
         // Get the bounding box for this Leaf node.
-        System.out.println("Calculating bb for Leaf");
+        P.P("Calculating bb for Leaf");
 
         this.boundingBox  = ((PolygonMesh)scenegraph.getPolygonMeshes().get(objInstanceName)).getBoundingBox();
 
-        System.out.println("Done calculating bb for Leaf");
+        P.P("Done calculating bb for Leaf");
     }
 
 

@@ -155,7 +155,7 @@ public class GroupNode extends AbstractNode
                 tempTNode = (TransformNode) node;
 
                 boolean collides = true;
-                float scale = 0.5f;
+                float scale = 0.25f;
 
                 while(collides) {
 
@@ -163,12 +163,11 @@ public class GroupNode extends AbstractNode
 
                     radial = new Vector3f(ng.x - cg.x, ng.y - cg.y, ng.z - cg.z);
                     if (radial.x == 0.0f && radial.y == 0.0f && radial.z == 0.0f)
-                        radial = new Vector3f(0, 2, 0);
+                        radial = new Vector3f(0, 0, 0);
                     //radial.normalize();
-                    radial.mul(scale);
+                    //radial.mul(scale);
 
                     //radial.add(ng.x, ng.y, ng.z);
-
 
                     transform = new Matrix4f()
                             .translate(radial)
@@ -180,8 +179,10 @@ public class GroupNode extends AbstractNode
                     collides = tempTNode.getBoundingBox()
                             .collides(children.stream()
                                     .map(c -> c.getBoundingBox()).collect(Collectors.toList()));
-                    scale += 0.5f;
+                    scale += 0.25f;
                 }
+
+                tempTNode.calculateBoundingBox();
             }
         }
 
