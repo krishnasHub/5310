@@ -4,6 +4,8 @@ import org.joml.Matrix4f;
 import org.joml.Vector4f;
 import util.Light;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -46,6 +48,12 @@ public class LightNode extends AbstractNode {
         // Do nothing..
     }
 
+    public List<Vector4f> getAllVertices() {
+        List<Vector4f> ret = new ArrayList<>();
+
+        return ret;
+
+    }
 
     @Override
     public INode clone() {

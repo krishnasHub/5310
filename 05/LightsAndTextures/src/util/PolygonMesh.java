@@ -107,21 +107,16 @@ public class PolygonMesh<VertexType extends IVertexData> {
     primitives = new ArrayList<Integer>(t);
   }
 
-  /**
-   * Compute the bounding box of this polygon mesh, if there is position data
-   */
 
-  protected void computeBoundingBox() {
-    int j;
+  public List<Vector4f> getAllPositionVertices() {
+    List<Vector4f> ret = new ArrayList<>(vertexData.size());
 
     if (vertexData.size() <= 0)
-      return;
+      return ret;
 
     if (!vertexData.get(0).hasData("position")) {
-      return;
+      return ret;
     }
-
-    List<Vector4f> positions = new ArrayList<Vector4f>();
 
     for (IVertexData v : vertexData) {
       float[] data = v.getData("position");
@@ -136,8 +131,27 @@ public class PolygonMesh<VertexType extends IVertexData> {
         case 1:
           pos.x = data[0];
       }
-      positions.add(pos);
+      ret.add(pos);
     }
+
+    return ret;
+  }
+
+  /**
+   * Compute the bounding box of this polygon mesh, if there is position data
+   */
+
+  protected void computeBoundingBox() {
+    int j;
+
+    if (vertexData.size() <= 0)
+      return;
+
+    if (!vertexData.get(0).hasData("position")) {
+      return;
+    }
+
+    List<Vector4f> positions = getAllPositionVertices();
 
     minBounds = new Vector4f(positions.get(0));
     maxBounds = new Vector4f(positions.get(0));

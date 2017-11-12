@@ -6,7 +6,7 @@ package util;
  * Simple wrapper to Print on console.
  */
 public class P {
-    private static final boolean SHOW_LOGS = true;
+    private static final boolean SHOW_LOGS = false;
 
     public static void P() {
         if(SHOW_LOGS) System.out.println();

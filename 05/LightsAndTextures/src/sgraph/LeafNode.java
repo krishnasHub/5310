@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import org.joml.Vector4f;
 import util.Light;
 import util.Material;
 import util.P;
@@ -84,6 +85,10 @@ public class LeafNode extends AbstractNode
         LeafNode newclone = new LeafNode(this.objInstanceName,scenegraph,name);
         newclone.setMaterial(new Material(this.getMaterial()));
         return newclone;
+    }
+
+    public List<Vector4f> getAllVertices() {
+        return ((PolygonMesh)scenegraph.getPolygonMeshes().get(objInstanceName)).getAllPositionVertices();
     }
 
     public void calculateBoundingBox() {

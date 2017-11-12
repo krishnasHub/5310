@@ -1,9 +1,11 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import org.joml.Vector4f;
 import util.BoundingBox;
 import util.Light;
 
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -94,6 +96,8 @@ public interface INode
     BoundingBox getBoundingBox();
 
     void explodeNode();
+
+    List<Vector4f> getAllVertices();
 
     /**
      * Set the material associated with this node. Not all types of nodes can have materials associated with them.

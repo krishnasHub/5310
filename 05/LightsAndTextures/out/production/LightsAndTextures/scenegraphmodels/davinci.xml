@@ -169,48 +169,45 @@
                         </group>
                     </transform>
 
-                    <group showExploded="true">
-                        <transform name="verticalGearSet" showExploded="true">
-                            <set>
-                                <!--moves gear and crank to the left so it is
-                                aligned with horizontal gear-->
-                                <translate>30 40 0</translate>
-                                <!--spin vertical gear and crank-->
-                                <rotate>10 1 0 0</rotate>
-                            </set>
-                            <animationType>RotateX</animationType>
-                            <group showExploded="true">
-                                <transform name="leftcrank">
-                                    <set>
-                                        <translate>50 0 0</translate>
-                                        <scale>150 10 10</scale>
-                                        <rotate>90 0 0 1</rotate>
-                                    </set>
-                                    <group>
-                                        <object instanceof="cylinder">
-                                            <material>
-                                                <color>0 0 1</color>
-                                                <ambient>1 1 1</ambient>
-                                                <diffuse>1 1 1</diffuse>
-                                                <specular>1 1 1</specular>
-                                                <shininess>100</shininess>
-                                                <textureName>silver.png</textureName>
-                                            </material>
-                                        </object>
-                                    </group>
-                                </transform>
+                    <transform name="verticalGearSet">
+                        <set>
+                            <!--moves gear and crank to the left so it is
+                            aligned with horizontal gear-->
+                            <translate>30 40 0</translate>
+                            <!--spin vertical gear and crank-->
+                            <rotate>10 1 0 0</rotate>
+                        </set>
+                        <animationType>RotateX</animationType>
+                        <group showExploded="true">
+                            <transform name="leftcrank">
+                                <set>
+                                    <translate>50 0 0</translate>
+                                    <scale>150 10 10</scale>
+                                    <rotate>90 0 0 1</rotate>
+                                </set>
+                                <group>
+                                    <object instanceof="cylinder">
+                                        <material>
+                                            <color>0 0 1</color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse>1 1 1</diffuse>
+                                            <specular>1 1 1</specular>
+                                            <shininess>100</shininess>
+                                            <textureName>silver.png</textureName>
+                                        </material>
+                                    </object>
+                                </group>
+                            </transform>
 
-                                <transform name="gearVertical">
-                                    <set>
-                                        <rotate>90 0 1 0</rotate>
-                                    </set>
-                                    <group name="Vertical Gear" from="scenegraphmodels/gear.xml">
-                                    </group>
-                                </transform>
-                            </group>
-                        </transform>
-                    </group>
-
+                            <transform name="gearVertical">
+                                <set>
+                                    <rotate>90 0 1 0</rotate>
+                                </set>
+                                <group name="Vertical Gear" from="scenegraphmodels/gear.xml">
+                                </group>
+                            </transform>
+                        </group>
+                    </transform>
 
                 </group>
             </transform>

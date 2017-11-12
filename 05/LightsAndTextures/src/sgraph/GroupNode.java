@@ -5,6 +5,7 @@ import org.joml.Vector3f;
 import org.joml.Vector4f;
 import util.BoundingBox;
 import util.P;
+import util.PolygonMesh;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,6 +105,18 @@ public class GroupNode extends AbstractNode
         P.P("Done calculating bb for Group");
     }
 
+    public List<Vector4f> getAllVertices() {
+        List<Vector4f> ret = new ArrayList<>();
+        List<Vector4f> subList = null;
+
+        for(int i = 0; i < children.size(); ++i) {
+            subList = children.get(i).getAllVertices();
+            ret.addAll(subList);
+        }
+
+        return ret;
+
+    }
 
     public void explodeNode() {
         // explode the children..
@@ -151,21 +164,19 @@ public class GroupNode extends AbstractNode
 
             // We only radially move the Transform Node. Can't really translate any other nodes.
             if(node instanceof TransformNode) {
-                ng = node.getBoundingBox().getCentroid();
                 tempTNode = (TransformNode) node;
 
                 boolean collides = true;
-                float scale = 0.25f;
 
                 while(collides) {
-
                     tempTNode.calculateBoundingBox();
+                    ng = tempTNode.getBoundingBox().getCentroid();
 
                     radial = new Vector3f(ng.x - cg.x, ng.y - cg.y, ng.z - cg.z);
                     if (radial.x == 0.0f && radial.y == 0.0f && radial.z == 0.0f)
-                        radial = new Vector3f(0, 0, 0);
+                        radial = new Vector3f(0, 2, 0);
                     //radial.normalize();
-                    //radial.mul(scale);
+                    radial.mul(1.11f);
 
                     //radial.add(ng.x, ng.y, ng.z);
 
@@ -179,7 +190,6 @@ public class GroupNode extends AbstractNode
                     collides = tempTNode.getBoundingBox()
                             .collides(children.stream()
                                     .map(c -> c.getBoundingBox()).collect(Collectors.toList()));
-                    scale += 0.25f;
                 }
 
                 tempTNode.calculateBoundingBox();

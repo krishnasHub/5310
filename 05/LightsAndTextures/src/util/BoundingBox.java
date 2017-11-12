@@ -32,14 +32,55 @@ public class BoundingBox {
         boolean ret = false;
 
         for(int i = 0; i < boxes.size(); ++i)
-            ret |= collides(boxes.get(i));
+            if(boxes.get(i) != this)
+                ret |= collides(boxes.get(i));
+
+        return ret;
+    }
+
+    public static BoundingBox GetBoundingBoxFor(List<Vector4f> positions) {
+        BoundingBox ret = new BoundingBox();
+
+        ret.setMinBounds(new Vector4f(positions.get(0)));
+        ret.setMaxBounds(new Vector4f(positions.get(0)));
+
+        Vector4f minBounds = ret.getMinBounds();
+        Vector4f maxBounds = ret.getMaxBounds();
+
+        for(int i = 0; i < positions.size(); ++i) {
+            Vector4f p = positions.get(i);
+
+            if (p.x < minBounds.x) {
+                minBounds.x = p.x;
+            }
+
+            if (p.x > maxBounds.x) {
+                maxBounds.x = p.x;
+            }
+
+            if (p.y < minBounds.y) {
+                minBounds.y = p.y;
+            }
+
+            if (p.y > maxBounds.y) {
+                maxBounds.y = p.y;
+            }
+
+            if (p.z < minBounds.z) {
+                minBounds.z = p.z;
+            }
+
+            if (p.z > maxBounds.z) {
+                maxBounds.z = p.z;
+            }
+        }
 
         return ret;
     }
 
     public boolean collides(BoundingBox box) {
         if(box == this)
-            return false;
+            return true;
 
         return (box.getMinBounds().x >= this.getMinBounds().x && box.getMinBounds().x <= this.getMaxBounds().x &&
                 box.getMinBounds().y >= this.getMinBounds().y && box.getMinBounds().y <= this.getMaxBounds().y &&

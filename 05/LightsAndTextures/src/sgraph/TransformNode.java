@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import org.joml.Vector4f;
 import util.BoundingBox;
 import util.P;
 
@@ -131,9 +132,11 @@ public class TransformNode extends AbstractNode
 
 
     public void explodeNode() {
-        // Do nothing..
-        if(this.showExploded)
+        // If I want to explode this, then set my child to explode.
+        if(this.showExploded && child != null)
             child.setShowExploded(true);
+
+        // Explode my child (if he/she wants to..
         if(child != null)
             child.explodeNode();
     }
@@ -148,6 +151,9 @@ public class TransformNode extends AbstractNode
         child.calculateBoundingBox();
 
 
+        this.boundingBox = BoundingBox.GetBoundingBoxFor(this.getAllVertices());
+
+        /*
         // Get the child's bb
         BoundingBox bb = new BoundingBox(child.getBoundingBox());
 
@@ -162,8 +168,24 @@ public class TransformNode extends AbstractNode
         // Recalculate my own bb based on the transformed bb.
         this.boundingBox = new BoundingBox(bb);
         //reCalculateBoundingBox(bb);
+        */
 
         P.P("Done calculating bb for Transform");
+    }
+
+    public List<Vector4f> getAllVertices() {
+        List<Vector4f> subList = null;
+
+        subList = child.getAllVertices();
+
+        Matrix4f currTransform = new Matrix4f()
+                .mul(transform)
+                .mul(animation_transform);
+
+        for(int i = 0; i < subList.size(); ++i)
+            currTransform.transform(subList.get(i));
+
+        return subList;
     }
 
     @Override
