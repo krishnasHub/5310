@@ -38,6 +38,17 @@ public class BoundingBox {
         return ret;
     }
 
+    public Vector4f getAxis() {
+        Vector4f ret = new Vector4f();
+
+        ret.x = this.maxBounds.x - this.minBounds.x;
+        ret.y = this.maxBounds.y - this.minBounds.y;
+        ret.z = this.maxBounds.z - this.minBounds.z;
+        ret.w = 0;
+
+        return ret;
+    }
+
     public static BoundingBox GetBoundingBoxFor(List<Vector4f> positions) {
         BoundingBox ret = new BoundingBox();
 
@@ -84,7 +95,10 @@ public class BoundingBox {
 
         return (box.getMinBounds().x >= this.getMinBounds().x && box.getMinBounds().x <= this.getMaxBounds().x &&
                 box.getMinBounds().y >= this.getMinBounds().y && box.getMinBounds().y <= this.getMaxBounds().y &&
-                box.getMinBounds().z >= this.getMinBounds().z && box.getMinBounds().z <= this.getMaxBounds().z);
+                box.getMinBounds().z >= this.getMinBounds().z && box.getMinBounds().z <= this.getMaxBounds().z) ||
+                (this.getMinBounds().x >= box.getMinBounds().x && this.getMinBounds().x <= box.getMaxBounds().x &&
+                        this.getMinBounds().y >= box.getMinBounds().y && this.getMinBounds().y <= box.getMaxBounds().y &&
+                        this.getMinBounds().z >= box.getMinBounds().z && this.getMinBounds().z <= box.getMaxBounds().z);
     }
 
     public Vector4f getCentroid() {

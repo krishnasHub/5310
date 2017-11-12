@@ -178,7 +178,7 @@
                             <rotate>10 1 0 0</rotate>
                         </set>
                         <animationType>RotateX</animationType>
-                        <group showExploded="true">
+                        <group name="testGroup" showExploded="true">
                             <transform name="leftcrank">
                                 <set>
                                     <translate>50 0 0</translate>

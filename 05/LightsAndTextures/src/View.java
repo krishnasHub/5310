@@ -187,7 +187,7 @@ public class View {
       sceneGraphtoRender.animate(timer);
 
       P.P("/*********************************************************/");
-      sceneGraphtoRender.getRoot().calculateBoundingBox();
+      //sceneGraphtoRender.getRoot().calculateBoundingBox();
 
       if(this.showExplodedView) {
 

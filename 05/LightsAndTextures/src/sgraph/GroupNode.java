@@ -173,10 +173,14 @@ public class GroupNode extends AbstractNode
                     ng = tempTNode.getBoundingBox().getCentroid();
 
                     radial = new Vector3f(ng.x - cg.x, ng.y - cg.y, ng.z - cg.z);
-                    if (radial.x == 0.0f && radial.y == 0.0f && radial.z == 0.0f)
-                        radial = new Vector3f(0, 2, 0);
+                    if (radial.x == 0.0f && radial.y == 0.0f && radial.z == 0.0f) {
+                        Vector4f cAxis = node.getBoundingBox().getAxis();
+                        cAxis.normalize();
+                        //cAxis.mul(5.0f);
+                        radial = new Vector3f(cAxis.x, cAxis.y, cAxis.z);
+                    }
                     //radial.normalize();
-                    radial.mul(1.11f);
+                    //radial.mul(0.5f);
 
                     //radial.add(ng.x, ng.y, ng.z);
 
@@ -192,7 +196,7 @@ public class GroupNode extends AbstractNode
                                     .map(c -> c.getBoundingBox()).collect(Collectors.toList()));
                 }
 
-                tempTNode.calculateBoundingBox();
+                //tempTNode.calculateBoundingBox();
             }
         }
 

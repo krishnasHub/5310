@@ -97,7 +97,7 @@ public class JOGLFrame extends JFrame {
 
     //Add an animator to the canvas
     AnimatorBase animator = new FPSAnimator(canvas, 300);
-    animator.setUpdateFPSFrames(300, null);
+    animator.setUpdateFPSFrames(60, null);
     animator.start();
 
     frameno = 0;

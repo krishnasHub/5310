@@ -148,7 +148,7 @@ public class TransformNode extends AbstractNode
         P.P("Calculating bb for Transform");
 
         // First calculate the boundingBoxes for all children.
-        child.calculateBoundingBox();
+        //child.calculateBoundingBox();
 
 
         this.boundingBox = BoundingBox.GetBoundingBoxFor(this.getAllVertices());
