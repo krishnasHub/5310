@@ -2,13 +2,14 @@
     <transform name="davinciHelicopter">
         <set>
             <scale>.07 .07 .07</scale>
-            <!--<rotate>90 1 0 0</rotate>-->
+            <rotate>90 1 0 0</rotate>
         </set>
         <animationType>RotateY2</animationType>
         <group name="base" showExploded="true">
+            <!--
             <light>
                 <ambient>1 1 1</ambient>
-            </light>
+            </light> -->
 
             <transform name="bottomplatform">
                 <set>
@@ -264,7 +265,7 @@
                     <translate>0 0 0</translate>
                 </set>
                 <group showExploded="true">
-                    <transform>
+                    <transform name="TopRoof">
                         <set>
                             <translate>10 150 -70</translate>
                             <scale>200 20 200</scale>

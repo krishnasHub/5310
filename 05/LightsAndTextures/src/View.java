@@ -35,9 +35,9 @@ import javax.imageio.ImageIO;
 public class View {
 
   private static final String SCENE = "scenegraphmodels/testScene.xml";
-  private static final String TABLE = "scenegraphmodels/davinci.xml";
+  private static final String TABLE = "scenegraphmodels/table.xml";
   private static final String HUMANOID = "scenegraphmodels/humanoid-lights.xml";
-  private static final String SCENE_GRAPH_XML = TABLE;
+  private static final String SCENE_GRAPH_XML = SCENE;
 
   private static final float DISPLACEMENT = 10.0f;
   private static final float PAN_ANGLE = 2f;

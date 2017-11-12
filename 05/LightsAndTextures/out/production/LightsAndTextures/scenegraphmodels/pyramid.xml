@@ -15,10 +15,10 @@
                 <object instanceof="box">
                     <material>
                         <ambient>1 1 1</ambient>
-                        <diffuse>1 1 1</diffuse>
-                        <specular>1 1 1</specular>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
                         <shininess>50</shininess>
-                        <textureName>sandstone2.png</textureName>
+
                     </material>
                 </object>
             </transform>
@@ -32,10 +32,10 @@
                 <object instanceof="box">
                     <material>
                         <ambient>1 1 1</ambient>
-                        <diffuse>1 1 1</diffuse>
-                        <specular>1 1 1</specular>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
                         <shininess>50</shininess>
-                        <textureName>sandstone3.png</textureName>
+
                     </material>
                 </object>
             </transform>
@@ -48,11 +48,11 @@
 
                 <object instanceof="box">
                     <material>
-                        <ambient>1 1 1</ambient>
-                        <diffuse>1 1 1</diffuse>
-                        <specular>1 1 1</specular>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
                         <shininess>50</shininess>
-                        <textureName>sandstone3.png</textureName>
+
                     </material>
                 </object>
             </transform>
@@ -66,17 +66,17 @@
                 <object instanceof="box">
                     <material>
                         <ambient>1 1 1</ambient>
-                        <diffuse>1 1 1</diffuse>
-                        <specular>1 1 1</specular>
+                        <diffuse>0.63 0.298 0</diffuse>
+                        <specular>0.63 0.298 0</specular>
                         <shininess>50</shininess>
-                        <textureName>sandstone2.png</textureName>
+                        <!--<textureName>sandstone2.png</textureName> -->
                     </material>
 
                 </object>
             </transform>
 
 
-<!--
+
             <transform name="Pyramid Cone 1">
                 <set>
                     <translate>0 -1 0</translate>
@@ -88,10 +88,10 @@
                 <object instanceof="cone">
                     <material>
                         <ambient>1 1 1</ambient>
-                        <diffuse>1 1 1</diffuse>
-                        <specular>1 1 1</specular>
+                        <diffuse>0.315 0.152 0</diffuse>
+                        <specular>0.315 0.152 0</specular>
                         <shininess>10</shininess>
-                        <textureName>rock1.png</textureName>
+
                     </material>
                 </object>
             </transform>
@@ -106,14 +106,14 @@
                 <object instanceof="cone">
                     <material>
                         <ambient>1 1 1</ambient>
-                        <diffuse>1 1 1</diffuse>
-                        <specular>1 1 1</specular>
+                        <diffuse>0.315 0.152 0</diffuse>
+                        <specular>0.315 0.152 0</specular>
                         <shininess>10</shininess>
-                        <textureName>rock1.png</textureName>
+
                     </material>
                 </object>
             </transform>
--->
+
 
         </group>
     </transform>
