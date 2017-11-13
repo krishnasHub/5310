@@ -14,10 +14,10 @@
 
                 <object instanceof="box">
                     <material>
-                        <ambient>1 1 1</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>50</shininess>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.83 0.498 0</diffuse>
+                        <specular>0.83 0.498 0</specular>
+                        <shininess>100</shininess>
 
                     </material>
                 </object>
@@ -31,10 +31,10 @@
 
                 <object instanceof="box">
                     <material>
-                        <ambient>1 1 1</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>50</shininess>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.83 0.498 0</diffuse>
+                        <specular>0.83 0.498 0</specular>
+                        <shininess>100</shininess>
 
                     </material>
                 </object>
@@ -49,9 +49,9 @@
                 <object instanceof="box">
                     <material>
                         <ambient>0.63 0.298 0</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>50</shininess>
+                        <diffuse>0.83 0.498 0</diffuse>
+                        <specular>0.83 0.498 0</specular>
+                        <shininess>100</shininess>
 
                     </material>
                 </object>
@@ -65,10 +65,10 @@
 <!-- 0.63 0.298 0 -->
                 <object instanceof="box">
                     <material>
-                        <ambient>1 1 1</ambient>
-                        <diffuse>0.63 0.298 0</diffuse>
-                        <specular>0.63 0.298 0</specular>
-                        <shininess>50</shininess>
+                        <ambient>0.63 0.298 0</ambient>
+                        <diffuse>0.83 0.498 0</diffuse>
+                        <specular>0.83 0.498 0</specular>
+                        <shininess>100</shininess>
                         <!--<textureName>sandstone2.png</textureName> -->
                     </material>
 
@@ -76,7 +76,7 @@
             </transform>
 
 
-
+<!--
             <transform name="Pyramid Cone 1">
                 <set>
                     <translate>0 -1 0</translate>
@@ -112,7 +112,7 @@
 
                     </material>
                 </object>
-            </transform>
+            </transform> -->
 
 
         </group>
