@@ -68,5 +68,5 @@ As before, you can turn around and head to the other two rooms as well, control 
 3. Animation Video:
 
 Here's the link to the animation video:
-
+https://github.com/ajesguerra/webdev-esguerra-arnold/blob/master/src/assets/projectimages/outassignment5.mp4
 
