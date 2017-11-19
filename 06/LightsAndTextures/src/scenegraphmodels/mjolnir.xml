@@ -1,0 +1,300 @@
+<scene>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="box" path="models/box"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+
+    <transform>
+        <set>
+        </set>
+        <group name="Entire Mjolnir">
+
+            <transform name="Top Ring">
+                <set>
+                    <translate>0 16 0</translate>
+                    <scale>6 2 6</scale>
+                </set>
+
+                <object instanceof="sphere">
+                    <material>
+                        <color>0.4 0.4 0.4</color>
+                    </material>
+
+
+                    <light name="Headloght">
+                        <diffuse>0.0 0.0 0.2</diffuse>
+                        <specular>0.0 0.0 0.4</specular>
+                        <position>0 2 0 </position>
+                        <spotangle>180</spotangle>
+                        <spotdirection>0 1 0 </spotdirection>
+                    </light>
+
+                </object>
+            </transform>
+
+            <transform name="Hammer">
+                <set>
+                    <scale>50 30 30</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Hammer top">
+                <set>
+                    <translate>0 15 0</translate>
+                    <scale>48 3 26</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Hammer top">
+                <set>
+                    <translate>0 -15 0</translate>
+                    <scale>48 3 26</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Hammer right 1">
+                <set>
+                    <translate>26 0 0</translate>
+                    <scale>3 28 28</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver2.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Hammer right 2">
+                <set>
+                    <translate>28 0 0</translate>
+                    <scale>3 26 26</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+
+            <transform name="Hammer right 1">
+                <set>
+                    <translate>-26 0 0</translate>
+                    <scale>3 28 28</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver2.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Hammer right 2">
+                <set>
+                    <translate>-28 0 0</translate>
+                    <scale>3 26 26</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+
+            <transform name="Mace grip">
+                <set>
+                    <translate>0 -20 0</translate>
+                    <scale>4 6 4</scale>
+                </set>
+
+                <object instanceof="cylinder">
+                    <material>
+                        <color>0.45 0.45 0.45</color>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Mace axil">
+                <set>
+                    <translate>0 -70 0</translate>
+                    <scale>3 60 3</scale>
+                </set>
+
+                <object instanceof="cylinder">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>20</shininess>
+                        <textureName>leather.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <!-- <color>0.8 0.533 0</color>  -->
+
+            <transform name="Ring on axil 1">
+                <set>
+                    <translate>0 -25 0</translate>
+                    <rotate>30 0 0 1</rotate>
+                    <scale>3.5 0.5 3.5</scale>
+                </set>
+
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Ring on axil 2">
+                <set>
+                    <translate>0 -35 0</translate>
+                    <rotate>30 0 0 1</rotate>
+                    <scale>3.5 0.5 3.5</scale>
+                </set>
+
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Ring on axil 3">
+                <set>
+                    <translate>0 -45 0</translate>
+                    <rotate>30 0 0 1</rotate>
+                    <scale>3.5 0.5 3.5</scale>
+                </set>
+
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Ring on axil 4">
+                <set>
+                    <translate>0 -55 0</translate>
+                    <rotate>30 0 0 1</rotate>
+                    <scale>3.5 0.5 3.5</scale>
+                </set>
+
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Ring on axil 5">
+                <set>
+                    <translate>0 -65 0</translate>
+                    <rotate>30 0 0 1</rotate>
+                    <scale>3.5 0.5 3.5</scale>
+                </set>
+
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+
+            <transform name="Mace kilt">
+                <set>
+                    <translate>0 -75 0</translate>
+                    <scale>4 6 4</scale>
+                </set>
+
+                <object instanceof="cylinder">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                        <textureName>steel2.png</textureName>
+                    </material>
+
+                </object>
+            </transform>
+        </group>
+    </transform>
+
+
+
+
+</scene>
