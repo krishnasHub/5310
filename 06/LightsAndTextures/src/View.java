@@ -9,6 +9,7 @@ import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
+import raytracer.BoxTracer;
 import raytracer.Ray;
 import raytracer.Tracer;
 import sgraph.GL3ScenegraphRenderer;
@@ -143,7 +144,7 @@ public class View {
     initSceneGraph(gla);
   }
 
-  private Vector3f eyePosition = new Vector3f(5, 1, 5);
+  private Vector3f eyePosition = new Vector3f(0, 50, 100);
   private Vector3f lookAtPosition = new Vector3f(0, 0, 0);
   private Vector3f upVector = new Vector3f(0, 1, 0);
   private int timer = 0;
@@ -181,12 +182,6 @@ public class View {
     if(scenegraph != null) {
       scenegraph.animate(timer);
 
-      while (!modelView.empty())
-        modelView.pop();
-
-      modelView.push(new Matrix4f());
-      modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
-
       if(!generatedRayTracedImage) {
 
         Vector4f start = new Vector4f(eyePosition.x, eyePosition.y, eyePosition.z, 1);
@@ -195,7 +190,7 @@ public class View {
         final int W = 1000;
         final int H = 1000;
         final float Z = -0.5f * H / (float) (Math.tan(Math.toRadians(30.0)));
-        Tracer tracer = new Tracer();
+        Tracer tracer = new BoxTracer();
         Ray ray = null;
         Color color = null;
 
@@ -208,7 +203,13 @@ public class View {
 
             ray = new Ray(start, v);
 
-            color = tracer.getColor(ray);
+            while (!modelView.empty())
+              modelView.pop();
+            modelView.push(new Matrix4f());
+
+            color = scenegraph.getColorForRay(ray, modelView);
+
+            //color = tracer.getColor(ray);
             img.setRGB(i, j, color.getRGB());
           }
         }
@@ -223,6 +224,13 @@ public class View {
         // Write hte array of colors into an image.
         generatedRayTracedImage = true;
       }
+
+
+      while (!modelView.empty())
+        modelView.pop();
+
+      modelView.push(new Matrix4f());
+      modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
 
       scenegraph.draw(modelView);
       //all the light properties, except positions

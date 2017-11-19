@@ -1,8 +1,10 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import raytracer.Ray;
 import util.IVertexData;
 
+import java.awt.*;
 import java.util.Map;
 import java.util.Stack;
 
@@ -97,4 +99,13 @@ public interface IScenegraph<VertexType extends IVertexData>
      */
     void addTexture(String name, String path);
     void dispose();
+
+    /**
+     * Traverse the entire Scenegraph for the Ray and get the color we want to display on the screen.
+     *
+     * @param ray - The Ray we want to trace.
+     * @param modelView - The modelView to transform.
+     * @return Color - The color that goes into this pixel represented by the Ray.
+     */
+    Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView);
 }

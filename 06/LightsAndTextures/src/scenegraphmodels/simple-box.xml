@@ -18,17 +18,19 @@
         </transform>
 
 
-        <object instanceof="box">
+        <transform>
+            <set>
+                <rotate>90 0 1 0</rotate>
+                <scale>60 30 20</scale>
+            </set>
+            <object instanceof="box">
 
 
-            <material>
-                <color>0.4 0.4 0.4</color>
-            </material>
-
-
-
-
-        </object>
+                <material>
+                    <color>0.4 0.4 0.4</color>
+                </material>
+            </object>
+        </transform>
 
     </group>
 

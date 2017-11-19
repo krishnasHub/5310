@@ -1,8 +1,10 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import raytracer.Ray;
 import util.Light;
 
+import java.awt.*;
 import java.util.Stack;
 
 /**
@@ -109,5 +111,14 @@ public interface INode
      * @param l
      */
     void addLight(Light l);
+
+    /**
+     * Traverse the entire Scenegraph for the Ray and get the color we want to display on the screen.
+     *
+     * @param ray - The Ray we want to trace.
+     * @param modelView - The modelView transformation so far.
+     * @return Color - The color that goes into this pixel represented by the Ray.
+     */
+    Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView);
 }
 

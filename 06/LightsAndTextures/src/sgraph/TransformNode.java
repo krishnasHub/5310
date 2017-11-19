@@ -1,7 +1,9 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import raytracer.Ray;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -125,6 +127,17 @@ public class TransformNode extends AbstractNode
         if (child!=null)
             child.draw(context,modelView);
         modelView.pop();
+    }
+
+    @Override
+    public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
+        if(child == null)
+            return Color.BLACK;
+
+        modelView.push(new Matrix4f(modelView.peek()));
+        modelView.peek().mul(transform.invert());
+
+        return child.getColorForRay(ray, modelView);
     }
 
     @Override

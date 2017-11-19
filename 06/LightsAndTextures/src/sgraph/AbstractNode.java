@@ -1,7 +1,12 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import raytracer.Ray;
+import raytracer.Tracer;
 import util.Light;
+
+import java.awt.*;
+import java.util.Stack;
 
 /**
  * This abstract class implements the {@link sgraph.INode} interface. It provides default methods
@@ -23,6 +28,8 @@ public abstract class AbstractNode implements INode
      * A reference to the {@link sgraph.IScenegraph} object that this is part of
      */
     protected IScenegraph scenegraph;
+
+    protected Tracer tracer = null;
 
     public AbstractNode(IScenegraph graph, String name)
     {
@@ -149,4 +156,10 @@ public abstract class AbstractNode implements INode
         throw new UnsupportedOperationException("Lights not supported yet!");
     }
 
+    /**
+     *
+     * @param ray - The Ray we want to trace.
+     * @return Color - The color represented by the pixel going through the ray.
+     */
+    public abstract Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView);
 }

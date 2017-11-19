@@ -1,9 +1,11 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import raytracer.Ray;
 import util.IVertexData;
 import util.PolygonMesh;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -147,5 +149,10 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     }
 
 
+    @Override
+    public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
+
+        return root.getColorForRay(ray, modelView);
+    }
 
 }

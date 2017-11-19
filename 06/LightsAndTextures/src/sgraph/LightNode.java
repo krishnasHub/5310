@@ -2,8 +2,10 @@ package sgraph;
 
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
+import raytracer.Ray;
 import util.Light;
 
+import java.awt.*;
 import java.util.Stack;
 
 /**
@@ -52,5 +54,9 @@ public class LightNode extends AbstractNode {
 
     public void setLight(Light light) {
         this.light = light;
+    }
+
+    public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
+        return Color.BLACK;
     }
 }

@@ -12,7 +12,7 @@ public class Ray {
     public float t;
 
     public Ray(Vector4f start, Vector4f direction) {
-        this.start = start;
-        this.direction = direction;
+        this.start = new Vector4f(start);
+        this.direction = new Vector4f(direction);
     }
 }

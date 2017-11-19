@@ -1,8 +1,12 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import raytracer.Ray;
+import raytracer.TracerFactory;
 import util.Light;
+import util.PolygonMesh;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -111,6 +115,20 @@ public class LeafNode extends AbstractNode
         if(lights.size() > 0) {
             lights.forEach(l -> context.storeLight(l, modelView.peek()));
         }
+    }
+
+
+    @Override
+    public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
+        this.tracer = TracerFactory.getTracer(objInstanceName);
+
+        if(tracer == null)
+            return Color.BLACK;
+
+        modelView.peek().transform(ray.start);
+        modelView.peek().transform(ray.direction);
+
+        return tracer.getColor(ray);
     }
 
 

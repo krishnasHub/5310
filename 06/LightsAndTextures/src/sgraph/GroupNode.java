@@ -1,7 +1,9 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import raytracer.Ray;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -136,5 +138,25 @@ public class GroupNode extends AbstractNode
     public List<INode> getChildren()
     {
         return children;
+    }
+
+
+    @Override
+    public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
+        Color c = null;
+        Color ret = Color.BLACK;
+        float smallestT = Float.MAX_VALUE;
+
+        for(int i = 0; i < children.size(); ++i) {
+            c = children.get(i).getColorForRay(ray, modelView);
+            if(!c.equals(Color.BLACK)) {
+                if(ray.t < smallestT) {
+                    ret = c;
+                    smallestT = ray.t;
+                }
+            }
+        }
+
+        return ret;
     }
 }
