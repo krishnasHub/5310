@@ -16,8 +16,24 @@ public class BoxTracer extends Tracer {
     public Vector4f getNormalForRay(Ray r) {
         Vector4f ret = new Vector4f();
 
+        Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));
 
-        return ret;
+        // Right and left plane
+        if(point.x == 0.5f) {
+            return new Vector4f(1, 0, 0, 0);
+        } else if(point.x == -0.5f) {
+            return new Vector4f(-1, 0, 0, 0);
+        } else if(point.y == 0.5f) {
+            return new Vector4f(0, 1, 0, 0);
+        } else if(point.y == -0.5f) {
+            return new Vector4f(0, -1, 0, 0);
+        } else if(point.z == 0.5f) {
+            return new Vector4f(0, 0, 1, 0);
+        } else if(point.z == -0.5f) {
+            return new Vector4f(0, 0, -1, 0);
+        }
+
+        return point.normalize();
     }
 
     @Override
