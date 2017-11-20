@@ -3,6 +3,7 @@ package sgraph;
 import org.joml.Matrix4f;
 import raytracer.Ray;
 import util.IVertexData;
+import util.Light;
 
 import java.awt.*;
 import java.util.Map;
@@ -108,4 +109,11 @@ public interface IScenegraph<VertexType extends IVertexData>
      * @return Color - The color that goes into this pixel represented by the Ray.
      */
     Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView);
+
+
+    void storeLight(Light light, Matrix4f modelView);
+
+    Map<Light, Matrix4f> getLightMap();
+
+
 }

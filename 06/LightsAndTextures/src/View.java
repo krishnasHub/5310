@@ -182,6 +182,14 @@ public class View {
     if(scenegraph != null) {
       scenegraph.animate(timer);
 
+      while (!modelView.empty())
+        modelView.pop();
+
+      modelView.push(new Matrix4f());
+      modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
+
+      scenegraph.draw(modelView);
+
       if(!generatedRayTracedImage) {
 
         Vector4f start = new Vector4f(eyePosition.x, eyePosition.y, eyePosition.z, 1);
@@ -225,13 +233,7 @@ public class View {
       }
 
 
-      while (!modelView.empty())
-        modelView.pop();
 
-      modelView.push(new Matrix4f());
-      modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
-
-      scenegraph.draw(modelView);
       //all the light properties, except positions
       gl.glUniform1i(numLightsLocation, renderer.getLightCount());
 

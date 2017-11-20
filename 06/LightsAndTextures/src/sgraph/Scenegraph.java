@@ -3,6 +3,7 @@ package sgraph;
 import org.joml.Matrix4f;
 import raytracer.Ray;
 import util.IVertexData;
+import util.Light;
 import util.PolygonMesh;
 
 import java.awt.*;
@@ -41,6 +42,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
      */
     protected IScenegraphRenderer renderer;
 
+    protected Map<Light, Matrix4f> lightMap;
+
 
     public Scenegraph()
     {
@@ -48,6 +51,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         meshes = new HashMap<String,PolygonMesh<VertexType>>();
         nodes = new HashMap<String, INode>();
         textures = new HashMap<String,String>();
+        lightMap = new HashMap<Light, Matrix4f>();
     }
 
     public void dispose()
@@ -155,4 +159,16 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         return root.getColorForRay(ray, modelView);
     }
 
+    @Override
+    public void storeLight(Light light, Matrix4f modelView) {
+        if(lightMap == null)
+            lightMap = new HashMap<>();
+
+        lightMap.put(light, new Matrix4f(modelView));
+    }
+
+    @Override
+    public Map<Light, Matrix4f> getLightMap() {
+        return lightMap;
+    }
 }

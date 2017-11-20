@@ -10,6 +10,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * This node represents the leaf of a scene graph. It is the only type of node that has
@@ -130,9 +131,9 @@ public class LeafNode extends AbstractNode
         new Matrix4f(modelView.peek()).invert().transform(newRay.start);
         new Matrix4f(modelView.peek()).invert().transform(newRay.direction);
 
+        List<Light> l = (List<Light>) scenegraph.getLightMap().keySet().stream().collect(Collectors.toList());
 
-
-        return tracer.getColor(newRay, this.getMaterial());
+        return tracer.getColor(newRay, this.getMaterial(), l);
     }
 
 
