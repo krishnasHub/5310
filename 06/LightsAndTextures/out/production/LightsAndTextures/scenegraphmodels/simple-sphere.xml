@@ -1,0 +1,43 @@
+<scene>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="box" path="models/box"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+
+    <transform>
+        <set>
+            <translate>0 0 -5</translate>
+        </set>
+
+        <group name="Sphere">
+            <transform>
+                <set></set>
+
+                <light name="Light">
+                    <ambient>0.6 0.6 0.6</ambient>
+                    <diffuse>0.0 0.0 0.2</diffuse>
+                    <specular>0.0 0.0 0.4</specular>
+                    <position>0 2 0 </position>
+                    <spotangle>180</spotangle>
+                    <spotdirection>0 -1 0 </spotdirection>
+                </light>
+            </transform>
+
+
+            <transform name="">
+                <set>
+                </set>
+                <object instanceof="sphere">
+
+
+                    <material>
+                        <color>0.7 0.4 0.4</color>
+                    </material>
+                </object>
+            </transform>
+
+        </group>
+
+    </transform>
+
+
+</scene>
