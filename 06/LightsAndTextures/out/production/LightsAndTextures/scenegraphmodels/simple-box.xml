@@ -41,6 +41,7 @@
 
             <transform name="brick 2">
                 <set>
+                    <translate>0 0 -5</translate>
                     <scale>60 30 20</scale>
                 </set>
                 <object instanceof="box">
