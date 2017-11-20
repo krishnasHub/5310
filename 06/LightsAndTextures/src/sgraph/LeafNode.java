@@ -130,7 +130,9 @@ public class LeafNode extends AbstractNode
         new Matrix4f(modelView.peek()).invert().transform(newRay.start);
         new Matrix4f(modelView.peek()).invert().transform(newRay.direction);
 
-        return tracer.getColor(newRay);
+
+
+        return tracer.getColor(newRay, this.getMaterial());
     }
 
 

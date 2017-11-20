@@ -33,7 +33,7 @@
 
 
                     <material>
-                        <color>0.4 0.4 0.4</color>
+                        <color>0.7 0.4 0.4</color>
                     </material>
                 </object>
             </transform>
@@ -48,7 +48,7 @@
 
 
                     <material>
-                        <color>0.4 0.4 0.4</color>
+                        <color>0.4 0.4 0.7</color>
                     </material>
                 </object>
             </transform>

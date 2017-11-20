@@ -3,6 +3,7 @@ package raytracer;
 import com.jogamp.openal.sound3d.Vec3f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
+import util.Material;
 
 import java.util.*;
 import java.awt.Color;
@@ -165,7 +166,7 @@ public abstract class Tracer {
     }
 
 
-    public abstract Color getColor(final Ray r);
+    public abstract Color getColor(final Ray r, Material material);
 
     private static final float kEpsilon = 0.01f;
 

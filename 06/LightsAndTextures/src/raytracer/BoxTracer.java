@@ -1,6 +1,7 @@
 package raytracer;
 
 import org.joml.Vector4f;
+import util.Material;
 
 import java.awt.*;
 
@@ -10,7 +11,7 @@ import java.awt.*;
 public class BoxTracer extends Tracer {
 
     @Override
-    public Color getColor(final Ray r) {
+    public Color getColor(final Ray r, Material material) {
         Vector4f min = new Vector4f(-0.5f, -0.5f,-0.5f, 0);
         Vector4f max = new Vector4f(0.5f, 0.5f, 0.5f,  0);
 
@@ -66,6 +67,10 @@ public class BoxTracer extends Tracer {
         else
             r.t = Math.min(tmin, tmax);
 
-        return Color.BLUE;
+        Vector4f ambient = material.getAmbient();
+
+        Color c = new Color(ambient.x, ambient.y, ambient.z);
+
+        return c;
     }
 }
