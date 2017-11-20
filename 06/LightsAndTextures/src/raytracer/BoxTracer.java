@@ -59,7 +59,12 @@ public class BoxTracer extends Tracer {
         if (tzmax < tmax)
             tmax = tzmax;
 
-        r.t = Math.min(tmin, tmax);
+        if(tmin < 0)
+            r.t = tmax;
+        else if(tmax < 0)
+            r.t = tmin;
+        else
+            r.t = Math.min(tmin, tmax);
 
         return Color.BLUE;
     }

@@ -15,4 +15,10 @@ public class Ray {
         this.start = new Vector4f(start);
         this.direction = new Vector4f(direction);
     }
+
+    public Ray(Ray ray) {
+        this.start = new Vector4f(ray.start);
+        this.direction = new Vector4f(ray.direction);
+        this.t = ray.t;
+    }
 }

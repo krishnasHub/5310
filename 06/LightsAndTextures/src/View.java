@@ -210,7 +210,7 @@ public class View {
             color = scenegraph.getColorForRay(ray, modelView);
 
             //color = tracer.getColor(ray);
-            img.setRGB(i, j, color.getRGB());
+            img.setRGB(W - i - 1, j, color.getRGB());
           }
         }
 

@@ -135,9 +135,13 @@ public class TransformNode extends AbstractNode
             return Color.BLACK;
 
         modelView.push(new Matrix4f(modelView.peek()));
-        modelView.peek().mul(transform.invert());
+        modelView.peek().mul(new Matrix4f(transform));
 
-        return child.getColorForRay(ray, modelView);
+        Color ret = child.getColorForRay(ray, modelView);
+
+        modelView.pop();
+
+        return ret;
     }
 
     @Override

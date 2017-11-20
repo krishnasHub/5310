@@ -3,38 +3,59 @@
     <instance name="box" path="models/box"></instance>
     <instance name="cylinder" path="models/cylinder"></instance>
 
-    <group name="Entire Brick">
-        <transform>
-            <set></set>
+    <transform>
+        <set>
+            <translate>0 0 -5</translate>
+        </set>
 
-            <light name="Light">
-                <ambient>0.6 0.6 0.6</ambient>
-                <diffuse>0.0 0.0 0.2</diffuse>
-                <specular>0.0 0.0 0.4</specular>
-                <position>0 2 0 </position>
-                <spotangle>180</spotangle>
-                <spotdirection>0 -1 0 </spotdirection>
-            </light>
-        </transform>
+        <group name="Entire Brick">
+            <transform>
+                <set></set>
 
-
-        <transform>
-            <set>
-                <rotate>90 0 1 0</rotate>
-                <scale>60 30 20</scale>
-            </set>
-            <object instanceof="box">
+                <light name="Light">
+                    <ambient>0.6 0.6 0.6</ambient>
+                    <diffuse>0.0 0.0 0.2</diffuse>
+                    <specular>0.0 0.0 0.4</specular>
+                    <position>0 2 0 </position>
+                    <spotangle>180</spotangle>
+                    <spotdirection>0 -1 0 </spotdirection>
+                </light>
+            </transform>
 
 
-                <material>
-                    <color>0.4 0.4 0.4</color>
-                </material>
-            </object>
-        </transform>
+            <transform name="brick 1">
+                <set>
 
-    </group>
+                    <rotate>90 0 0 1</rotate>
+                    <scale>60 30 20</scale>
+                </set>
+                <object instanceof="box">
 
 
+                    <material>
+                        <color>0.4 0.4 0.4</color>
+                    </material>
+                </object>
+            </transform>
+
+
+            <transform name="brick 2">
+                <set>
+                    <scale>60 30 20</scale>
+                </set>
+                <object instanceof="box">
+
+
+                    <material>
+                        <color>0.4 0.4 0.4</color>
+                    </material>
+                </object>
+            </transform>
+
+
+        </group>
+
+    </transform>
 
 
 </scene>
