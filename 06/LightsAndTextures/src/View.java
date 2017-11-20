@@ -144,7 +144,7 @@ public class View {
     initSceneGraph(gla);
   }
 
-  private Vector3f eyePosition = new Vector3f(0, 50, 100);
+  private Vector3f eyePosition = new Vector3f(0, 20, 100);
   private Vector3f lookAtPosition = new Vector3f(0, 0, 0);
   private Vector3f upVector = new Vector3f(0, 1, 0);
   private int timer = 0;

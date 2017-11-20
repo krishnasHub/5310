@@ -14,8 +14,6 @@ public class BoxTracer extends Tracer {
 
     @Override
     public Vector4f getNormalForRay(Ray r) {
-        Vector4f ret = new Vector4f();
-
         Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));
 
         // Right and left plane
