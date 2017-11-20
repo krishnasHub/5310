@@ -23,7 +23,7 @@
             </transform>
 
 
-            <transform name="">
+            <transform name="simple sphere">
                 <set>
                 </set>
                 <object instanceof="sphere">

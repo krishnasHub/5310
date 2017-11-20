@@ -53,6 +53,19 @@
                 </object>
             </transform>
 
+            <transform name="sphere1">
+                <set>
+                    <translate>0 40 0</translate>
+                    <scale>30 30 30</scale>
+                </set>
+                <object instanceof="sphere">
+
+
+                    <material>
+                        <color>1 1 0</color>
+                    </material>
+                </object>
+            </transform>
 
         </group>
 

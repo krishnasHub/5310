@@ -42,7 +42,7 @@ public class View {
   private static final String HUMANOID = "scenegraphmodels/humanoid-lights.xml";
   private static final String SIMPLE_BRICK = "scenegraphmodels/simple-box.xml";
   private static final String SIMPLE_SPHERE = "scenegraphmodels/simple-sphere.xml";
-  private static final String SCENE_GRAPH_XML = SIMPLE_SPHERE;
+  private static final String SCENE_GRAPH_XML = SIMPLE_BRICK;
 
   private static final float DISPLACEMENT = 10.0f;
   private static final float PAN_ANGLE = 2f;
