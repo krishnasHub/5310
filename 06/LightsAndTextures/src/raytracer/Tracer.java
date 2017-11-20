@@ -190,48 +190,52 @@ public abstract class Tracer {
         float dDotmL;
         //float spotLightAmount;
 
+        Vector4f tNormal = new Vector4f(fNormal);
+        tNormal.normalize();
+
+
         for (int i = 0; i < lights.size(); i++) {
-            if (lights.get(i).getPosition().w!=0)
-                lightVec = (lights.get(i).getPosition().sub(fPosition)).normalize();
+            Light light = new Light(lights.get(i));
+
+            if (light.getPosition().w!=0)
+                lightVec = (light.getPosition().sub(fPosition)).normalize();
             else
-                lightVec = (lights.get(i).getPosition().mul(-1f)).normalize();
+                lightVec = (light.getPosition().mul(-1f)).normalize();
 
-            Vector4f tNormal = new Vector4f(fNormal);
-            normalView = tNormal.normalize();
-            nDotL = normalView.dot(lightVec);
+            nDotL = tNormal.dot(lightVec);
 
-            viewVec = new Vector4f(fPosition).mul(-1);
+            viewVec = new Vector4f(fPosition);
             viewVec = viewVec.normalize();
 
-
-            reflectVec = (new Vector3f(lightVec.x, lightVec.y, lightVec.z).mul(-1)).reflect(new Vector3f(normalView.x, normalView.y, normalView.z));
+            reflectVec = (new Vector3f(lightVec.x, lightVec.y, lightVec.z).mul(-1))
+                    .reflect(new Vector3f(tNormal.x, tNormal.y, tNormal.z));
             reflectVec = reflectVec.normalize();
 
 
             rDotV = Math.max(reflectVec.dot(new Vector3f(viewVec.x, viewVec.y, viewVec.z)), 0.0f);
 
-            dDotmL = lights.get(i).getSpotDirection().dot(new Vector4f(lightVec).mul(-1f));
+            dDotmL = light.getSpotDirection().dot(new Vector4f(lightVec).mul(-1f));
 
-            boolean inCone = (dDotmL >= Math.cos(lights.get(i).getSpotCutoff()));
+            boolean inCone = (dDotmL >= Math.cos((float) Math.toRadians(light.getSpotCutoff())));
 
-            ambient = new Vector4f(material.getAmbient()).mul(new Vector4f(lights.get(i).getAmbient().x,
-                    lights.get(i).getAmbient().y,
-                    lights.get(i).getAmbient().z, 0));
+            ambient = new Vector4f(material.getAmbient()).mul(new Vector4f(light.getAmbient().x,
+                    light.getAmbient().y,
+                    light.getAmbient().z, 0));
 
             diffuse = new Vector4f(material.getDiffuse())
                     .mul(new Vector4f(
-                            lights.get(i).getDiffuse().x,
-                            lights.get(i).getDiffuse().y,
-                            lights.get(i).getDiffuse().z,
+                            light.getDiffuse().x,
+                            light.getDiffuse().y,
+                            light.getDiffuse().z,
                             0))
                     .mul(Math.max(nDotL, 0));
 
             if (nDotL>0)
                 specular = new Vector4f(material.getSpecular())
                         .mul(new Vector4f(
-                                lights.get(i).getSpecular().x,
-                                lights.get(i).getSpecular().y,
-                                lights.get(i).getSpecular().z,
+                                light.getSpecular().x,
+                                light.getSpecular().y,
+                                light.getSpecular().z,
                                 0))
                         .mul((float) Math.pow(rDotV, material.getShininess()));
             else
@@ -255,9 +259,18 @@ public abstract class Tracer {
 
         float[] colors = c.getRGBComponents(null);
 
-        ret = new Color(colors[0] + v.x, colors[1] + v.y, colors[2] + v.z, 1);
+        ret = new Color(
+                clamp(colors[0] + v.x, 1),
+                clamp(colors[1] + v.y, 1),
+                clamp(colors[2] + v.z, 1), 1);
 
         return ret;
+    }
+
+    protected float clamp(float a, float max) {
+        if(a > max)
+            return max;
+        return a;
     }
 
     public abstract Color getColor(final Ray r, Material material, List<Light> l);
