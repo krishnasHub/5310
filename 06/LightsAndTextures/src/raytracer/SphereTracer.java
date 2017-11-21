@@ -1,5 +1,6 @@
 package raytracer;
 
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 import java.awt.*;
@@ -10,7 +11,7 @@ import util.Material;
 
 public class SphereTracer extends Tracer {
   @Override
-  public Vector4f getNormalForRay(Ray r) {
+  public Vector3f getNormalForRay(Ray r) {
     return null;
   }
 

@@ -171,86 +171,85 @@ public abstract class Tracer {
         return new Vector4f(new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t)));
     }
 
-    public abstract Vector4f getNormalForRay(Ray r);
+    public abstract Vector3f getNormalForRay(Ray r);
 
     protected Color getLightColorAt(Material material, Ray r, List<Light> lights) {
-        Vector4f ambient = material.getAmbient();
-        Vector4f diffuse;
-        Vector4f specular;
+        Vector3f ambient = new Vector3f(material.getAmbient().x, material.getAmbient().y, material.getAmbient().z);
+        Vector3f diffuse;
+        Vector3f specular;
         Color c = new Color(ambient.x, ambient.y, ambient.z);
         Color fColor = Color.BLACK;
         final Vector4f fPosition = getPositionForRay(r);
-        final Vector4f fNormal = getNormalForRay(r);
+        final Vector3f fNormal = getNormalForRay(r);
 
-        Vector4f lightVec;
-        Vector4f normalView;
-        Vector4f viewVec;
+        Vector3f lightVec;
+        Vector3f normalView;
+        Vector3f viewVec;
         Vector3f reflectVec;
         float nDotL;
         float rDotV;
         float dDotmL;
         //float spotLightAmount;
 
-        Vector4f tNormal = new Vector4f(fNormal);
+        Vector3f tNormal = new Vector3f(fNormal);
         tNormal.normalize();
 
 
         for (int i = 0; i < lights.size(); i++) {
             Light light = new Light(lights.get(i));
 
+            Vector4f temp;
             if (light.getPosition().w!=0)
-                lightVec = (light.getPosition().sub(fPosition)).normalize();
+                 temp = (light.getPosition().sub(fPosition));
             else
-                lightVec = (light.getPosition().mul(-1f)).normalize();
+                temp = (light.getPosition().mul(-1f));
 
-            nDotL = tNormal.dot(lightVec);
+            temp = (light.getPosition().sub(fPosition));
+            //temp = (light.getPosition().add(new Vector4f(r.direction)));
 
-            viewVec = (new Vector4f(fPosition));
-            viewVec = viewVec.normalize();
+            lightVec = new Vector3f(temp.x, temp.y, temp.z);
 
-            reflectVec = (new Vector3f(lightVec.x, lightVec.y, lightVec.z).mul(-1).normalize())
-                    .reflect(new Vector3f(tNormal.x, tNormal.y, tNormal.z));
+            nDotL = tNormal.dot(new Vector3f(lightVec).normalize());
+
+            viewVec = new Vector3f(fPosition.x, fPosition.y, fPosition.z)
+                    //.sub(new Vector3f(fPosition.x, fPosition.y, fPosition.z))
+
+                    .normalize()
+                    //.reflect(new Vector3f(tNormal.x, tNormal.y, tNormal.z).normalize())
+            ;
+            //viewVec = viewVec.normalize();
+
+            reflectVec = (new Vector3f(lightVec).mul(-1).normalize()).reflect(tNormal);
             reflectVec = reflectVec.normalize();
 
-            rDotV = Math.max(reflectVec.dot(new Vector3f(viewVec.x, viewVec.y, viewVec.z).normalize()), 0.0f);
+            rDotV = Math.max(reflectVec.dot(viewVec), 0.0f);
 
             if(rDotV > maxValue)
                 maxValue = rDotV;
 
-            dDotmL = light.getSpotDirection().dot(new Vector4f(lightVec).mul(-1f));
+            dDotmL = new Vector3f(light.getSpotDirection().x, light.getSpotDirection().y, light.getSpotDirection().z)
+                    .dot(new Vector3f(lightVec).mul(-1f));
 
             boolean inCone = (dDotmL >= Math.cos((float) Math.toRadians(light.getSpotCutoff())));
 
-            ambient = new Vector4f(material.getAmbient()).mul(new Vector4f(light.getAmbient().x,
-                    light.getAmbient().y,
-                    light.getAmbient().z, 1));
+            ambient = new Vector3f(material.getAmbient().x, material.getAmbient().y, material.getAmbient().z)
+                    .mul(new Vector3f(light.getAmbient().x, light.getAmbient().y, light.getAmbient().z));
 
-            diffuse = new Vector4f(material.getDiffuse())
-                    .mul(new Vector4f(
-                            light.getDiffuse().x,
-                            light.getDiffuse().y,
-                            light.getDiffuse().z,
-                            1))
+            diffuse = new Vector3f(material.getDiffuse().x, material.getDiffuse().y, material.getDiffuse().z)
+                    .mul(new Vector3f(light.getDiffuse().x, light.getDiffuse().y, light.getDiffuse().z))
                     .mul(Math.max(nDotL, 0));
 
             if (nDotL>0) {
-                specular = new Vector4f(material.getSpecular())
-                        .mul(new Vector4f(
-                                light.getSpecular().x,
-                                light.getSpecular().y,
-                                light.getSpecular().z,
-                                1))
+                specular = new Vector3f(material.getSpecular().x, material.getSpecular().y, material.getSpecular().z)
+                        .mul(new Vector3f(light.getSpecular().x, light.getSpecular().y, light.getSpecular().z))
                         //.mul(rDotV)
                         .mul((float) Math.pow(rDotV, material.getShininess()))
                 ;
             } else
-                specular = new Vector4f(0, 0, 0, 0);
+                specular = new Vector3f(0, 0, 0);
 
-            if(inCone)
-            {
-                //spotLightAmount = (dDotmL - cos(light[i].spotCutoff)) / dDotmL;
-                //spotLightAmount = 1;
-                fColor = addColor(fColor, (((new Vector4f(ambient)).add(diffuse)).add(specular)));
+            if(inCone) {
+                fColor = addColor(fColor, (((new Vector3f(ambient)).add(diffuse)).add(specular)));
             }
         }
         //fColor = fColor * texture(image,fTexCoord.st);
@@ -259,8 +258,8 @@ public abstract class Tracer {
         return fColor;
     }
 
-    protected Color addColor(Color c, Vector4f v) {
-        Color ret = c;
+    protected Color addColor(Color c, Vector3f v) {
+        Color ret;
 
         float[] colors = c.getRGBComponents(null);
 

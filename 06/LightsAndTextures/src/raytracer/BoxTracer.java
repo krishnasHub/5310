@@ -1,5 +1,6 @@
 package raytracer;
 
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 import util.Light;
 import util.Material;
@@ -13,25 +14,25 @@ import java.util.*;
 public class BoxTracer extends Tracer {
 
     @Override
-    public Vector4f getNormalForRay(Ray r) {
-        Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));
+    public Vector3f getNormalForRay(Ray r) {
+        Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t)).normalize();
 
         // Right and left plane
         if(point.x == 0.5f) {
-            return new Vector4f(1, 0, 0, 0);
+            return new Vector3f(1, 0, 0);
         } else if(point.x == -0.5f) {
-            return new Vector4f(-1, 0, 0, 0);
+            return new Vector3f(-1, 0, 0);
         } else if(point.y == 0.5f) {
-            return new Vector4f(0, 1, 0, 0);
+            return new Vector3f(0, 1, 0);
         } else if(point.y == -0.5f) {
-            return new Vector4f(0, -1, 0, 0);
+            return new Vector3f(0, -1, 0);
         } else if(point.z == 0.5f) {
-            return new Vector4f(0, 0, 1, 0);
+            return new Vector3f(0, 0, 1);
         } else if(point.z == -0.5f) {
-            return new Vector4f(0, 0, -1, 0);
+            return new Vector3f(0, 0, -1);
         }
 
-        return point.normalize();
+        return new Vector3f(point.x, point.y, point.z);
     }
 
     @Override
