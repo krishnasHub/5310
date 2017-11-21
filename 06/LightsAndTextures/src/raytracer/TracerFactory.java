@@ -12,9 +12,10 @@ public class TracerFactory {
         switch(objInstanceName) {
             case "box":
                 return new BoxTracer();
-
-                default:
-                    return null;
+            case "sphere":
+                return new SphereTracer();
+            default:
+                return null;
         }
     }
 }
