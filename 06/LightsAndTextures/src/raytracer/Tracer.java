@@ -14,6 +14,7 @@ import java.awt.Color;
  */
 public abstract class Tracer {
 
+    public static float maxValue = Float.MIN_VALUE;
 
     public Color getColor1(final Ray r) {
         Vector3f p1, p2, p3;
@@ -204,15 +205,17 @@ public abstract class Tracer {
 
             nDotL = tNormal.dot(lightVec);
 
-            viewVec = new Vector4f(fPosition);
+            viewVec = (new Vector4f(fPosition));
             viewVec = viewVec.normalize();
 
-            reflectVec = (new Vector3f(lightVec.x, lightVec.y, lightVec.z).mul(-1))
+            reflectVec = (new Vector3f(lightVec.x, lightVec.y, lightVec.z).mul(-1).normalize())
                     .reflect(new Vector3f(tNormal.x, tNormal.y, tNormal.z));
             reflectVec = reflectVec.normalize();
 
+            rDotV = Math.max(reflectVec.dot(new Vector3f(viewVec.x, viewVec.y, viewVec.z).normalize()), 0.0f);
 
-            rDotV = Math.max(reflectVec.dot(new Vector3f(viewVec.x, viewVec.y, viewVec.z)), 0.0f);
+            if(rDotV > maxValue)
+                maxValue = rDotV;
 
             dDotmL = light.getSpotDirection().dot(new Vector4f(lightVec).mul(-1f));
 
@@ -220,32 +223,34 @@ public abstract class Tracer {
 
             ambient = new Vector4f(material.getAmbient()).mul(new Vector4f(light.getAmbient().x,
                     light.getAmbient().y,
-                    light.getAmbient().z, 0));
+                    light.getAmbient().z, 1));
 
             diffuse = new Vector4f(material.getDiffuse())
                     .mul(new Vector4f(
                             light.getDiffuse().x,
                             light.getDiffuse().y,
                             light.getDiffuse().z,
-                            0))
+                            1))
                     .mul(Math.max(nDotL, 0));
 
-            if (nDotL>0)
+            if (nDotL>0) {
                 specular = new Vector4f(material.getSpecular())
                         .mul(new Vector4f(
                                 light.getSpecular().x,
                                 light.getSpecular().y,
                                 light.getSpecular().z,
-                                0))
-                        .mul((float) Math.pow(rDotV, material.getShininess()));
-            else
-                specular = new Vector4f();
+                                1))
+                        //.mul(rDotV)
+                        .mul((float) Math.pow(rDotV, material.getShininess()))
+                ;
+            } else
+                specular = new Vector4f(0, 0, 0, 0);
 
             if(inCone)
             {
                 //spotLightAmount = (dDotmL - cos(light[i].spotCutoff)) / dDotmL;
                 //spotLightAmount = 1;
-                fColor = addColor(fColor, new Vector4f(ambient).add(diffuse).add(specular));
+                fColor = addColor(fColor, (((new Vector4f(ambient)).add(diffuse)).add(specular)));
             }
         }
         //fColor = fColor * texture(image,fTexCoord.st);

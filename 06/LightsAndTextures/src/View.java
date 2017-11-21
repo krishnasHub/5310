@@ -221,6 +221,8 @@ public class View {
           }
         }
 
+        System.out.println("Max Value: " + Tracer.maxValue);
+
         try{
           File f = new File("output/Output.png");
           ImageIO.write(img, "png", f);
