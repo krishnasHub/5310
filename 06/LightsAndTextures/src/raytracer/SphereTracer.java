@@ -11,13 +11,13 @@ import util.Material;
 
 public class SphereTracer extends Tracer {
   @Override
-  public Vector3f getNormalForRay(Ray r) {
+  public Vector4f getNormalForRay(Ray r) {
     return null;
   }
 
   @Override
-  public Color getColor(Ray r, Material material, List<Light> lights) {
-
+  public void intersectThisRay(Ray r) {
+    r.t = -1f;
     //TODO: What to do to get actual radius of the sphere if not a unit sphere?
     float radius = 1;
 
@@ -29,8 +29,8 @@ public class SphereTracer extends Tracer {
             //Is there a case where the sphere's center/origin is not at (0,0,0)?
             (r.direction.x * (r.start.x)
                     //same comment for y and z.
-            + r.direction.y * (r.start.y)
-            + r.direction.z * (r.start.z));
+                    + r.direction.y * (r.start.y)
+                    + r.direction.z * (r.start.z));
     float C = (float) (Math.pow(r.start.x, 2)
             + Math.pow(r.start.y, 2)
             + Math.pow(r.start.z, 2)
@@ -39,18 +39,18 @@ public class SphereTracer extends Tracer {
     float discriminant = (float) Math.sqrt(Math.pow(B, 2) - 4 * A * C);
     //TODO: Case where the ray grazes the sphere at exactly one point.
     /**
-    System.out.println(A);
-    System.out.println(B);
-    System.out.println(C);
-    System.out.println(discriminant);
-    **/
+     System.out.println(A);
+     System.out.println(B);
+     System.out.println(C);
+     System.out.println(discriminant);
+     **/
 
     //If discriminant is negative, square root is imaginary and line and sphere don't exist.
     //TODO: Double check that when 2*A == 0, return black or something else.
     if ((discriminant <= 0)
             || (Double.isNaN(discriminant))
             || (A == 0)) {
-      return Color.BLACK;
+      return ;
     }
 
     //Otherwise there is an intersection, take the smallest of the two (ray enters and exits sphere)
@@ -71,17 +71,17 @@ public class SphereTracer extends Tracer {
     if (tClosest > 0) {
       r.t = tClosest;
     } else {
-      return Color.BLACK;
+      return ;
     }
 
     /**
      System.out.println(tClosest);
      System.out.println(t1);
-    System.out.println(t2);
-    */
+     System.out.println(t2);
+     */
     //Color l = getLightColorAt(material, r, lights);
     // If it reached the end here, the ray hit the object, return a color for the object.
     Color l = Color.YELLOW;
-    return l;
   }
+
 }

@@ -34,10 +34,16 @@ public class LightNode extends AbstractNode {
 
 
         // This is for the Ray Tracer
+        //Vector4f posn = newLight.getPosition();
+        //posn = new Matrix4f(modelView.peek()).invert().transform(posn);
+        /*
+        // normals and refractions..
+        posn.x =  -0.25f * posn.x;
+        posn.y =  -0.25f * posn.y;
+        posn.z =  0.5f * posn.z;
+        */
+        //newLight.setPosition(posn);
         this.scenegraph.storeLight(newLight);
-        Vector4f posn = newLight.getPosition();
-        posn = new Matrix4f(modelView.peek()).invert().transform(posn);
-        newLight.setPosition(posn);
     }
 
     @Override

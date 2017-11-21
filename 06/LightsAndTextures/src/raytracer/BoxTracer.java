@@ -14,29 +14,30 @@ import java.util.*;
 public class BoxTracer extends Tracer {
 
     @Override
-    public Vector3f getNormalForRay(Ray r) {
-        Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t)).normalize();
+    public Vector4f getNormalForRay(Ray r) {
+        Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));
 
         // Right and left plane
         if(point.x == 0.5f) {
-            return new Vector3f(1, 0, 0);
+            return new Vector4f(1, 0, 0, 0);
         } else if(point.x == -0.5f) {
-            return new Vector3f(-1, 0, 0);
+            return new Vector4f(-1, 0, 0, 0);
         } else if(point.y == 0.5f) {
-            return new Vector3f(0, 1, 0);
+            return new Vector4f(0, 1, 0, 0);
         } else if(point.y == -0.5f) {
-            return new Vector3f(0, -1, 0);
+            return new Vector4f(0, -1, 0, 0);
         } else if(point.z == 0.5f) {
-            return new Vector3f(0, 0, 1);
+            return new Vector4f(0, 0, 1, 0);
         } else if(point.z == -0.5f) {
-            return new Vector3f(0, 0, -1);
+            return new Vector4f(0, 0, -1, 0);
         }
 
-        return new Vector3f(point.x, point.y, point.z);
+        return new Vector4f(point.x, point.y, point.z, point.w);
     }
 
-    @Override
-    public Color getColor(final Ray r, Material material, java.util.List<Light> lights) {
+    public void intersectThisRay(Ray r) {
+        r.t = -1;
+
         Vector4f min = new Vector4f(-0.5f, -0.5f,-0.5f, 0);
         Vector4f max = new Vector4f(0.5f, 0.5f, 0.5f,  0);
 
@@ -59,7 +60,7 @@ public class BoxTracer extends Tracer {
         }
 
         if ((tmin > tymax) || (tymin > tmax))
-            return Color.BLACK;
+            return;
 
         if (tymin > tmin)
             tmin = tymin;
@@ -77,7 +78,7 @@ public class BoxTracer extends Tracer {
         }
 
         if ((tmin > tzmax) || (tzmin > tmax))
-            return Color.BLACK;
+            return;
 
         if (tzmin > tmin)
             tmin = tzmin;
@@ -91,9 +92,5 @@ public class BoxTracer extends Tracer {
             r.t = tmin;
         else
             r.t = Math.min(tmin, tmax);
-
-        Color l = getLightColorAt(material, r, lights);
-
-        return l;
     }
 }

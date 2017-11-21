@@ -167,22 +167,23 @@ public abstract class Tracer {
         return Color.BLACK;
     }
 
-    protected Vector4f getPositionForRay(Ray r) {
+    public Vector4f getPositionForRay(Ray r) {
         return new Vector4f(new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t)));
     }
 
-    public abstract Vector3f getNormalForRay(Ray r);
+    public abstract Vector4f getNormalForRay(Ray r);
+
+    public abstract void intersectThisRay(Ray ray);
 
     private static boolean once = false;
 
-    protected Color getLightColorAt(Material material, Ray r, List<Light> lights) {
-        Vector3f ambient = new Vector3f(material.getAmbient().x, material.getAmbient().y, material.getAmbient().z);
+    public Color getLightColorAt(Material material, Ray r, List<Light> lights, Vector4f normal, Vector4f position) {
+        Vector3f ambient;
         Vector3f diffuse;
         Vector3f specular;
-        Color c = new Color(ambient.x, ambient.y, ambient.z);
         Color fColor = Color.BLACK;
-        final Vector4f fPosition = getPositionForRay(r);
-        final Vector3f fNormal = getNormalForRay(r);
+        final Vector4f fPosition = new Vector4f(position);
+        final Vector4f fNormal = new Vector4f(normal);
 
         Vector3f lightVec;
         Vector3f normalView;
@@ -193,7 +194,7 @@ public abstract class Tracer {
         float dDotmL;
         //float spotLightAmount;
 
-        Vector3f tNormal = new Vector3f(fNormal);
+        Vector3f tNormal = new Vector3f(fNormal.x, fNormal.y, fNormal.z);
         tNormal.normalize();
 
 
@@ -210,23 +211,11 @@ public abstract class Tracer {
                  temp = (light.getPosition().sub(fPosition));
             else
                 temp = (light.getPosition().mul(-1f));
-
-            temp = (light.getPosition()).sub(r.start);
-
-            //temp = (light.getPosition().sub(fPosition));
-            //temp = (light.getPosition().add(new Vector4f(r.direction)));
-
             lightVec = new Vector3f(temp.x, temp.y, temp.z).normalize();
 
-            nDotL = tNormal.dot(new Vector3f(lightVec).normalize());
+            nDotL = tNormal.dot(lightVec);
 
-            viewVec = new Vector3f(fPosition.x, fPosition.y, fPosition.z)
-                    //.sub(new Vector3f(fPosition.x, fPosition.y, fPosition.z))
-
-                    .normalize()
-                    //.reflect(new Vector3f(tNormal.x, tNormal.y, tNormal.z).normalize())
-            ;
-            //viewVec = viewVec.normalize();
+            viewVec = new Vector3f(fPosition.x, fPosition.y, fPosition.z).mul(-1).normalize();
 
             reflectVec = (new Vector3f(lightVec).mul(-1)).reflect(tNormal);
             reflectVec = reflectVec.normalize();
@@ -285,7 +274,7 @@ public abstract class Tracer {
         return a;
     }
 
-    public abstract Color getColor(final Ray r, Material material, List<Light> l);
+    //public abstract Color getColor(final Ray r, Material material, List<Light> l);
 
     private static final float kEpsilon = 0.01f;
 

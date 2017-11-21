@@ -1,6 +1,8 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
+import org.joml.Vector4f;
 import raytracer.Ray;
 import raytracer.TracerFactory;
 import util.Light;
@@ -133,7 +135,30 @@ public class LeafNode extends AbstractNode
 
         List<Light> l = scenegraph.getLights();
 
-        Color absorptive = tracer.getColor(newRay, this.getMaterial(), l);
+        tracer.intersectThisRay(newRay);
+        if(newRay.t == -1)
+            return Color.BLACK;
+
+        float intersection = newRay.t;
+        //newRay = new Ray(ray);
+        newRay.t = intersection;
+
+
+        //new Matrix4f(modelView.peek()).invert().transform(newRay.start);
+        //new Matrix4f(modelView.peek()).invert().transform(newRay.direction);
+
+
+        Vector4f normal = tracer.getNormalForRay(newRay);
+        Vector4f position = tracer.getPositionForRay(newRay);
+
+        Ray ray2 = new Ray(ray);
+        ray2.t = newRay.t;
+
+        normal = new Matrix4f(modelView.peek()).transform(normal);
+        position = new Matrix4f(modelView.peek()).transform(position);
+
+        Color absorptive = tracer.getLightColorAt(this.getMaterial(), ray2, l, normal, position);
+        float abs = this.material.getAbsorption();
 
         return absorptive;
     }
