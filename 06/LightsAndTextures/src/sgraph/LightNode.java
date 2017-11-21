@@ -28,25 +28,16 @@ public class LightNode extends AbstractNode {
     @Override
     public void draw(IScenegraphRenderer context, Stack<Matrix4f> modelView) {
         Light newLight = new Light(this.light);
+
+        // This is for OpenGL
         context.storeLight(this.light, modelView.peek());
 
 
-        this.scenegraph.storeLight(newLight, modelView.peek());
+        // This is for the Ray Tracer
+        this.scenegraph.storeLight(newLight);
         Vector4f posn = newLight.getPosition();
-
-        posn = modelView.peek().invert().transform(posn);
-
+        posn = new Matrix4f(modelView.peek()).invert().transform(posn);
         newLight.setPosition(posn);
-
-        /*
-        Vector4f posn = this.light.getPosition();
-        posn.x += dir * 1f;
-
-        if(posn.x >= 300 || posn.x <= -300)
-            dir *= -1;
-
-        this.light.setPosition(posn);
-        */
     }
 
     @Override

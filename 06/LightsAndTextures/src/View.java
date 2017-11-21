@@ -209,14 +209,8 @@ public class View {
           for(int j = 0; j < H; ++j) {
             v = new Vector4f(i - (W/2.0f), j - (H/2.0f), Z, 0);
             v = new Matrix4f().lookAt(eyePosition, lookAtPosition, new Vector3f(0, -1, 0)).transform(v);
-
             ray = new Ray(start, v);
-
-            while (!modelView.empty())
-              modelView.pop();
-            modelView.push(new Matrix4f());
-
-            color = scenegraph.getColorForRay(ray, modelView);
+            color = scenegraph.getColorForRay(ray);
 
             img.setRGB(W - i - 1, j, color.getRGB());
           }

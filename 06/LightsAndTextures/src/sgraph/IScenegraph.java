@@ -105,15 +105,14 @@ public interface IScenegraph<VertexType extends IVertexData>
      * Traverse the entire Scenegraph for the Ray and get the color we want to display on the screen.
      *
      * @param ray - The Ray we want to trace.
-     * @param modelView - The modelView to transform.
      * @return Color - The color that goes into this pixel represented by the Ray.
      */
-    Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView);
+    Color getColorForRay(final Ray ray);
 
 
-    void storeLight(Light light, Matrix4f modelView);
+    void storeLight(Light light);
 
-    Map<Light, Matrix4f> getLightMap();
+    java.util.List<Light> getLights();
 
 
 }

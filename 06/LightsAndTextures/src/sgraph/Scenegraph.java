@@ -7,10 +7,7 @@ import util.Light;
 import util.PolygonMesh;
 
 import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * A specific implementation of this scene graph. This implementation is still independent
@@ -42,7 +39,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
      */
     protected IScenegraphRenderer renderer;
 
-    protected Map<Light, Matrix4f> lightMap;
+    protected java.util.List<util.Light> lightList;
 
 
     public Scenegraph()
@@ -51,7 +48,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         meshes = new HashMap<String,PolygonMesh<VertexType>>();
         nodes = new HashMap<String, INode>();
         textures = new HashMap<String,String>();
-        lightMap = new HashMap<Light, Matrix4f>();
+        lightList = new ArrayList<>(10);
     }
 
     public void dispose()
@@ -154,21 +151,23 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
 
     @Override
-    public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
+    public Color getColorForRay(final Ray ray) {
+        Stack<Matrix4f> modelView = new Stack<>();
+        modelView.push(new Matrix4f());
 
         return root.getColorForRay(ray, modelView);
     }
 
     @Override
-    public void storeLight(Light light, Matrix4f modelView) {
-        if(lightMap == null)
-            lightMap = new HashMap<>();
+    public void storeLight(Light light) {
+        if(lightList == null)
+            lightList = new ArrayList<>();
 
-        lightMap.put(light, new Matrix4f(modelView));
+        lightList.add(light);
     }
 
     @Override
-    public Map<Light, Matrix4f> getLightMap() {
-        return lightMap;
+    public java.util.List<Light> getLights() {
+        return lightList;
     }
 }

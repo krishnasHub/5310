@@ -131,9 +131,11 @@ public class LeafNode extends AbstractNode
         new Matrix4f(modelView.peek()).invert().transform(newRay.start);
         new Matrix4f(modelView.peek()).invert().transform(newRay.direction);
 
-        List<Light> l = (List<Light>) scenegraph.getLightMap().keySet().stream().collect(Collectors.toList());
+        List<Light> l = scenegraph.getLights();
 
-        return tracer.getColor(newRay, this.getMaterial(), l);
+        Color absorptive = tracer.getColor(newRay, this.getMaterial(), l);
+
+        return absorptive;
     }
 
 

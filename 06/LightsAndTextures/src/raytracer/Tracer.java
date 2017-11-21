@@ -173,6 +173,8 @@ public abstract class Tracer {
 
     public abstract Vector3f getNormalForRay(Ray r);
 
+    private static boolean once = false;
+
     protected Color getLightColorAt(Material material, Ray r, List<Light> lights) {
         Vector3f ambient = new Vector3f(material.getAmbient().x, material.getAmbient().y, material.getAmbient().z);
         Vector3f diffuse;
@@ -198,16 +200,23 @@ public abstract class Tracer {
         for (int i = 0; i < lights.size(); i++) {
             Light light = new Light(lights.get(i));
 
+            if(!once) {
+                System.out.println(light.getPosition().x + " " + light.getPosition().y + " " + light.getPosition().z);
+                once = !once;
+            }
+
             Vector4f temp;
             if (light.getPosition().w!=0)
                  temp = (light.getPosition().sub(fPosition));
             else
                 temp = (light.getPosition().mul(-1f));
 
-            temp = (light.getPosition().sub(fPosition));
+            temp = (light.getPosition()).sub(r.start);
+
+            //temp = (light.getPosition().sub(fPosition));
             //temp = (light.getPosition().add(new Vector4f(r.direction)));
 
-            lightVec = new Vector3f(temp.x, temp.y, temp.z);
+            lightVec = new Vector3f(temp.x, temp.y, temp.z).normalize();
 
             nDotL = tNormal.dot(new Vector3f(lightVec).normalize());
 
@@ -219,7 +228,7 @@ public abstract class Tracer {
             ;
             //viewVec = viewVec.normalize();
 
-            reflectVec = (new Vector3f(lightVec).mul(-1).normalize()).reflect(tNormal);
+            reflectVec = (new Vector3f(lightVec).mul(-1)).reflect(tNormal);
             reflectVec = reflectVec.normalize();
 
             rDotV = Math.max(reflectVec.dot(viewVec), 0.0f);
@@ -242,7 +251,6 @@ public abstract class Tracer {
             if (nDotL>0) {
                 specular = new Vector3f(material.getSpecular().x, material.getSpecular().y, material.getSpecular().z)
                         .mul(new Vector3f(light.getSpecular().x, light.getSpecular().y, light.getSpecular().z))
-                        //.mul(rDotV)
                         .mul((float) Math.pow(rDotV, material.getShininess()))
                 ;
             } else

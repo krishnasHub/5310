@@ -6,19 +6,20 @@
     <transform>
         <set>
             <translate>0 0 -5</translate>
+            <rotate>45 0 1 0</rotate>
         </set>
 
         <group name="Entire Brick">
             <transform>
                 <set>
-                    <translate>0 10 5</translate>
+                    <translate>0 0 5</translate>
                 </set>
 
                 <light name="Light">
                     <ambient>0.2 0.2 0.2</ambient>
                     <diffuse>1 1 1</diffuse>
                     <specular>1 1 1</specular>
-                    <position>0 30 0</position>
+                    <position>0 20 10</position>
                     <spotangle>180</spotangle>
                     <spotdirection>0 0 -1 </spotdirection>
                 </light>
@@ -49,6 +50,23 @@
                 <object instanceof="box">
 
 
+                    <material>
+                        <ambient>0.2 0.2 0.6</ambient>
+                        <diffuse>0.2 0.2 0.6</diffuse>
+                        <specular>0.2 0.2 0.6</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+
+
+            <transform name="brick 3">
+                <set>
+                    <translate>-20 0 -15</translate>
+                    <rotate>90 0 0 1</rotate>
+                    <scale>60 30 20</scale>
+                </set>
+                <object instanceof="box">
                     <material>
                         <ambient>0.2 0.2 0.6</ambient>
                         <diffuse>0.2 0.2 0.6</diffuse>
