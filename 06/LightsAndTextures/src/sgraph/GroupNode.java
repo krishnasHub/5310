@@ -149,12 +149,15 @@ public class GroupNode extends AbstractNode
 
         for(int i = 0; i < children.size(); ++i) {
             c = children.get(i).getColorForRay(ray, modelView);
+            //return c;
+
             if(c != (Color.BLACK)) {
                 if(ray.t < smallestT) {
                     ret = c;
                     smallestT = ray.t;
                 }
             }
+
         }
 
         return ret;
