@@ -156,7 +156,9 @@ public class GroupNode extends AbstractNode
                     ret = c;
                     smallestT = ray.t;
                 }
+
             }
+
 
         }
 

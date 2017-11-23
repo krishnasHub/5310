@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 import raytracer.Ray;
 import util.IVertexData;
 import util.Light;
@@ -111,6 +112,8 @@ public interface IScenegraph<VertexType extends IVertexData>
 
 
     void storeLight(Light light);
+
+    void setCameraValues(Vector3f eyePosition, Vector3f lookAt, Vector3f upVector);
 
     java.util.List<Light> getLights();
 

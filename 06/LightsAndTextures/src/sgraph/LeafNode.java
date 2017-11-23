@@ -140,8 +140,9 @@ public class LeafNode extends AbstractNode
             return Color.BLACK;
 
         float intersection = newRay.t;
+        ray.t = intersection;
         //newRay = new Ray(ray);
-        newRay.t = intersection;
+        //newRay.t = intersection;
 
 
         //new Matrix4f(modelView.peek()).invert().transform(newRay.start);

@@ -1,6 +1,7 @@
 package sgraph;
 
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 import raytracer.Ray;
 import util.IVertexData;
 import util.Light;
@@ -149,11 +150,23 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         textures.put(name,path);
     }
 
+    @Override
+    public void setCameraValues(Vector3f eyePosition, Vector3f lookAt, Vector3f upVector) {
+        this.eyePosition = eyePosition;
+        this.lookAt = lookAt;
+        this.upVector = upVector;
+    }
+
+    private Vector3f eyePosition;
+    private Vector3f lookAt;
+    private Vector3f upVector;
 
     @Override
     public Color getColorForRay(final Ray ray) {
         Stack<Matrix4f> modelView = new Stack<>();
         modelView.push(new Matrix4f());
+        eyePosition = new Vector3f(0, 10, 100);
+        modelView.peek().lookAt(eyePosition, lookAt, upVector);
 
         return root.getColorForRay(ray, modelView);
     }

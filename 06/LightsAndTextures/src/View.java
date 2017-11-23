@@ -196,14 +196,15 @@ public class View {
         Vector4f start = new Vector4f(eyePosition.x, eyePosition.y, eyePosition.z, 1);
 
         Vector4f v;
-        final int W = 1000;
-        final int H = 1000;
+        final int W = 2000;
+        final int H = 2000;
         final float Z = -0.5f * H / (float) (Math.tan(Math.toRadians(30.0)));
         Tracer tracer = new BoxTracer();
         Ray ray = null;
         Color color = null;
 
         BufferedImage img = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
+        scenegraph.setCameraValues(eyePosition, lookAtPosition, new Vector3f(0, 1, 0));
 
         for(int i = 0; i < W; ++i) {
           for(int j = 0; j < H; ++j) {

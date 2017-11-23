@@ -194,8 +194,7 @@ public abstract class Tracer {
         float dDotmL;
         //float spotLightAmount;
 
-        Vector3f tNormal = new Vector3f(fNormal.x, fNormal.y, fNormal.z);
-        tNormal.normalize();
+
 
 
         for (int i = 0; i < lights.size(); i++) {
@@ -213,9 +212,12 @@ public abstract class Tracer {
                 temp = (light.getPosition().mul(-1f));
             lightVec = new Vector3f(temp.x, temp.y, temp.z).normalize();
 
+            Vector3f tNormal = new Vector3f(fNormal.x, fNormal.y, fNormal.z);
+            tNormal = tNormal.normalize();
+
             nDotL = tNormal.dot(lightVec);
 
-            viewVec = new Vector3f(fPosition.x, fPosition.y, fPosition.z).mul(-1).normalize();
+            viewVec = (new Vector3f(fPosition.x, fPosition.y, fPosition.z).mul(-1)).normalize();
 
             reflectVec = (new Vector3f(lightVec).mul(-1)).reflect(tNormal);
             reflectVec = reflectVec.normalize();
