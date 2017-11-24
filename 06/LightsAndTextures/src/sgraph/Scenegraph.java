@@ -157,18 +157,29 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         this.upVector = upVector;
     }
 
-    private Vector3f eyePosition;
-    private Vector3f lookAt;
-    private Vector3f upVector;
+    public Vector3f eyePosition;
+    public Vector3f lookAt;
+    public Vector3f upVector;
 
     @Override
     public Color getColorForRay(final Ray ray) {
         Stack<Matrix4f> modelView = new Stack<>();
         modelView.push(new Matrix4f());
-        eyePosition = new Vector3f(0, 10, 100);
-        modelView.peek().lookAt(eyePosition, lookAt, upVector);
+        if(eyePosition != null && lookAt != null && upVector != null)
+            modelView.peek().lookAt(eyePosition, lookAt, upVector);
 
         return root.getColorForRay(ray, modelView);
+    }
+
+
+    @Override
+    public void collectAllLights() {
+        Stack<Matrix4f> modelView = new Stack<>();
+        modelView.push(new Matrix4f());
+        if(eyePosition != null && lookAt != null && upVector != null)
+            modelView.peek().lookAt(eyePosition, lookAt, upVector);
+
+        root.collectAllLights(modelView);
     }
 
     @Override

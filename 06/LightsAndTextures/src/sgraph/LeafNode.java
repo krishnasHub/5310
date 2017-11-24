@@ -120,6 +120,10 @@ public class LeafNode extends AbstractNode
         }
     }
 
+    public void collectAllLights(Stack<Matrix4f> modelView) {
+        // Do nothing..
+    }
+
 
     @Override
     public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {

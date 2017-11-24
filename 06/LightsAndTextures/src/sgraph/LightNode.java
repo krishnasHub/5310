@@ -1,6 +1,8 @@
 package sgraph;
 
+import javafx.scene.Scene;
 import org.joml.Matrix4f;
+import org.joml.Vector3f;
 import org.joml.Vector4f;
 import raytracer.Ray;
 import util.Light;
@@ -27,22 +29,18 @@ public class LightNode extends AbstractNode {
 
     @Override
     public void draw(IScenegraphRenderer context, Stack<Matrix4f> modelView) {
-        Light newLight = new Light(this.light);
-
         // This is for OpenGL
         context.storeLight(this.light, modelView.peek());
+    }
 
+    public void collectAllLights(Stack<Matrix4f> modelView) {
+        Scenegraph sg = (Scenegraph)this.scenegraph;
 
-        // This is for the Ray Tracer
+        Light newLight = new Light(this.light);
         Vector4f posn = newLight.getPosition();
-        posn = new Matrix4f(modelView.peek()).transform(posn);
-        /*
-        // normals and refractions..
-        posn.x =  -0.25f * posn.x;
-        posn.y =  -0.25f * posn.y;
-        posn.z =  0.5f * posn.z;
-        */
+        posn = modelView.peek().transform(posn);
         newLight.setPosition(posn);
+
         this.scenegraph.storeLight(newLight);
     }
 

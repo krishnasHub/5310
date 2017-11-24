@@ -113,6 +113,8 @@ public interface IScenegraph<VertexType extends IVertexData>
 
     void storeLight(Light light);
 
+    void collectAllLights();
+
     void setCameraValues(Vector3f eyePosition, Vector3f lookAt, Vector3f upVector);
 
     java.util.List<Light> getLights();

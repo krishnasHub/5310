@@ -120,5 +120,8 @@ public interface INode
      * @return Color - The color that goes into this pixel represented by the Ray.
      */
     Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView);
+
+
+    void collectAllLights(Stack<Matrix4f> modelView);
 }
 

@@ -129,6 +129,20 @@ public class TransformNode extends AbstractNode
         modelView.pop();
     }
 
+    public void collectAllLights(Stack<Matrix4f> modelView) {
+        if(child == null) {
+            // Do nothing..
+            return;
+        }
+
+        modelView.push(new Matrix4f(modelView.peek()));
+        modelView.peek().mul(new Matrix4f(transform));
+
+        child.collectAllLights(modelView);
+
+        modelView.pop();
+    }
+
     @Override
     public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
         if(child == null)

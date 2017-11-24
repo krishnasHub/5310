@@ -183,28 +183,25 @@ public class View {
     if(scenegraph != null) {
       scenegraph.animate(timer);
 
-      while (!modelView.empty())
-        modelView.pop();
 
-      modelView.push(new Matrix4f());
-      modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
 
-      scenegraph.draw(modelView);
+
 
       if(!generatedRayTracedImage) {
 
         Vector4f start = new Vector4f(eyePosition.x, eyePosition.y, eyePosition.z, 1);
 
         Vector4f v;
-        final int W = 2000;
-        final int H = 2000;
+        final int W = 1000;
+        final int H = 1000;
         final float Z = -0.5f * H / (float) (Math.tan(Math.toRadians(30.0)));
-        Tracer tracer = new BoxTracer();
         Ray ray = null;
         Color color = null;
 
         BufferedImage img = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
-        scenegraph.setCameraValues(eyePosition, lookAtPosition, new Vector3f(0, 1, 0));
+
+        scenegraph.setCameraValues(eyePosition, lookAtPosition, new Vector3f(0, -1, 0));
+        scenegraph.collectAllLights();
 
         for(int i = 0; i < W; ++i) {
           for(int j = 0; j < H; ++j) {
@@ -213,7 +210,7 @@ public class View {
             ray = new Ray(start, v);
             color = scenegraph.getColorForRay(ray);
 
-            img.setRGB(W - i - 1, j, color.getRGB());
+            img.setRGB(i, H - j - 1, color.getRGB());
           }
         }
 
@@ -230,7 +227,13 @@ public class View {
         generatedRayTracedImage = true;
       }
 
+      while (!modelView.empty())
+        modelView.pop();
 
+      modelView.push(new Matrix4f());
+      modelView.peek().lookAt(eyePosition, lookAtPosition, upVector).mul(trackballTransform);
+
+      scenegraph.draw(modelView);
 
       //all the light properties, except positions
       gl.glUniform1i(numLightsLocation, renderer.getLightCount());

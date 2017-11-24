@@ -140,6 +140,17 @@ public class GroupNode extends AbstractNode
         return children;
     }
 
+    public void collectAllLights(Stack<Matrix4f> modelView) {
+        if(children == null || children.size() == 0) {
+            // Do nothing..
+            return;
+        }
+
+        for(int i = 0; i < children.size(); ++i) {
+            children.get(i).collectAllLights(modelView);
+        }
+
+    }
 
     @Override
     public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
