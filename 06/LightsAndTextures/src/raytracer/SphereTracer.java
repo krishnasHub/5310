@@ -13,6 +13,7 @@ public class SphereTracer extends Tracer {
   @Override
   public Vector4f getNormalForRay(Ray r) {
     Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));
+    point.w = 0;
     return point.normalize();
   }
 

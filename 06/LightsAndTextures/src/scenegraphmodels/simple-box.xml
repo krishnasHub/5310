@@ -28,41 +28,42 @@
                 </object>
             </transform>
 
+            <!--
+
+                        <transform name="brick 2">
+                            <set>
+                                <translate>0 0 -5</translate>
+                                <scale>60 30 20</scale>
+                            </set>
+                            <object instanceof="box">
 
 
-            <transform name="brick 2">
-                <set>
-                    <translate>0 0 -5</translate>
-                    <scale>60 30 20</scale>
-                </set>
-                <object instanceof="box">
+                                <material>
+                                    <ambient>0.2 0.2 0.6</ambient>
+                                    <diffuse>0.2 0.2 0.6</diffuse>
+                                    <specular>0.2 0.2 0.6</specular>
+                                    <shininess>100</shininess>
+                                </material>
+                            </object>
+                        </transform>
 
 
-                    <material>
-                        <ambient>0.2 0.2 0.6</ambient>
-                        <diffuse>0.2 0.2 0.6</diffuse>
-                        <specular>0.2 0.2 0.6</specular>
-                        <shininess>100</shininess>
-                    </material>
-                </object>
-            </transform>
-
-
-            <transform name="brick 3">
-                <set>
-                    <translate>-20 0 -15</translate>
-                    <rotate>90 0 0 1</rotate>
-                    <scale>60 30 20</scale>
-                </set>
-                <object instanceof="box">
-                    <material>
-                        <ambient>0.2 0.2 0.6</ambient>
-                        <diffuse>0.2 0.2 0.6</diffuse>
-                        <specular>0.2 0.2 0.6</specular>
-                        <shininess>100</shininess>
-                    </material>
-                </object>
-            </transform>
+                        <transform name="brick 3">
+                            <set>
+                                <translate>-20 0 -15</translate>
+                                <rotate>90 0 0 1</rotate>
+                                <scale>60 30 20</scale>
+                            </set>
+                            <object instanceof="box">
+                                <material>
+                                    <ambient>0.2 0.2 0.6</ambient>
+                                    <diffuse>0.2 0.2 0.6</diffuse>
+                                    <specular>0.2 0.2 0.6</specular>
+                                    <shininess>100</shininess>
+                                </material>
+                            </object>
+                        </transform>
+                        -->
 
 
             <transform>
@@ -74,13 +75,11 @@
                     <ambient>0.8 0.8 0.8</ambient>
                     <specular>1 1 1</specular>
                     <diffuse>1 1 1</diffuse>
-                    <position>0 20 10</position>
+                    <position>40 20 10</position>
                     <spotangle>180</spotangle>
                     <spotdirection>0 0 -1 </spotdirection>
                 </light>
             </transform>
-
-
 
             <transform name="sphere1">
                 <set>
@@ -91,7 +90,45 @@
 
 
                     <material>
-                        <color>1 1 0</color>
+                        <ambient>0.8 0.533 0</ambient>
+                        <diffuse>0.8 0.533 0</diffuse>
+                        <specular>0.8 0.533 0</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="sphere2">
+                <set>
+                    <translate>-40 40 0</translate>
+                    <scale>30 30 30</scale>
+                </set>
+                <object instanceof="sphere">
+
+
+                    <material>
+                        <ambient>0.8 0.533 0.8</ambient>
+                        <diffuse>0.8 0.533 0.8</diffuse>
+                        <specular>0.8 0.533 0.8</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+
+
+            <transform name="sphere3">
+                <set>
+                    <translate>40 40 0</translate>
+                    <scale>30 30 30</scale>
+                </set>
+                <object instanceof="sphere">
+
+
+                    <material>
+                        <ambient>0.8 0.533 0.533</ambient>
+                        <diffuse>0.8 0.533 0.533</diffuse>
+                        <specular>0.8 0.533 0.533</specular>
+                        <shininess>100</shininess>
                     </material>
                 </object>
             </transform>
