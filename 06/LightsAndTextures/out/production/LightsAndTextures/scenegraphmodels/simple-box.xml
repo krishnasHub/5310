@@ -20,9 +20,9 @@
                 </set>
                 <object instanceof="box">
                         <material>
-                            <ambient>0.8 0.533 0</ambient>
-                            <diffuse>0.8 0.533 0</diffuse>
-                            <specular>0.8 0.533 0</specular>
+                            <ambient>1 0.4 0</ambient>
+                            <diffuse>1 0.4 0</diffuse>
+                            <specular>1 0.4 0</specular>
                             <shininess>100</shininess>
                         </material>
                 </object>
