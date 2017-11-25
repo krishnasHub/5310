@@ -61,6 +61,7 @@ public class LightNode extends AbstractNode {
     }
 
     public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
+        //ray.t = -1;
         return Color.BLACK;
     }
 }

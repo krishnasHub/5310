@@ -159,10 +159,14 @@ public class GroupNode extends AbstractNode
         float smallestT = Float.MAX_VALUE;
 
         for(int i = 0; i < children.size(); ++i) {
+            if(children.get(i) instanceof LightNode)
+                continue;
+
+            //ray.t = -1;
             c = children.get(i).getColorForRay(ray, modelView);
             //return c;
 
-            if(c != (Color.BLACK)) {
+            if(c != Color.BLACK) {
                 if(ray.t < smallestT) {
                     ret = c;
                     smallestT = ray.t;

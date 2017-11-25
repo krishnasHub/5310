@@ -12,7 +12,8 @@ import util.Material;
 public class SphereTracer extends Tracer {
   @Override
   public Vector4f getNormalForRay(Ray r) {
-    return null;
+    Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));
+    return point.normalize();
   }
 
   @Override

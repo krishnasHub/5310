@@ -86,6 +86,9 @@ public class BoxTracer extends Tracer {
         if (tzmax < tmax)
             tmax = tzmax;
 
+        if(tmin < 0 && tmax < 0)
+            return;
+
         if(tmin < 0)
             r.t = tmax;
         else if(tmax < 0)

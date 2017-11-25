@@ -194,9 +194,6 @@ public abstract class Tracer {
         float dDotmL;
         //float spotLightAmount;
 
-
-
-
         for (int i = 0; i < lights.size(); i++) {
             Light light = new Light(lights.get(i));
 

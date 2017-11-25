@@ -145,7 +145,7 @@ public class TransformNode extends AbstractNode
 
     @Override
     public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
-        if(child == null)
+        if(child == null || child instanceof LightNode)
             return Color.BLACK;
 
         modelView.push(new Matrix4f(modelView.peek()));

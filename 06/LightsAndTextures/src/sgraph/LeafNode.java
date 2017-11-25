@@ -140,6 +140,8 @@ public class LeafNode extends AbstractNode
         List<Light> l = scenegraph.getLights();
 
         tracer.intersectThisRay(newRay);
+        ray.t = newRay.t;
+
         if(newRay.t == -1)
             return Color.BLACK;
 
@@ -157,7 +159,7 @@ public class LeafNode extends AbstractNode
         Vector4f position = tracer.getPositionForRay(newRay);
 
         Ray ray2 = new Ray(ray);
-        ray2.t = newRay.t;
+        ray2.t = intersection;
 
         normal = new Matrix4f(modelView.peek()).transform(normal);
         position = new Matrix4f(modelView.peek()).transform(position);

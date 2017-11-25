@@ -81,7 +81,7 @@
             </transform>
 
 
-            <!--
+
             <transform name="sphere1">
                 <set>
                     <translate>0 40 0</translate>
@@ -94,7 +94,7 @@
                         <color>1 1 0</color>
                     </material>
                 </object>
-            </transform>-->
+            </transform>
 
         </group>
 
