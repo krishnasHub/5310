@@ -176,6 +176,12 @@ public abstract class Tracer {
         //return (1 + value) / 2.0f;
     }
 
+    public float str(float value, float min, float max) {
+        return (max - min) * value + min;
+        //return (1 + value) / 2.0f;
+    }
+
+
     public abstract Vector4f getNormalForRay(Ray r);
 
     public abstract void intersectThisRay(Ray ray);

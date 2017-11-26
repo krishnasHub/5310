@@ -9,15 +9,59 @@ import java.awt.*;
 import java.util.*;
 
 /**
- * Created by krish on 11/19/2017.
+ * This tracer is for the box object (not box-inside/box-outside), so texture coordinates won't
+ * work for the die. Will need to write different method for getTextureCoordinatesForPoint if so.
  */
 public class BoxTracer extends Tracer {
 
     public float[] getTextureCoordinatesForPoint(Vector4f point) {
         float[] coords = new float[2];
-        coords[0] = 0;
-        coords[1] = 0;
 
+        if ((point.x > -0.5f) && (point.x < 0.5f)) {
+            if (point.z == 0.5f) {
+                //Front face
+                coords[1] = scaleToRange(point.x, 0.5f, -0.5f);
+                coords[0] = scaleToRange(point.y, 0.5f, -0.5f);
+            }
+            if (point.z == -0.5f) {
+                //Back face
+                coords[1] = scaleToRange(point.x, 0.5f, -0.5f);
+                coords[0] = scaleToRange(point.y, -0.5f, 0.5f);
+            }
+
+        }
+
+        //Left Side
+        if (point.x == -0.5f) {
+            if ((point.z > -0.5f) && (point.z < 0.5f)) {
+                coords[1] = scaleToRange(point.z, 0.5f, -0.5f);
+                coords[0] = scaleToRange(point.y, 0.5f, -0.5f);
+            }
+        }
+
+        //Right Side
+        if (point.x == 0.5f) {
+            if ((point.z > -0.5f) && (point.z < 0.5f)) {
+                coords[1] = scaleToRange(point.z, -0.5f, 0.5f);
+                coords[0] = scaleToRange(point.y, 0.5f, -0.5f);
+            }
+        }
+
+        //Top Side
+        if (point.y == 0.5f) {
+            if ((point.z > -0.5f) && (point.z < 0.5f)) {
+                coords[1] = scaleToRange(point.x, 0.5f, -0.5f);
+                coords[0] = scaleToRange(point.z, -0.5f, 0.5f);
+            }
+        }
+
+        //Bottom Side
+        if (point.y == -0.5f) {
+            if ((point.z > -0.5f) && (point.z < 0.5f)) {
+                coords[1] = scaleToRange(point.x, 0.5f, -0.5f);
+                coords[0] = scaleToRange(point.z, 0.5f, -0.5f);
+            }
+        }
 
         return coords;
     }

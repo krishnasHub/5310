@@ -35,6 +35,8 @@ public class SphereTracer extends Tracer {
   public void intersectThisRay(Ray r) {
     r.t = -1f;
     //TODO: What to do to get actual radius of the sphere if not a unit sphere?
+    //ANS: Assume the sphere (and box) are unit ones where you are assuming the size.
+    //Otherwise this formula will need to change.
     float radius = 1;
 
     float A = (float) ((Math.pow(r.direction.x, 2))
@@ -53,7 +55,7 @@ public class SphereTracer extends Tracer {
             - Math.pow(radius, 2)); //radius squared
 
     float discriminant = (float) Math.sqrt(Math.pow(B, 2) - 4 * A * C);
-    //TODO: Case where the ray grazes the sphere at exactly one point.
+
     /**
      System.out.println(A);
      System.out.println(B);
@@ -66,7 +68,7 @@ public class SphereTracer extends Tracer {
     if ((discriminant <= 0)
             || (Double.isNaN(discriminant))
             || (A == 0)) {
-      return ;
+      return;
     }
 
     //Otherwise there is an intersection, take the smallest of the two (ray enters and exits sphere)
@@ -76,18 +78,18 @@ public class SphereTracer extends Tracer {
             / (2 * A);
     float tClosest;
 
+    //Case where the ray grazes the sphere at exactly one point.
     if (t1 == t2) {
       tClosest = t1;
     } else {
       tClosest = Math.min(t1, t2);
     }
 
-
     // Only want positive values of t.
     if (tClosest > 0) {
       r.t = tClosest;
     } else {
-      return ;
+      return;
     }
 
     /**
@@ -97,7 +99,7 @@ public class SphereTracer extends Tracer {
      */
     //Color l = getLightColorAt(material, r, lights);
     // If it reached the end here, the ray hit the object, return a color for the object.
-    Color l = Color.YELLOW;
+    //Color l = Color.YELLOW;
   }
 
 }
