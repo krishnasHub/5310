@@ -172,49 +172,52 @@ public class LeafNode extends AbstractNode
 
         TextureImage textureImage = null;
 
-        if(textureName == null || textureName == "")
-            textureName = "white.png";
+        if(textureName == null || textureName == ""){
+            return absorptive;
+        } else {
+            textureImage = scenegraph.getTexture(textureName);
 
-        textureImage = scenegraph.getTexture(textureName);
+            // latitude and longitude on the sphere/box in teh range 0 - 1 for X and Y axes.
+            float[] coords = tracer.getTextureCoordinatesForPoint(positionInObjSpace);
 
-        // latitude and longitude on the sphere/box in teh range 0 - 1 for X and Y axes.
-        float[] coords = tracer.getTextureCoordinatesForPoint(positionInObjSpace);
+            //Vector4f txColor = textureImage.getColor(coords[0] * 255, coords[1] * 255);
+            Vector4f texColor = textureImage.getColor(coords[0], coords[1]);
+            //Color texColor = textureImage.getColor2(coords[0], coords[1]);
 
-        //Vector4f txColor = textureImage.getColor(coords[0] * 255, coords[1] * 255);
-        Color texColor = textureImage.getColor2(coords[0] * 255, coords[1] * 255);
+            try {
+                Color ret = addTextureColortoColor(absorptive, texColor, false);
 
-        Color ret = addTextureColortoColor(absorptive, texColor);
-        return ret;
-
-        /*
-        Color ret = null;
-        try {
-            return addTextureColortoColor(absorptive, txColor);
-        } catch (IllegalArgumentException iae) {
-            iae.printStackTrace();
+                return ret;
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        */
 
-        //return ret;
+        return null;
     }
 
     private Color addTextureColortoColor(Color absorptive, Color texColor) {
         float[] arr = texColor.getRGBColorComponents(null);
 
-        return addTextureColortoColor(absorptive, new Vector4f(arr[0], arr[1], arr[2], 1.0f));
+        return addTextureColortoColor(absorptive, new Vector4f(arr[0], arr[1], arr[2], 1.0f), false);
     }
 
 
-    private Color addTextureColortoColor(Color absorptive, Vector4f textureColor) {
+    private Color addTextureColortoColor(Color absorptive, Vector4f textureColor, boolean scale) {
         Color ret = null;
         float[] colorAsVec = absorptive.getColorComponents(null);
 
-
+        if(scale) {
+            ret = new Color(textureColor.x * tracer.scaleToRange(colorAsVec[0], 0, 255),
+                    textureColor.y * tracer.scaleToRange(colorAsVec[1], 0, 255),
+                    textureColor.z * tracer.scaleToRange(colorAsVec[2], 0, 255),
+                    1);
+        } else {
             ret = new Color(textureColor.x * colorAsVec[0],
                     textureColor.y * colorAsVec[1],
                     textureColor.z * colorAsVec[2],
                     1);
-
+        }
 
         return ret;
     }
