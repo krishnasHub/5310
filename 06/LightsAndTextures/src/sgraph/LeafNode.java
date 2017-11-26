@@ -7,6 +7,7 @@ import raytracer.Ray;
 import raytracer.TracerFactory;
 import util.Light;
 import util.PolygonMesh;
+import util.TextureImage;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -158,6 +159,8 @@ public class LeafNode extends AbstractNode
         Vector4f normal = tracer.getNormalForRay(newRay);
         Vector4f position = tracer.getPositionForRay(newRay);
 
+        Vector4f positionInObjSpace = new Vector4f(position);
+
         Ray ray2 = new Ray(ray);
         ray2.t = intersection;
 
@@ -167,7 +170,53 @@ public class LeafNode extends AbstractNode
         Color absorptive = tracer.getLightColorAt(this.getMaterial(), ray2, l, normal, position);
         float abs = this.material.getAbsorption();
 
-        return absorptive;
+        TextureImage textureImage = null;
+
+        if(textureName == null || textureName == "")
+            textureName = "white.png";
+
+        textureImage = scenegraph.getTexture(textureName);
+
+        // latitude and longitude on the sphere/box in teh range 0 - 1 for X and Y axes.
+        float[] coords = tracer.getTextureCoordinatesForPoint(positionInObjSpace);
+
+        //Vector4f txColor = textureImage.getColor(coords[0] * 255, coords[1] * 255);
+        Color texColor = textureImage.getColor2(coords[0] * 255, coords[1] * 255);
+
+        Color ret = addTextureColortoColor(absorptive, texColor);
+        return ret;
+
+        /*
+        Color ret = null;
+        try {
+            return addTextureColortoColor(absorptive, txColor);
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+        }
+        */
+
+        //return ret;
+    }
+
+    private Color addTextureColortoColor(Color absorptive, Color texColor) {
+        float[] arr = texColor.getRGBColorComponents(null);
+
+        return addTextureColortoColor(absorptive, new Vector4f(arr[0], arr[1], arr[2], 1.0f));
+    }
+
+
+    private Color addTextureColortoColor(Color absorptive, Vector4f textureColor) {
+        Color ret = null;
+        float[] colorAsVec = absorptive.getColorComponents(null);
+
+
+            ret = new Color(textureColor.x * colorAsVec[0],
+                    textureColor.y * colorAsVec[1],
+                    textureColor.z * colorAsVec[2],
+                    1);
+
+
+        return ret;
     }
 
 

@@ -5,6 +5,7 @@ import org.joml.Vector3f;
 import raytracer.Ray;
 import util.IVertexData;
 import util.Light;
+import util.TextureImage;
 
 import java.awt.*;
 import java.util.Map;
@@ -110,6 +111,7 @@ public interface IScenegraph<VertexType extends IVertexData>
      */
     Color getColorForRay(final Ray ray);
 
+    TextureImage getTexture(String textureName);
 
     void storeLight(Light light);
 

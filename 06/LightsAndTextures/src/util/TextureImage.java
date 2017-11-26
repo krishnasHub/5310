@@ -41,7 +41,11 @@ public class TextureImage {
     return name;
   }
 
-  Vector4f getColor(float x, float y) {
+  public Color getColor2(float x, float y) {
+    return new Color(image.getRGB((int)x % image.getWidth(), (int) y % image.getHeight()));
+  }
+
+  public Vector4f getColor(float x, float y) {
     int x1, y1, x2, y2;
 
     x = x - (int) x; //GL_REPEAT

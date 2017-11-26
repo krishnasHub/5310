@@ -13,6 +13,15 @@ import java.util.*;
  */
 public class BoxTracer extends Tracer {
 
+    public float[] getTextureCoordinatesForPoint(Vector4f point) {
+        float[] coords = new float[2];
+        coords[0] = 0;
+        coords[1] = 0;
+
+
+        return coords;
+    }
+
     @Override
     public Vector4f getNormalForRay(Ray r) {
         Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));

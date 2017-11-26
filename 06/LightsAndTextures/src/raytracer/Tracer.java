@@ -171,9 +171,16 @@ public abstract class Tracer {
         return new Vector4f(new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t)));
     }
 
+    public float scaleToRange(float value, float min, float max) {
+        return (value - min) / (max - min);
+        //return (1 + value) / 2.0f;
+    }
+
     public abstract Vector4f getNormalForRay(Ray r);
 
     public abstract void intersectThisRay(Ray ray);
+
+    public abstract float[] getTextureCoordinatesForPoint(Vector4f point);
 
     private static boolean once = false;
 

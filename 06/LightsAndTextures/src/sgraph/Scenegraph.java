@@ -6,8 +6,11 @@ import raytracer.Ray;
 import util.IVertexData;
 import util.Light;
 import util.PolygonMesh;
+import util.TextureImage;
 
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -42,6 +45,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     protected java.util.List<util.Light> lightList;
 
+    protected Map<String, TextureImage> textureImageMap;
+
 
     public Scenegraph()
     {
@@ -50,6 +55,38 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         nodes = new HashMap<String, INode>();
         textures = new HashMap<String,String>();
         lightList = new ArrayList<>(10);
+
+        loadTextures();
+    }
+
+
+    private void loadTextures() {
+        if(textureImageMap != null)
+            return;
+
+        textureImageMap = new HashMap<>();
+
+        try {
+            File textureFolder = new File("src/textures");
+
+            String[] files = textureFolder.list();
+
+            for(int i = 0; i < files.length; ++i) {
+                String textureName = files[i];
+                int ind = textureName.lastIndexOf('.');
+
+                util.TextureImage textureImage = new util.TextureImage("textures/" + textureName,
+                        textureName.substring(ind + 1), textureName.substring(0, ind));
+                textureImageMap.put(textureName, textureImage);
+            }
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+    }
+
+    public TextureImage getTexture(String textureName) {
+        return textureImageMap.get(textureName);
     }
 
     public void dispose()

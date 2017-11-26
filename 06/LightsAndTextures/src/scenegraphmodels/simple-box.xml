@@ -94,6 +94,7 @@
                         <diffuse>0.8 0.533 0</diffuse>
                         <specular>0.8 0.533 0</specular>
                         <shininess>100</shininess>
+                        <textureName>silver.png</textureName>
                     </material>
                 </object>
             </transform>

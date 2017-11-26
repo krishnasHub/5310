@@ -10,6 +10,20 @@ import util.Light;
 import util.Material;
 
 public class SphereTracer extends Tracer {
+
+  public float[] getTextureCoordinatesForPoint(Vector4f point) {
+    float[] coords = new float[2];
+
+    float tetha =  (float) Math.acos(point.y);
+    float phi = (float) Math.atan2(point.z, point.x);
+
+    coords[0] = scaleToRange(tetha, 0.0f, (float) Math.PI);
+    coords[1] = scaleToRange(phi, (float) -Math.PI, (float) Math.PI);
+
+    return coords;
+  }
+
+
   @Override
   public Vector4f getNormalForRay(Ray r) {
     Vector4f point = new Vector4f(r.start).add(new Vector4f(r.direction).mul(r.t));
