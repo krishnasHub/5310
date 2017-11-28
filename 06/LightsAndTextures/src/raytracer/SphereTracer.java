@@ -17,8 +17,8 @@ public class SphereTracer extends Tracer {
     float tetha =  (float) Math.acos(point.y);
     float phi = (float) Math.atan2(point.z, point.x);
 
-    coords[0] = scaleToRange(tetha, 0.0f, (float) Math.PI);
-    coords[1] = scaleToRange(phi, (float) -Math.PI, (float) Math.PI);
+    coords[0] = scaleToRange(phi, (float) -Math.PI, (float) Math.PI);
+    coords[1] = scaleToRange(tetha, 0.0f, (float) Math.PI);
 
     return coords;
   }

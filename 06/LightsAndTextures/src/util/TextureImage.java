@@ -71,9 +71,9 @@ public class TextureImage {
     Vector4f three = ColorToVector4f(new Color(image.getRGB(x1, y2)));
     Vector4f four = ColorToVector4f(new Color(image.getRGB(x2, y2)));
 
-    Vector4f inter1 = one.lerp(three, 1);
-    Vector4f inter2 = two.lerp(four, 1);
-    Vector4f inter3 = inter1.lerp(inter2, 1);
+    Vector4f inter1 = one.lerp(three, y - (int) y);
+    Vector4f inter2 = two.lerp(four, y - (int) y);
+    Vector4f inter3 = inter1.lerp(inter2, x - (int) x);
 
     return inter3;
   }

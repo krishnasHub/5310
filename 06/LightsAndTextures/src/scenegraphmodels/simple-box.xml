@@ -176,18 +176,18 @@
 
 
                     <material>
-                        <ambient>0.8 0.533 0</ambient>
-                        <diffuse>0.8 0.533 0</diffuse>
-                        <specular>0.8 0.533 0</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
-                        <textureName>silver.png</textureName>
+                        <textureName>earthmap.png</textureName>
                     </material>
                 </object>
             </transform>
 
             <transform name="sphere2">
                 <set>
-                    <translate>-40 40 0</translate>
+                    <translate>-60 40 0</translate>
                     <scale>30 30 30</scale>
                 </set>
                 <object instanceof="sphere">
@@ -205,7 +205,7 @@
 
             <transform name="sphere3">
                 <set>
-                    <translate>40 40 0</translate>
+                    <translate>60 40 0</translate>
                     <scale>30 30 30</scale>
                 </set>
                 <object instanceof="sphere">
