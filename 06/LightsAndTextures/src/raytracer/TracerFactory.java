@@ -12,6 +12,8 @@ public class TracerFactory {
         switch(objInstanceName) {
             case "box":
                 return new BoxTracer();
+            case "box-outside":
+                return new BoxOutsideTracer();
             case "sphere":
                 return new SphereTracer();
             default:

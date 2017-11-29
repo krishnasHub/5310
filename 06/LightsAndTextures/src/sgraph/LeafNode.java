@@ -179,9 +179,14 @@ public class LeafNode extends AbstractNode
 
             // latitude and longitude on the sphere/box in teh range 0 - 1 for X and Y axes.
             float[] coords = tracer.getTextureCoordinatesForPoint(positionInObjSpace);
-
             //Vector4f txColor = textureImage.getColor(coords[0] * 255, coords[1] * 255);
-            Vector4f texColor = textureImage.getColor(coords[0], coords[1]);
+            Vector4f texColor;
+            if (textureName.equals("dieflip.png")) {
+                texColor = textureImage.getColorDie(coords[0], coords[1], coords[2]);
+            } else {
+                texColor = textureImage.getColor(coords[0], coords[1]);
+            }
+
             //Color texColor = textureImage.getColor2(coords[0], coords[1]);
 
             try {

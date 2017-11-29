@@ -177,8 +177,7 @@ public abstract class Tracer {
     }
 
     public float str(float value, float min, float max) {
-        return (max - min) * value + min;
-        //return (1 + value) / 2.0f;
+        return (((max - min) * value) + min);
     }
 
 

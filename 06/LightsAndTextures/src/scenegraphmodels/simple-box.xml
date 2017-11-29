@@ -1,6 +1,7 @@
 <scene>
     <instance name="sphere" path="models/sphere"></instance>
     <instance name="box" path="models/box"></instance>
+    <instance name="box-outside" path="models/box-outside"></instance>
     <instance name="cylinder" path="models/cylinder"></instance>
 
     <transform>
@@ -14,15 +15,15 @@
 
             <transform name="brick front">
                 <set>
-                    <scale>15 30 10</scale>
+                    <scale>15 15 15</scale>
                 </set>
-                <object instanceof="box">
+                <object instanceof="box-outside">
                     <material>
                         <ambient>1 0.4 0</ambient>
                         <diffuse>1 0.4 0</diffuse>
                         <specular>1 0.4 0</specular>
                         <shininess>100</shininess>
-                        <textureName>earthmap.png</textureName>
+                        <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -31,15 +32,15 @@
                 <set>
                     <translate>0 -40 0</translate>
                     <rotate>180 0 1 0</rotate>
-                    <scale>15 30 10</scale>
+                    <scale>15 15 15</scale>
                 </set>
-                <object instanceof="box">
+                <object instanceof="box-outside">
                     <material>
                         <ambient>1 0.4 0</ambient>
                         <diffuse>1 0.4 0</diffuse>
                         <specular>1 0.4 0</specular>
                         <shininess>100</shininess>
-                        <textureName>earthmap.png</textureName>
+                        <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -48,15 +49,15 @@
                 <set>
                     <translate>-40 0 0</translate>
                     <rotate>90 0 1 0</rotate>
-                    <scale>15 30 10</scale>
+                    <scale>15 15 15</scale>
                 </set>
-                <object instanceof="box">
+                <object instanceof="box-outside">
                     <material>
                         <ambient>1 0.4 0</ambient>
                         <diffuse>1 0.4 0</diffuse>
                         <specular>1 0.4 0</specular>
                         <shininess>100</shininess>
-                        <textureName>earthmap.png</textureName>
+                        <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -65,15 +66,15 @@
                 <set>
                     <translate>-40 -40 0</translate>
                     <rotate>-90 0 1 0</rotate>
-                    <scale>15 30 10</scale>
+                    <scale>15 15 15</scale>
                 </set>
-                <object instanceof="box">
+                <object instanceof="box-outside">
                     <material>
                         <ambient>1 0.4 0</ambient>
                         <diffuse>1 0.4 0</diffuse>
                         <specular>1 0.4 0</specular>
                         <shininess>100</shininess>
-                        <textureName>earthmap.png</textureName>
+                        <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -84,13 +85,13 @@
                     <rotate>90 1 0 0</rotate>
                     <scale>15 30 10</scale>
                 </set>
-                <object instanceof="box">
+                <object instanceof="box-outside">
                     <material>
                         <ambient>1 0.4 0</ambient>
                         <diffuse>1 0.4 0</diffuse>
                         <specular>1 0.4 0</specular>
                         <shininess>100</shininess>
-                        <textureName>earthmap.png</textureName>
+                        <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
@@ -99,15 +100,15 @@
                 <set>
                     <translate>40 -40 0</translate>
                     <rotate>-90 1 0 0</rotate>
-                    <scale>15 30 10</scale>
+                    <scale>15 15 15</scale>
                 </set>
-                <object instanceof="box">
+                <object instanceof="box-outside">
                     <material>
                         <ambient>1 0.4 0</ambient>
                         <diffuse>1 0.4 0</diffuse>
                         <specular>1 0.4 0</specular>
                         <shininess>100</shininess>
-                        <textureName>earthmap.png</textureName>
+                        <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
