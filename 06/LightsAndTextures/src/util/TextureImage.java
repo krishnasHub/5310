@@ -85,7 +85,7 @@ public class TextureImage {
   /**
    * Gets the color for box outside textures, like the die)
   **/
-  public Vector4f getColorDie(float x, float y, float side) {
+  public Vector4f getColorBoxOutside(float x, float y, float side) {
     int x1, y1, x2, y2;
 
     x = x - (int) x; //GL_REPEAT

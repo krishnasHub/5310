@@ -6,7 +6,7 @@
 
     <transform>
         <set>
-            <translate>0 0 -5</translate>
+            <translate>0 -5 -5</translate>
             <!--<rotate>45 0 1 0</rotate>-->
         </set>
 
@@ -44,6 +44,25 @@
                     </material>
                 </object>
             </transform>
+
+            <!--
+            <transform name="earthbox">
+                <set>
+                    <translate>0 -20 0</translate>
+                    <rotate>90 0 0 1</rotate>
+                    <scale>15 25 15</scale>
+                </set>
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 0.4 0</ambient>
+                        <diffuse>1 0.4 0</diffuse>
+                        <specular>1 0.4 0</specular>
+                        <shininess>100</shininess>
+                        <textureName>earthmap.png</textureName>
+                    </material>
+                </object>
+            </transform>
+            -->
 
             <transform name="brick left">
                 <set>
@@ -83,7 +102,7 @@
                 <set>
                     <translate>40 0 0</translate>
                     <rotate>90 1 0 0</rotate>
-                    <scale>15 30 10</scale>
+                    <scale>15 15 15</scale>
                 </set>
                 <object instanceof="box-outside">
                     <material>

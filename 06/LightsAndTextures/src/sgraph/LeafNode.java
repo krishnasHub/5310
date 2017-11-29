@@ -181,8 +181,10 @@ public class LeafNode extends AbstractNode
             float[] coords = tracer.getTextureCoordinatesForPoint(positionInObjSpace);
             //Vector4f txColor = textureImage.getColor(coords[0] * 255, coords[1] * 255);
             Vector4f texColor;
-            if (textureName.equals("dieflip.png")) {
-                texColor = textureImage.getColorDie(coords[0], coords[1], coords[2]);
+
+            //If dieflip, use the box-outside method to get specific areas of the texture image.
+            if (objInstanceName.equals("box-outside")) {
+                texColor = textureImage.getColorBoxOutside(coords[0], coords[1], coords[2]);
             } else {
                 texColor = textureImage.getColor(coords[0], coords[1]);
             }
