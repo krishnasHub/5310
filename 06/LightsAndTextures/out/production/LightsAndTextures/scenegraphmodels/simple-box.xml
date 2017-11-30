@@ -19,9 +19,9 @@
                 </set>
                 <object instanceof="box-outside">
                     <material>
-                        <ambient>1 0.4 0</ambient>
-                        <diffuse>1 0.4 0</diffuse>
-                        <specular>1 0.4 0</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
                         <textureName>dieflip.png</textureName>
                     </material>
@@ -36,33 +36,14 @@
                 </set>
                 <object instanceof="box-outside">
                     <material>
-                        <ambient>1 0.4 0</ambient>
-                        <diffuse>1 0.4 0</diffuse>
-                        <specular>1 0.4 0</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
                         <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
-
-            <!--
-            <transform name="earthbox">
-                <set>
-                    <translate>0 -20 0</translate>
-                    <rotate>90 0 0 1</rotate>
-                    <scale>15 25 15</scale>
-                </set>
-                <object instanceof="box">
-                    <material>
-                        <ambient>1 0.4 0</ambient>
-                        <diffuse>1 0.4 0</diffuse>
-                        <specular>1 0.4 0</specular>
-                        <shininess>100</shininess>
-                        <textureName>earthmap.png</textureName>
-                    </material>
-                </object>
-            </transform>
-            -->
 
             <transform name="brick left">
                 <set>
@@ -72,9 +53,9 @@
                 </set>
                 <object instanceof="box-outside">
                     <material>
-                        <ambient>1 0.4 0</ambient>
-                        <diffuse>1 0.4 0</diffuse>
-                        <specular>1 0.4 0</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
                         <textureName>dieflip.png</textureName>
                     </material>
@@ -89,9 +70,9 @@
                 </set>
                 <object instanceof="box-outside">
                     <material>
-                        <ambient>1 0.4 0</ambient>
-                        <diffuse>1 0.4 0</diffuse>
-                        <specular>1 0.4 0</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
                         <textureName>dieflip.png</textureName>
                     </material>
@@ -106,9 +87,9 @@
                 </set>
                 <object instanceof="box-outside">
                     <material>
-                        <ambient>1 0.4 0</ambient>
-                        <diffuse>1 0.4 0</diffuse>
-                        <specular>1 0.4 0</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
                         <textureName>dieflip.png</textureName>
                     </material>
@@ -123,54 +104,14 @@
                 </set>
                 <object instanceof="box-outside">
                     <material>
-                        <ambient>1 0.4 0</ambient>
-                        <diffuse>1 0.4 0</diffuse>
-                        <specular>1 0.4 0</specular>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
                         <textureName>dieflip.png</textureName>
                     </material>
                 </object>
             </transform>
-
-
-
-            <!--
-
-                        <transform name="brick 2">
-                            <set>
-                                <translate>0 0 -5</translate>
-                                <scale>60 30 20</scale>
-                            </set>
-                            <object instanceof="box">
-
-
-                                <material>
-                                    <ambient>0.2 0.2 0.6</ambient>
-                                    <diffuse>0.2 0.2 0.6</diffuse>
-                                    <specular>0.2 0.2 0.6</specular>
-                                    <shininess>100</shininess>
-                                </material>
-                            </object>
-                        </transform>
-
-
-                        <transform name="brick 3">
-                            <set>
-                                <translate>-20 0 -15</translate>
-                                <rotate>90 0 0 1</rotate>
-                                <scale>60 30 20</scale>
-                            </set>
-                            <object instanceof="box">
-                                <material>
-                                    <ambient>0.2 0.2 0.6</ambient>
-                                    <diffuse>0.2 0.2 0.6</diffuse>
-                                    <specular>0.2 0.2 0.6</specular>
-                                    <shininess>100</shininess>
-                                </material>
-                            </object>
-                        </transform>
-                        -->
-
 
             <transform>
                 <set>
@@ -181,7 +122,7 @@
                     <ambient>0.8 0.8 0.8</ambient>
                     <specular>1 1 1</specular>
                     <diffuse>1 1 1</diffuse>
-                    <position>40 20 10</position>
+                    <position>1 20 10</position>
                     <spotangle>180</spotangle>
                     <spotdirection>0 0 -1 </spotdirection>
                 </light>
@@ -199,7 +140,7 @@
                         <ambient>1 1 1</ambient>
                         <diffuse>1 1 1</diffuse>
                         <specular>1 1 1</specular>
-                        <shininess>100</shininess>
+                        <shininess>500</shininess>
                         <textureName>earthmap.png</textureName>
                     </material>
                 </object>
