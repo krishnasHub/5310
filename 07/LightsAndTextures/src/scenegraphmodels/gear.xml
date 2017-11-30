@@ -1,0 +1,663 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+    <instance name="disc" path="models/disc.obj" />
+
+    <group>
+        <transform name="mainDisc">
+            <set>
+                <rotate>90 1 0 0</rotate>
+            </set>
+            <group>
+                <object instanceof="disc">
+                    <material>
+                        <color> 1 0 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone1.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="smallerDiscAttachment">
+            <set>
+                <translate>0 0 20</translate>
+                <scale> .9 .9 .2 </scale>
+                <rotate>90 1 0 0</rotate>
+            </set>
+            <group>
+                <object instanceof="disc">
+                    <material>
+                        <color> 1 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="smallerDiscAttachment2">
+            <set>
+                <translate>0 0 -5</translate>
+                <scale> .9 .9 .2 </scale>
+                <rotate>90 1 0 0</rotate>
+            </set>
+            <group>
+                <object instanceof="disc">
+                    <material>
+                        <color> 1 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>steel1.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="shaftHolder">
+            <set>
+                <translate>0 0 -5</translate>
+                <scale> 20 20 30 </scale>
+                <rotate>90 1 0 0</rotate>
+            </set>
+            <group>
+                <object instanceof="cylinder">
+                    <material>
+                        <color> 1 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>steel2.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="shaftHolderFrontDetail">
+            <set>
+                <scale> 18 18 31 </scale>
+                <rotate>90 1 0 0</rotate>
+            </set>
+            <group>
+                <object instanceof="cylinder">
+                    <material>
+                        <color> 1 0 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>steel1.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog">
+            <set>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog2">
+            <set>
+                <rotate>15 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog3">
+            <set>
+                <rotate>30 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog4">
+            <set>
+                <rotate>45 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog5">
+            <set>
+                <rotate>60 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog6">
+            <set>
+                <rotate>75 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog7">
+            <set>
+                <rotate>90 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog8">
+            <set>
+                <rotate>105 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog9">
+            <set>
+                <rotate>120 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog10">
+            <set>
+                <rotate>135 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog11">
+            <set>
+                <rotate>150 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog12">
+            <set>
+                <rotate>165 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog13">
+            <set>
+                <rotate>180 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog14">
+            <set>
+                <rotate>195 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog15">
+            <set>
+                <rotate>210 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog16">
+            <set>
+                <rotate>225 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog17">
+            <set>
+                <rotate>240 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog18">
+            <set>
+                <rotate>255 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+        <transform name="cog19">
+            <set>
+                <rotate>270 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog20">
+            <set>
+                <rotate>285 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog21">
+            <set>
+                <rotate>300 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog22">
+            <set>
+                <rotate>315 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog23">
+            <set>
+                <rotate>330 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="cog24">
+            <set>
+                <rotate>345 0 0 1</rotate>
+                <translate>0 80 10</translate>
+                <scale> 10 10 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 1 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>wood_leg.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="bar1">
+            <set>
+                <translate>0 0 10</translate>
+                <scale> 10 100 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="bar2">
+            <set>
+                <rotate>90 0 0 1</rotate>
+                <translate>0 0 10</translate>
+                <scale> 10 100 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="bar3">
+            <set>
+                <rotate>45 0 0 1</rotate>
+                <translate>0 0 10</translate>
+                <scale> 10 100 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+
+        <transform name="bar4">
+            <set>
+                <rotate>135 0 0 1</rotate>
+                <translate>0 0 10</translate>
+                <scale> 10 100 20 </scale>
+            </set>
+            <group>
+                <object instanceof="box">
+                    <material>
+                        <color> 0 1 0 </color>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>silver.png</textureName>
+                    </material>
+                </object>
+            </group>
+        </transform>
+    </group>
+</scene>

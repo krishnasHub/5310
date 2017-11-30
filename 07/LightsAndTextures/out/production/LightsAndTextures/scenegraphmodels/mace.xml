@@ -1,0 +1,175 @@
+<scene>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+    <instance name="cone" path="models/cone"></instance>
+
+    <transform>
+    <set>
+    </set>
+    <group name="Entire Mace">
+        <transform name="Mace Top">
+            <set>
+                <translate>0 10 0</translate>
+                <scale>8 16 8</scale>
+            </set>
+
+            <object instanceof="cone">
+                <material>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Sphere">
+            <set>
+                <scale>20 20 20</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+
+        <transform name="Mace Spikes">
+            <set>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Spikes">
+            <set>
+                <rotate>90 0 1 0</rotate>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Spikes">
+            <set>
+                <rotate>45 0 1 0</rotate>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace Spikes">
+            <set>
+                <rotate>135 0 1 0</rotate>
+                <scale>21 21 1</scale>
+            </set>
+
+            <object instanceof="sphere">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                    <textureName>gold1.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+
+        <transform name="Mace grip">
+            <set>
+                <translate>0 -25 0</translate>
+                <scale>4 6 4</scale>
+            </set>
+
+            <object instanceof="cylinder">
+                <material>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace axil">
+            <set>
+                <translate>0 -80 0</translate>
+                <scale>3 60 3</scale>
+            </set>
+
+            <object instanceof="cylinder">
+                <material>
+                    <ambient>1 1 1</ambient>
+                    <diffuse>1 1 1</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                    <textureName>steel1.png</textureName>
+                </material>
+            </object>
+        </transform>
+
+        <transform name="Mace kilt">
+            <set>
+                <translate>0 -85 0</translate>
+                <scale>4 6 4</scale>
+            </set>
+
+            <object instanceof="cylinder">
+                <material>
+                    <ambient>0.8 0.533 0</ambient>
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <shininess>100</shininess>
+                </material>
+
+<!--
+                <light name="Light on hammer grip">
+                    <diffuse>0.8 0.533 0</diffuse>
+                    <specular>0.8 0.533 0</specular>
+                    <position>0 -2 0</position>
+                    <spotangle>10</spotangle>
+                    <spotdirection>0 1 0 </spotdirection>
+                </light> -->
+
+            </object>
+        </transform>
+    </group>
+    </transform>
+
+
+
+
+</scene>

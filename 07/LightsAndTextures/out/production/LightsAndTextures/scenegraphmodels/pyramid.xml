@@ -1,0 +1,124 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+    <instance name="cone" path="models/cone"></instance>
+
+    <transform>
+        <set>
+
+        </set>
+        <group name="Entire Pyramid">
+            <transform name="Pyramid Base">
+                <set>
+                    <scale>16 3 16</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone2.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 3 0</translate>
+                    <scale>12 3 12</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone3.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 6 0</translate>
+                    <scale>8 3 8</scale>
+                </set>
+
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone3.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 9 0</translate>
+                    <scale>6 3 6</scale>
+                </set>
+<!-- 0.63 0.298 0 -->
+                <object instanceof="box">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>50</shininess>
+                        <textureName>sandstone2.png</textureName>
+                    </material>
+
+                </object>
+            </transform>
+
+
+
+            <transform name="Pyramid Base">
+                <set>
+                    <translate>0 -1 0</translate>
+                    <rotate>45 0 1 0</rotate>
+                    <scale>13 13 2</scale>
+
+                </set>
+
+                <object instanceof="cone">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>10</shininess>
+                        <textureName>rock1.png</textureName>
+                    </material>
+                </object>
+            </transform>
+            <transform name="Pyramid Cone">
+                <set>
+                    <translate>0 -1 0</translate>
+                    <rotate>-45 0 1 0</rotate>
+                    <scale>13 13 2</scale>
+
+                </set>
+
+                <object instanceof="cone">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>10</shininess>
+                        <textureName>rock1.png</textureName>
+                    </material>
+                </object>
+            </transform>
+
+
+        </group>
+    </transform>
+
+
+
+
+</scene>
