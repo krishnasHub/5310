@@ -1,0 +1,65 @@
+<scene>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="box" path="models/box"></instance>
+    <instance name="box-outside" path="models/box-outside"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+
+    <transform>
+        <set>
+            <translate>0 0 0</translate>
+        </set>
+
+        <group name="Entire Scene">
+
+            <transform name="Light Transform">
+                <set>
+
+                </set>
+
+                <light name="Light">
+                    <ambient>0.8 0.8 0.8</ambient>
+                    <specular>1 1 1</specular>
+                    <diffuse>1 1 1</diffuse>
+                    <position>0 0 50</position>
+                    <spotangle>180</spotangle>
+                    <spotdirection>0 0 -1 </spotdirection>
+                </light>
+            </transform>
+
+            <transform name="back wall">
+                <set>
+                    <translate>0 0 -50</translate>
+                    <scale>150 150 15</scale>
+                </set>
+                <object instanceof="box-outside">
+                    <material>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>300</shininess>
+                    </material>
+                </object>
+            </transform>
+
+
+            <transform name="sphere1">
+                <set>
+                    <translate>0 0 -20</translate>
+                    <scale>10 10 10</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 0.25 0.25</ambient>
+                        <diffuse>1 0.25 0.25</diffuse>
+                        <specular>1 0.25 0.25</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+
+        </group>
+
+    </transform>
+
+
+</scene>

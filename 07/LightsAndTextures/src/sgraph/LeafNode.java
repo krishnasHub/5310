@@ -135,6 +135,7 @@ public class LeafNode extends AbstractNode
 
         Ray newRay = new Ray(ray);
 
+        // The ray is now in Object's coordinate system.
         new Matrix4f(modelView.peek()).invert().transform(newRay.start);
         new Matrix4f(modelView.peek()).invert().transform(newRay.direction);
 
@@ -148,13 +149,6 @@ public class LeafNode extends AbstractNode
 
         float intersection = newRay.t;
         ray.t = intersection;
-        //newRay = new Ray(ray);
-        //newRay.t = intersection;
-
-
-        //new Matrix4f(modelView.peek()).invert().transform(newRay.start);
-        //new Matrix4f(modelView.peek()).invert().transform(newRay.direction);
-
 
         Vector4f normal = tracer.getNormalForRay(newRay);
         Vector4f position = tracer.getPositionForRay(newRay);
@@ -164,6 +158,7 @@ public class LeafNode extends AbstractNode
         Ray ray2 = new Ray(ray);
         ray2.t = intersection;
 
+        // normal and position are in World coordinate system.
         normal = new Matrix4f(modelView.peek()).transform(normal);
         position = new Matrix4f(modelView.peek()).transform(position);
 
@@ -188,8 +183,6 @@ public class LeafNode extends AbstractNode
             } else {
                 texColor = textureImage.getColor(coords[0], coords[1]);
             }
-
-            //Color texColor = textureImage.getColor2(coords[0], coords[1]);
 
             try {
                 Color ret = addTextureColortoColor(absorptive, texColor, false);

@@ -40,7 +40,7 @@ public class View {
   private static final String SCENE = "scenegraphmodels/testScene.xml";
   private static final String TABLE = "scenegraphmodels/davinci.xml";
   private static final String HUMANOID = "scenegraphmodels/humanoid-lights.xml";
-  private static final String SIMPLE_BRICK = "scenegraphmodels/simple-box.xml";
+  private static final String SIMPLE_BRICK = "scenegraphmodels/shadow-graph.xml";
   private static final String SIMPLE_SPHERE = "scenegraphmodels/simple-sphere.xml";
   private static final String SCENE_GRAPH_XML = SIMPLE_BRICK;
 
@@ -145,7 +145,7 @@ public class View {
     initSceneGraph(gla);
   }
 
-  private Vector3f eyePosition = new Vector3f(0, 10, 100);
+  private Vector3f eyePosition = new Vector3f(0, 0, 100);
   private Vector3f lookAtPosition = new Vector3f(0, 0, 0);
   private Vector3f upVector = new Vector3f(0, 1, 0);
   private int timer = 0;
@@ -158,8 +158,6 @@ public class View {
     renderer.clearRenderer();
     if(timer == Integer.MAX_VALUE - 10)
       timer = 0;
-
-
 
     GL3 gl = gla.getGL().getGL3();
     FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
@@ -183,10 +181,6 @@ public class View {
     if(scenegraph != null) {
       scenegraph.animate(timer);
 
-
-
-
-
       if(!generatedRayTracedImage) {
 
         Vector4f start = new Vector4f(eyePosition.x, eyePosition.y, eyePosition.z, 1);
@@ -200,13 +194,13 @@ public class View {
 
         BufferedImage img = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
 
-        scenegraph.setCameraValues(eyePosition, lookAtPosition, new Vector3f(0, -1, 0));
+        //scenegraph.setCameraValues(eyePosition, lookAtPosition, new Vector3f(0, -1, 0));
         scenegraph.collectAllLights();
 
         for(int i = 0; i < W; ++i) {
           for(int j = 0; j < H; ++j) {
             v = new Vector4f(i - (W/2.0f), j - (H/2.0f), Z, 0);
-            v = new Matrix4f().lookAt(eyePosition, lookAtPosition, new Vector3f(0, -1, 0)).transform(v);
+            //v = new Matrix4f().lookAt(eyePosition, lookAtPosition, new Vector3f(0, -1, 0)).transform(v);
             ray = new Ray(start, v);
             color = scenegraph.getColorForRay(ray);
 

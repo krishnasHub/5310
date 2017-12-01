@@ -202,8 +202,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     public Color getColorForRay(final Ray ray) {
         Stack<Matrix4f> modelView = new Stack<>();
         modelView.push(new Matrix4f());
-        if(eyePosition != null && lookAt != null && upVector != null)
-            modelView.peek().lookAt(eyePosition, lookAt, upVector);
+        //if(eyePosition != null && lookAt != null && upVector != null)
+        //    modelView.peek().lookAt(eyePosition, lookAt, upVector);
 
         return root.getColorForRay(ray, modelView);
     }
