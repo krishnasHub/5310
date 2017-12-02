@@ -6,7 +6,7 @@
 
     <transform>
         <set>
-            <translate>0 0 0</translate>
+            <rotate>-60 1 0 0</rotate>
         </set>
 
         <group name="Entire Scene">
