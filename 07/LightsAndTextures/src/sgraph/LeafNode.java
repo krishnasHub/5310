@@ -156,6 +156,36 @@ public class LeafNode extends AbstractNode
         return ret;
     }
 
+
+    private Color getReflectionColor(Vector4f position, Vector4f normal, Ray oldRay) {
+        Ray reflectiveRay;
+
+        Vector4f start = new Vector4f(position);
+
+        Vector3f normalizedPosition = new Vector3f(position.x, position.y, position.z).normalize();
+        Vector3f normalizedNormal = new Vector3f(normal.x, normal.y, normal.z).normalize();
+        Vector3f reflectedVector = new Vector3f(normalizedPosition)
+                .reflect(new Vector3f(normalizedNormal) );
+        reflectedVector = reflectedVector.normalize();
+
+        Vector4f direction = new Vector4f(reflectedVector.x, reflectedVector.y, reflectedVector.z, 0);
+        direction = direction.normalize();
+
+        start = start.add(new Vector4f(direction).mul(1.1f));
+
+        reflectiveRay = new Ray(start, direction);
+        reflectiveRay.purpose = RayPurpose.RAY_REFLECT;
+        reflectiveRay.originators.add(this);
+
+        if(oldRay != null) {
+            reflectiveRay.originators.addAll(oldRay.originators);
+        }
+
+        Color reflecColor = scenegraph.getColorForRay(reflectiveRay);
+
+        return reflecColor;
+    }
+
     @Override
     public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
         this.tracer = TracerFactory.getTracer(objInstanceName);
@@ -203,6 +233,8 @@ public class LeafNode extends AbstractNode
         Color absorptive = tracer.getLightColorAt(this.getMaterial(), ray2, l, normal, position);
         float abs = this.material.getAbsorption();
 
+        if(abs != 0)
+            absorptive = tracer.fractionOf(absorptive, abs);
 
         int shadowHits = inShadow(position);
         if(shadowHits > 0) {
@@ -211,6 +243,37 @@ public class LeafNode extends AbstractNode
             }
         }
 
+        // If this ray is reflective, return the reflective color instead of going ahead...
+        if (ray.purpose == RayPurpose.RAY_REFLECT) {
+
+            // If this ray has been bouncing around for MAX_REFLECT_COUNT times, return the current color.
+            if(ray.originators.size() >= Ray.MAX_REFLECT_COUNT) {
+                return absorptive;
+            }
+
+            if(this.material.getReflection() == 0) {
+                return absorptive;
+            }
+            // Else, shoot another ray from here and return that color with the current color.
+            Color reflectionColor = getReflectionColor(position, normal, ray);
+
+            // If this re-reflected ray didn't hit anyone, return the current color.
+            if(reflectionColor == Color.BLACK) {
+                return absorptive;
+            }
+
+
+            reflectionColor = tracer.fractionOf(reflectionColor, material.getReflection());
+
+            return tracer.addColor(absorptive, reflectionColor);
+        }
+
+        if(material.getReflection() != 0) {
+            Color reflectionColor = getReflectionColor(position, normal, null);
+            if (reflectionColor != Color.BLACK) {
+                absorptive = tracer.addColor(absorptive, reflectionColor);
+            }
+        }
 
         TextureImage textureImage = null;
 

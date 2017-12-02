@@ -177,6 +177,10 @@ public class GroupNode extends AbstractNode
 
         }
 
+        if(ret == Color.BLACK)
+            ray.t = -1;
+
+        ray.t = smallestT;
         return ret;
     }
 }

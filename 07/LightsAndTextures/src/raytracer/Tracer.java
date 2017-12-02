@@ -266,6 +266,11 @@ public abstract class Tracer {
         return fColor;
     }
 
+    public Color addColor(Color c, Color d) {
+        Vector3f v = new Vector3f(d.getRed() / 255.0f, d.getGreen() / 255.0f, d.getBlue() / 255.0f);
+        return addColor(c, v);
+    }
+
     protected Color addColor(Color c, Vector3f v) {
         Color ret;
 
@@ -275,6 +280,15 @@ public abstract class Tracer {
                 clamp(colors[0] + v.x, 1),
                 clamp(colors[1] + v.y, 1),
                 clamp(colors[2] + v.z, 1), 1);
+
+        return ret;
+    }
+
+    public Color fractionOf(Color color, float fraction) {
+        float[] colorValues = color.getRGBComponents(null);
+        Color ret = new Color(colorValues[0] * fraction,
+                colorValues[1] * fraction,
+                colorValues[2] * fraction);
 
         return ret;
     }
