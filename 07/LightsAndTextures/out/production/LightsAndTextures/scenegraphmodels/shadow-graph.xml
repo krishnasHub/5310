@@ -71,8 +71,53 @@
 
             <transform name="sphere1">
                 <set>
-                    <translate>0 0 -20</translate>
+                    <translate>-10 0 -20</translate>
                     <scale>10 10 10</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 0.25 0.25</ambient>
+                        <diffuse>1 0.25 0.25</diffuse>
+                        <specular>1 0.25 0.25</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="sphere2">
+                <set>
+                    <translate>10 0 -30</translate>
+                    <scale>10 10 10</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 0.25 0.25</ambient>
+                        <diffuse>1 0.25 0.25</diffuse>
+                        <specular>1 0.25 0.25</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="sphere3">
+                <set>
+                    <translate>0 0 -40</translate>
+                    <scale>10 10 10</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>1 0.25 0.25</ambient>
+                        <diffuse>1 0.25 0.25</diffuse>
+                        <specular>1 0.25 0.25</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+
+            <transform name="sphere4">
+                <set>
+                    <translate>0 0 -20</translate>
+                    <scale>3 3 3</scale>
                 </set>
                 <object instanceof="sphere">
                     <material>
