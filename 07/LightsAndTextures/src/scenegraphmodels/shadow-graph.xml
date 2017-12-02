@@ -17,7 +17,7 @@
                 </set>
 
                 <light name="Light">
-                    <ambient>0.1 0.1 0.1</ambient>
+                    <ambient>0.2 0.2 0.2</ambient>
                     <specular>0.4 0.4 0.4</specular>
                     <diffuse>0.4 0.4 0.4</diffuse>
                     <position>0 10 -10</position>
@@ -31,7 +31,7 @@
                 </set>
 
                 <light name="Light">
-                    <ambient>0.1 0.1 0.1</ambient>
+                    <ambient>0.2 0.2 0.2</ambient>
                     <specular>0.4 0.4 0.4</specular>
                     <diffuse>0.4 0.4 0.4</diffuse>
                     <position>0 -10 -10</position>
@@ -45,7 +45,7 @@
                 </set>
 
                 <light name="Light">
-                    <ambient>0.1 0.1 0.1</ambient>
+                    <ambient>0.2 0.2 0.2</ambient>
                     <specular>0.4 0.4 0.4</specular>
                     <diffuse>0.4 0.4 0.4</diffuse>
                     <position>10 0 -10</position>
@@ -59,7 +59,7 @@
                 </set>
 
                 <light name="Light">
-                    <ambient>0.1 0.1 0.1</ambient>
+                    <ambient>0.2 0.2 0.2</ambient>
                     <specular>0.4 0.4 0.4</specular>
                     <diffuse>0.4 0.4 0.4</diffuse>
                     <position>-10 0 -10</position>
@@ -71,19 +71,37 @@
 
             <transform name="ground brick">
                 <set>
-                    <translate>0 0 -50</translate>
-                    <scale>250 250 10</scale>
+                    <translate>0 0 -42</translate>
+                    <scale>350 350 10</scale>
                 </set>
                 <object instanceof="sphere">
                     <material>
-                        <ambient>0.7 0.7 0.7</ambient>
+                        <ambient>0.7529 0.7529 0.7529</ambient>
+                        <specular>0.7529 0.7529 0.7529</specular>
+                        <diffuse>0.7529 0.7529 0.7529</diffuse>
                         <shininess>100</shininess>
                         <absorption>1</absorption>
-                        <reflection>1</reflection>
+                        <reflection>0.8</reflection>
                     </material>
                 </object>
             </transform>
 
+            <transform name="Weird Pole">
+                <set>
+                    <translate>0 0 -20</translate>
+                    <scale>5 5 200</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <ambient>0.025 0.025 0.025</ambient>
+                        <specular>0.025 0.025 0.025</specular>
+                        <diffuse>0.025 0.025 0.025</diffuse>
+                        <shininess>100</shininess>
+                        <absorption>1</absorption>
+                        <reflection>0.8</reflection>
+                    </material>
+                </object>
+            </transform>
 
 
             <transform name="back Sphere 1">
@@ -93,9 +111,9 @@
                 </set>
                 <object instanceof="sphere">
                     <material>
-                        <ambient>0.7 0.7 0.7</ambient>
-                        <diffuse>0.7 0.7 0.7</diffuse>
-                        <specular>0.7 0.7 0.7</specular>
+                        <ambient>0.4 0.55 0.4</ambient>
+                        <diffuse>0.4 0.55 0.4</diffuse>
+                        <specular>0.4 0.55 0.4</specular>
                         <shininess>100</shininess>
                         <absorption>1</absorption>
                         <reflection>1</reflection>
@@ -111,12 +129,12 @@
                 </set>
                 <object instanceof="sphere">
                     <material>
-                        <ambient>0.7 0.7 0.7</ambient>
-                        <diffuse>0.7 0.7 0.7</diffuse>
-                        <specular>0.7 0.7 0.7</specular>
+                        <ambient>0.55 0.4 0.4</ambient>
+                        <diffuse>0.55 0.4 0.4</diffuse>
+                        <specular>0.55 0.4 0.4</specular>
                         <shininess>100</shininess>
                         <absorption>1</absorption>
-                        <reflection>1</reflection>
+                        <reflection>0.8</reflection>
                     </material>
                 </object>
             </transform>
@@ -128,12 +146,12 @@
                 </set>
                 <object instanceof="sphere">
                     <material>
-                        <ambient>0.7 0.7 0.7</ambient>
-                        <diffuse>0.7 0.7 0.7</diffuse>
-                        <specular>0.7 0.7 0.7</specular>
+                        <ambient>0.55 0.55 0.4</ambient>
+                        <diffuse>0.55 0.55 0.4</diffuse>
+                        <specular>0.55 0.55 0.4</specular>
                         <shininess>100</shininess>
                         <absorption>1</absorption>
-                        <reflection>1</reflection>
+                        <reflection>0.8</reflection>
                     </material>
                 </object>
             </transform>
@@ -145,12 +163,12 @@
                 </set>
                 <object instanceof="sphere">
                     <material>
-                        <ambient>0.7 0.7 0.7</ambient>
-                        <diffuse>0.7 0.7 0.7</diffuse>
-                        <specular>0.7 0.7 0.7</specular>
+                        <ambient>0.4 0.4 0.55</ambient>
+                        <diffuse>0.4 0.4 0.55</diffuse>
+                        <specular>0.4 0.4 0.55</specular>
                         <shininess>100</shininess>
                         <absorption>1</absorption>
-                        <reflection>1</reflection>
+                        <reflection>0.8</reflection>
                     </material>
                 </object>
             </transform>
