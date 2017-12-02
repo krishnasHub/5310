@@ -16,10 +16,38 @@
                 </set>
 
                 <light name="Light">
-                    <ambient>0.8 0.8 0.8</ambient>
+                    <ambient>0.4 0.4 0.4</ambient>
                     <specular>1 1 1</specular>
                     <diffuse>1 1 1</diffuse>
-                    <position>0 0 50</position>
+                    <position>20 -20 50</position>
+                    <spotangle>180</spotangle>
+                    <spotdirection>0 0 -1 </spotdirection>
+                </light>
+            </transform>
+
+            <transform name="Light Transform 2">
+                <set>
+                </set>
+
+                <light name="Light 2">
+                    <ambient>0.4 0.4 0.4</ambient>
+                    <specular>1 1 1</specular>
+                    <diffuse>1 1 1</diffuse>
+                    <position>-20 -20 50</position>
+                    <spotangle>180</spotangle>
+                    <spotdirection>0 0 -1 </spotdirection>
+                </light>
+            </transform>
+
+            <transform name="Light Transform 3">
+                <set>
+                </set>
+
+                <light name="Light 3">
+                    <ambient>0.4 0.4 0.4</ambient>
+                    <specular>1 1 1</specular>
+                    <diffuse>1 1 1</diffuse>
+                    <position>0 -20 50</position>
                     <spotangle>180</spotangle>
                     <spotdirection>0 0 -1 </spotdirection>
                 </light>

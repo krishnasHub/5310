@@ -4,6 +4,7 @@ import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 import raytracer.Ray;
+import raytracer.RayPurpose;
 import raytracer.TracerFactory;
 import util.Light;
 import util.PolygonMesh;
@@ -126,6 +127,35 @@ public class LeafNode extends AbstractNode
     }
 
 
+    private int inShadow(Vector4f position) {
+        List<Light> l = scenegraph.getLights();
+        Ray shadowRay;
+        Vector4f start, direction;
+        int ret = 0;
+
+        for(int i = 0; i < l.size(); ++i) {
+            Light light = new Light(l.get(i));
+
+            direction = new Vector4f(position).sub(new Vector4f(light.getPosition()));
+            direction.w = 0;
+            direction = direction.normalize();
+            direction = direction.mul(-1);
+
+            start = new Vector4f(position);
+
+            shadowRay = new Ray(start, direction);
+            shadowRay.purpose = RayPurpose.RAY_SHADOW;
+            shadowRay.originators.add(this);
+
+            Color shadowColor = scenegraph.getColorForRay(shadowRay);
+            if(shadowColor != Color.BLACK)
+                ret++;
+        }
+
+
+        return ret;
+    }
+
     @Override
     public Color getColorForRay(final Ray ray, Stack<Matrix4f> modelView) {
         this.tracer = TracerFactory.getTracer(objInstanceName);
@@ -150,6 +180,14 @@ public class LeafNode extends AbstractNode
         float intersection = newRay.t;
         ray.t = intersection;
 
+        if(ray.purpose == RayPurpose.RAY_SHADOW) {
+            if(ray.originators.contains(this)) {
+                ray.t = -1f;
+                return Color.BLACK;
+            }
+            return Color.WHITE;
+        }
+
         Vector4f normal = tracer.getNormalForRay(newRay);
         Vector4f position = tracer.getPositionForRay(newRay);
 
@@ -164,6 +202,15 @@ public class LeafNode extends AbstractNode
 
         Color absorptive = tracer.getLightColorAt(this.getMaterial(), ray2, l, normal, position);
         float abs = this.material.getAbsorption();
+
+
+        int shadowHits = inShadow(position);
+        if(shadowHits > 0) {
+            for(int i = 0; i < shadowHits; ++i) {
+                absorptive = absorptive.darker();
+            }
+        }
+
 
         TextureImage textureImage = null;
 
