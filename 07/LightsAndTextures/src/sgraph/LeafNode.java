@@ -243,6 +243,36 @@ public class LeafNode extends AbstractNode
             }
         }
 
+        TextureImage textureImage = null;
+
+        if(textureName == null || textureName == ""){
+            //ret = absorptive;
+        } else {
+            textureImage = scenegraph.getTexture(textureName);
+
+            // latitude and longitude on the sphere/box in teh range 0 - 1 for X and Y axes.
+            float[] coords = tracer.getTextureCoordinatesForPoint(positionInObjSpace);
+            //Vector4f txColor = textureImage.getColor(coords[0] * 255, coords[1] * 255);
+            Vector4f texColor;
+
+            //If dieflip, use the box-outside method to get specific areas of the texture image.
+            if (objInstanceName.equals("box-outside")) {
+                texColor = textureImage.getColorBoxOutside(coords[0], coords[1], coords[2]);
+            } else {
+                texColor = textureImage.getColor(coords[0], coords[1]);
+            }
+
+            try {
+                Color ret = addTextureColortoColor(absorptive, texColor, false);
+                absorptive = new Color(ret.getRGB());
+                //ret = absorptive;
+
+                return ret;
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         // If this ray is reflective, return the reflective color instead of going ahead...
         if (ray.purpose == RayPurpose.RAY_REFLECT) {
 
@@ -262,7 +292,6 @@ public class LeafNode extends AbstractNode
                 return absorptive;
             }
 
-
             reflectionColor = tracer.fractionOf(reflectionColor, material.getReflection());
 
             return tracer.addColor(absorptive, reflectionColor);
@@ -275,35 +304,9 @@ public class LeafNode extends AbstractNode
             }
         }
 
-        TextureImage textureImage = null;
 
-        if(textureName == null || textureName == ""){
-            return absorptive;
-        } else {
-            textureImage = scenegraph.getTexture(textureName);
 
-            // latitude and longitude on the sphere/box in teh range 0 - 1 for X and Y axes.
-            float[] coords = tracer.getTextureCoordinatesForPoint(positionInObjSpace);
-            //Vector4f txColor = textureImage.getColor(coords[0] * 255, coords[1] * 255);
-            Vector4f texColor;
-
-            //If dieflip, use the box-outside method to get specific areas of the texture image.
-            if (objInstanceName.equals("box-outside")) {
-                texColor = textureImage.getColorBoxOutside(coords[0], coords[1], coords[2]);
-            } else {
-                texColor = textureImage.getColor(coords[0], coords[1]);
-            }
-
-            try {
-                Color ret = addTextureColortoColor(absorptive, texColor, false);
-
-                return ret;
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        return null;
+        return absorptive;
     }
 
     private Color addTextureColortoColor(Color absorptive, Color texColor) {

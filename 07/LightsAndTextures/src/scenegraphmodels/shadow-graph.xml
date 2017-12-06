@@ -12,97 +12,148 @@
 
         <group name="Entire Scene">
 
-            <transform name="Light Transform">
-                <set>
-                </set>
+            <group name="Lights">
+                <transform name="Light Transform">
+                    <set>
+                    </set>
 
-                <light name="Light">
-                    <ambient>0.2 0.2 0.2</ambient>
-                    <specular>0.4 0.4 0.4</specular>
-                    <diffuse>0.4 0.4 0.4</diffuse>
-                    <position>0 10 -10</position>
-                    <spotangle>180</spotangle>
-                    <spotdirection>0 0 -1 </spotdirection>
-                </light>
-            </transform>
+                    <light name="Light">
+                        <ambient>0.2 0.2 0.2</ambient>
+                        <specular>0.4 0.4 0.4</specular>
+                        <diffuse>0.4 0.4 0.4</diffuse>
+                        <position>0 10 -10</position>
+                        <spotangle>180</spotangle>
+                        <spotdirection>0 0 -1 </spotdirection>
+                    </light>
+                </transform>
 
-            <transform name="Light Transform 2">
-                <set>
-                </set>
+                <transform name="Light Transform 2">
+                    <set>
+                    </set>
 
-                <light name="Light">
-                    <ambient>0.2 0.2 0.2</ambient>
-                    <specular>0.4 0.4 0.4</specular>
-                    <diffuse>0.4 0.4 0.4</diffuse>
-                    <position>0 -10 -10</position>
-                    <spotangle>180</spotangle>
-                    <spotdirection>0 0 -1 </spotdirection>
-                </light>
-            </transform>
+                    <light name="Light">
+                        <ambient>0.2 0.2 0.2</ambient>
+                        <specular>0.4 0.4 0.4</specular>
+                        <diffuse>0.4 0.4 0.4</diffuse>
+                        <position>0 -10 -10</position>
+                        <spotangle>180</spotangle>
+                        <spotdirection>0 0 -1 </spotdirection>
+                    </light>
+                </transform>
 
-            <transform name="Light Transform 3">
-                <set>
-                </set>
+                <transform name="Light Transform 3">
+                    <set>
+                    </set>
 
-                <light name="Light">
-                    <ambient>0.2 0.2 0.2</ambient>
-                    <specular>0.4 0.4 0.4</specular>
-                    <diffuse>0.4 0.4 0.4</diffuse>
-                    <position>10 0 -10</position>
-                    <spotangle>180</spotangle>
-                    <spotdirection>0 0 -1 </spotdirection>
-                </light>
-            </transform>
+                    <light name="Light">
+                        <ambient>0.2 0.2 0.2</ambient>
+                        <specular>0.4 0.4 0.4</specular>
+                        <diffuse>0.4 0.4 0.4</diffuse>
+                        <position>10 0 -10</position>
+                        <spotangle>180</spotangle>
+                        <spotdirection>0 0 -1 </spotdirection>
+                    </light>
+                </transform>
 
-            <transform name="Light Transform 4">
-                <set>
-                </set>
+                <transform name="Light Transform 4">
+                    <set>
+                    </set>
 
-                <light name="Light">
-                    <ambient>0.2 0.2 0.2</ambient>
-                    <specular>0.4 0.4 0.4</specular>
-                    <diffuse>0.4 0.4 0.4</diffuse>
-                    <position>-10 0 -10</position>
-                    <spotangle>180</spotangle>
-                    <spotdirection>0 0 -1 </spotdirection>
-                </light>
-            </transform>
+                    <light name="Light">
+                        <ambient>0.2 0.2 0.2</ambient>
+                        <specular>0.4 0.4 0.4</specular>
+                        <diffuse>0.4 0.4 0.4</diffuse>
+                        <position>-10 0 -10</position>
+                        <spotangle>180</spotangle>
+                        <spotdirection>0 0 -1 </spotdirection>
+                    </light>
+                </transform>
+            </group>
 
+
+            <group name="4 die">
+                <transform name="dice">
+                    <set>
+                        <translate>-100 -20 50</translate>
+                        <rotate>-72 0 0 1</rotate>
+                        <rotate>153 1 0 0</rotate>
+                        <scale>10 10 10</scale>
+                    </set>
+                    <object instanceof="box-outside">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <shininess>100</shininess>
+                            <textureName>dieflip.png</textureName>
+                        </material>
+                    </object>
+                </transform>
+
+                <transform name="dice 2">
+                    <set>
+                        <translate>100 -20 50</translate>
+                        <rotate>-72 0 0 1</rotate>
+                        <rotate>153 1 0 0</rotate>
+                        <scale>10 10 10</scale>
+                    </set>
+                    <object instanceof="box-outside">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <shininess>100</shininess>
+                            <textureName>dieflip.png</textureName>
+                        </material>
+                    </object>
+                </transform>
+
+                <transform name="dice 3">
+                    <set>
+                        <translate>0 -120 50</translate>
+                        <rotate>-72 0 0 1</rotate>
+                        <rotate>153 1 0 0</rotate>
+                        <scale>10 10 10</scale>
+                    </set>
+                    <object instanceof="box-outside">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <shininess>100</shininess>
+                            <textureName>dieflip.png</textureName>
+                        </material>
+                    </object>
+                </transform>
+
+                <transform name="dice 4">
+                    <set>
+                        <translate>0 120 70</translate>
+                        <rotate>-72 0 0 1</rotate>
+                        <rotate>153 1 0 0</rotate>
+                        <scale>10 10 10</scale>
+                    </set>
+                    <object instanceof="box-outside">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <shininess>100</shininess>
+                            <textureName>dieflip.png</textureName>
+                        </material>
+                    </object>
+                </transform>
+            </group>
 
             <transform name="ground brick">
                 <set>
-                    <translate>0 0 -42</translate>
+                    <translate>-10 0 -42</translate>
                     <scale>350 350 10</scale>
                 </set>
                 <object instanceof="sphere">
                     <material>
-                        <ambient>0.7529 0.7529 0.7529</ambient>
-                        <specular>0.7529 0.7529 0.7529</specular>
-                        <diffuse>0.7529 0.7529 0.7529</diffuse>
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
                         <shininess>100</shininess>
-                        <absorption>1</absorption>
-                        <reflection>0.8</reflection>
+                        <absorption>0.5</absorption>
+                        <reflection>1</reflection>
+                        <textureName>checkerboard.jpg</textureName>
                     </material>
                 </object>
             </transform>
-
-            <transform name="Weird Pole">
-                <set>
-                    <translate>0 0 -20</translate>
-                    <scale>5 5 200</scale>
-                </set>
-                <object instanceof="sphere">
-                    <material>
-                        <ambient>0.025 0.025 0.025</ambient>
-                        <specular>0.025 0.025 0.025</specular>
-                        <diffuse>0.025 0.025 0.025</diffuse>
-                        <shininess>100</shininess>
-                        <absorption>1</absorption>
-                        <reflection>0.8</reflection>
-                    </material>
-                </object>
-            </transform>
-
 
             <transform name="back Sphere 1">
                 <set>
@@ -248,6 +299,23 @@
                     <translate>0 0 -30</translate>
                 </set>
                 <group name="center_black_spheres">
+
+                    <transform name="Weird Pole">
+                        <set>
+                            <translate>0 0 10</translate>
+                            <scale>5 5 200</scale>
+                        </set>
+                        <object instanceof="sphere">
+                            <material>
+                                <ambient>0.025 0.025 0.025</ambient>
+                                <specular>0.025 0.025 0.025</specular>
+                                <diffuse>0.025 0.025 0.025</diffuse>
+                                <shininess>100</shininess>
+                                <absorption>1</absorption>
+                                <reflection>0.8</reflection>
+                            </material>
+                        </object>
+                    </transform>
 
                     <transform name="black_center">
                         <set>

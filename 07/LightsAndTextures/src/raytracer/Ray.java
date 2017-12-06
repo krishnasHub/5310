@@ -14,7 +14,7 @@ public class Ray {
     public Vector4f direction;
     public float t;
 
-    public static final int MAX_REFLECT_COUNT = 12;
+    public static final int MAX_REFLECT_COUNT = 5;
 
     public RayPurpose purpose = RayPurpose.RAY_TRACE;
     public Stack<INode> originators = new Stack<>();

@@ -181,6 +181,7 @@ public class View {
     if(scenegraph != null) {
       scenegraph.animate(timer);
 
+      //generatedRayTracedImage = true;
       if(!generatedRayTracedImage) {
 
         Vector4f start = new Vector4f(eyePosition.x, eyePosition.y, eyePosition.z, 1);
